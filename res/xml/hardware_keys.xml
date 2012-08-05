@@ -19,6 +19,12 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <CheckBoxPreference
+        android:key="disable_hardware_keys"
+        android:title="@string/disable_hw_title"
+        android:summary="@string/disable_hw_summary"
+        android:defaultValue="false" />
+
+    <CheckBoxPreference
         android:key="enable_hardware_rebind"
         android:title="@string/keys_enable_custom_title"
         android:summary="@string/keys_enable_custom_summary" />
@@ -130,6 +136,7 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="button_keys_additional"
         android:title="@string/additional_options_title">
 
         <com.android.settings.mahdi.SystemSettingCheckBoxPreference

@@ -20,11 +20,13 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
@@ -34,8 +36,10 @@ import android.preference.PreferenceActivity;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceCategory;
+import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -53,6 +57,8 @@ import com.android.settings.cyanogenmod.ButtonBacklightBrightness;
 import com.android.settings.mahdi.util.ShortcutPickerHelper;
 import com.android.internal.util.mahdi.QSUtils;
 
+import org.cyanogenmod.hardware.KeyDisabler;
+
 import java.util.*;
 
 public class HardwareKeys extends SettingsPreferenceFragment implements
@@ -67,7 +73,9 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
     private static final String CATEGORY_MENU = "button_keys_menu";
     private static final String CATEGORY_ASSIST = "button_keys_assist";
     private static final String CATEGORY_APPSWITCH = "button_keys_appSwitch";
+    private static final String CATEGORY_ADDITIONAL = "button_keys_additional";
 
+    private static final String KEYS_DISABLE_HW_KEYS = "disable_hardware_keys";
     private static final String KEYS_CATEGORY_BINDINGS = "keys_bindings";
     private static final String KEYS_ENABLE_CUSTOM = "enable_hardware_rebind";
     private static final String KEYS_BACK_PRESS = "keys_back_press";
@@ -102,6 +110,7 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
     private static final int KEY_MASK_ASSIST     = 0x08;
     private static final int KEY_MASK_APP_SWITCH = 0x10;
 
+    private CheckBoxPreference mDisableHwKeys;
     private CheckBoxPreference mEnableCustomBindings;
     private Preference mBackPressAction;
     private Preference mBackLongPressAction;
@@ -120,6 +129,8 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
     private Preference mAppSwitchDoubleTapAction;
     private ListPreference mLongHomeAction;
     private ListPreference[] mActions;
+
+    private Handler mHandler;
 
     private boolean mCheckPreferences;
     private Map<String, String> mKeySettings = new HashMap<String, String>();
@@ -157,6 +168,8 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
             prefs.removeAll();
         }
 
+        mHandler = new Handler();
+
         // Load the preferences from an XML resource
         addPreferencesFromResource(R.xml.hardware_keys);
         prefs = getPreferenceScreen();
@@ -182,7 +195,11 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
                 (PreferenceCategory) prefs.findPreference(CATEGORY_ASSIST);
         PreferenceCategory keysAppSwitchCategory =
                 (PreferenceCategory) prefs.findPreference(CATEGORY_APPSWITCH);
+        PreferenceCategory keysAdditionalCategory =
+                (PreferenceCategory) prefs.findPreference(CATEGORY_ADDITIONAL);
 
+        mDisableHwKeys = (CheckBoxPreference) prefs.findPreference(
+                KEYS_DISABLE_HW_KEYS);
         mEnableCustomBindings = (CheckBoxPreference) prefs.findPreference(
                 KEYS_ENABLE_CUSTOM);
         mBackPressAction = (Preference) prefs.findPreference(
@@ -311,17 +328,17 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
             prefs.removePreference(keysAppSwitchCategory);
         }
 
-         final ButtonBacklightBrightness backlight =
-                (ButtonBacklightBrightness) findPreference(KEY_BUTTON_BACKLIGHT);
-        if (!backlight.isButtonSupported() && !backlight.isKeyboardSupported()) {
-            prefs.removePreference(backlight);
-        }
-
         boolean enableHardwareRebind = Settings.System.getInt(getContentResolver(),
                 Settings.System.HARDWARE_KEY_REBINDING, 0) == 1;
         mEnableCustomBindings = (CheckBoxPreference) findPreference(KEYS_ENABLE_CUSTOM);
         mEnableCustomBindings.setChecked(enableHardwareRebind);
         mEnableCustomBindings.setOnPreferenceChangeListener(this);
+
+        final ButtonBacklightBrightness backlight =
+                (ButtonBacklightBrightness) findPreference(KEY_BUTTON_BACKLIGHT);
+        if (!backlight.isButtonSupported() && !backlight.isKeyboardSupported()) {
+            prefs.removePreference(backlight);
+        }
 
         // Handle warning dialog.
         SharedPreferences preferences =
@@ -478,6 +495,123 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
         return true;
     }
 
+    private static void writeDisableHwkeysOption(Context context, boolean enabled) {
+        final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        final int defaultBrightness = context.getResources().getInteger(
+                com.android.internal.R.integer.config_buttonBrightnessSettingDefault);
+
+        Settings.System.putInt(context.getContentResolver(),
+                Settings.System.DISABLE_HARDWARE_KEYS, enabled ? 1 : 0);
+        KeyDisabler.setActive(enabled);
+
+        if (enabled) {
+            Settings.System.putInt(context.getContentResolver(),
+                    Settings.System.NAVIGATION_BAR_SHOW, 1);
+        } else {
+            Settings.System.putInt(context.getContentResolver(),
+                    Settings.System.NAVIGATION_BAR_SHOW, 0);
+        }
+
+        /* Save/restore button timeouts to disable them in softkey mode */
+        Editor editor = prefs.edit();
+
+        if (enabled) {
+            int currentBrightness = Settings.System.getInt(context.getContentResolver(),
+                    Settings.System.BUTTON_BRIGHTNESS, defaultBrightness);
+            if (!prefs.contains("pre_navbar_button_backlight")) {
+                editor.putInt("pre_navbar_button_backlight", currentBrightness);
+            }
+            Settings.System.putInt(context.getContentResolver(),
+                    Settings.System.BUTTON_BRIGHTNESS, 0);
+        } else {
+            Settings.System.putInt(context.getContentResolver(),
+                    Settings.System.BUTTON_BRIGHTNESS,
+                    prefs.getInt("pre_navbar_button_backlight", defaultBrightness));
+            editor.remove("pre_navbar_button_backlight");
+        }
+        editor.commit();
+    }
+
+    private void updateDisableHwkeysOption() {
+        boolean enabled = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.DISABLE_HARDWARE_KEYS, 0) != 0;
+
+        mDisableHwKeys.setChecked(enabled);
+
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        /* Disable hw-key options if they're disabled */
+        final PreferenceCategory backCategory =
+                (PreferenceCategory) prefScreen.findPreference(CATEGORY_BACK);
+        final PreferenceCategory homeCategory =
+                (PreferenceCategory) prefScreen.findPreference(CATEGORY_HOME);
+        final PreferenceCategory menuCategory =
+                (PreferenceCategory) prefScreen.findPreference(CATEGORY_MENU);
+        final PreferenceCategory assistCategory =
+                (PreferenceCategory) prefScreen.findPreference(CATEGORY_ASSIST);
+        final PreferenceCategory appSwitchCategory =
+                (PreferenceCategory) prefScreen.findPreference(CATEGORY_APPSWITCH);
+        final PreferenceCategory additionalCategory =
+                (PreferenceCategory) prefScreen.findPreference(CATEGORY_ADDITIONAL);
+        final ButtonBacklightBrightness backlight =
+                (ButtonBacklightBrightness) prefScreen.findPreference(KEY_BUTTON_BACKLIGHT);
+
+        if (mEnableCustomBindings != null) {
+            mEnableCustomBindings.setEnabled(!enabled);
+        }
+
+        /* Toggle backlight control depending on navbar state, force it to
+           off if enabling */
+        if (backlight != null) {
+            backlight.setEnabled(!enabled);
+        }
+
+        /* Toggle hardkey control availability depending on navbar state */
+        if (backCategory != null) {
+            backCategory.setEnabled(!enabled);
+        }
+        if (homeCategory != null) {
+            homeCategory.setEnabled(!enabled);
+        }
+        if (menuCategory != null) {
+            menuCategory.setEnabled(!enabled);
+        }
+        if (assistCategory != null) {
+            assistCategory.setEnabled(!enabled);
+        }
+        if (appSwitchCategory != null) {
+            appSwitchCategory.setEnabled(!enabled);
+        }
+        if (additionalCategory != null) {
+            additionalCategory.setEnabled(!enabled);
+        }
+    }
+
+    public static void restoreKeyDisabler(Context context) {
+        if (!KeyDisabler.isSupported()) {
+            return;
+        }
+
+        writeDisableHwkeysOption(context, Settings.System.getInt(context.getContentResolver(),
+                Settings.System.DISABLE_HARDWARE_KEYS, 0) != 0);
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        if (preference == mDisableHwKeys) {
+            mDisableHwKeys.setEnabled(false);
+            writeDisableHwkeysOption(getActivity(), mDisableHwKeys.isChecked());
+            updateDisableHwkeysOption();
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    mDisableHwKeys.setEnabled(true);
+                }
+            }, 1000);
+        }
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
+    }
+
     private boolean hasHomeKey() {
         Iterator<String> nextAction = mKeySettings.values().iterator();
         while (nextAction.hasNext()){
@@ -503,6 +637,7 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
 
     @Override
     public void onResume() {
+        updateDisableHwkeysOption();
         super.onResume();
 
         for (ListPreference pref : mActions) {

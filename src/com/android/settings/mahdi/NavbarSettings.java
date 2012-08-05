@@ -127,7 +127,7 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
         }
     }
 
-    private void updateNavbarPreferences(boolean show) {
+    public void updateNavbarPreferences(boolean show) {
         mNavBarMenuDisplay.setEnabled(show);
         mButtonPreference.setEnabled(show);
         mRingPreference.setEnabled(show);
@@ -174,6 +174,12 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
 
     @Override
     public void onResume() {
+
+        boolean hasNavBarByDefault = getResources().getBoolean(
+                com.android.internal.R.bool.config_showNavigationBar);
+        boolean enableNavigationBar = Settings.System.getInt(getContentResolver(),
+                Settings.System.NAVIGATION_BAR_SHOW, hasNavBarByDefault ? 1 : 0) == 1;
+        updateNavbarPreferences(enableNavigationBar);
         super.onResume();
     }
 
