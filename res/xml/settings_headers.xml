@@ -248,16 +248,12 @@
         android:icon="@*android:drawable/ic_print"
         android:title="@string/print_settings" />
 
-    <!-- Performance Controls -->
+    <!-- Performance -->
     <header
-        android:id="@+id/performance_controls"
+        android:id="@+id/performance_settings"
+        android:fragment="com.android.settings.cyanogenmod.PerformanceSettings"
         android:icon="@drawable/ic_settings_performance"
-        android:title="@string/performance_settings">
-        <intent
-            android:action="android.intent.action.MAIN"
-            android:targetClass="com.dsht.kerneltweaker.MainActivity"
-            android:targetPackage="com.dsht.kerneltweaker" />
-    </header>
+        android:title="@string/performance_settings_title" />
 
     <!-- Development -->
     <header

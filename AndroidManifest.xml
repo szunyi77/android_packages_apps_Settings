@@ -75,6 +75,8 @@
     <uses-permission android:name="android.permission.SYSTEM_NOTIFICATION_LISTENER" />
     <uses-permission android:name="android.permission.READ_PHONE_BLACKLIST" />
     <uses-permission android:name="android.permission.CHANGE_PHONE_BLACKLIST" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
     <permission
         android:name="android.permission.REQUEST_SUPERUSER"
         android:protectionLevel="signature" />
@@ -1870,6 +1872,7 @@
         <activity android:name=".mahdi.lsn.LockscreenNotifications" />
         <activity android:name=".mahdi.LockscreenButtons" />
         <activity android:name=".mahdi.PrivacySettings" />
+        <activity android:name=".headsup.HeadsUpSettings" />
 
         <activity android:name=".mahdi.AutoBrightnessSetup"
                 android:excludeFromRecents="true"
@@ -2161,7 +2164,14 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".headsup.HeadsUpSettings" />
+        <!-- Performance Settings -->
+        <activity android:name=".cyanogenmod.PerformanceSettings" />
+
+        <receiver android:name=".cyanogenmod.BootReceiver" android:enabled="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
 
         <!-- Mahdi-Rom activities End -->
 

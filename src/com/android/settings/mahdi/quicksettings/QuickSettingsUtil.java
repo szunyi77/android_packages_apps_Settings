@@ -40,6 +40,7 @@ import static com.android.internal.util.mahdi.QSConstants.TILE_NETWORKADB;
 import static com.android.internal.util.mahdi.QSConstants.TILE_NETWORKMODE;
 import static com.android.internal.util.mahdi.QSConstants.TILE_NFC;
 import static com.android.internal.util.mahdi.QSConstants.TILE_ONTHEGO;
+import static com.android.internal.util.mahdi.QSConstants.TILE_PERFORMANCE_PROFILE;
 import static com.android.internal.util.mahdi.QSConstants.TILE_PROFILE;
 import static com.android.internal.util.mahdi.QSConstants.TILE_QUICKRECORD;
 import static com.android.internal.util.mahdi.QSConstants.TILE_QUIETHOURS;
@@ -201,6 +202,9 @@ public class QuickSettingsUtil {
         registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_HEADS_UP, R.string.title_tile_heads_up,
                 "com.android.systemui:drawable/ic_qs_heads_up_on"));
+        registerTile(new QuickSettingsUtil.TileInfo(
+                TILE_PERFORMANCE_PROFILE, R.string.title_tile_performance_profile,
+                "com.android.systemui:drawable/ic_qs_perf_profile"));
     }
 
     private static void registerTile(QuickSettingsUtil.TileInfo info) {
@@ -262,6 +266,11 @@ public class QuickSettingsUtil {
         // Don't show the Compass tile if the device has no orientation sensor
         if (!QSUtils.deviceSupportsCompass(context)) {
             removeTile(TILE_COMPASS);
+        }
+
+        // Don't show the performance profiles tile if is not available for the device
+        if (!QSUtils.deviceSupportsPerformanceProfiles(context)) {
+            removeTile(TILE_PERFORMANCE_PROFILE);
         }
     }
 
