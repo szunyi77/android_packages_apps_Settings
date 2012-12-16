@@ -1585,7 +1585,8 @@
         <activity android:name=".cyanogenmod.SystemSettings" />
         <activity android:name=".cyanogenmod.PowerMenu" />
         <activity android:name=".notificationlight.NotificationLightSettings" />
-	<activity android:name=".profiles.ProfilesSettings" />
+	<activity android:name=".profiles.ProfilesSettings" />	
+        <activity android:name=".slim.quicksettings.QuickSettings" />
 
 	<!-- Pseudo-activity used to provide an intent-filter entry point to profiles config -->
         <activity android:name="Settings$ProfilesSettingsActivity"
