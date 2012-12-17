@@ -591,4 +591,10 @@
 
     <!-- SuperSU  -->
     <string name="superuser_settings_title">Superuser</string>
+
+    <!-- Sizes for pattern lockscreen -->
+    <string name="lock_pattern_size_3">3x3</string>
+    <string name="lock_pattern_size_4">4x4</string>
+    <string name="lock_pattern_size_5">5x5</string>
+    <string name="lock_pattern_size_6">6x6</string>
 </resources>
