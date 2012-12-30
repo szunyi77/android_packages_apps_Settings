@@ -4534,4 +4534,9 @@
 
     <!-- Text to display in regulatory info screen (from device overlay). -->
     <string name="regulatory_info_text"></string>
+
+    <!-- About phone screen, supernexus version-->
+    <string name="mod_version">SuperNexus version</string>
+    <string name="mod_version_default">Unknown</string>
+
 </resources>
