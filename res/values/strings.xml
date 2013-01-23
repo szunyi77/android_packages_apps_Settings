@@ -4543,6 +4543,10 @@
     <string name="pref_wifi_disable_hdcp_title">Skip HDCP negotiation</string>
     <string name="pref_wifi_disable_hdcp_summary">Try this option if you can connect but don\'t get any output</string>
 
+    <!-- USB Mass Storage -->
+    <string name="usb_mass_storage_title">Mass storage</string>
+    <string name="usb_mass_storage_summary">Enable USB mass storage</string>
+
     <!-- Stylus Icon -->
     <string name="stylus_icon_enabled_title">Show icon when using stylus</string>
     <string name="stylus_icon_enabled_summary">Show the pointer icon when hovering or drawing with the stylus</string>
