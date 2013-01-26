@@ -1586,6 +1586,8 @@
 
         <activity android:name=".cyanogenmod.PowerMenu" />
 
+        <activity android:name=".notificationlight.NotificationLightSettings" />
+
         <!-- CyanogenMod activities End -->
 
         <receiver android:name=".widget.SettingsAppWidgetProvider"
