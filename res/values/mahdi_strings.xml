@@ -946,11 +946,20 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="shortcuts_color_mode_title">Icon color mode</string>
     <string name="shortcuts_color_mode_summary">Change the shorcuts icon color mode</string>
 
-    <!-- Notification drawer settings  -->
+    <!-- Status bar auto-collapse behaviour  -->
     <string name="notification_drawer_title">Notification drawer</string>
     <string name="notification_drawer_summary">Add shortcuts, enable quick settings ribbons and more</string>
     <string name="notification_shortcuts_settings_title">Shortcuts</string>
     <string name="notification_shortcuts_settings_summary">Add shortcuts to the bottom of the notification drawer</string>
+
+    <!-- Notification hide labels -->
+    <string name="notification_drawer_collapse_on_dismiss_title">Auto close behavior</string>
+    <string name="collapse_on_dismiss_never">Disabled</string>
+    <string name="collapse_on_dismiss_if_empty">If none remaining</string>
+    <string name="collapse_on_dismiss_if_no_clearable">If no removable remaining</string>
+    <string name="collapse_on_dismiss_never_summary">Leave open after removing notifications</string>
+    <string name="collapse_on_dismiss_if_empty_summary">Close after removing the last notification</string>
+    <string name="collapse_on_dismiss_if_no_clearable_summary">Close after removing the last removable notification</string>
 
     <!-- Notification hide labels -->
     <string name="notification_hide_labels_title">Hide notification labels</string>

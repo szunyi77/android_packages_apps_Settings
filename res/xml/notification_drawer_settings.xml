@@ -45,6 +45,13 @@
             android:entryValues="@array/notification_hide_labels_values"
             android:persistent="false" />
 
+        <ListPreference
+            android:key="notification_drawer_collapse_on_dismiss"
+            android:title="@string/notification_drawer_collapse_on_dismiss_title"
+            android:dialogTitle="@string/notification_drawer_collapse_on_dismiss_title"
+            android:entries="@array/notification_drawer_collapse_on_dismiss_entries"
+            android:entryValues="@array/notification_drawer_collapse_on_dismiss_values" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

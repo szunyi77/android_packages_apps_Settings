@@ -50,6 +50,7 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment
     private static final String PREF_NOTI_REMINDER_INTERVAL = "noti_reminder_interval";
     private static final String PREF_NOTI_REMINDER_RINGTONE = "noti_reminder_ringtone";
     private static final String PREF_BRIGHTNESS_SLIDER = "notification_brightness_slider";
+    private static final String UI_COLLAPSE_BEHAVIOUR = "notification_drawer_collapse_on_dismiss";
 
     private ListPreference mHideLabels;
     private CheckBoxPreference mReminder;
@@ -57,6 +58,7 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment
     private ListPreference mReminderMode;
     private RingtonePreference mReminderRingtone;
     private CheckBoxPreference mBrightnessSlider;
+    private ListPreference mCollapseOnDismiss;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -112,6 +114,14 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment
         mBrightnessSlider.setChecked(Settings.System.getIntForUser(getContentResolver(),
                 Settings.System.NOTIFICATION_BRIGHTNESS_SLIDER, 0, UserHandle.USER_CURRENT) == 1);
         mBrightnessSlider.setOnPreferenceChangeListener(this);
+
+        int collapseBehaviour = Settings.System.getInt(getContentResolver(),
+                Settings.System.STATUS_BAR_COLLAPSE_ON_DISMISS,
+                Settings.System.STATUS_BAR_COLLAPSE_IF_NO_CLEARABLE);
+        mCollapseOnDismiss = (ListPreference) findPreference(UI_COLLAPSE_BEHAVIOUR);
+        mCollapseOnDismiss.setValue(String.valueOf(collapseBehaviour));
+        mCollapseOnDismiss.setOnPreferenceChangeListener(this);
+        updateCollapseBehaviourSummary(collapseBehaviour);
 
         PreferenceCategory additionalOptions =
             (PreferenceCategory) prefs.findPreference(PREF_NOTIFICATION_OPTIONS);
@@ -173,6 +183,12 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment
             boolean value = (Boolean) objValue;
             Settings.System.putInt(resolver,
                 Settings.System.NOTIFICATION_BRIGHTNESS_SLIDER, value ? 1 : 0);
+            return true;
+        } else if (preference == mCollapseOnDismiss) {
+            int value = Integer.valueOf((String) objValue);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.STATUS_BAR_COLLAPSE_ON_DISMISS, value);
+            updateCollapseBehaviourSummary(value);
             return true;
         }
         return false;
@@ -242,5 +258,11 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment
                 break;
         }
         mReminderMode.setSummary(getResources().getString(resId));
+    }
+
+    private void updateCollapseBehaviourSummary(int setting) {
+        String[] summaries = getResources().getStringArray(
+                R.array.notification_drawer_collapse_on_dismiss_summaries);
+        mCollapseOnDismiss.setSummary(summaries[setting]);
     }
 }
