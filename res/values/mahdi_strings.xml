@@ -28,4 +28,17 @@
 
     <!-- Mahdi-Rom Category  -->
     <string name="mahdi_rom_category_title">Mahdi Rom</string>
+
+    <!-- Sound settings screen -->
+    <string name="volume_overlay_title">Volume panel style</string>
+    <string name="link_volume_ringtones">Link ringtone &amp; notifications volumes</string>
+    <string name="link_volume_mutes">Silent mode affects notifications</string>
+    <string name="volbtn_music_controls_title">Volume rocker music controls</string>
+    <string name="volbtn_music_controls_summary">When screen off, long-pressing the volume rockers will seek music tracks</string>
+
+    <!-- Wakeup options -->
+    <string name="display_category_wakeup_options_title">Wakeup options</string>
+    <string name="pref_volume_wake_title">Volume rocker wake</string>
+    <string name="pref_volume_wake_summary">Pressing the volume rocker up/down will wake the device</string>
+    <string name="volume_ring_only_description">Ringtone</string>
 </resources>
