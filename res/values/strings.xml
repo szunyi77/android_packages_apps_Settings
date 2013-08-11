@@ -4541,11 +4541,7 @@
     <string name="user_image_choose_photo" msgid="3746334626214970837">Choose photo from Gallery</string>
 
     <!-- Text to display in regulatory info screen (from device overlay). -->
-    <string name="regulatory_info_text"></string>
-
-    <!-- About phone screen, supernexus version-->
-    <string name="mod_version">SuperNexus version</string>
-    <string name="mod_version_default">Unknown</string>
+    <string name="regulatory_info_text"></string>    
 
     <!-- Wireless display -->
     <string name="pref_wifi_disable_hdcp_title">Skip HDCP negotiation</string>
