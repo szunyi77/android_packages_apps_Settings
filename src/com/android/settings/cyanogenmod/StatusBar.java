@@ -36,15 +36,13 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     private static final String STATUS_BAR_AM_PM = "status_bar_am_pm";
     private static final String STATUS_BAR_BATTERY = "status_bar_battery";
     private static final String STATUS_BAR_CLOCK = "status_bar_show_clock";
-    private static final String STATUS_BAR_SIGNAL = "status_bar_signal";
-    private static final String STATUS_BAR_NOTIF_COUNT = "status_bar_notif_count";
+    private static final String STATUS_BAR_SIGNAL = "status_bar_signal";    
     private static final String STATUS_BAR_CATEGORY_GENERAL = "status_bar_general";
 
     private ListPreference mStatusBarAmPm;
     private ListPreference mStatusBarBattery;
     private ListPreference mStatusBarCmSignal;
     private CheckBoxPreference mStatusBarClock;
-    private CheckBoxPreference mStatusBarNotifCount;
     private PreferenceCategory mPrefCategoryGeneral;
 
     @Override
@@ -89,11 +87,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         mStatusBarCmSignal.setValue(String.valueOf(signalStyle));
         mStatusBarCmSignal.setSummary(mStatusBarCmSignal.getEntry());
         mStatusBarCmSignal.setOnPreferenceChangeListener(this);
-
-        mStatusBarNotifCount = (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_NOTIF_COUNT);
-        mStatusBarNotifCount.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-                Settings.System.STATUS_BAR_NOTIF_COUNT, 0) == 1));
-
+       
         mPrefCategoryGeneral = (PreferenceCategory) findPreference(STATUS_BAR_CATEGORY_GENERAL);
 
         if (Utils.isWifiOnly(getActivity())) {
@@ -134,11 +128,6 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
             value = mStatusBarClock.isChecked();
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.STATUS_BAR_CLOCK, value ? 1 : 0);
-            return true;
-        } else if (preference == mStatusBarNotifCount) {
-            value = mStatusBarNotifCount.isChecked();
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.STATUS_BAR_NOTIF_COUNT, value ? 1 : 0);
             return true;
         }
         return false;
