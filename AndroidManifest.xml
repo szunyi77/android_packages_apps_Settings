@@ -1580,6 +1580,14 @@
             </intent-filter>
         </activity>
 
+	<!-- CyanogenMod activities Start -->
+
+        <activity android:name=".cyanogenmod.SystemSettings" />
+
+        <activity android:name=".cyanogenmod.PowerMenu" />
+
+        <!-- CyanogenMod activities End -->
+
         <receiver android:name=".widget.SettingsAppWidgetProvider"
                 android:label="@string/gadget_title"
                 android:exported="false"

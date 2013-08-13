@@ -58,6 +58,16 @@
         android:fragment="com.android.settings.WirelessSettings"
         android:icon="@drawable/empty_icon" />
 
+    <!-- Mahdi Rom -->
+    <header android:title="@string/mahdi_rom_category_title" />
+
+    <!-- System -->
+    <header
+        android:id="@+id/system_settings"
+        android:fragment="com.android.settings.cyanogenmod.SystemSettings"
+        android:title="@string/system_settings_title"
+        android:icon="@drawable/ic_settings_mahdi" />
+
     <!-- DEVICE -->
     <header android:id="@+id/device_section"
         android:title="@string/header_category_device" />
