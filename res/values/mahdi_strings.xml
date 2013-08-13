@@ -127,4 +127,16 @@
     <string name="profile_applist_title">Applications</string>
     <string name="profile_reset_title">Reset</string>
     <string name="select_custom_app_title">Select custom application</string>
+
+    <!-- About phone screen,  Mod Version -->
+    <string name="mod_version">Mahdi Rom version</string>
+    <string name="mod_version_default">Unknown</string>
+    <!-- About phone screen, Build date of ROM -->
+    <string name="build_date">Build date</string>
+    <string name="build_date_default">2012-01-01-0000</string>
+    <!-- About device screen, Cpu info. -->
+    <string name="cpu_info">CPU</string>
+    <!-- About phone screen, Free memory info -->
+    <string name="mem_info">Memory</string>
+    <!-- About phone screen, status item label --> 
 </resources>
