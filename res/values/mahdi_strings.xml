@@ -14,6 +14,9 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Mahdi-Rom Category  -->
+    <string name="mahdi_rom_category_title">Mahdi Rom</string>
+
     <!-- System Interface settings  -->
     <string name="system_settings_title">System</string>
     <string name="system_interface_title">System interface</string>
@@ -24,10 +27,7 @@
     <string name="power_menu_screenshot_title">Screenshot</string>
     <string name="power_menu_expanded_desktop">Expanded desktop</string>
     <string name="power_menu_airplane_title">Airplane mode</string>
-    <string name="power_menu_silent_title">Sound panel</string>
-
-    <!-- Mahdi-Rom Category  -->
-    <string name="mahdi_rom_category_title">Mahdi Rom</string>
+    <string name="power_menu_silent_title">Sound panel</string>   
 
     <!-- Sound settings screen -->
     <string name="volume_overlay_title">Volume panel style</string>
@@ -61,4 +61,8 @@
     <!-- Status bar notification count -->
     <string name="status_bar_notif_count_title">Show notification count</string>
     <string name="status_bar_notif_count_summary">Display number of pending notifications</string>
+
+    <!-- Kill app long-press back -->
+    <string name="kill_app_longpress_back">Kill app back button</string>
+    <string name="kill_app_longpress_back_summary">Kill the foreground app by long-pressing the back key</string> 
 </resources>
