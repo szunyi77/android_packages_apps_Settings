@@ -107,6 +107,12 @@
                 android:summary="@string/wakeup_when_plugged_unplugged_summary"
                 android:defaultValue="false" />
 
+            <CheckBoxPreference
+                android:key="adaptive_backlight"
+                android:title="@string/adaptive_backlight_title"
+                android:summary="@string/adaptive_backlight_summary"
+                android:defaultValue="true" />
+
             <com.android.settings.hardware.DisplayColor
                 android:key="color_calibration"
                 android:title="@string/color_calibration_title"
