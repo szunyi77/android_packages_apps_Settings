@@ -293,4 +293,7 @@
     <string name="less_notification_sounds_1m">1 minute</string>
     <string name="less_notification_sounds_2m">2 minutes</string>
     <string name="less_notification_sounds_5m">5 minutes</string>
+
+    <!-- Whether to allow mock SMS -->
+    <string name="allow_mock_sms">Allow mock SMS</string>
 </resources>
