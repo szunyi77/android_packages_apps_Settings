@@ -2261,4 +2261,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="backlight_summary_disabled">Disabled</string>
     <string name="backlight_summary_enabled_with_timeout">Enabled for <xliff:g id="timeout">%s</xliff:g></string>
     <string name="backlight_summary_enabled">Enabled</string>
+
+    <!-- Glove mode / high touch sensitivity -->
+    <string name="auto_adjust_touch_title">High touch sensitivity</string>
+    <string name="auto_adjust_touch_summary">"Increase the screen's sensitivity so you can touch it while wearing gloves"</string>
 </resources>
