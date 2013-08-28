@@ -20,7 +20,6 @@ import com.android.internal.telephony.PhoneConstants;
 import com.android.settings.R;
 
 import android.content.Context;
-import android.net.wimax.WimaxHelper;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
 
@@ -58,8 +57,7 @@ public class QuickSettingsUtil {
     public static final String TILE_MEDIA_PLAY_PAUSE = "toggleMediaPlayPause";
     public static final String TILE_MEDIA_PREVIOUS = "toggleMediaPrevious";
     public static final String TILE_MEDIA_NEXT = "toggleMediaNext";
-    public static final String TILE_LTE = "toggleLte";
-    public static final String TILE_WIMAX = "toggleWimax";
+    public static final String TILE_LTE = "toggleLte";    
 
     private static final String TILE_DELIMITER = "|";
     private static final String TILES_DEFAULT = TILE_USER
