@@ -56,7 +56,8 @@ public class QuickSettingsUtil {
     public static final String TILE_FLASHLIGHT = "toggleFlashlight";
     public static final String TILE_SLEEP = "toggleSleepMode";    
     public static final String TILE_LTE = "toggleLte";
-    public static final String TILE_PROFILE = "toggleProfile";    
+    public static final String TILE_PROFILE = "toggleProfile";
+    public static final String TILE_REBOOT = "toggleReboot";    
 
     private static final String TILE_DELIMITER = "|";
     private static final String TILES_DEFAULT = TILE_USER
@@ -104,6 +105,9 @@ public class QuickSettingsUtil {
         TILES.put(TILE_MOBILENETWORK, new QuickSettingsUtil.TileInfo(
                 TILE_MOBILENETWORK, R.string.title_tile_mobilenetwork,
                 "com.android.systemui:drawable/ic_qs_signal_4"));
+	TILES.put(TILE_NETWORKMODE, new QuickSettingsUtil.TileInfo(
++                TILE_NETWORKMODE, R.string.title_tile_networkmode,
++                "com.android.systemui:drawable/ic_qs_2g3g_on"));
         TILES.put(TILE_AUTOROTATE, new QuickSettingsUtil.TileInfo(
                 TILE_AUTOROTATE, R.string.title_tile_autorotate,
                 "com.android.systemui:drawable/ic_qs_auto_rotate"));
@@ -122,13 +126,7 @@ public class QuickSettingsUtil {
         TILES.put(TILE_USER, new QuickSettingsUtil.TileInfo(
                 TILE_USER, R.string.title_tile_user,
                 "com.android.systemui:drawable/ic_qs_default_user"));
-	TILES.put(TILE_PROFILE, new QuickSettingsUtil.TileInfo(
-                TILE_PROFILE, R.string.title_tile_profile,
-                "com.android.systemui:drawable/ic_qs_profiles"));
-	TILES.put(TILE_NETWORKMODE, new QuickSettingsUtil.TileInfo(
-                TILE_NETWORKMODE, R.string.title_tile_networkmode,
-                "com.android.systemui:drawable/ic_qs_2g3g_on"));
-
+		
 // These toggles are not available yet.  Comment out for now
 //        TILES.put(TILE_SCREENTIMEOUT, new QuickSettingsUtil.TileInfo(
 //                TILE_SCREENTIMEOUT, R.string.title_tile_screentimeout,
