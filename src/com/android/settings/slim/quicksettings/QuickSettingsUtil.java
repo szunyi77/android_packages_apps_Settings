@@ -106,8 +106,8 @@ public class QuickSettingsUtil {
                 TILE_MOBILENETWORK, R.string.title_tile_mobilenetwork,
                 "com.android.systemui:drawable/ic_qs_signal_4"));
 	TILES.put(TILE_NETWORKMODE, new QuickSettingsUtil.TileInfo(
-+                TILE_NETWORKMODE, R.string.title_tile_networkmode,
-+                "com.android.systemui:drawable/ic_qs_2g3g_on"));
+                TILE_NETWORKMODE, R.string.title_tile_networkmode,
+                "com.android.systemui:drawable/ic_qs_2g3g_on"));
         TILES.put(TILE_AUTOROTATE, new QuickSettingsUtil.TileInfo(
                 TILE_AUTOROTATE, R.string.title_tile_autorotate,
                 "com.android.systemui:drawable/ic_qs_auto_rotate"));
@@ -126,6 +126,9 @@ public class QuickSettingsUtil {
         TILES.put(TILE_USER, new QuickSettingsUtil.TileInfo(
                 TILE_USER, R.string.title_tile_user,
                 "com.android.systemui:drawable/ic_qs_default_user"));
+	TILES.put(TILE_SYNC, new QuickSettingsUtil.TileInfo(
+                TILE_SYNC, R.string.title_tile_sync,
+                "com.android.systemui:drawable/ic_qs_sync_off"));
 		
 // These toggles are not available yet.  Comment out for now
 //        TILES.put(TILE_SCREENTIMEOUT, new QuickSettingsUtil.TileInfo(
