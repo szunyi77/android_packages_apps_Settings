@@ -57,7 +57,8 @@ public class QuickSettingsUtil {
     public static final String TILE_MEDIA_PLAY_PAUSE = "toggleMediaPlayPause";
     public static final String TILE_MEDIA_PREVIOUS = "toggleMediaPrevious";
     public static final String TILE_MEDIA_NEXT = "toggleMediaNext";
-    public static final String TILE_LTE = "toggleLte";    
+    public static final String TILE_LTE = "toggleLte";
+    public static final String TILE_PROFILE = "toggleProfile";    
 
     private static final String TILE_DELIMITER = "|";
     private static final String TILES_DEFAULT = TILE_USER
@@ -118,6 +119,9 @@ public class QuickSettingsUtil {
         TILES.put(TILE_USER, new QuickSettingsUtil.TileInfo(
                 TILE_USER, R.string.title_tile_user,
                 "com.android.systemui:drawable/ic_qs_default_user"));
+	TILES.put(TILE_PROFILE, new QuickSettingsUtil.TileInfo(
+                TILE_PROFILE, R.string.title_tile_profile,
+                "com.android.systemui:drawable/ic_qs_profiles"));
 
 // These toggles are not available yet.  Comment out for now
 //        TILES.put(TILE_NETWORKMODE, new QuickSettingsUtil.TileInfo(
