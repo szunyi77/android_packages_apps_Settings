@@ -42,7 +42,6 @@ import android.telephony.PhoneStateListener;
 import android.telephony.ServiceState;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
-import android.view.MenuItem;
 
 import com.android.internal.telephony.Phone;
 import com.android.internal.telephony.PhoneConstants;
@@ -212,8 +211,6 @@ public class Status extends PreferenceActivity {
     protected void onCreate(Bundle icicle) {
         super.onCreate(icicle);
 
-        getActionBar().setDisplayHomeAsUpEnabled(true);
-
         mHandler = new MyHandler(this);
 
         mTelephonyManager = (TelephonyManager)getSystemService(TELEPHONY_SERVICE);
@@ -305,15 +302,6 @@ public class Status extends PreferenceActivity {
         } else {
             removePreferenceFromScreen(KEY_SERIAL_NUMBER);
         }
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            finish();
-            return true;
-        }
-        return false;
     }
 
     @Override
