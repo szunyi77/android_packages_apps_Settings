@@ -1588,6 +1588,18 @@
 	<activity android:name=".profiles.ProfilesSettings" />	
         <activity android:name=".slim.quicksettings.QuickSettings" />
 
+	<!-- Pseudo-activity used to provide an intent-filter entry point to expanded-desktop config -->
+	 <activity android:name="Settings$PowerMenuSettingsActivity"
+            android:label="@string/power_menu_title"
+            android:excludeFromRecents="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.cm.PowerMenu" />
+        </activity>
+
 	<!-- Pseudo-activity used to provide an intent-filter entry point to quick settings tiles config -->
         <activity android:name="Settings$QuickSettingsTilesActivity"
                 android:label="@string/tile_picker_title">

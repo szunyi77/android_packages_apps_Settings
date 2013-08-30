@@ -859,5 +859,6 @@ public class Settings extends PreferenceActivity
     public static class NotificationAccessSettingsActivity extends Settings { /* empty */ } 
     public static class ProfilesSettingsActivity extends Settings { /* empty */ }
     public static class QuickSettingsActivity extends Settings { /* empty */ }
-    public static class QuickSettingsTilesActivity extends Settings { /* empty */ }   
+    public static class QuickSettingsTilesActivity extends Settings { /* empty */ }
+    public static class PowerMenuSettingsActivity extends Settings { /* empty */ }   
 }
