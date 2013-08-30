@@ -337,6 +337,7 @@
     <string name="title_toggle_media_next">Media: Skip to Next</string>
     <string name="title_toggle_lte">Toggle LTE</string>
     <string name="title_toggle_wimax">Toggle WiMax</string>
+    <string name="title_toggle_favcontact">Toggle Favorite Contact</string>
     <string name="title_button_modes">Button modes</string>
     <string name="pref_brightness_mode_title">Brightness modes</string>
     <string name="pref_brightness_mode_summary">View or change the Brightness button modes</string>
@@ -388,7 +389,8 @@
     <string name="title_tile_profile">Profile</string>
     <string name="title_tile_reboot">Reboot</string>
     <string name="title_tile_nfc">NFC</string>
-    <string name="title_tile_screen_timeout">Screen timeout</string>
+    <string name="title_tile_screen_timeout">Screen timeout</string>    
+    <string name="title_tile_favcontact">Favorite Contact</string>
 
     <string name="title_dynamic_tiles">Dynamic tiles</string>
     <string name="dynamic_tiles_note_title">Note</string>
