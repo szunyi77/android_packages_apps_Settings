@@ -36,8 +36,7 @@
 
 	<CheckBoxPreference
             android:key="no_notifications_pulldown"
-            android:title="@string/title_no_notifications_pulldown"
-            android:dependency="disable_quick_settings"
+            android:title="@string/title_no_notifications_pulldown"            
             android:summary="@string/summary_no_notifications_pulldown" />
 
     </PreferenceCategory>
