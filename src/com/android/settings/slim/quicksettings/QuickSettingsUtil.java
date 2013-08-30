@@ -61,6 +61,7 @@ public class QuickSettingsUtil {
     public static final String TILE_REBOOT = "toggleReboot";
     public static final String TILE_NFC = "toggleNfc";
     public static final String TILE_FAVCONTACT = "toggleFavoriteContact";
+    public static final String TILE_FCHARGE = "toggleFCharge";
 
     private static final String TILE_DELIMITER = "|";
     private static final String TILES_DEFAULT = TILE_USER
@@ -90,6 +91,12 @@ public class QuickSettingsUtil {
         TILES.put(TILE_BRIGHTNESS, new QuickSettingsUtil.TileInfo(
                 TILE_BRIGHTNESS, R.string.title_tile_brightness,
                 "com.android.systemui:drawable/ic_qs_brightness_auto_off", true));
+        TILES.put(TILE_FCHARGE, new QuickSettingsUtil.TileInfo(
+                TILE_FCHARGE, R.string.title_tile_fcharge,
+                "com.android.systemui:drawable/ic_qs_fcharge_off", true));
+        TILES.put(TILE_FAVCONTACT, new QuickSettingsUtil.TileInfo(
+                TILE_FAVCONTACT, R.string.title_tile_favcontact,
+                "com.android.systemui:drawable/ic_qs_default_user", false));
         TILES.put(TILE_SLEEP, new QuickSettingsUtil.TileInfo(
                 TILE_SLEEP, R.string.title_tile_sleep,
                 "com.android.systemui:drawable/ic_qs_sleep", true));
@@ -144,9 +151,6 @@ public class QuickSettingsUtil {
         TILES.put(TILE_WIFIAP, new QuickSettingsUtil.TileInfo(
                 TILE_WIFIAP, R.string.title_tile_wifiap,
                 "com.android.systemui:drawable/ic_qs_wifi_ap_neutral", true));
-        TILES.put(TILE_FAVCONTACT, new QuickSettingsUtil.TileInfo(
-                TILE_FAVCONTACT, R.string.title_tile_favcontact,
-                "com.android.systemui:drawable/ic_qs_default_user", false));
 
 // These toggles are not available yet.  Comment out for now
 //        TILES.put(TILE_SYNC, new QuickSettingsUtil.TileInfo(
