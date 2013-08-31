@@ -111,6 +111,9 @@ public class QuickSettingsUtil {
         TILES.put(TILE_LOCKSCREEN, new QuickSettingsUtil.TileInfo(
                 TILE_LOCKSCREEN, R.string.title_tile_lockscreen,
                 "com.android.systemui:drawable/ic_qs_lock_screen_on", true));
+	TILES.put(TILE_LTE, new QuickSettingsUtil.TileInfo(
+                TILE_LTE, R.string.title_tile_lte,
+                "com.android.systemui:drawable/ic_qs_lte_off", true));
         TILES.put(TILE_MOBILEDATA, new QuickSettingsUtil.TileInfo(
                 TILE_MOBILEDATA, R.string.title_tile_mobiledata,
                 "com.android.systemui:drawable/ic_qs_mobildata_off", true));
