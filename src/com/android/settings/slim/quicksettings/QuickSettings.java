@@ -63,10 +63,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
     private static final String COLLAPSE_PANEL = "collapse_panel";
     private static final String GENERAL_SETTINGS = "pref_general_settings";
     private static final String STATIC_TILES = "static_tiles";
-    private static final String DYNAMIC_TILES = "pref_dynamic_tiles";
-
-    public static final String FAST_CHARGE_DIR = "/sys/kernel/fast_charge";
-    public static final String FAST_CHARGE_FILE = "force_fast_charge";
+    private static final String DYNAMIC_TILES = "pref_dynamic_tiles";    
 
     MultiSelectListPreference mRingMode;
     ListPreference mNetworkMode;
