@@ -104,10 +104,7 @@ public class QuickSettingsUtil {
                 "com.android.systemui:drawable/ic_qs_fcharge_off", true));
         TILES.put(TILE_FAVCONTACT, new QuickSettingsUtil.TileInfo(
                 TILE_FAVCONTACT, R.string.title_tile_favcontact,
-                "com.android.systemui:drawable/ic_qs_fav_contact", false));
-        TILES.put(TILE_SLEEP, new QuickSettingsUtil.TileInfo(
-                TILE_SLEEP, R.string.title_tile_sleep,
-                "com.android.systemui:drawable/ic_qs_sleep", true));
+                "com.android.systemui:drawable/ic_qs_fav_contact", false));        
         TILES.put(TILE_GPS, new QuickSettingsUtil.TileInfo(
                 TILE_GPS, R.string.title_tile_gps,
                 "com.android.systemui:drawable/ic_qs_gps_neutral", true));
@@ -129,6 +126,9 @@ public class QuickSettingsUtil {
         TILES.put(TILE_AUTOROTATE, new QuickSettingsUtil.TileInfo(
                 TILE_AUTOROTATE, R.string.title_tile_autorotate,
                 "com.android.systemui:drawable/ic_qs_auto_rotate", true));
+	TILES.put(TILE_SLEEP, new QuickSettingsUtil.TileInfo(
+                TILE_SLEEP, R.string.title_tile_power,
+                "com.android.systemui:drawable/ic_qs_power", true));
         TILES.put(TILE_PROFILE, new QuickSettingsUtil.TileInfo(
                 TILE_PROFILE, R.string.title_tile_profile,
                 "com.android.systemui:drawable/ic_qs_profiles", true));
@@ -163,11 +163,6 @@ public class QuickSettingsUtil {
                 TILE_WIFIAP, R.string.title_tile_wifiap,
                 "com.android.systemui:drawable/ic_qs_wifi_ap_neutral", true));
 // These toggles are not available yet.  Comment out for now
-//        TILES.put(TILE_SYNC, new QuickSettingsUtil.TileInfo(
-//                TILE_SYNC, R.string.title_tile_sync,
-//                "com.android.systemui:drawable/stat_sync_on"));
-//        if(PhoneConstants.LTE_ON_CDMA_TRUE == TelephonyManager.getDefault().getLteOnCdmaMode() ||
-//           TelephonyManager.getDefault().getLteOnGsmMode() != 0) {
 //            TILES.put(TILE_LTE, new QuickSettingsUtil.TileInfo(
 //                    TILE_LTE, R.string.title_tile_lte,
 //                    "com.android.systemui:drawable/stat_lte_on"));
