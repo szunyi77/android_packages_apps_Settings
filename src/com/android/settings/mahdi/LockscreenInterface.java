@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.slim;
+package com.android.settings.mahdi;
 
 import android.app.Activity;
 import android.app.AlertDialog;

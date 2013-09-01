@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.cyanogenmod;
+package com.android.settings.mahdi;
 
 import android.content.res.Resources;
 import android.os.RemoteException;

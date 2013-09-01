@@ -1582,12 +1582,12 @@
 
 	<!-- Mahdi-Rom activities Start -->
 
-        <activity android:name=".cyanogenmod.SystemSettings" />
-        <activity android:name=".cyanogenmod.PowerMenu" />
+        <activity android:name=".mahdi.SystemSettings" />
+        <activity android:name=".mahdi.PowerMenu" />
+	<activity android:name=".mahdi.quicksettings.QuickSettings" />
+	<activity android:name=".mahdi.LockscreenInterface" />
         <activity android:name=".notificationlight.NotificationLightSettings" />
-	<activity android:name=".profiles.ProfilesSettings" />	
-        <activity android:name=".slim.quicksettings.QuickSettings" />
-	<activity android:name=".slim.LockscreenInterface" />
+	<activity android:name=".profiles.ProfilesSettings" />	        
 
 	<!-- Pseudo-activity used to provide an intent-filter entry point to expanded-desktop config -->
 	 <activity android:name="Settings$PowerMenuSettingsActivity"
@@ -1598,18 +1598,18 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.cm.PowerMenu" />
+                android:value="com.android.settings.mahdi.PowerMenu" />
         </activity>
 
 	<!-- Pseudo-activity used to provide an intent-filter entry point to ass lockscreen config -->
-        <activity android:name="Settings$ASSLockscreenActivity"
+        <activity android:name="Settings$MahdiLockscreenActivity"
                 android:label="@string/lock_screen_title">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.slim.LockscreenInterface" />
+                android:value="com.android.settings.mahdi.LockscreenInterface" />
         </activity>
 
 	<!-- Pseudo-activity used to provide an intent-filter entry point to quick settings tiles config -->
@@ -1620,7 +1620,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.slim.quicksettings.QuickSettingsTiles" />
+                android:value="com.android.settings.mahdi.quicksettings.QuickSettingsTiles" />
         </activity>
 
         <!-- Pseudo-activity used to provide an intent-filter entry point to quick settings tiles config -->
@@ -1632,7 +1632,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.slim.quicksettings.QuickSettings" />
+                android:value="com.android.settings.mahdi.quicksettings.QuickSettings" />
         </activity>
 
 	<!-- Pseudo-activity used to provide an intent-filter entry point to profiles config -->

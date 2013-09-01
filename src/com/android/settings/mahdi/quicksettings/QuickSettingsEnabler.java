@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011 The CyanogenMod Project
+ * Copyright (C) 2012 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,26 +14,19 @@
  * limitations under the License.
  */
 
-package com.android.settings.slim;
+package com.android.settings.mahdi.quicksettings;
 
-import java.util.concurrent.atomic.AtomicBoolean;
-
+import android.provider.Settings;
 import android.content.Context;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 
-public class SwitchWidget implements CompoundButton.OnCheckedChangeListener {
-    public static Context mContext;
-    public Switch mSwitch;
-    public AtomicBoolean mConnected = new AtomicBoolean(false);
+import com.android.settings.mahdi.SwitchWidget;
 
-    public boolean mStateMachineEvent;
-
-    /*
-     * public SwitchWidget(Context context, Switch switch_) { super(context,
-     * switch_); mContext = context; mSwitch = switch_; }
-     */
-    public SwitchWidget() {
+public class QuickSettingsEnabler extends SwitchWidget {
+    public QuickSettingsEnabler(Context context, Switch switch_) {
+        mContext = context;
+        mSwitch = switch_;
     }
 
     public void resume() {
@@ -44,24 +37,20 @@ public class SwitchWidget implements CompoundButton.OnCheckedChangeListener {
         mSwitch.setOnCheckedChangeListener(null);
     }
 
-    public void setSwitch(Switch switch_) {
-        /* Stub! */
-        if (mSwitch == switch_)
-            return;
-        mSwitch.setOnCheckedChangeListener(null);
-        mSwitch = switch_;
-        mSwitch.setOnCheckedChangeListener(this);
-
-        setState(switch_);
-    }
-
     public void setState(Switch switch_) {
-        /* Stub */
+        boolean isEnabled = Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.EXPANDED_VIEW_WIDGET, 0) == 1;
+        mSwitch.setChecked(isEnabled);
         return;
     }
 
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        /* Stub! */
+        // Do nothing if called as a result of a state machine event
+        if (mStateMachineEvent) {
+            return;
+        }
+        Settings.System.putInt(mContext.getContentResolver(), Settings.System.EXPANDED_VIEW_WIDGET,
+                isChecked ? 1 : 0);
         return;
     }
 

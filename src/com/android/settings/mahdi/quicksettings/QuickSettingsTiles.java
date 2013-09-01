@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.slim.quicksettings;
+package com.android.settings.mahdi.quicksettings;
 
 import android.app.AlertDialog;
 import android.app.Fragment;
@@ -49,8 +49,8 @@ import com.android.internal.telephony.Phone;
 import com.android.internal.telephony.PhoneConstants;
 import com.android.settings.R;
 import com.android.settings.Utils;
-import com.android.settings.slim.quicksettings.QuickSettingsUtil;
-import com.android.settings.slim.quicksettings.QuickSettingsUtil.TileInfo;
+import com.android.settings.mahdi.quicksettings.QuickSettingsUtil;
+import com.android.settings.mahdi.quicksettings.QuickSettingsUtil.TileInfo;
 
 import java.io.File;
 import java.util.ArrayList;

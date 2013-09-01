@@ -141,11 +141,11 @@ public class SecuritySettings extends SettingsPreferenceFragment
         addPreferencesFromResource(R.xml.security_settings);
         root = getPreferenceScreen();
 
-	// Mahdi-Rom - allows for calling the settings screen with stock or slim view
-        boolean isSlimSecurity = false;
+	// Mahdi-Rom - allows for calling the settings screen with stock or Mahdi view
+        boolean isMahdiSecurity = false;
         Bundle args = getArguments();
         if (args != null) {
-            isSlimSecurity = args.getBoolean("slim_security");
+            isMahdiSecurity = args.getBoolean("Mahdi_security");
         }
         ContentResolver resolver = getActivity().getApplicationContext().getContentResolver();
         
@@ -221,7 +221,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
         }
 
 	// Add the additional Mahdi-Rom settings
-        addPreferencesFromResource(R.xml.security_settings_slim);
+        addPreferencesFromResource(R.xml.security_settings_mahdi);
 
         // Lock before Unlock
             mLockBeforeUnlock = (CheckBoxPreference) root

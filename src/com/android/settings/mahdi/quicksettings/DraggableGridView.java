@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.android.settings.slim.quicksettings;
+package com.android.settings.mahdi.quicksettings;
 
 import java.util.Collections;
 import java.util.ArrayList;
@@ -41,7 +41,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.settings.R;
-import com.android.settings.slim.quicksettings.QuickSettingsTiles.OnRearrangeListener;
+import com.android.settings.mahdi.quicksettings.QuickSettingsTiles.OnRearrangeListener;
 
 public class DraggableGridView extends ViewGroup implements
         View.OnTouchListener, View.OnClickListener, View.OnLongClickListener {

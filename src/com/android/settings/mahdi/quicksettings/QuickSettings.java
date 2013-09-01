@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.slim.quicksettings;
+package com.android.settings.mahdi.quicksettings;
 
 import android.content.ContentResolver;
 import android.content.Context;
