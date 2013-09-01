@@ -22,6 +22,7 @@ import static android.provider.Settings.System.SCREEN_OFF_TIMEOUT;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.admin.DevicePolicyManager;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -34,15 +35,20 @@ import android.os.UserManager;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
+import android.preference.PreferenceCategory;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
+import android.provider.Settings.SettingNotFoundException;
 import android.security.KeyStore;
 import android.telephony.TelephonyManager;
 import android.util.Log;
+import android.content.ContentResolver;
 
 import com.android.internal.widget.LockPatternUtils;
+import com.android.settings.R;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,6 +62,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
     static final String TAG = "SecuritySettings";
 
     // Lock Settings
+    private static final String PREF_LOCK_SCREEN = "lock_screen_settings";
     private static final String KEY_UNLOCK_SET_OR_CHANGE = "unlock_set_or_change";
     private static final String KEY_BIOMETRIC_WEAK_IMPROVE_MATCHING =
             "biometric_weak_improve_matching";
@@ -82,6 +89,10 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private static final String KEY_NOTIFICATION_ACCESS = "manage_notification_access";
     private static final String PACKAGE_MIME_TYPE = "application/vnd.android.package-archive";
 
+    // Mahdi-Rom Additions
+    private static final String LOCK_BEFORE_UNLOCK = "lock_before_unlock";
+
+
     private PackageManager mPM;
     DevicePolicyManager mDPM;
 
@@ -106,6 +117,10 @@ public class SecuritySettings extends SettingsPreferenceFragment
 
     private boolean mIsPrimary;
 
+    // Mahdi-Rom Additions    
+    private CheckBoxPreference mLockBeforeUnlock;
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -126,8 +141,15 @@ public class SecuritySettings extends SettingsPreferenceFragment
         addPreferencesFromResource(R.xml.security_settings);
         root = getPreferenceScreen();
 
-        // Add options for lock/unlock screen
-        int resid = 0;
+	// Mahdi-Rom - allows for calling the settings screen with stock or slim view
+        boolean isSlimSecurity = false;
+        Bundle args = getArguments();
+        if (args != null) {
+            isSlimSecurity = args.getBoolean("slim_security");
+        }
+        ContentResolver resolver = getActivity().getApplicationContext().getContentResolver();
+        
+        int resid = 0;	
         if (!mLockPatternUtils.isSecure()) {
             // if there are multiple users, disable "None" setting
             UserManager mUm = (UserManager) getSystemService(Context.USER_SERVICE);
@@ -154,7 +176,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
                 case DevicePolicyManager.PASSWORD_QUALITY_ALPHANUMERIC:
                 case DevicePolicyManager.PASSWORD_QUALITY_COMPLEX:
                     resid = R.xml.security_settings_password;
-                    break;
+                    break;	
             }
         }
         addPreferencesFromResource(resid);
@@ -197,6 +219,38 @@ public class SecuritySettings extends SettingsPreferenceFragment
             setupLockAfterPreference();
             updateLockAfterPreferenceSummary();
         }
+
+	// Add the additional Mahdi-Rom settings
+        addPreferencesFromResource(R.xml.security_settings_slim);
+
+        // Lock before Unlock
+            mLockBeforeUnlock = (CheckBoxPreference) root
+                    .findPreference(LOCK_BEFORE_UNLOCK);
+            mLockBeforeUnlock.setChecked(Settings.Secure.getInt(resolver,
+                    Settings.Secure.LOCK_BEFORE_UNLOCK, 0) == 1);
+
+	// disable lock options if lock screen set to NONE
+            // or if using pattern as a primary lock screen or
+            // as a backup to biometric
+            if ((!mLockPatternUtils.isSecure() && mLockPatternUtils.isLockScreenDisabled())
+                || (mLockPatternUtils.isLockPatternEnabled())) {               
+                if (mLockPatternUtils.isLockPatternEnabled()) {
+                    mLockBeforeUnlock.setEnabled(true);
+                } else {
+                    mLockBeforeUnlock.setEnabled(false);
+                } 
+
+	    // disable menu unlock and vibrate on unlock options if
+            // using PIN/password as primary lock screen or as
+            // backup to biometric
+            } else if (mLockPatternUtils.isLockPasswordEnabled()) {                
+                mLockBeforeUnlock.setEnabled(true);
+           
+            // Disable the quick unlock if its not using PIN/password
+            // as a primary lock screen or as a backup to biometric
+            } else {                
+                mLockBeforeUnlock.setEnabled(false);
+            }
 
         // biometric weak liveliness
         mBiometricWeakLiveliness =
@@ -454,7 +508,8 @@ public class SecuritySettings extends SettingsPreferenceFragment
         }
         if (mVisiblePattern != null) {
             mVisiblePattern.setChecked(lockPatternUtils.isVisiblePatternEnabled());
-        }
+        }	
+
         if (mPowerButtonInstantlyLocks != null) {
             mPowerButtonInstantlyLocks.setChecked(lockPatternUtils.getPowerButtonInstantlyLocks());
         }
@@ -514,6 +569,9 @@ public class SecuritySettings extends SettingsPreferenceFragment
             lockPatternUtils.setVisiblePatternEnabled(isToggled(preference));
         } else if (KEY_POWER_INSTANTLY_LOCKS.equals(key)) {
             lockPatternUtils.setPowerButtonInstantlyLocks(isToggled(preference));
+	} else if (preference == mLockBeforeUnlock) {
+            Settings.Secure.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.Secure.LOCK_BEFORE_UNLOCK, isToggled(preference) ? 1 : 0);
         } else if (preference == mShowPassword) {
             Settings.System.putInt(getContentResolver(), Settings.System.TEXT_SHOW_PASSWORD,
                     mShowPassword.isChecked() ? 1 : 0);

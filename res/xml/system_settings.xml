@@ -26,15 +26,21 @@
         android:title="@string/status_bar_title" />
 
     <PreferenceScreen
-        android:key="power_menu"
-        android:title="@string/power_menu_title"
-	android:icon="@drawable/ic_settings_power_menu"
-        android:fragment="com.android.settings.cyanogenmod.PowerMenu" />
-
-    <PreferenceScreen
         android:key="quick_settings_panel"
         android:fragment="com.android.settings.slim.quicksettings.QuickSettings"
 	android:icon="@drawable/ic_settings_quick_settings"
         android:title="@string/quick_settings_panel_title" />
+
+    <PreferenceScreen
+        android:key="power_menu"
+        android:title="@string/power_menu_title"
+	android:icon="@drawable/ic_settings_power_menu"
+        android:fragment="com.android.settings.cyanogenmod.PowerMenu" />
+    
+    <PreferenceScreen
+        android:key="lock_screen_settings"
+        android:fragment="com.android.settings.slim.LockscreenInterface"
+	android:icon="@drawable/ic_settings_lockscreen"
+        android:title="@string/lock_screen_title" />
       
 </PreferenceScreen>
