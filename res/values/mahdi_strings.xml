@@ -55,7 +55,8 @@
     <string name="volume_ring_only_description">Ringtone</string>
 
     <!-- Status bar  -->
-    <string name="status_bar_title">Status bar</string>
+    <string name="status_bar_title">Status bar</string>    
+    <string name="status_bar_style_title">Style</string>
     <string name="status_bar_clock_title">Clock</string>
     <string name="status_bar_general_title">General</string>
     <string name="status_bar_show_clock_title">Show clock</string>
@@ -69,6 +70,20 @@
     <string name="status_bar_battery_status_percentage">Percentage</string>
     <string name="status_bar_battery_status_circle">Circle</string>
     <string name="status_bar_battery_status_circle_percentage">Circle with percentage</string>
+
+    <!-- Status bar background style -->
+    <string name="status_bar_transparency_title">Status bar transparency</string>
+    <string name="status_bar_color_title">Status bar color</string>
+    <string name="status_bar_background_style">Background style</string>
+    <string name="status_bar_alpha_mode_dialog_text_title">Show status bar transparency</string>
+    <string name="status_bar_alpha_mode_text_title">Transparency mode</string>
+    <string name="status_bar_alpha_mode_home">on launcher</string>
+    <string name="status_bar_alpha_mode_default">on launcher and keyguard</string>
+    <string name="status_bar_alpha_mode_always">always</string>
+    <string name="status_bar_style_reset">Reset</string>
+    <string name="status_bar_reset">Reset</string>    
+    <string name="status_bar_style_reset_message">Reset statusbar style?</string>
+    <string name="navbar_reset">Reset</string>
     
     <!-- Kill app long-press back -->
     <string name="kill_app_longpress_back">Kill app back button</string>
@@ -431,5 +446,15 @@
     <string name="additional_options_title">Additional options</string>
     <string name="lock_before_unlock_title">Show slider before secure unlock</string>
     <string name="lock_before_unlock_summary">Show slider lockscreen before secure unlock mechanism</string>
+
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">Color Picker</string>
+    <string name="press_color_to_apply">Press on color below to apply</string>
+    <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#ff000000</string>
+    <string name="set">Set</string>
+    <string name="color_default">Default</string>
 
 </resources>

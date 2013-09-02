@@ -1583,6 +1583,8 @@
 	<!-- Mahdi-Rom activities Start -->
 
         <activity android:name=".mahdi.SystemSettings" />
+	<activity android:name=".mahdi.StatusBar" />
+        <activity android:name=".mahdi.StatusBarStyle" />
         <activity android:name=".mahdi.PowerMenu" />
 	<activity android:name=".mahdi.quicksettings.QuickSettings" />
 	<activity android:name=".mahdi.LockscreenInterface" />
@@ -1676,6 +1678,8 @@
                 <data android:mimeType="cm/profile" />
             </intent-filter>
         </activity>
+
+	<activity android:name="net.margaritov.preference.colorpicker" />
 
         <!-- Mahdi-Rom activities End -->
 
