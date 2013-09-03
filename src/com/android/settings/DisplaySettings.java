@@ -34,6 +34,7 @@ import android.hardware.display.WifiDisplay;
 import android.hardware.display.WifiDisplayStatus;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.UserHandle;
 import android.os.RemoteException;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
@@ -146,15 +147,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
         mFontSizePref = (WarnedListPreference) findPreference(KEY_FONT_SIZE);
         mFontSizePref.setOnPreferenceChangeListener(this);
-        mFontSizePref.setOnPreferenceClickListener(this);
-        mNotificationPulse = (PreferenceScreen) findPreference(KEY_NOTIFICATION_PULSE);
-        if (mNotificationPulse != null) {
-            if (!res.getBoolean(com.android.internal.R.bool.config_intrusiveNotificationLed)) {
-                getPreferenceScreen().removePreference(mNotificationPulse);
-            } else {
-                updateLightPulseDescription();
-            }
-        }
+        mFontSizePref.setOnPreferenceClickListener(this);        
 
         mDisplayManager = (DisplayManager)getActivity().getSystemService(
                 Context.DISPLAY_SERVICE);
@@ -177,6 +170,15 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             }
         }
 
+        boolean hasNotificationLed = res.getBoolean(
+                com.android.internal.R.bool.config_intrusiveNotificationLed);
+        boolean hasBatteryLed = res.getBoolean(
+                com.android.internal.R.bool.config_intrusiveBatteryLed);        
+
+        if (hasNotificationLed || hasBatteryLed) {
+            mBatteryPulse = (PreferenceScreen) findPreference(KEY_BATTERY_LIGHT);
+            mNotificationPulse = (PreferenceScreen) findPreference(KEY_NOTIFICATION_PULSE);            
+        }
     }
 
     private void updateDisplayRotationPreferenceDescription() {
@@ -284,16 +286,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         }
         screenTimeoutPreference.setEnabled(revisedEntries.size() > 0);
     }
-
-    private void updateLightPulseDescription() {
-        if (Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.NOTIFICATION_LIGHT_PULSE, 0) == 1) {
-            mNotificationPulse.setSummary(getString(R.string.notification_light_enabled));
-        } else {
-            mNotificationPulse.setSummary(getString(R.string.notification_light_disabled));
-        }
-    }
-
+    
     int floatToIndex(float val) {
         String[] indices = getResources().getStringArray(R.array.entryvalues_font_size);
         float lastVal = Float.parseFloat(indices[0]);
@@ -328,14 +321,15 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     @Override
     public void onResume() {
         super.onResume();
-        updateDisplayRotationPreferenceDescription();
-        updateLightPulseDescription();
+        updateDisplayRotationPreferenceDescription();        
 
         RotationPolicy.registerRotationPolicyListener(getActivity(),
                 mRotationPolicyListener);
 
+	final ContentResolver resolver = getContentResolver();
+
         // Display rotation observer
-        getContentResolver().registerContentObserver(
+        resolver.registerContentObserver(
                 Settings.System.getUriFor(Settings.System.ACCELEROMETER_ROTATION), true,
                 mAccelerometerRotationObserver);
 
@@ -381,6 +375,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         readFontSizePreference(mFontSizePref);
         updateScreenSaverSummary();
         updateWifiDisplaySummary();
+	updateLightPulseSummary();
+        updateBatteryPulseSummary();
     }
 
     private void updateScreenSaverSummary() {
@@ -403,6 +399,28 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 default:
                     mWifiDisplayPreference.setSummary(R.string.wifi_display_summary_disabled);
                     break;
+            }
+        }
+    }
+
+    private void updateLightPulseSummary() {
+        if (mNotificationPulse != null) {
+            if (Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.NOTIFICATION_LIGHT_PULSE, 0) == 1) {
+                mNotificationPulse.setSummary(R.string.notification_light_enabled);
+            } else {
+                mNotificationPulse.setSummary(R.string.notification_light_disabled);
+            }
+        }
+    }
+
+    private void updateBatteryPulseSummary() {
+        if (mBatteryPulse != null) {
+            if (Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.BATTERY_LIGHT_ENABLED, 1) == 1) {
+                mBatteryPulse.setSummary(R.string.notification_light_enabled);
+            } else {
+                mBatteryPulse.setSummary(R.string.notification_light_disabled);
             }
         }
     }
