@@ -454,6 +454,8 @@
     <string name="additional_options_title">Additional options</string>
     <string name="lock_before_unlock_title">Show slider before secure unlock</string>
     <string name="lock_before_unlock_summary">Show slider lockscreen before secure unlock mechanism</string>
+    <string name="lockscreen_disable_hints_title">Disable usability hints</string>
+    <string name="lockscreen_disable_hints_summary">Disables the glow that surrounds the widgets on lockscreen</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>

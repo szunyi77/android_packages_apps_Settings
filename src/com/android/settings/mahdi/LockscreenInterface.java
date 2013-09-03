@@ -51,8 +51,10 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements P
     private static final String TAG = "LockscreenInterface";
     
     private static final String KEY_ADDITIONAL_OPTIONS = "options_group";
+    private static final String KEY_LOCKSCREEN_DISABLE_HINTS = "lockscreen_disable_hints";
         
     private PreferenceCategory mAdditionalOptions;
+    private CheckBoxPreference mLockscreenHints;
 
     private boolean mCheckPreferences;
 
@@ -84,6 +86,10 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements P
         prefs = getPreferenceScreen();
 
         mAdditionalOptions = (PreferenceCategory) prefs.findPreference(KEY_ADDITIONAL_OPTIONS);	
+
+	mLockscreenHints = (CheckBoxPreference)findPreference(KEY_LOCKSCREEN_DISABLE_HINTS);
+        mLockscreenHints.setChecked(Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+                Settings.System.LOCKSCREEN_DISABLE_HINTS, 0) == 1);
         
         final int unsecureUnlockMethod = Settings.Secure.getInt(getActivity().getContentResolver(),
                 Settings.Secure.LOCKSCREEN_UNSECURE_USED, 1);
@@ -103,6 +109,15 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements P
     public void onResume() {
         super.onResume();
         createCustomLockscreenView();
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        if (preference == mLockscreenHints) {
+                Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                        Settings.System.LOCKSCREEN_DISABLE_HINTS, mLockscreenHints.isChecked() ? 1 : 0);
+        }
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
     @Override
