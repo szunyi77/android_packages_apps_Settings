@@ -30,4 +30,22 @@
             android:title="@string/lockscreen_disable_hints_title"
             android:summary="@string/lockscreen_disable_hints_summary" />
 
+	<PreferenceCategory
+        android:key="lockscreen_style_options"
+        android:title="@string/lockscreen_style_options_title">
+
+        <ListPreference
+            android:key="lockscreen_background"
+            android:persistent="false"
+            android:dialogTitle="@string/lockscreen_custom_background_title"
+            android:title="@string/lockscreen_custom_background_title"
+            android:entries="@array/lockscreen_background_entries"
+            android:entryValues="@array/lockscreen_background_values"/>
+
+        <com.android.settings.widget.SeekBarPreference
+            android:key="lockscreen_alpha"
+            android:title="@string/lockscreen_alpha_title" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
