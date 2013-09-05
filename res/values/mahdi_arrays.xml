@@ -378,5 +378,38 @@
         <item>@*android:drawable/ic_lockscreen_google_normal</item>
         <item>@*android:drawable/ic_lockscreen_twitter_normal</item>
     </string-array>
+
+    <!--- Nav buttons height -->
+    <string-array name="nav_buttons_height_entries" translatable="false">
+        <item>@string/navigation_bar_height_52</item>
+        <item>@string/navigation_bar_height_50</item>
+        <item>@string/navigation_bar_height_48</item>
+        <item>@string/navigation_bar_height_44</item>
+        <item>@string/navigation_bar_height_40</item>
+        <item>@string/navigation_bar_height_38</item>
+        <item>@string/navigation_bar_height_36</item>
+        <item>@string/navigation_bar_height_34</item>
+        <item>@string/navigation_bar_height_32</item>
+        <item>@string/navigation_bar_height_30</item>
+        <item>@string/navigation_bar_height_28</item>
+        <item>@string/navigation_bar_height_26</item>
+        <item>@string/navigation_bar_height_24</item>
+    </string-array>
+
+    <string-array name="nav_buttons_height_values" translatable="false">
+        <item>52</item>
+        <item>50</item>
+        <item>48</item>
+        <item>44</item>
+        <item>40</item>
+        <item>38</item>
+        <item>36</item>
+        <item>34</item>
+        <item>32</item>
+        <item>30</item>
+        <item>28</item>
+        <item>26</item>
+        <item>24</item>
+    </string-array>
 </resources>
 
