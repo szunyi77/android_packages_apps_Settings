@@ -64,6 +64,11 @@
             android:defaultValue="48"
             android:persistent="false" />
         
+	<PreferenceScreen
+            android:key="navigation_ring"
+            android:fragment="com.android.settings.mahdi.NavRing"
+            android:icon="@drawable/ic_settings_nav_bar_ring"
+            android:title="@string/navigation_ring_title" />
     </PreferenceCategory>	         
       
 </PreferenceScreen>
