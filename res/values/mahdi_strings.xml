@@ -466,9 +466,10 @@
     <string name="lockscreen_background_default_wallpaper">Default wallpaper</string>
     <string name="lockscreen_alpha_title">Background transparency</string>
 
-    <!-- Color Picker -->
+    <!-- Color Picker -->    
     <string name="dialog_color_picker">Color Picker</string>
     <string name="press_color_to_apply">Press on color below to apply</string>
+    <string name="dialog_indicator_color_title">Select color</string>
     <string name="arrow_right">→</string>
     <string name="arrow_down">↓</string>
     <string name="hex">Hex:</string>
@@ -568,4 +569,10 @@
     <string name="navring_action_torch">Toggle torch</string>
     <string name="navring_action_google_now">Google Now</string>
     <string name="navring_choose_action_title">Choose action</string>
+
+    <!-- Navigation bar extra settings -->
+    <string name="navigation_button_color_title">Navigation button color</string> 
+    <string name="navigation_controls_title">Colors and glow</string> 
+    <string name="navigation_button_glow_color_title">Navigation button glow color</string> 
+    <string name="navigation_button_glow_time_title">Navigation button glow time</string>
 </resources>

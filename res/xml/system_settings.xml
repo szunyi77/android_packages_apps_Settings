@@ -29,8 +29,8 @@
         android:key="quick_settings_panel"
         android:fragment="com.android.settings.mahdi.quicksettings.QuickSettings"
 	android:icon="@drawable/ic_settings_quick_settings"
-        android:title="@string/quick_settings_panel_title" />    
-
+        android:title="@string/quick_settings_panel_title" />
+    
     <PreferenceScreen
         android:key="power_menu"
         android:title="@string/power_menu_title"
@@ -63,12 +63,19 @@
             android:entryValues="@array/nav_buttons_height_values"
             android:defaultValue="48"
             android:persistent="false" />
-        
-	<PreferenceScreen
+
+        <PreferenceScreen 
+            android:key="navigation_control"         
+            android:fragment="com.android.settings.mahdi.NavControl"
+            android:icon="@drawable/ic_settings_nav_bar_glow"
+            android:title="@string/navigation_controls_title" />  
+
+        <PreferenceScreen
             android:key="navigation_ring"
             android:fragment="com.android.settings.mahdi.NavRing"
             android:icon="@drawable/ic_settings_nav_bar_ring"
             android:title="@string/navigation_ring_title" />
-    </PreferenceCategory>	         
-      
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
