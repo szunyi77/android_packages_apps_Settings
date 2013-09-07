@@ -111,12 +111,10 @@ public class QuickSettingsTiles extends Fragment {
                 String tileID;
                 String tileString = res.getString(tile.getTitleResId());
                 if (st.hasMoreTokens()) {
-                    tileID = st.nextToken();
-                    if (tileindex.startsWith(QuickSettingsUtil.TILE_FAVCONTACT)){
+                    tileID = st.nextToken();                    
                         String newTileString = prefs.getString(tileindex, null);
                         if (newTileString != null) tileString = newTileString;
-                        else tileString += " "+tileID;
-                    }
+                        else tileString += " "+tileID;                    
                 }
                 if (tile != null) addTile(tileString, tile.getIcon(), 0, false);
             }

@@ -409,8 +409,7 @@
     <string name="title_tile_profile">Profile</string>
     <string name="title_tile_reboot">Reboot</string>
     <string name="title_tile_nfc">NFC</string>
-    <string name="title_tile_screen_timeout">Screen timeout</string>    
-    <string name="title_tile_favcontact">Favorite contact</string>
+    <string name="title_tile_screen_timeout">Screen timeout</string>        
     <string name="title_tile_fcharge">Fast charge</string>
     <string name="title_tile_volume">Volume</string>
     <string name="title_tile_expanded_desktop">Expanded desktop</string>
