@@ -575,4 +575,15 @@
     <!-- SELinux warning -->
     <string name="selinux_enable_title">Security Enhanced Android</string>
     <string name="selinux_enable_warning">You are about to enable SEAndroid, an advanced security mechanism, on your device.\n\nThis option exists for debugging purposes only, and it is very likely that your device isn\'t fully ready for it, which may cause parts (or all) of your hardware to block or hang.\n\nAre you sure you want to proceed?</string>
+
+    <!-- USB Mass Storage -->
+    <string name="usb_mass_storage_title">Mass storage</string>
+    <string name="usb_mass_storage_summary">Enable USB mass storage</string>
+
+    <!-- Stylus Icon -->
+    <string name="stylus_icon_enabled_title">Show icon when using stylus</string>
+    <string name="stylus_icon_enabled_summary">Show the pointer icon when hovering or drawing with the stylus</string>
+
+    <!-- Advanced, Device specific (DeviceParts) settings  -->
+    <string name="advanced_settings_title">Advanced</string>
 </resources>
