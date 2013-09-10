@@ -50,6 +50,7 @@ import android.util.Log;
 import com.android.internal.view.RotationPolicy;
 import com.android.settings.DreamSettings;
 import com.android.settings.mahdi.DisplayRotation;
+import com.android.settings.Utils;
 
 import java.util.ArrayList;
 
@@ -61,11 +62,11 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final int FALLBACK_SCREEN_TIMEOUT_VALUE = 30000;
 
     private static final String KEY_SCREEN_TIMEOUT = "screen_timeout";
-    private static final String KEY_FONT_SIZE = "font_size";
+    private static final String KEY_FONT_SIZE = "font_size";    
     private static final String KEY_NOTIFICATION_PULSE = "notification_pulse";
-    private static final String KEY_SCREEN_SAVER = "screensaver";
-    private static final String KEY_WIFI_DISPLAY = "wifi_display";
     private static final String KEY_BATTERY_LIGHT = "battery_light";
+    private static final String KEY_SCREEN_SAVER = "screensaver";
+    private static final String KEY_WIFI_DISPLAY = "wifi_display";    
     private static final String KEY_WAKEUP_CATEGORY = "category_wakeup_options";
     private static final String KEY_VOLUME_WAKE = "pref_volume_wake";
     private static final String KEY_DISPLAY_ROTATION = "display_rotation";
@@ -82,7 +83,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private DisplayManager mDisplayManager;
 
     private CheckBoxPreference mVolumeWake;
-    private WarnedListPreference mFontSizePref;
+    private WarnedListPreference mFontSizePref;    
     private PreferenceScreen mNotificationPulse;
     private PreferenceScreen mBatteryPulse;
     private PreferenceScreen mDisplayRotationPreference;
@@ -119,6 +120,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
         addPreferencesFromResource(R.xml.display_settings);
 
+	PreferenceScreen prefSet = getPreferenceScreen();
+
         mDisplayRotationPreference = (PreferenceScreen) findPreference(KEY_DISPLAY_ROTATION);
 
 	final CheckBoxPreference lockScreenRotation =
@@ -147,7 +150,37 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
         mFontSizePref = (WarnedListPreference) findPreference(KEY_FONT_SIZE);
         mFontSizePref.setOnPreferenceChangeListener(this);
-        mFontSizePref.setOnPreferenceClickListener(this);        
+        mFontSizePref.setOnPreferenceClickListener(this);
+	       
+        mNotificationPulse = (PreferenceScreen) findPreference(KEY_NOTIFICATION_PULSE);
+        if (mNotificationPulse != null) {
+            if (!getResources().getBoolean(com.android.internal.R.bool.config_intrusiveNotificationLed)) {
+                getPreferenceScreen().removePreference(mNotificationPulse);
+            } else {
+                updateLightPulseDescription();
+            }
+        }
+
+        mBatteryPulse = (PreferenceScreen) findPreference(KEY_BATTERY_LIGHT);
+        if (mBatteryPulse != null) {
+            if (getResources().getBoolean(
+                    com.android.internal.R.bool.config_intrusiveBatteryLed) == false) {
+                getPreferenceScreen().removePreference(mBatteryPulse);
+            } else {
+                updateBatteryPulseDescription();
+            }
+        }
+
+	mVolumeWake = (CheckBoxPreference) findPreference(KEY_VOLUME_WAKE);
+        if (mVolumeWake != null) {
+            if (!res.getBoolean(R.bool.config_show_volumeRockerWake)) {
+                getPreferenceScreen().removePreference(mVolumeWake);
+                getPreferenceScreen().removePreference((PreferenceCategory) findPreference(KEY_WAKEUP_CATEGORY));
+            } else {
+                mVolumeWake.setChecked(Settings.System.getInt(resolver,
+                        Settings.System.VOLUME_WAKE_SCREEN, 0) == 1);
+            }
+        }       
 
         mDisplayManager = (DisplayManager)getActivity().getSystemService(
                 Context.DISPLAY_SERVICE);
@@ -158,29 +191,26 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             getPreferenceScreen().removePreference(mWifiDisplayPreference);
             mWifiDisplayPreference = null;
         }
+    }
 
-        mVolumeWake = (CheckBoxPreference) findPreference(KEY_VOLUME_WAKE);
-        if (mVolumeWake != null) {
-            if (!res.getBoolean(R.bool.config_show_volumeRockerWake)) {
-                getPreferenceScreen().removePreference(mVolumeWake);
-                getPreferenceScreen().removePreference((PreferenceCategory) findPreference(KEY_WAKEUP_CATEGORY));
-            } else {
-                mVolumeWake.setChecked(Settings.System.getInt(resolver,
-                        Settings.System.VOLUME_WAKE_SCREEN, 0) == 1);
-            }
-        }
-
-        boolean hasNotificationLed = res.getBoolean(
-                com.android.internal.R.bool.config_intrusiveNotificationLed);
-        boolean hasBatteryLed = res.getBoolean(
-                com.android.internal.R.bool.config_intrusiveBatteryLed);        
-
-        if (hasNotificationLed || hasBatteryLed) {
-            mBatteryPulse = (PreferenceScreen) findPreference(KEY_BATTERY_LIGHT);
-            mNotificationPulse = (PreferenceScreen) findPreference(KEY_NOTIFICATION_PULSE);            
+    private void updateLightPulseDescription() {
+        if (Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.NOTIFICATION_LIGHT_PULSE, 0) == 1) {
+            mNotificationPulse.setSummary(getString(R.string.notification_light_enabled));
+        } else {
+            mNotificationPulse.setSummary(getString(R.string.notification_light_disabled));
         }
     }
 
+    private void updateBatteryPulseDescription() {
+        if (Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.BATTERY_LIGHT_ENABLED, 1) == 1) {
+            mBatteryPulse.setSummary(getString(R.string.notification_light_enabled));
+        } else {
+            mBatteryPulse.setSummary(getString(R.string.notification_light_disabled));
+        }
+    }         
+                
     private void updateDisplayRotationPreferenceDescription() {
         if (mDisplayRotationPreference == null) {
             // The preference was removed, do nothing
@@ -375,8 +405,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         readFontSizePreference(mFontSizePref);
         updateScreenSaverSummary();
         updateWifiDisplaySummary();
-	updateLightPulseSummary();
-        updateBatteryPulseSummary();
+	updateLightPulseDescription();
+        updateBatteryPulseDescription();
     }
 
     private void updateScreenSaverSummary() {
@@ -401,29 +431,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                     break;
             }
         }
-    }
-
-    private void updateLightPulseSummary() {
-        if (mNotificationPulse != null) {
-            if (Settings.System.getInt(getActivity().getContentResolver(),
-                    Settings.System.NOTIFICATION_LIGHT_PULSE, 0) == 1) {
-                mNotificationPulse.setSummary(R.string.notification_light_enabled);
-            } else {
-                mNotificationPulse.setSummary(R.string.notification_light_disabled);
-            }
-        }
-    }
-
-    private void updateBatteryPulseSummary() {
-        if (mBatteryPulse != null) {
-            if (Settings.System.getInt(getActivity().getContentResolver(),
-                    Settings.System.BATTERY_LIGHT_ENABLED, 1) == 1) {
-                mBatteryPulse.setSummary(R.string.notification_light_enabled);
-            } else {
-                mBatteryPulse.setSummary(R.string.notification_light_disabled);
-            }
-        }
-    }
+    }    
 
     public void writeFontSizePreference(Object objValue) {
         try {
