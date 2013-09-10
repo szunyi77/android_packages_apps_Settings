@@ -1583,11 +1583,12 @@
 	<!-- Mahdi-Rom activities Start -->
 
         <activity android:name=".mahdi.SystemSettings" />
-	<activity android:name=".mahdi.StatusBar" />        
+	<activity android:name=".mahdi.StatusBar" />
+	<activity android:name=".mahdi.NavBar" />        
         <activity android:name=".mahdi.PowerMenu" />
 	<activity android:name=".mahdi.quicksettings.QuickSettings" />
 	<activity android:name=".mahdi.LockscreenInterface" />
-	<activity android:name=".mahdi.LockscreenTargets" />
+	<activity android:name=".mahdi.LockscreenTargets" />	
         <activity android:name=".notificationlight.NotificationLightSettings" />
 	<activity android:name=".notificationlight.BatteryLightSettings" />
 	<activity android:name=".profiles.ProfilesSettings" />	        

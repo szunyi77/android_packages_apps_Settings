@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2012 The Mahdi Rom Project
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/navigation_bar_title">
+
+        <PreferenceScreen
+            android:key="nav_buttons_edit"
+            android:fragment="com.android.settings.mahdi.NavBarEdit"
+            android:title="@string/navigation_bar_edit_title"
+            android:icon="@drawable/ic_settings_nav_bar_edit"
+            android:summary="@string/navigation_bar_edit_summary" />
+
+        <ListPreference
+            android:key="nav_buttons_height"
+            android:dialogTitle="@string/navigation_bar_height"
+            android:title="@string/navigation_bar_height"
+            android:icon="@drawable/ic_settings_nav_bar_height"
+            android:entries="@array/nav_buttons_height_entries"
+            android:entryValues="@array/nav_buttons_height_values"
+            android:defaultValue="48"
+            android:persistent="false" />
+
+        <PreferenceScreen 
+            android:key="navigation_control"         
+            android:fragment="com.android.settings.mahdi.NavControl"
+            android:icon="@drawable/ic_settings_nav_bar_glow"
+            android:title="@string/navigation_controls_title" />  
+
+        <PreferenceScreen
+            android:key="navigation_ring"
+            android:fragment="com.android.settings.mahdi.NavRing"
+            android:icon="@drawable/ic_settings_nav_bar_ring"
+            android:title="@string/navigation_ring_title" />
+
+</PreferenceScreen>
