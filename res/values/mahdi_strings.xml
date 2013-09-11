@@ -586,4 +586,7 @@
 
     <!-- Advanced, Device specific (DeviceParts) settings  -->
     <string name="advanced_settings_title">Advanced</string>
+
+    <!-- SuperSU  -->
+    <string name="superuser_settings_title">Superuser</string>
 </resources>
