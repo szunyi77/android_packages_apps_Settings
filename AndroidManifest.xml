@@ -1582,7 +1582,7 @@
 
 	<!-- Mahdi-Rom activities Start -->
 
-        <activity android:name=".mahdi.SystemSettings" />
+        <activity android:name=".mahdi.CustomizationSettings" />
 	<activity android:name=".mahdi.StatusBar" />
 	<activity android:name=".mahdi.NavBar" />        
         <activity android:name=".mahdi.PowerMenu" />

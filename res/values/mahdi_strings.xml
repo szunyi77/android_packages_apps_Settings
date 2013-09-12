@@ -13,16 +13,13 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- Mahdi-Rom Category  -->
-    <string name="mahdi_rom_category_title">Mahdi Rom</string>
-
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">    
     <!-- System Interface settings  -->
-    <string name="system_settings_title">System</string>
-    <string name="system_interface_title">System interface</string>
+    <string name="customization_settings_title">Customization</string>    
 
     <!-- Power menu enable disable -->
-    <string name="power_menu_title">Power menu settings</string>
+    <string name="power_menu_title">Power menu</string>
+    <string name="power_menu_summary">View or change the power menu list</string>
     <string name="power_menu_reboot_title">Reboot menu</string>
     <string name="power_menu_screenshot_title">Screenshot</string>
     <string name="power_menu_expanded_desktop">Expanded desktop</string>
@@ -55,7 +52,8 @@
     <string name="volume_ring_only_description">Ringtone</string>
 
     <!-- Status bar  -->
-    <string name="status_bar_title">Status bar customization</string>    
+    <string name="status_bar_title">Status bar</string>
+    <string name="status_bar_summary">View or change the status bar settings</string>    
     <string name="status_bar_style_title">Style</string>
     <string name="status_bar_clock_title">Clock</string>
     <string name="status_bar_general_title">General</string>
@@ -317,15 +315,10 @@
 
     <!-- Whether to allow mock SMS -->
     <string name="allow_mock_sms">Allow mock SMS</string>
-
-    <!-- INTERFACE Settings  -->
-    <!-- Settings main menu category heading. Rom (Launcher, Themes, System). [CHAR LIMIT=40] -->
-    <string name="header_category_rom_settings">ASS</string>
-    <!-- Interface settings  -->
-    <string name="interface_settings_title">Interface</string>
-    <string name="interface_title">Interface</string>
+    
     <!-- Notification Drawer  -->
     <string name="notification_drawer_title">Notification drawer</string>
+
     <!-- Power Widget  -->
     <string name="power_widget_title">Power widget</string>
     <string name="title_expanded_widget">Power widget</string>
@@ -378,8 +371,8 @@
     <string name="notification_widgets">Widgets</string>
 
     <!-- Quick settings panel -->
-    <string name="quick_settings_panel_title">Quick Settings panel</string>
-    <string name="quick_settings_title">Quick Settings</string>
+    <string name="quick_settings_title">Quick Settings</string>    
+    <string name="quick_settings_summary">View or change the quick settings options</string>
     <string name="title_static_tiles">Static tiles</string>
     <string name="tile_picker_title">Tiles and layout</string>
     <string name="tile_picker_summary">View, select or change the layout of the displayed tiles</string>
@@ -441,11 +434,11 @@
     <string name="tiles_reset_title">Reset</string>
     <string name="tiles_reset_message">Restore the default displayed tiles and layout?</string>
     
-    <!-- Screen security - Screen security   --> 
+    <!-- Lock screen - Screen security   --> 
     <string name="screen_security_category">Screen security</string>
     <string name="screen_security_title">Lock screen</string>   
     <string name="screen_security_summary">View or change lock screen security</string>
-    <string name="lock_screen_title">Lock screen settings</string>
+    <string name="lock_screen_title">Lock screen</string>
     <string name="lock_screen_summary">View or change the lock screen settings</string>
     <string name="additional_options_title">Additional options</string>
     <string name="lock_before_unlock_title">Show slider before secure unlock</string>
@@ -523,7 +516,8 @@
     <string name="icon_picker_pack_title">Icon pack</string>
 
     <!-- Navigation Bar -->
-    <string name="navigation_bar_title">Nav bar customization</string>
+    <string name="navigation_bar_title">Navigation bar</string>
+    <string name="navigation_bar_summary">View or change the navigation bar settings</string>
     <string name="navigation_bar_help_text">1 - To begin editing, tap the lock icon\n\n2 - Tap any button to assign or change functionality\n\n3 - Long press any button to rearrange the order\n\n4 - To save, tap the lock icon again\n\n5 - To restore system default, tap the reset button\n\n</string>
     <string name="navigation_bar_tips">&#8226; Actions can only be assigned to one button at a time\n\n&#8226; The home button cannot be re-assigned\n\n&#8226; Side buttons cannot be rearranged</string>
     <string name="navigation_bar_tips_title">Quick tips</string>
@@ -533,7 +527,7 @@
     <string name="navigation_bar_menu_editable">Editable</string>
     <string name="navigation_bar_menu_locked">Locked</string>
     <string name="navigation_bar_edit_title">Button customization</string>
-    <string name="navigation_bar_edit_summary">Edit button layout</string>
+    <string name="navigation_bar_edit_summary">Add buttons or edit layout</string>
     <string name="navigation_bar_height">Button height</string>
     <string name="navigation_bar_height_52">52dp</string>
     <string name="navigation_bar_height_50">50dp</string>
@@ -551,6 +545,7 @@
 
     <!-- Navigation ring shortcuts -->
     <string name="navigation_ring_title">Quick launch shortcuts</string>
+    <string name="navigation_ring_summary">Add or edit ring shortcuts</string>
     <string name="navring_target_reset_message">Delete all user created navigation bar shortcuts and restore to default?</string>
     <string name="navring_target_reset">Navigation bar shortcuts reset to default</string>
     <string name="navring_target_save">Navigation bar shortcuts saved</string>
@@ -567,10 +562,14 @@
     <string name="navring_choose_action_title">Choose action</string>
 
     <!-- Navigation bar extra settings -->
-    <string name="navigation_button_color_title">Navigation button color</string> 
-    <string name="navigation_controls_title">Colors and glow</string> 
-    <string name="navigation_button_glow_color_title">Navigation button glow color</string> 
+    <string name="navigation_controls_title">Colours and glow</string>
+    <string name="navigation_controls_summary">Edit button colours and glow</string>
+    <string name="navigation_button_colour_title">Navigation button colour</string>
+    <string name="navigation_button_colour_summary">Tap to edit navigation button colour</string>      
+    <string name="navigation_button_glow_colour_title">Navigation button glow colour</string>
+    <string name="navigation_button_glow_colour_summary">Tap to edit navigation button glow colour</string> 
     <string name="navigation_button_glow_time_title">Navigation button glow time</string>
+    <string name="navigation_button_glow_time_summary">Tap to edit navigation button glow time</string>
 
     <!-- SELinux warning -->
     <string name="selinux_enable_title">Security Enhanced Android</string>

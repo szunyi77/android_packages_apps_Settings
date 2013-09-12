@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012 The CyanogenMod project
+ * Copyright (C) 2012 The Mahdi Rom project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,15 +30,15 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
-public class SystemSettings extends SettingsPreferenceFragment {
+public class CustomizationSettings extends SettingsPreferenceFragment {
 
-    private static final String TAG = "SystemSettings";      
+    private static final String TAG = "CustomizationSettings";      
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.system_settings);                
+        addPreferencesFromResource(R.xml.customization_settings);                
     }    
 
     @Override

@@ -17,33 +17,37 @@ limitations under the License.
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/navigation_bar_title">
 
-        <PreferenceScreen
-            android:key="nav_buttons_edit"
-            android:fragment="com.android.settings.mahdi.NavBarEdit"
-            android:title="@string/navigation_bar_edit_title"
-            android:icon="@drawable/ic_settings_nav_bar_edit"
-            android:summary="@string/navigation_bar_edit_summary" />
+    <PreferenceScreen
+        android:key="nav_buttons_edit"
+	android:title="@string/navigation_bar_edit_title"
+	android:summary="@string/navigation_bar_edit_summary"
+        android:fragment="com.android.settings.mahdi.NavBarEdit"       
+        android:icon="@drawable/ic_settings_nav_bar_edit" />
+        
 
-        <ListPreference
-            android:key="nav_buttons_height"
-            android:dialogTitle="@string/navigation_bar_height"
-            android:title="@string/navigation_bar_height"
-            android:icon="@drawable/ic_settings_nav_bar_height"
-            android:entries="@array/nav_buttons_height_entries"
-            android:entryValues="@array/nav_buttons_height_values"
-            android:defaultValue="48"
-            android:persistent="false" />
+    <ListPreference
+        android:key="nav_buttons_height"
+        android:dialogTitle="@string/navigation_bar_height"
+        android:title="@string/navigation_bar_height"
+        android:icon="@drawable/ic_settings_nav_bar_height"
+        android:entries="@array/nav_buttons_height_entries"
+        android:entryValues="@array/nav_buttons_height_values"
+        android:defaultValue="48"
+        android:persistent="false" />
 
-        <PreferenceScreen 
-            android:key="navigation_control"         
-            android:fragment="com.android.settings.mahdi.NavControl"
-            android:icon="@drawable/ic_settings_nav_bar_glow"
-            android:title="@string/navigation_controls_title" />  
+    <PreferenceScreen 
+        android:key="navigation_control" 
+	android:title="@string/navigation_controls_title"
+	android:summary="@string/navigation_controls_summary"        
+        android:fragment="com.android.settings.mahdi.NavControl"	
+        android:icon="@drawable/ic_settings_nav_bar_glow" />
+              
 
-        <PreferenceScreen
-            android:key="navigation_ring"
-            android:fragment="com.android.settings.mahdi.NavRing"
-            android:icon="@drawable/ic_settings_nav_bar_ring"
-            android:title="@string/navigation_ring_title" />
+    <PreferenceScreen
+        android:key="navigation_ring"
+	android:title="@string/navigation_ring_title"
+	android:summary="@string/navigation_ring_summary"
+        android:fragment="com.android.settings.mahdi.NavRing"	
+        android:icon="@drawable/ic_settings_nav_bar_ring" />        
 
 </PreferenceScreen>
