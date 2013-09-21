@@ -68,6 +68,9 @@
     <string name="status_bar_battery_status_percentage">Percentage</string>
     <string name="status_bar_battery_status_circle">Circle</string>
     <string name="status_bar_battery_status_circle_percentage">Circle with percentage</string>
+    <string name="status_bar_swipe_to_show">Swipe to show</string>
+    <string name="status_bar_swipe_show_title">Swipe to show</string>
+    <string name="status_bar_swipe_show_summary">Swipe down from the top of the screen to show status bar in fullscreen apps</string>
 
     <!-- Status bar background style -->
     <string name="status_bar_transparency_title">Status bar transparency</string>
