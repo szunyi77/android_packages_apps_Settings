@@ -66,11 +66,7 @@
         <PreferenceScreen
                 android:key="wifi_display"
                 android:title="@string/wifi_display_settings_title"
-                android:fragment="com.android.settings.wfd.WifiDisplaySettings" />
-
-        <PreferenceCategory
-            android:key="category_wakeup_options"
-            android:title="@string/display_category_wakeup_options_title"/>
+                android:fragment="com.android.settings.wfd.WifiDisplaySettings" />        
 
         <CheckBoxPreference
             android:key="pref_volume_wake"
