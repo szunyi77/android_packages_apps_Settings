@@ -68,6 +68,12 @@
             android:persistent="false"
             android:ringtoneType="notification" />
 
+    <!-- Quiet Hours -->
+    <PreferenceScreen               
+        android:fragment="com.android.settings.mahdi.QuietHours"
+        android:title="@string/quiet_hours_title" 
+	android:summary="@string/quiet_hours_summary" />  
+
     <CheckBoxPreference
             android:key="dtmf_tone"
             android:title="@string/dtmf_tone_enable_title"
@@ -98,7 +104,7 @@
             android:key="emergency_tone"
             android:title="@string/emergency_tone_title"
             android:entries="@array/emergency_tone_entries"
-            android:entryValues="@array/emergency_tone_values" />
+            android:entryValues="@array/emergency_tone_values" />           
 
     <!-- Dock -->
     <PreferenceCategory
