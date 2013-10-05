@@ -58,6 +58,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String STATIC_TILES = "static_tiles";
     private static final String DYNAMIC_TILES = "pref_dynamic_tiles";
     private static final String VIBRATE_TILES = "quick_settings_tiles_vibrate";
+    private static final String QS_SMALL_ICONS = "qs_small_icons";
 
     private MultiSelectListPreference mRingMode;
     private ListPreference mNetworkMode;

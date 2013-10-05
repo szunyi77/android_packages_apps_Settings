@@ -613,6 +613,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="haptic_qs_tiles_title">Vibrate on touch</string>
     <string name="haptic_qs_tiles_summary">Vibrate when touching tiles</string>
 
+    <!-- QuickSettings smaller tiles -->
+    <string name="title_qs_small_icons">Show smaller tiles</string>
+    <string name="summary_qs_small_icons">Use smaller tiles to increase the number of colums</string>
+
     <!-- This exists as part of Power widget already, re-use them
          If Power widget is removed, re-enable these -->
     <string name="pref_ring_mode_title">Sound modes</string>

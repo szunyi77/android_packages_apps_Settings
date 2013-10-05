@@ -27,6 +27,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.Fragment;
+import android.content.ContentResolver;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.CursorLoader;
@@ -157,15 +158,21 @@ public class QuickSettingsTiles extends Fragment implements View.OnClickListener
                     FrameLayout.LayoutParams.MATCH_PARENT, Gravity.CENTER_HORIZONTAL);
             mDragView.setLayoutParams(params);
         }
-        int cellGap = getItemFromSystemUi("quick_settings_cell_gap", "dimen");
-        if (cellGap != 0) {
-            mDragView.setCellGap(cellGap);
-        }
         int cellHeight = getItemFromSystemUi("quick_settings_cell_height", "dimen");
         if (cellHeight != 0) {
             mDragView.setCellHeight(cellHeight);
         }
+        int cellGap = getItemFromSystemUi("quick_settings_cell_gap", "dimen");
+        if (cellGap != 0) {
+            mDragView.setCellGap(cellGap);
+        }
+        ContentResolver resolver = getActivity().getContentResolver();
+        boolean mSmallIcons = Settings.System.getIntForUser(resolver,
+                Settings.System.QUICK_SETTINGS_SMALL_ICONS, 0, UserHandle.USER_CURRENT) == 1;
         int columnCount = getItemFromSystemUi("quick_settings_num_columns", "integer");
+        if (mSmallIcons) {
+            columnCount = getItemFromSystemUi("quick_settings_num_columns_small", "integer");
+        }
         if (columnCount != 0) {
             mDragView.setColumnCount(columnCount);
         }

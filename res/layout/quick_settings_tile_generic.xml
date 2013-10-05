@@ -38,10 +38,9 @@
             android:id="@+id/text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center_horizontal"
+            android:layout_gravity="center"
             android:textColor="#CCCCCC"
-            android:singleLine="true"
+            android:singleLine="false"
             />
     </LinearLayout>
 
@@ -57,4 +56,3 @@
         android:src="@drawable/ic_settings_quick_settings" />
 
 </RelativeLayout>
-
