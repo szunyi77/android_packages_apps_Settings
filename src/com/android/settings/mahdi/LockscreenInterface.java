@@ -54,16 +54,16 @@ import net.margaritov.preference.colorpicker.ColorPickerView;
 public class LockscreenInterface extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
     private static final String TAG = "LockscreenInterface";
 
-    private static final int LOCKSCREEN_BACKGROUND = 1024;
-    
+    private static final int LOCKSCREEN_BACKGROUND = 1024;    
     private static final String KEY_ADDITIONAL_OPTIONS = "options_group";
     private static final String KEY_LOCKSCREEN_DISABLE_HINTS = "lockscreen_disable_hints";
-
+    private static final String BATTERY_AROUND_LOCKSCREEN_RING = "battery_around_lockscreen_ring";
     private static final String KEY_BACKGROUND_PREF = "lockscreen_background";
     private static final String KEY_BACKGROUND_ALPHA_PREF = "lockscreen_alpha";
         
     private PreferenceCategory mAdditionalOptions;
     private CheckBoxPreference mLockscreenHints;
+    private CheckBoxPreference mLockRingBattery;
     private ListPreference mCustomBackground;
     private SeekBarPreference mBgAlpha;
     
@@ -107,6 +107,10 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements P
 	mLockscreenHints = (CheckBoxPreference)findPreference(KEY_LOCKSCREEN_DISABLE_HINTS);
         mLockscreenHints.setChecked(Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
                 Settings.System.LOCKSCREEN_DISABLE_HINTS, 0) == 1);
+
+	mLockRingBattery = (CheckBoxPreference)findPreference(BATTERY_AROUND_LOCKSCREEN_RING);
+        mLockRingBattery.setChecked(Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+                Settings.System.BATTERY_AROUND_LOCKSCREEN_RING, 0) == 1);
 
 	mCustomBackground = (ListPreference) findPreference(KEY_BACKGROUND_PREF);
         mCustomBackground.setOnPreferenceChangeListener(this);
@@ -160,6 +164,9 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements P
         if (preference == mLockscreenHints) {
                 Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                         Settings.System.LOCKSCREEN_DISABLE_HINTS, mLockscreenHints.isChecked() ? 1 : 0);
+	} else if (preference == mLockRingBattery) {
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.BATTERY_AROUND_LOCKSCREEN_RING, mLockRingBattery.isChecked() ? 1 : 0);
     
         }
        return super.onPreferenceTreeClick(preferenceScreen, preference);

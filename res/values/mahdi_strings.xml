@@ -511,6 +511,10 @@
     <string name="icon_picker_sms">Messaging</string>
     <string name="icon_picker_twitter">Twitter</string>
 
+    <!-- Battery status on lock ring -->
+    <string name="battery_around_lockscreen_ring">Battery level around lock ring</string>
+    <string name="battery_around_lockscreen_ring_summary">If checked the lockscreen ring will display the battery charge level</string>
+
     <!-- String for IconPicker -->
     <string name="icon_picker_title">Choose icon source</string>
     <string name="icon_picker_system_icons_title">System icons</string>
