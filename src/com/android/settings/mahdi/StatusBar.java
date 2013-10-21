@@ -58,6 +58,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     private static final String PREF_STATUS_BAR_ALPHA = "status_bar_alpha";
     private static final String PREF_STATUS_BAR_ALPHA_MODE = "status_bar_alpha_mode";
     private static final String PREF_STATUS_BAR_COLOR = "status_bar_color";
+    private static final String STATUS_BAR_TRANSPARENT_ON_KEYGUARD = "status_bar_transparent_on_keyguard";
 
     private ListPreference mStatusBarAmPm;
     private ListPreference mStatusBarBattery;
@@ -68,6 +69,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     private SeekBarPreference mStatusbarTransparency;
     private ColorPickerPreference mStatusBarColor;
     private ListPreference mAlphaMode;
+    private CheckBoxPreference mStatusBarTransparentOnKeyguard;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -90,14 +92,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         mStatusBarBattery = (ListPreference) findPreference(STATUS_BAR_BATTERY);
         mStatusBarCmSignal = (ListPreference) findPreference(STATUS_BAR_SIGNAL);
 	mStatusBarColor = (ColorPickerPreference) findPreference(PREF_STATUS_BAR_COLOR);
-        mStatusBarColor.setOnPreferenceChangeListener(this);
-        int intColor = Settings.System.getInt(getActivity().getContentResolver(),
-                    Settings.System.STATUS_BAR_COLOR, 0xff000000);
-        String hexColor = String.format("#%08x", (0xffffffff & intColor));
-        mStatusBarColor.setNewPreviewColor(intColor);
-
-	mStatusBarClock.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-                Settings.System.STATUS_BAR_CLOCK, 1) == 1));
+	mStatusbarTransparency = (SeekBarPreference) findPreference(PREF_STATUS_BAR_ALPHA);        		
 
 	float statBarTransparency = 0.0f;
         try{
@@ -107,8 +102,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
             statBarTransparency = 0.0f;
             Settings.System.putFloat(getActivity().getContentResolver(), Settings.System.STATUS_BAR_ALPHA, 0.0f);
         }
-
-	mStatusbarTransparency = (SeekBarPreference) findPreference(PREF_STATUS_BAR_ALPHA);
+	
         mStatusbarTransparency.setProperty(Settings.System.STATUS_BAR_ALPHA);
         mStatusbarTransparency.setInitValue((int) (statBarTransparency * 100));
         mStatusbarTransparency.setOnPreferenceChangeListener(this);
@@ -120,7 +114,15 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         mAlphaMode.setSummary(mAlphaMode.getEntry());
         mAlphaMode.setOnPreferenceChangeListener(this);
 
-        setHasOptionsMenu(true);                    
+	mStatusBarTransparentOnKeyguard = (CheckBoxPreference) prefs.findPreference(STATUS_BAR_TRANSPARENT_ON_KEYGUARD);
+        int StatusBarTransparentOnKeyguard = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.STATUS_BAR_TRANSPARENT_ON_KEYGUARD, 1);
+        mStatusBarTransparentOnKeyguard.setOnPreferenceChangeListener(this);
+
+        setHasOptionsMenu(true);
+
+        mStatusBarClock.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+                Settings.System.STATUS_BAR_CLOCK, 1) == 1));                    
 
         try {
             if (Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
@@ -199,6 +201,10 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
                     Settings.System.STATUS_BAR_ALPHA_MODE, alphaMode);
             mAlphaMode.setSummary(mAlphaMode.getEntries()[index]);
             return true;
+	} else if (preference == mStatusBarTransparentOnKeyguard) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(), Settings.System.STATUS_BAR_TRANSPARENT_ON_KEYGUARD, value ? 1 : 0);
+	    return true;
         }
         return false;
     }
@@ -244,5 +250,4 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     public void onResume() {
         super.onResume();
     }
-
 }

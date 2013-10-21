@@ -85,6 +85,8 @@
     <string name="status_bar_reset">Reset</string>    
     <string name="status_bar_style_reset_message">Reset statusbar style?</string>
     <string name="navbar_reset">Reset</string>
+    <string name="status_bar_transparent_on_keyguard_title">Translucent lockscreen status bar</string>
+    <string name="status_bar_transparent_on_keyguard_summary">Makes the status bar translucent on the lockscreen</string> 
     
     <!-- Kill app long-press back -->
     <string name="kill_app_longpress_back">Kill app back button</string>
@@ -637,5 +639,5 @@
     <!-- UI debug setting: show CPU info? [CHAR LIMIT=25] -->
     <string name="show_cpu_info">Show CPU info</string>
     <!-- UI debug setting: show cpu usage summary [CHAR LIMIT=50] -->
-    <string name="show_cpu_info_summary">Screen overlay showing current CPU info</string>    
+    <string name="show_cpu_info_summary">Screen overlay showing current CPU info</string>       
 </resources>
