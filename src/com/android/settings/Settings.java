@@ -866,5 +866,6 @@ public class Settings extends PreferenceActivity
     public static class QuickSettingsTilesActivity extends Settings { /* empty */ }
     public static class PowerMenuSettingsActivity extends Settings { /* empty */ }
     public static class MahdiLockscreenActivity extends Settings { /* empty */ }
-    public static class PerformanceSettingsActivity extends Settings { /* empty */ }   
+    public static class PerformanceSettingsActivity extends Settings { /* empty */ } 
+    public static class ActiveDisplaySettingsActivity extends Settings { /* empty */ }  
 }
