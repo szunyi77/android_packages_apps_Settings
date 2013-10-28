@@ -39,8 +39,7 @@ public class NavControl extends SettingsPreferenceFragment implements OnPreferen
 
     private static final String NAVIGATION_BUTTON_COLOR = "navigation_button_color";
     private static final String NAVIGATION_BUTTON_GLOW_COLOR = "navigation_button_glow_color";
-    private static final String NAVIGATION_BUTTON_GLOW_TIME =
-            "navigation_button_glow_time";
+    private static final String NAVIGATION_BUTTON_GLOW_TIME = "navigation_button_glow_time";            
 
     private static final String KEY_NAVIGATION_BAR = "navigation_bar";
 

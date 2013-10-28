@@ -29,7 +29,7 @@
          very long strings too. -->
     <integer name="maximum_user_dictionary_word_length" translatable="false">48</integer>
 
-    <!-- **** CYANOGENMOD ADDITIONS START **** -->    
+    <!-- **** MAHDI-ROM ADDITIONS START **** -->    
 
     <!-- Show Expanded Desktop preference -->
     <bool name="config_show_expandedDesktop">false</bool>
@@ -40,7 +40,10 @@
 
     <!-- LED Flashlight -->
     <bool name="has_led_flash">false</bool>
+
+    <!-- Whether device has hardware buttons -->
+    <bool name="config_has_hardware_buttons">false</bool>
    
-    <!-- **** CYANOGENMOD ADDITIONS END **** -->
+    <!-- **** MAHDI-ROM ADDITIONS END **** -->
     
 </resources>
