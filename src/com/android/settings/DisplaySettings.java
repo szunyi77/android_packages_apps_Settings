@@ -191,8 +191,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         // Volume rocker wake
         mVolumeWake = (CheckBoxPreference) findPreference(KEY_VOLUME_WAKE);
         if (mVolumeWake != null) {
-            if (!getResources().getBoolean(R.bool.config_show_volumeRockerWake)
-                    || !Utils.hasVolumeRocker(getActivity())) {
+            if (!getResources().getBoolean(R.bool.config_show_volumeRockerWake)) {                   
                 getPreferenceScreen().removePreference(mVolumeWake);
             } else {
                 mVolumeWake.setChecked(Settings.System.getInt(resolver,

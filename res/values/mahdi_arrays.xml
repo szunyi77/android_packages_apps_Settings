@@ -412,6 +412,7 @@
         <item>24</item>
     </string-array>
 
+    <!-- Hardware Keys -->
     <string-array name="hardware_keys_action_entries" translatable="false">
         <item>@string/hardware_keys_action_nothing</item>
         <item>@string/hardware_keys_action_menu</item>
@@ -430,6 +431,7 @@
         <item>5</item>
     </string-array>
 
+    <!-- Lockscreen Buttons -->
     <string-array name="lockscreen_long_key_press_entries" translatable="false">
         <item>@string/lockscreen_buttons_no_action</item>
         <item>@string/lockscreen_buttons_next</item>
