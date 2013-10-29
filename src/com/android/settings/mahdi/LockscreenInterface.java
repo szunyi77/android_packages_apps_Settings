@@ -60,12 +60,14 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements P
     private static final String BATTERY_AROUND_LOCKSCREEN_RING = "battery_around_lockscreen_ring";
     private static final String KEY_BACKGROUND_PREF = "lockscreen_background";
     private static final String KEY_BACKGROUND_ALPHA_PREF = "lockscreen_alpha";
+    private static final String KEY_LOCKSCREEN_BUTTONS = "lockscreen_buttons";
         
     private PreferenceCategory mAdditionalOptions;
     private CheckBoxPreference mLockscreenHints;
     private CheckBoxPreference mLockRingBattery;
     private ListPreference mCustomBackground;
     private SeekBarPreference mBgAlpha;
+    private PreferenceScreen mLockscreenButtons;
     
     private boolean mIsScreenLarge;
 
@@ -102,7 +104,12 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements P
         addPreferencesFromResource(R.xml.lockscreen_interface_settings);
         prefs = getPreferenceScreen();
 
-        mAdditionalOptions = (PreferenceCategory) prefs.findPreference(KEY_ADDITIONAL_OPTIONS);	
+        mAdditionalOptions = (PreferenceCategory) prefs.findPreference(KEY_ADDITIONAL_OPTIONS);
+
+	mLockscreenButtons = (PreferenceScreen) findPreference(KEY_LOCKSCREEN_BUTTONS);
+        if (!hasButtons()) {
+            getPreferenceScreen().removePreference(mLockscreenButtons);
+        }	
 
 	mLockscreenHints = (CheckBoxPreference)findPreference(KEY_LOCKSCREEN_DISABLE_HINTS);
         mLockscreenHints.setChecked(Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
