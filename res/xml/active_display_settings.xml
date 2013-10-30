@@ -72,7 +72,7 @@
         android:key="ad_customizations"
         android:title="@string/ad_customizations_title" />
 
-	<com.android.settings.mahdi.activedisplay.AppMultiSelectListPreference
+	<com.android.settings.mahdi.chameleonos.AppMultiSelectListPreference
             android:key="ad_excluded_apps"
             android:persistent="false"
             android:title="@string/ad_excluded_apps_title"
@@ -93,7 +93,7 @@
             android:summary="@string/ad_show_ampm_summary"
             android:dependency="ad_enable"/>
 
-    	<com.android.settings.mahdi.activedisplay.SeekBarPreference
+    	<com.android.settings.mahdi.chameleonos.SeekBarPreference
             android:key="ad_brightness"
             android:persistent="false"
             android:title="@string/ad_brightness_title"

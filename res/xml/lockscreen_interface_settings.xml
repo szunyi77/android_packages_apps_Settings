@@ -38,7 +38,7 @@
 
 	<PreferenceScreen
         android:key="active_display"
-        android:fragment="com.android.settings.mahdi.activedisplay.ActiveDisplaySettings"
+        android:fragment="com.android.settings.mahdi.chameleonos.ActiveDisplaySettings"
         android:title="@string/ad_settings_title"
         android:summary="@string/ad_settings_summary">
         </PreferenceScreen>   

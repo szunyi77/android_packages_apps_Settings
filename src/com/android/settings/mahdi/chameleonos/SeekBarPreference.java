@@ -1,4 +1,4 @@
-package com.android.settings.mahdi.activedisplay;
+package com.android.settings.mahdi.chameleonos;
 
 import android.content.Context;
 import android.content.res.TypedArray;

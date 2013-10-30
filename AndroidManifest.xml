@@ -1586,7 +1586,7 @@
 
         <activity android:name=".mahdi.CustomizationSettings" />
 	<activity android:name=".mahdi.StatusBar" />
-	<activity android:name=".mahdi.NavBar" />        
+	<activity android:name=".mahdi.ButtonSettings" />        
         <activity android:name=".mahdi.PowerMenu" />
 	<activity android:name=".mahdi.quicksettings.QuickSettings" />
 	<activity android:name=".mahdi.LockscreenInterface" />
@@ -1594,7 +1594,7 @@
 	<activity android:name=".mahdi.QuietHours" />
 	<activity android:name=".mahdi.HardwareKeys" />
 	<activity android:name=".mahdi.LockscreenButtons" />
-	<activity android:name=".mahdi.activedisplay.ActiveDisplaySettings" />  	
+	<activity android:name=".mahdi.chameleonos.ActiveDisplaySettings" />  	
         <activity android:name=".notificationlight.NotificationLightSettings" />
 	<activity android:name=".notificationlight.BatteryLightSettings" />
 	<activity android:name=".profiles.ProfilesSettings" />	       

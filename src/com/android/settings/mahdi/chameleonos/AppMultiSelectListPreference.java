@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.android.settings.mahdi.activedisplay;
+package com.android.settings.mahdi.chameleonos;
 
 import android.app.AlertDialog;
 import android.content.Context;

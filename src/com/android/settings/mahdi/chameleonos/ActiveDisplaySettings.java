@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.mahdi.activedisplay;
+package com.android.settings.mahdi.chameleonos;
 
 import android.content.Context;
 import android.hardware.SensorManager;
@@ -34,8 +34,8 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.android.settings.mahdi.activedisplay.SeekBarPreference;
-import com.android.settings.mahdi.activedisplay.AppMultiSelectListPreference;
+import com.android.settings.mahdi.chameleonos.SeekBarPreference;
+import com.android.settings.mahdi.chameleonos.AppMultiSelectListPreference;
 
 import static android.hardware.Sensor.TYPE_LIGHT;
 import static android.hardware.Sensor.TYPE_PROXIMITY;
