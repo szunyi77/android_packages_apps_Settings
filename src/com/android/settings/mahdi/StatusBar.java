@@ -43,6 +43,8 @@ import com.android.settings.Utils;
 import com.android.settings.util.Helpers;
 import com.android.settings.widget.SeekBarPreference;
 
+import static android.provider.Settings.System.STATUS_BAR_TRAFFIC;
+
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class StatusBar extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
@@ -59,6 +61,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     private static final String PREF_STATUS_BAR_ALPHA_MODE = "status_bar_alpha_mode";
     private static final String PREF_STATUS_BAR_COLOR = "status_bar_color";
     private static final String STATUS_BAR_TRANSPARENT_ON_KEYGUARD = "status_bar_transparent_on_keyguard";
+    private static final String STATUS_BAR_TRAFFIC = "status_bar_traffic";
 
     private ListPreference mStatusBarAmPm;
     private ListPreference mStatusBarBattery;
@@ -70,6 +73,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     private ColorPickerPreference mStatusBarColor;
     private ListPreference mAlphaMode;
     private CheckBoxPreference mStatusBarTransparentOnKeyguard;
+    private CheckBoxPreference mStatusBarTraffic;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -150,6 +154,11 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         mStatusBarCmSignal.setValue(String.valueOf(signalStyle));
         mStatusBarCmSignal.setSummary(mStatusBarCmSignal.getEntry());
         mStatusBarCmSignal.setOnPreferenceChangeListener(this);
+
+	mStatusBarTraffic = (CheckBoxPreference) prefs.findPreference(STATUS_BAR_TRAFFIC);
+	int StatusBarTraffic = Settings.System.getInt(getActivity().getContentResolver(),        
+            Settings.System.STATUS_BAR_TRAFFIC, 1);
+        mStatusBarTraffic.setOnPreferenceChangeListener(this);
        
         mPrefCategoryGeneral = (PreferenceCategory) findPreference(STATUS_BAR_CATEGORY_GENERAL);
 
@@ -204,6 +213,10 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
 	} else if (preference == mStatusBarTransparentOnKeyguard) {
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(), Settings.System.STATUS_BAR_TRANSPARENT_ON_KEYGUARD, value ? 1 : 0);
+	    return true;
+	} else if (preference == mStatusBarTraffic) {
+            boolean value = (Boolean) newValue;            
+            Settings.System.putInt(getActivity().getContentResolver(), Settings.System.STATUS_BAR_TRAFFIC, value ? 1 : 0);
 	    return true;
         }
         return false;
