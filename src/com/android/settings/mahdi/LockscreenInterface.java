@@ -64,10 +64,13 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     private static final String PREF_LOCKSCREEN_EIGHT_TARGETS = "lockscreen_eight_targets";
     private static final String PREF_LOCKSCREEN_TORCH = "lockscreen_glowpad_torch";
     private static final String PREF_LOCKSCREEN_SHORTCUTS = "lockscreen_shortcuts";
+
+    private static final String KEY_SEE_THROUGH = "see_through";
         
     private CheckBoxPreference mEnableModLock;
     private PreferenceCategory mStyleCategory;
     private Preference mEnableKeyguardWidgets;
+    private CheckBoxPreference mSeeThrough;
     private ListPreference mBatteryStatus;
     private CheckBoxPreference mLockscreenEightTargets;
     private CheckBoxPreference mGlowpadTorch;
@@ -136,6 +139,13 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
                 }
                 mEnableKeyguardWidgets.setEnabled(!disabled);
             }
+        }
+
+        // lockscreen see through
+        mSeeThrough = (CheckBoxPreference) findPreference(KEY_SEE_THROUGH);
+        if (mSeeThrough != null) {
+            mSeeThrough.setChecked(Settings.System.getInt(getContentResolver(),
+                    Settings.System.LOCKSCREEN_SEE_THROUGH, 0) == 1);
         }
 
         mBatteryStatus = (ListPreference) findPreference(KEY_BATTERY_STATUS);
@@ -230,7 +240,13 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-       return super.onPreferenceTreeClick(preferenceScreen, preference);
+        if (preference == mSeeThrough) {
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.LOCKSCREEN_SEE_THROUGH,
+                    mSeeThrough.isChecked() ? 1 : 0);
+            return true;
+        }
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
     @Override

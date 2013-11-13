@@ -30,8 +30,8 @@
             android:fragment="com.android.settings.mahdi.LockscreenWidgets"
             android:title="@string/lockscreen_widgets_title" />
 
-        <com.android.settings.mahdi.SystemSettingCheckBoxPreference
-            android:key="lockscreen_see_through"
+        <CheckBoxPreference
+            android:key="see_through"
             android:title="@string/see_through_title"
             android:summary="@string/see_through_summary" />
 
