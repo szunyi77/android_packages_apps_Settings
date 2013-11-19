@@ -46,6 +46,7 @@ import com.android.internal.util.mahdi.HwKeyHelper;
 
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
+import com.android.settings.cyanogenmod.ButtonBacklightBrightness;
 import com.android.settings.mahdi.util.ShortcutPickerHelper;
 
 import java.util.HashMap;
@@ -82,6 +83,7 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
     private static final String KEYS_APP_SWITCH_PRESS = "keys_app_switch_press";
     private static final String KEYS_APP_SWITCH_LONG_PRESS = "keys_app_switch_long_press";
     private static final String KEYS_APP_SWITCH_DOUBLE_TAP = "keys_app_switch_double_tap";
+    private static final String KEY_BUTTON_BACKLIGHT = "button_backlight";
 
     private static final int DLG_SHOW_WARNING_DIALOG = 0;
     private static final int DLG_SHOW_ACTION_DIALOG  = 1;
@@ -302,6 +304,12 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
                     Settings.System.KEY_APP_SWITCH_DOUBLE_TAP_ACTION);
         } else {
             prefs.removePreference(keysAppSwitchCategory);
+        }
+
+         final ButtonBacklightBrightness backlight =
+                (ButtonBacklightBrightness) findPreference(KEY_BUTTON_BACKLIGHT);
+        if (!backlight.isButtonSupported() && !backlight.isKeyboardSupported()) {
+            prefs.removePreference(backlight);
         }
 
         boolean enableHardwareRebind = Settings.System.getInt(getContentResolver(),
