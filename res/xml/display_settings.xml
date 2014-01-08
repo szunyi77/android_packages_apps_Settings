@@ -132,6 +132,16 @@
                 android:summary="@string/gamma_tuning_summary_head"
                 android:persistent="false" />
 
+            <PreferenceScreen
+                android:persistent="false"
+                android:key="screencolor_settings"
+                android:title="@string/screencolor">
+                <intent
+                    android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.android.settings"
+                    android:targetClass="com.android.settings.ScreenColorSettings" />
+            </PreferenceScreen>
+
         </PreferenceCategory>
         
 </PreferenceScreen>

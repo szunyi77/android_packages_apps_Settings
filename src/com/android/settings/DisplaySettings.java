@@ -26,6 +26,8 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.database.ContentObserver;
 import android.os.Bundle;
 import android.os.Handler;
@@ -78,6 +80,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_ADAPTIVE_BACKLIGHT = "adaptive_backlight";
     private static final String KEY_DISPLAY_COLOR = "color_calibration";
     private static final String KEY_DISPLAY_GAMMA = "gamma_tuning";
+    private static final String KEY_SCREEN_COLOR_SETTINGS = "screencolor_settings";
 
     // Strings used for building the summary
     private static final String ROTATION_ANGLE_0 = "0";
@@ -101,6 +104,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private CheckBoxPreference mWakeWhenPluggedOrUnplugged;
     private CheckBoxPreference mTapToWake;
     private CheckBoxPreference mAdaptiveBacklight;
+    private PreferenceScreen mScreenColorSettings;
 
     private final Configuration mCurConfig = new Configuration();
     
@@ -238,8 +242,14 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         if (!DisplayColor.isSupported()) {
             advancedPrefs.removePreference(findPreference(KEY_DISPLAY_COLOR));
         }
+
         if (!DisplayGamma.isSupported()) {
             advancedPrefs.removePreference(findPreference(KEY_DISPLAY_GAMMA));
+        }
+
+        mScreenColorSettings = (PreferenceScreen) findPreference(KEY_SCREEN_COLOR_SETTINGS);
+        if (!isPostProcessingSupported()) {
+            advancedPrefs.removePreference(mScreenColorSettings);
         }
     }
 
@@ -548,6 +558,17 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 Log.d(TAG, "Tap-to-wake settings restored.");
             }
         }
+    }
+
+    private boolean isPostProcessingSupported() {
+        boolean ret = true;
+        final PackageManager pm = getPackageManager();
+        try {
+            pm.getPackageInfo("com.qualcomm.display", PackageManager.GET_META_DATA);
+        } catch (NameNotFoundException e) {
+            ret = false;
+        }
+        return ret;
     }
 
     private static boolean isAdaptiveBacklightSupported() {

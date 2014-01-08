@@ -33,4 +33,7 @@
     <color name="data_usage_series_details_fill_color_secondary">#60ba7f3e</color>
     <color name="data_usage_sweep_warning_label_color">#f7931d</color>
     <color name="data_usage_sweep_limit_label_color">#c01a2c</color>
+
+    <color name="screencolor_background">#50000000</color>
+     <drawable name="transparent_background">#00000000</drawable>
 </resources>
