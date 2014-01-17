@@ -648,6 +648,16 @@ public class Settings extends PreferenceActivity
                         target.remove(i);
                     }
                 }
+            } else if (id == R.id.supersu_settings) {
+                // Embedding into Settings is supported from SuperSU v1.85 and up
+                boolean supported = false;
+                try {
+                    supported = (getPackageManager().getPackageInfo("eu.chainfire.supersu", 0).versionCode >= 185);
+                } catch (PackageManager.NameNotFoundException e) {
+                }
+                if (!supported) {
+                    target.remove(i);
+                }
             } else if (id == R.id.development_settings) {
                 if (!showDev) {
                     target.remove(i);

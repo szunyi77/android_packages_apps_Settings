@@ -1448,6 +1448,9 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Superuser header name -->
     <string name="superuser">Superuser</string>
 
+    <!-- SuperSU header name - the app hides itself from launcher based on this resource name being present in com.android.settings -->
+    <string name="supersu_title">SuperSU</string>
+
     <!-- Emulate menu key -->
     <string name="emulate_menu_key_title">Emulate hardware menu key</string>
     <string name="emulate_menu_key_summary">Pressing the navbar menu key will open the overflow menu at the bottom</string>
