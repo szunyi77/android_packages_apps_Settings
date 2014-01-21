@@ -108,6 +108,11 @@
                 android:defaultValue="false" />
 
             <CheckBoxPreference
+                android:key="double_tap_wake_gesture"
+                android:title="@string/double_tap_to_wake_title"
+                android:defaultValue="false" />
+
+            <CheckBoxPreference
                 android:key="adaptive_backlight"
                 android:title="@string/adaptive_backlight_title"
                 android:summary="@string/adaptive_backlight_summary"
