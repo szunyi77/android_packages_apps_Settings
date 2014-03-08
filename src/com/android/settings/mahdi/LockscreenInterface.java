@@ -36,6 +36,7 @@ import android.preference.Preference;
 import android.preference.PreferenceScreen;
 import android.preference.PreferenceCategory;
 import android.preference.Preference.OnPreferenceChangeListener;
+import android.preference.SeekBarPreference;
 import android.provider.Settings;
 import android.view.Window;
 import android.widget.Toast;
@@ -66,11 +67,13 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     private static final String PREF_LOCKSCREEN_SHORTCUTS = "lockscreen_shortcuts";
 
     private static final String KEY_SEE_THROUGH = "see_through";
+    private static final String KEY_BLUR_RADIUS = "blur_radius";
         
     private CheckBoxPreference mEnableModLock;
     private PreferenceCategory mStyleCategory;
     private Preference mEnableKeyguardWidgets;
     private CheckBoxPreference mSeeThrough;
+    private SeekBarPreference mBlurRadius;
     private ListPreference mBatteryStatus;
     private CheckBoxPreference mLockscreenEightTargets;
     private CheckBoxPreference mGlowpadTorch;
@@ -141,12 +144,19 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
             }
         }
 
-        // lockscreen see through
+        // lock screen see through
         mSeeThrough = (CheckBoxPreference) findPreference(KEY_SEE_THROUGH);
         if (mSeeThrough != null) {
             mSeeThrough.setChecked(Settings.System.getInt(getContentResolver(),
                     Settings.System.LOCKSCREEN_SEE_THROUGH, 0) == 1);
         }
+
+        // lock screen blur radius
+        mBlurRadius = (SeekBarPreference) findPreference(KEY_BLUR_RADIUS);
+        mBlurRadius.setProgress(Settings.System.getInt(getContentResolver(),
+                Settings.System.LOCKSCREEN_BLUR_RADIUS, 12));
+        mBlurRadius.setOnPreferenceChangeListener(this);
+        mBlurRadius.setEnabled(mSeeThrough.isChecked() && mSeeThrough.isEnabled());
 
         mBatteryStatus = (ListPreference) findPreference(KEY_BATTERY_STATUS);
         if (mBatteryStatus != null) {
@@ -244,6 +254,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(),
                     Settings.System.LOCKSCREEN_SEE_THROUGH,
                     mSeeThrough.isChecked() ? 1 : 0);
+            mBlurRadius.setEnabled(mSeeThrough.isChecked() && mSeeThrough.isEnabled());
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
@@ -268,6 +279,11 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
             return true;
         } else if (preference == mLockscreenEightTargets) {
             showDialogInner(DLG_ENABLE_EIGHT_TARGETS, (Boolean) objValue);
+            return true;
+        } else if (preference == mBlurRadius) {
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.LOCKSCREEN_BLUR_RADIUS,
+                    (Integer) objValue);
             return true;
         }
         return false;

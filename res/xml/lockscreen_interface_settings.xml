@@ -35,6 +35,13 @@
             android:title="@string/see_through_title"
             android:summary="@string/see_through_summary" />
 
+        <SeekBarPreference
+            android:key="blur_radius"
+            android:title="@string/blur_radius_title"
+            android:summary="@string/blur_radius_summary"
+            android:max="25"
+            android:defaultValue="12" />
+
         <com.android.settings.mahdi.SystemSettingCheckBoxPreference
             android:key="battery_around_lockscreen_ring"
             android:title="@string/battery_around_lockscreen_ring"
