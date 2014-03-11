@@ -19,4 +19,10 @@
     <color name="auto_brightness_preview_foreground">@android:color/white</color>
     <color name="auto_brightness_preview_markers">@android:color/holo_blue_light</color>
     <color name="auto_brightness_preview_grid">#44ffffff</color>
+
+    <color name="linear_color_bar_left_color">#ffcccccc</color>
+    <color name="linear_color_bar_middle_color">#ffcccccc</color>
+    <color name="linear_color_bar_right_color">#ff888888</color>
+    <color name="linear_color_bar_gray_color">#ff555555</color>
+    <color name="linear_color_bar_white_color">#ffffffff</color>
 </resources>
