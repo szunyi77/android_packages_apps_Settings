@@ -19,6 +19,10 @@ package com.android.settings.mahdi;
 import java.util.prefs.PreferenceChangeListener;
 
 import android.content.ContentResolver;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.media.AudioSystem;
@@ -36,7 +40,10 @@ import com.android.settings.mahdi.chameleonos.SeekBarPreference;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
+import com.android.settings.mahdi.preference.AppSelectListPreference;
+import com.android.settings.mahdi.SystemSettingCheckBoxPreference;
 
+import java.net.URISyntaxException;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -50,18 +57,27 @@ public class SoundSettings extends SettingsPreferenceFragment implements
 
     private static final String CATEGORY_VOLUME = "category_volume";
     private static final String BUTTON_VOLUME_DEFAULT = "button_volume_default_screen";
-    private static final String KEY_VOLUME_PANEL_TIMEOUT = "volume_panel_timeout";
-    private static final String KEY_SAFE_HEADSET_VOLUME = "safe_headset_volume";
-    private static final String KEY_SWAP_VOLUME_BUTTONS = "swap_volume_buttons";
+    private static final String KEY_VOLUME_PANEL_TIMEOUT = "volume_panel_timeout";    
     private static final String KEY_VOLUME_ADJUST_SOUND = "volume_adjust_sounds_enabled";
+    private static final String KEY_SWAP_VOLUME_BUTTONS = "swap_volume_buttons";
+    private static final String KEY_SAFE_HEADSET_VOLUME = "safe_headset_volume";
+    private static final String KEY_HEADSET_PLUG = "headset_plug";
+    private static final String KEY_HEADSET_MUSIC_ACTIVE = "headset_plug_music_active";
+    private static final String KEY_HEADSET_ACTIONS = "headset_plug_actions";
+    private static final String KEY_HEADSET_PLUG_APP_RUNNING = "headset_plug_app_running";
+    private static final String KEY_HEADSET_PLUG_FORCE_ACTIONS = "headset_plug_force_actions";
 
     private PreferenceCategory volumeCategory;
     private ListPreference mVolumeDefault;
     private SeekBarPreference mVolumePanelTimeout;
-    private CheckBoxPreference mSafeHeadsetVolume;
-    private CheckBoxPreference mSwapVolumeButtons;
     private CheckBoxPreference mVolumeAdjustSound;
-    
+    private CheckBoxPreference mSwapVolumeButtons;
+    private CheckBoxPreference mSafeHeadsetVolume;
+    private AppSelectListPreference mHeadsetPlug;
+    private SystemSettingCheckBoxPreference mHeadsetMusicActive;
+    private SystemSettingCheckBoxPreference mHeadsetForceAction;
+    private ListPreference mHeadsetAction;
+    private ListPreference mHeadsetAppRunning;    
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -82,6 +98,8 @@ public class SoundSettings extends SettingsPreferenceFragment implements
             mVolumePanelTimeout.setValue(statusVolumePanelTimeout / 1000);
             mVolumePanelTimeout.setOnPreferenceChangeListener(this);
 
+        mVolumeAdjustSound = (CheckBoxPreference) findPreference(KEY_VOLUME_ADJUST_SOUND);
+
         mSafeHeadsetVolume = (CheckBoxPreference) findPreference(KEY_SAFE_HEADSET_VOLUME);
         mSafeHeadsetVolume.setPersistent(false);
         boolean safeMediaVolumeEnabled = getResources().getBoolean(
@@ -89,7 +107,21 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         mSafeHeadsetVolume.setChecked(Settings.System.getInt(resolver,
                 Settings.System.SAFE_HEADSET_VOLUME, safeMediaVolumeEnabled ? 1 : 0) != 0);
 
-        mVolumeAdjustSound = (CheckBoxPreference) findPreference(KEY_VOLUME_ADJUST_SOUND);
+        mHeadsetAction = (ListPreference) findPreference(KEY_HEADSET_ACTIONS);
+        mHeadsetAction.setOnPreferenceChangeListener(this);
+        mHeadsetForceAction = (SystemSettingCheckBoxPreference) findPreference(KEY_HEADSET_PLUG_FORCE_ACTIONS);
+        updateHeadsetActionSummary();
+
+        mHeadsetAppRunning = (ListPreference) findPreference(KEY_HEADSET_PLUG_APP_RUNNING);
+        mHeadsetAppRunning.setValue(Integer.toString(Settings.System.getInt(
+            getContentResolver(), Settings.System.HEADSET_PLUG_APP_RUNNING, 0)));
+        mHeadsetAppRunning.setSummary(mHeadsetAppRunning.getEntry());
+        mHeadsetAppRunning.setOnPreferenceChangeListener(this);
+
+        mHeadsetPlug = (AppSelectListPreference) findPreference(KEY_HEADSET_PLUG);
+        mHeadsetPlug.setOnPreferenceChangeListener(this);
+        mHeadsetMusicActive = (SystemSettingCheckBoxPreference) findPreference(KEY_HEADSET_MUSIC_ACTIVE);
+        updateHeadsetPlugSummary();
 
         if (!Utils.isPhone(getActivity())) {
             PreferenceCategory category_volume =
@@ -132,7 +164,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mVolumeDefault) {
-            String value = (String)newValue;
+            String value = (String) newValue;
             Settings.System.putString(getActivity().getContentResolver(), Settings.System.VOLUME_KEYS_DEFAULT, value);
             updateVolumeDefault(newValue);
             return true;
@@ -141,6 +173,27 @@ public class SoundSettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(),
                     Settings.System.VOLUME_PANEL_TIMEOUT, volumePanelTimeout * 1000);
             return true;
+        } else if (preference == mHeadsetPlug) {
+            String value = (String) newValue;
+            Settings.System.putString(getContentResolver(),
+                    Settings.System.HEADSET_PLUG_ENABLED, value);
+            updateHeadsetPlugSummary();
+            return true;
+        } else if (preference == mHeadsetAction) {
+           String value = (String) newValue;
+           int val = Integer.parseInt(value);
+           Settings.System.putInt(getContentResolver(),
+                   Settings.System.HEADSET_PLUG_ACTIONS, val);
+           updateHeadsetActionSummary();
+           return true;
+        } else if (preference == mHeadsetAppRunning) {
+           String value = (String) newValue;
+           int val = Integer.parseInt(value);
+           Settings.System.putInt(getContentResolver(),
+                   Settings.System.HEADSET_PLUG_APP_RUNNING, val);
+           int index = mHeadsetAppRunning.findIndexOfValue(value);
+           mHeadsetAppRunning.setSummary(mHeadsetAppRunning.getEntries()[index]);
+           return true;
         }
         return false;
     }
@@ -168,6 +221,60 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         Settings.Secure.putInt(getActivity().getContentResolver(),
                 Settings.System.VOLUME_KEYS_DEFAULT, value);
         mVolumeDefault.setSummary(mVolumeDefault.getEntries()[index]);
+    }
+
+    private void updateHeadsetActionSummary() {
+        int value = Settings.System.getInt(
+            getContentResolver(), Settings.System.HEADSET_PLUG_ACTIONS, 0);
+
+        mHeadsetAction.setValue(Integer.toString(value));
+        mHeadsetAction.setSummary(mHeadsetAction.getEntry());
+
+        if (value == 0) {
+            mHeadsetForceAction.setEnabled(false);
+        }else {
+            mHeadsetForceAction.setEnabled(true);
+        }
+    }
+
+    private void updateHeadsetPlugSummary() {
+        final PackageManager packageManager = getPackageManager();
+
+        mHeadsetPlug.setSummary(getResources().getString(R.string.headset_plug_positive_title));
+        mHeadsetMusicActive.setEnabled(false);
+        mHeadsetAction.setEnabled(false);
+        mHeadsetAppRunning.setEnabled(false);
+        mHeadsetForceAction.setEnabled(false);
+
+        String headSetPlugIntentUri = Settings.System.getString(getContentResolver(), Settings.System.HEADSET_PLUG_ENABLED);
+
+        if (headSetPlugIntentUri != null) {
+            if(headSetPlugIntentUri.equals(Settings.System.HEADSET_PLUG_SYSTEM_DEFAULT)) {
+                 mHeadsetPlug.setSummary(getResources().getString(R.string.headset_plug_neutral_summary));
+                 mHeadsetMusicActive.setEnabled(true);
+                 mHeadsetAction.setEnabled(true);
+                 mHeadsetAppRunning.setEnabled(true);
+                 updateHeadsetActionSummary();
+            } else {
+                Intent headSetPlugIntent = null;
+                try {
+                    headSetPlugIntent = Intent.parseUri(headSetPlugIntentUri, 0);
+                } catch (URISyntaxException e) {
+                    headSetPlugIntent = null;
+                }
+
+                if (headSetPlugIntent != null) {
+                    ResolveInfo info = packageManager.resolveActivity(headSetPlugIntent, 0);
+                    if (info != null) {
+                        mHeadsetPlug.setSummary(info.loadLabel(packageManager));
+                        mHeadsetMusicActive.setEnabled(true);
+                        mHeadsetAction.setEnabled(true);
+                        mHeadsetAppRunning.setEnabled(true);
+                        updateHeadsetActionSummary();
+                    }
+                }
+            }
+        }
     }
 
     public void removeListEntry(ListPreference list, String valuetoRemove) {
