@@ -19,34 +19,16 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/shake_events_title">
 
-    <CheckBoxPreference
-        android:key="enable_shake_events"
-        android:title="@string/shake_events_enabled_title"
-        android:defaultValue="false" />
-
     <Preference
         android:key="shake_event_x"
-        android:title="@string/shake_event_x_title"
-        android:dependency="enable_shake_events" />
+        android:title="@string/shake_event_x_title" />
 
     <Preference
         android:key="shake_event_y"
-        android:title="@string/shake_event_y_title"
-        android:dependency="enable_shake_events" />
+        android:title="@string/shake_event_y_title" />
 
     <Preference
         android:key="shake_event_z"
-        android:title="@string/shake_event_z_title"
-        android:dependency="enable_shake_events" />
-
-    <PreferenceCategory
-        android:title="@string/keyguard_shake_events_cat">
-
-        <PreferenceScreen
-            android:fragment="com.android.settings.mahdi.slim.KeyguardShakeEvents"
-            android:key="shake_events"
-            android:title="@string/keyguard_shake_events_title" />
-
-    </PreferenceCategory>
+        android:title="@string/shake_event_z_title" />
 
 </PreferenceScreen>

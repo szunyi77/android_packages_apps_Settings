@@ -100,7 +100,7 @@ public class SecuritySettings extends RestrictedSettingsFragment
     private static final String KEY_VISIBLE_DOTS = "visibledots";
     private static final String LOCK_BEFORE_UNLOCK = "lock_before_unlock";
     private static final String LOCK_NUMPAD_RANDOM = "lock_numpad_random";
-    private static final String KEY_SHAKE_TO_SECURE = "shake_to_secure";
+    private static final String KEY_SHAKE_TO_SECURE = "shake_to_secure_mode";
     private static final String KEY_SHAKE_AUTO_TIMEOUT = "shake_auto_timeout";
     private static final String LOCKSCREEN_QUICK_UNLOCK_CONTROL = "quick_unlock_control";
     private static final String SLIDE_LOCK_TIMEOUT_DELAY = "slide_lock_timeout_delay";
@@ -137,12 +137,14 @@ public class SecuritySettings extends RestrictedSettingsFragment
     private CheckBoxPreference mVisibleDots;
     private CheckBoxPreference mLockBeforeUnlock;
     private ListPreference mLockNumpadRandom;
-    private CheckBoxPreference mShakeToSecure;
+    private ListPreference mShakeToSecure;
     private ListPreference mShakeTimer;
     private CheckBoxPreference mQuickUnlockScreen;
     private ListPreference mSlideLockTimeoutDelay;
     private ListPreference mSlideLockScreenOffDelay;
     private CheckBoxPreference mVisibleGesture;
+
+    private int mShakeTypeChosen = -1;
 
     public SecuritySettings() {
         super(null /* Don't ask for restrictions pin on creation. */);
@@ -321,12 +323,13 @@ public class SecuritySettings extends RestrictedSettingsFragment
         // Don't show if device admin requires security
         boolean shakeEnabled = mLockPatternUtils.getRequestedMinimumPasswordLength()
                 == DevicePolicyManager.PASSWORD_QUALITY_UNSPECIFIED;
-        mShakeToSecure = (CheckBoxPreference) root
+        final int shakeSecure = Settings.Secure.getInt(
+                getContentResolver(),
+                Settings.Secure.LOCK_SHAKE_TEMP_SECURE, 0);
+        mShakeToSecure = (ListPreference) root
                 .findPreference(KEY_SHAKE_TO_SECURE);
         if (mShakeToSecure != null) {
-            mShakeToSecure.setChecked(
-                    Settings.Secure.getInt(getContentResolver(),
-                    Settings.Secure.LOCK_SHAKE_TEMP_SECURE, 0) == 1);
+            mShakeToSecure.setValue(String.valueOf(shakeSecure));
             mShakeToSecure.setOnPreferenceChangeListener(this);
             if (!shakeEnabled) {
                 mSecurityCategory.removePreference(mShakeToSecure);
@@ -343,6 +346,8 @@ public class SecuritySettings extends RestrictedSettingsFragment
             mShakeTimer.setOnPreferenceChangeListener(this);
             if (!shakeEnabled) {
                 mSecurityCategory.removePreference(mShakeTimer);
+            } else {
+                mShakeTimer.setEnabled(shakeSecure != 0);
             }
         }
 
@@ -805,10 +810,13 @@ public class SecuritySettings extends RestrictedSettingsFragment
         } else if (requestCode == CONFIRM_EXISTING_FOR_TEMPORARY_INSECURE &&
                 resultCode == Activity.RESULT_OK) {
             // Enable shake to secure
-            Settings.Secure.putInt(getContentResolver(),
-                    Settings.Secure.LOCK_SHAKE_TEMP_SECURE, 1);
-            if (mShakeToSecure != null) {
-                mShakeToSecure.setChecked(true);
+            if (mShakeTypeChosen != -1) {
+                Settings.Secure.putInt(getContentResolver(),
+                        Settings.Secure.LOCK_SHAKE_TEMP_SECURE, mShakeTypeChosen);
+                if (mShakeToSecure != null && mShakeTimer != null) {
+                    mShakeToSecure.setValue(String.valueOf(mShakeTypeChosen));
+                    mShakeTimer.setEnabled(true);
+                }
             }
             return;
         }
@@ -834,14 +842,15 @@ public class SecuritySettings extends RestrictedSettingsFragment
             mLockNumpadRandom.setValue(String.valueOf(value));
             mLockNumpadRandom.setSummary(mLockNumpadRandom.getEntry());
         } else if (preference == mShakeToSecure) {
-            boolean checked = ((Boolean) value);
-            if (checked) {
-                // Uncheck until confirmed
-                mShakeToSecure.setChecked(false);
+            int userVal = Integer.parseInt((String) value);
+            if (userVal != 0) {
+                mShakeTypeChosen = userVal;
                 showDialogInner(DLG_SHAKE_WARN);
             } else {
                 Settings.Secure.putInt(getContentResolver(),
                         Settings.Secure.LOCK_SHAKE_TEMP_SECURE, 0);
+                mShakeToSecure.setValue(String.valueOf(0));
+                mShakeTimer.setEnabled(false);
             }
         } else if (preference == mShakeTimer) {
             int shakeTime = Integer.parseInt((String) value);
@@ -948,10 +957,12 @@ public class SecuritySettings extends RestrictedSettingsFragment
         }
 
         private void disableShakeLock() {
-            if (getOwner().mShakeToSecure != null) {
+            if (getOwner().mShakeToSecure != null
+                    && getOwner().mShakeTimer != null) {
                 Settings.Secure.putInt(getActivity().getContentResolver(),
                         Settings.Secure.LOCK_SHAKE_TEMP_SECURE, 0);
-                getOwner().mShakeToSecure.setChecked(false);
+                getOwner().mShakeToSecure.setValue(String.valueOf(0));
+                getOwner().mShakeTimer.setEnabled(false);
             }
         }
     }

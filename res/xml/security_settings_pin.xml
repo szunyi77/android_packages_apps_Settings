@@ -38,8 +38,10 @@
             android:key="power_button_instantly_locks"
             android:title="@string/lockpattern_settings_enable_power_button_instantly_locks"/>
 
-        <CheckBoxPreference
-            android:key="shake_to_secure"
+        <ListPreference
+            android:key="shake_to_secure_mode"
+            android:entries="@array/shake_secure_entries"
+            android:entryValues="@array/shake_secure_values"
             android:title="@string/shake_to_secure_title"
             android:summary="@string/shake_to_secure_summary" />
 
