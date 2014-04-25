@@ -499,6 +499,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="title_tile_profile">Profile</string>
     <string name="title_tile_autorotate">Orientation</string>
     <string name="title_tile_settings">Settings</string>
+    <string name="title_tile_shake">Shake events</string>
     <string name="title_tile_sound">Sound</string>
     <string name="title_tile_sync">Sync</string>
     <string name="title_tile_wifiap">Wi-Fi AP</string>
@@ -2096,4 +2097,13 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="volume_steps_ring_title">Ringer</string>
     <string name="volume_steps_system_title">System</string>
     <string name="volume_steps_voice_call_title">Voice call</string>
+
+    <!-- Shake Events -->
+    <string name="shake_events_title">Shake events</string>
+    <string name="shake_events_summary">Use shake events to perform custom actions</string>
+    <string name="shake_events_enabled_title">Enable shake listener</string>
+    <string name="shake_events_normal_title">Active shake events</string>
+    <string name="shake_event_x_title">Activity to launch when shaken horizontally</string>
+    <string name="shake_event_y_title">Activity to launch when shaken vertically</string>
+    <string name="shake_event_z_title">Activity to launch when shaken back-and-forth</string>
 </resources>

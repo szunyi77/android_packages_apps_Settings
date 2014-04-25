@@ -63,6 +63,12 @@
         android:fragment="com.android.settings.mahdi.aokp.AnimationInterfaceSettings" />
 
     <PreferenceScreen
+        android:key="shake_events"
+        android:fragment="com.android.settings.mahdi.slim.ShakeEvents"
+        android:title="@string/shake_events_title"
+        android:summary="@string/shake_events_summary" />
+
+    <PreferenceScreen
         android:key="hardware_keys"
         android:title="@string/button_keys_title"
         android:summary="@string/button_keys_summary"

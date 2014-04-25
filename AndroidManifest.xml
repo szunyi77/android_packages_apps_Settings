@@ -2116,6 +2116,19 @@
             </intent-filter>
         </activity>
 
+        <!-- Pseudo-activity used to provide an intent-filter entry to shake event settings -->
+        <activity android:name="Settings$ShakeEventsSettingsActivity"
+                android:label="@string/shake_events_title"
+                android:taskAffinity=""
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.mahdi.slim.ShakeEvents" />
+        </activity>
+
         <!-- Mahdi-Rom activities End -->
 
         <receiver android:name=".widget.SettingsAppWidgetProvider"

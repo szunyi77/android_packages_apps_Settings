@@ -92,6 +92,7 @@ import com.android.settings.mahdi.QuietHours;
 import com.android.settings.mahdi.themes.ThemeEnabler;
 import com.android.settings.mahdi.themes.ThemeSettings;
 import com.android.settings.mahdi.superuser.PolicyNativeFragment;
+import com.android.settings.mahdi.slim.ShakeEvents;
 import com.android.settings.net.MobileDataEnabler;
 import com.android.settings.nfc.AndroidBeam;
 import com.android.settings.nfc.PaymentSettings;
@@ -384,7 +385,8 @@ public class Settings extends PreferenceActivity
         NavbarSettings.class.getName(),
         com.android.settings.mahdi.PrivacySettings.class.getName(),
         com.android.settings.mahdi.superuser.PolicyNativeFragment.class.getName(),
-        ThemeSettings.class.getName()       
+        ThemeSettings.class.getName(),
+        ShakeEvents.class.getName()       
     };
 
     @Override
@@ -1260,5 +1262,6 @@ public class Settings extends PreferenceActivity
     public static class NavbarSettingsActivity extends Settings { /* empty */ }
     public static class ThemeSettingsActivity extends Settings { /* empty */ }
     public static class RamBarActivity extends Settings { /* empty */ }
-    public static class VoiceWakeupSettingsActivity extends Settings { /* empty */ }    
+    public static class VoiceWakeupSettingsActivity extends Settings { /* empty */ }
+    public static class ShakeEventsSettingsActivity extends Settings { /* empty */ }
 }
