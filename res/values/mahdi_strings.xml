@@ -2114,4 +2114,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="shake_event_z_title">Activity to launch when shaken back-and-forth</string>
     <string name="keyguard_shake_events_cat">Keyguard</string>
     <string name="keyguard_shake_events_title">Keyguard shake events</string>
+
+    <!-- Shake sensitivity -->
+    <string name="shake_sensitivity_title">Shake sensitivity</string>
+    <string name="shake_sensitivity_summary">Global sensitivity of all shake preferences</string>
+    <string name="shake_sensitivity_less_sensitive">Less sensitive</string>
+    <string name="shake_sensitivity_more_sensitive">More sensitive</string>
 </resources>
