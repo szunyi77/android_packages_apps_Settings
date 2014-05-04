@@ -120,6 +120,11 @@
             android:defaultValue="true" />
 
         <com.android.settings.mahdi.SystemSettingCheckBoxPreference
+            android:key="qs_dynamic_equalizer"
+            android:title="@string/title_dynamic_equalizer"
+            android:defaultValue="true" />
+
+        <com.android.settings.mahdi.SystemSettingCheckBoxPreference
             android:key="qs_dyanmic_ime"
             android:title="@string/title_dynamic_ime"
             android:defaultValue="true" />
