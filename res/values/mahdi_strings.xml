@@ -707,6 +707,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="clock_date_format_custom">Custom java format</string>
     <string name="status_bar_clock_style_reset_message">Reset clock color?</string>
 
+    <!-- Statusbar Second Clock -->
+    <string name="clock_use_second">Second</string>
+    <string name="clock_use_second_summary">Show seconds in the clock</string>
+
     <!-- StatusBar Battery Settings -->    
     <string name="status_bar_battery_title">Battery status style</string>
     <string name="status_bar_style_icon_portrait">Icon portrait</string>
