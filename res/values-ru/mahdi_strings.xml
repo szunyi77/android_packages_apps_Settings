@@ -1269,9 +1269,9 @@
     <string name="new_recents_screen_summary">Заменяет \"Недавние приложения\" на версию от Slim</string>
     <string name="recent_panel_scale_title">Размер</string>
     <string name="recent_panel_scale_summary">Размер панели \"Недавних приложений\" в процентах.</string>
-    <string name="recent_panel_100">100% (по умолчанию)</string>
-    <string name="recent_panel_85">85%</string>
-    <string name="recent_panel_70">70%</string>
+    <string name="recent_panel_100">100 процентов (по умолчанию)</string>
+    <string name="recent_panel_85">85 процентов</string>
+    <string name="recent_panel_70">70 процентов</string>
     <string name="recent_panel_expanded_mode_title">Расширенный режим</string>
     <string name="recent_panel_expanded_mode_summary">Расширенный режим просмотра \"Недавних приложений\"</string>
     <string name="recent_panel_expanded_mode_auto">Авто (по умолчанию)</string>
