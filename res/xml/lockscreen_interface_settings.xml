@@ -52,13 +52,6 @@
         android:title="@string/style_title"
         android:key="lockscreen_style_category" >
 
-        <Preference
-            android:id="@+id/lockscreen_wallpaper_settings"
-            android:title="@string/lockscreen_wallpaper_settings_title">
-            <intent android:targetPackage="com.android.wallpapercropper"
-                    android:targetClass="com.android.wallpapercropper.LockWallpaperPickerActivity" />
-        </Preference>
-
         <PreferenceScreen
             android:key="keyguard_enable_widgets"
             android:fragment="com.android.settings.mahdi.LockscreenWidgets"
