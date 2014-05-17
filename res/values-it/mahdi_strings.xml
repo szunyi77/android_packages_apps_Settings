@@ -87,18 +87,17 @@
     <!-- Power menu enable disable -->
     <string name="power_menu_title">Pulsante spegnimento</string> 
     <string name="power_menu_summary">Vedi o cambia le azioni del pulsante spegnimento</string>
-    <string name="power_menu_reboot_title">Menù Riavvio</string>
+    <string name="power_menu_reboot_title">Menù riavvio</string>
     <string name="power_menu_screenshot_title">Screenshot</string>
-    <string name="power_menu_screenrecord_title">Screen Record</string>
-    <string name="power_menu_profiles_title">Selettore Profilo</string>
-    <string name="power_menu_profiles_disabled">Disattivato</string>
-    <string name="power_menu_profiles_lock">Disattivato sulla schermata di sblocco</string>
-    <string name="power_menu_profiles_all">Mostra sempre</string>
-    <string name="power_menu_airplane_title">Modalità Aereo</string>
-    <string name="power_menu_silent_title">Pannello Suoni</string> 
+    <string name="power_menu_screenrecord_title">Screen record</string>
+    <string name="power_menu_profiles_title">Selettore profilo</string>
+    <string name="power_menu_airplane_title">Modalità aereo</string>
+    <string name="power_menu_silent_title">Pannello suoni</string> 
+    <string name="power_menu_expanded_desktop">Immersive mode</string>
+    <string name="power_menu_mobile_data">Dati mobili</string>
 
     <!-- Advanced reboot options -->
-    <string name="advanced_reboot_title">Riavvio Avanzato</string>
+    <string name="advanced_reboot_title">Riavvio avanzato</string>
     <string name="advanced_reboot_summary">Quando è attivo, include nella schermata di riavvio il riavvio in recovery e in bootloader</string>
 
    <!-- Profiles settings  -->
@@ -128,7 +127,7 @@
     <string name="profile_reset_message">Eliminare tutti i profili e i gruppi di applicazioni creati?</string>
 
     <!-- Delete confimation messages -->
-    <string name="profile_delete_confirm">Elimina questo profilo</string>
+    <string name="profile_delete_confirm">Eliminare questo profilo?</string>
     <string name="profile_app_delete_confirm">Eliminare questa applicazione?</string>
     <string name="profile_cannot_delete">Un profilo attivo non può essere cancellato</string>
 
@@ -435,39 +434,39 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <string name="title_dynamic_tiles">Tile Dinamici</string>
     <string name="dynamic_tiles_note_title">Nota</string>
-    <string name="dynamic_tiles_note_summary">I Tile dinamici non sono sempre visibili e sono attivati da eventi di sistema</string>
+    <string name="dynamic_tiles_note_summary">I tile dinamici non sono sempre visibili e sono attivati da eventi di sistema</string>
     <string name="title_dynamic_alarm">Sveglia</string>
-    <string name="title_dynamic_bugreport">Riporta Bug</string>
+    <string name="title_dynamic_bugreport">Riporta bug</string>
     <string name="title_dynamic_dock_battery">In carica</string>
-    <string name="title_dynamic_ime">Cambia Tastiera</string>
+    <string name="title_dynamic_ime">Cambia tastiera</string>
     <string name="title_dynamic_usbtether">Tethering USB</string>
     <string name="title_dynamic_wifi">Schermo Wi-Fi</string>
 
     <string name="title_general">Generale</string>
-    <string name="title_quick_pulldown">Quick Settings Veloci</string>
-    <string name="summary_quick_pulldown">strisciando dal lato %1$s della barra di notifica scenderanno i quick settings</string>
+    <string name="title_quick_pulldown">Quick settings veloci</string>
+    <string name="summary_quick_pulldown">Strisciando dal lato %1$s della barra di notifica scenderanno i quick settings</string>
     <string name="quick_pulldown_summary_left">Sinistra</string>
     <string name="quick_pulldown_summary_right">Destra</string>
     <string name="quick_pulldown_off">Spento</string>
     <string name="quick_pulldown_left">Sinistra</string>
     <string name="quick_pulldown_right">Destra</string>
     <string name="title_collapse_panel">Chiudi automaticamente pannello</string>
-    <string name="summary_collapse_panel">Chiudi il pannello Quick Settings dopo aver modificato un Tile</string>
+    <string name="summary_collapse_panel">Chiudi il pannello quick settings dopo aver modificato un tile</string>
 
     <!-- QuickSettings: Smart Pulldown -->
-    <string name="smart_pulldown_title">Quick Settings Intelligenti</string>
+    <string name="smart_pulldown_title">Quick settings intelligenti</string>
     <string name="smart_pulldown_summary">Apri i quick settings quando non ci sono notifiche %1$s presenti</string>
     <string name="smart_pulldown_off">Spento</string>
-    <string name="smart_pulldown_dismissable">Non persistenti</string>
-    <string name="smart_pulldown_persistent">Persistenti </string>
+    <string name="smart_pulldown_dismissable">Eliminabili</string>
+    <string name="smart_pulldown_persistent">Non eliminabili</string>
 
     <!-- QuickSettings: Custom Tile -->
-    <string name="custom_tile_dialog_text">Each action will add a new state to the tile. Each click changes to the next state. Long-press to add long-press actions. If no click action exists the long-action icon will be used for the tile. This allows you to change states by clicking and launch actions by long-pressing.</string>
+    <string name="custom_tile_dialog_text">Ogni azione aggiungerà un nuovo stato al tile. Ogni click cambia al prossimo stato. Tieni premuto per aggiungere un\'opzione tieni premuto. Se non c\'é un\'opzione per il click sarà usata quella per il tieni premuto. Questo ti permette di tenere premuto per passare al prossimo stato.</string>
      <string name="custom_tile_dialog_title">Azioni dei tile personalizzati</string>
      <string name="custom_toggle_extras">Extra dei tile personalizzati</string>
      <string name="custom_toggle_collapse_check">Chiudi  dopo aver modificato un tile</string>
-     <string name="custom_toggle_match_state_check">Click action matches icon</string>
-     <string name="custom_tile_long_press">Longpress:</string>
+     <string name="custom_toggle_match_state_check">Il click collega le icone</string>
+     <string name="custom_tile_long_press">Tieni premuto:</string>
      <string name="custom_tile_null_warning">Deve essere prima selezionata un\'azione</string>
 
     <string name="pref_network_mode_title">Modalità di rete</string>
@@ -509,7 +508,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="pref_ring_mode_title">Modalità suoneria</string>
     <string name="pref_ring_mode_summary">Vedi o cambia le modalità del pulsante suoneria</string>
     <string name="cm_sound_mode_silent">Silenzioso</string>
-    <string name="cm_sound_mode_vibrate">Vibrazionr</string>
+    <string name="cm_sound_mode_vibrate">Vibrazione</string>
     <string name="cm_sound_mode_sound">Suono</string>
     <string name="cm_sound_mode_soundVibrate">Suono + Vibrazione</string>
 
@@ -597,7 +596,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="status_bar_clock_style_reset_message">Ripristinare colore orologio?</string>
 
     <!-- StatusBar Battery Settings -->    
-    <string name="status_bar_battery_title">Stile Batteria</string>
+    <string name="status_bar_battery_title">Stile batteria</string>
     <string name="status_bar_style_icon_portrait">Icona verticale</string>
     <string name="status_bar_style_icon_landscape">Icona orizzontale</string>
     <string name="status_bar_style_circle">Cerchio</string>
@@ -879,12 +878,12 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="navbar_enable_bar_summary">Attiva la navigation bar </string>
     <string name="navigation_bar_left_title">Modalità Mancino</string>
     <string name="navigation_bar_left_summary">In modalità orizzontale la navigation bar è sulla sinistra </string>
-    <string name="navigation_bar_height_title">Altezza Navigation bar </string>
-    <string name="navigation_bar_height_summary">Altezza della navigation bar in verticale.</string>
-    <string name="navigation_bar_height_landscape_title">Altezza navigation bar in orizzontale </string>
-    <string name="navigation_bar_height_landscape_summary">Altezza della navigation bar in orizzontale.</string>
-    <string name="navigation_bar_width_title">Spessore navigation bar </string>
-    <string name="navigation_bar_width_summary">Altezza navigation bar se la barra è lungo un lato .</string>
+    <string name="navigation_bar_height_title">Altezza navigation bar </string>
+    <string name="navigation_bar_height_summary">Altezza della navigation bar in verticale</string>
+    <string name="navigation_bar_height_landscape_title">Altezza navigation bar in orizzontale</string>
+    <string name="navigation_bar_height_landscape_summary">Altezza della navigation bar in orizzontale</string>
+    <string name="navigation_bar_width_title">Spessore navigation bar</string>
+    <string name="navigation_bar_width_summary">Altezza navigation bar in modalità orizzontale</string>
     <string name="navbar_can_move">Mostra orizzontale </string>
     <string name="navbar_can_move_summary">Mostra navigation bar in basso in modalità orizzontale </string>
     <string name="navbar_style_dimen_title">Dimensioni</string>
@@ -1031,7 +1030,11 @@ name="quiet_hours_auto_sms_call_title">Chiamate in arrivo </string>
     <string name="screen_recorder_bitrate_20000000">20000000</string>
     <string name="screen_recorder_bitrate_50000000">50000000</string>
     <string name="screen_recorder_bitrate_100000000">100000000</string>
-
+    
+    <!-- Custom lockscreen options -->
+    <string name="lockscreen_custom_title">Opzioni personalizzate</string>
+    <string name="lockscreen_custom_summary">Attiva notifiche in lockscreen, peek e altro</string>
+    
     <!-- Lockscreen widget settings -->
     <string name="title_widgets">Widget</string>
     <string name="lockscreen_widgets_title">Widget</string>
@@ -1042,12 +1045,14 @@ name="quiet_hours_auto_sms_call_title">Chiamate in arrivo </string>
     <string name="lockscreen_disable_hints_title">Disattiva consigli pagina iniziale </string>
     <string name="lockscreen_disable_hints_summary">Disattiva la trasparenza ai bordi che mostra la presenza di widget </string>
     <string name="lockscreen_use_widget_container_carousel_title">Attiva carosello dei widget in modalità verticale </string>
-    <string name="lockscreen_use_widget_container_carousel_summary">Usa animazione carosello mentre si scorre tra i widget della lockscreen </string>
-
+    <string name="lockscreen_use_widget_container_carousel_summary">Usa animazione cubo mentre si scorre tra i widget della lockscreen </string>
+    <string name="lockscreen_widget_frame_title">Disattiva frame widget</string>
+    <string name="lockscreen_widget_frame_summary">Disattiva frame di sfondo del widget</string>
+    
     <!-- Lockscreen Notifications -->
     <!-- Categories --> 
     <string name="general">Generale</string>
-    <string name="layout">Disposizione </string>
+    <string name="layout">Disposizione</string>
     <string name="privacy">Privacy</string>
 
     <string name="Lockscreen_notifications_header">Notifiche in lockscreen </string>
@@ -1059,10 +1064,10 @@ name="quiet_hours_auto_sms_call_title">Chiamate in arrivo </string>
     <string name="show_always_summary">Accendi sempre lo schermo quando tirato fuori dalla tasca, anche quando non ci sono notifiche </string>
     <string name="hide_low_priority">Nascondi bassa priorità </string>
     <string name="hide_low_priority_summary">Nascondi le notifiche di bassa priorità come il meteo di Google Now </string>
-    <string name="hide_non_clearable">Mostra le non toglibili </string>
+    <string name="hide_non_clearable">Nascondi le non toglibili </string>
     <string name="hide_non_clearable_summary">Nascondi tutte le notifiche che non si possono togliere </string>
     <string name="dismiss_all">Permetti di togliere tutte le notifiche </string>
-    <string name="dismiss_all_summary">Permetti di togliere anche le notifiche non toglibili. Naturalmente, saranno nascoste dalla lockscreen ma rimarranno nel pannello di notifica .</string>
+    <string name="dismiss_all_summary">Permetti di togliere anche le notifiche non toglibili. Naturalmente rimarranno nel pannello di notifica</string>
     <string name="expanded_view">Notifiche estese </string>
     <string name="expanded_view_summary">Mostra notifiche estese quando possibile </string>
     <string name="force_expanded_view">Forza la vista estesa </string>
@@ -1080,49 +1085,61 @@ name="quiet_hours_auto_sms_call_title">Chiamate in arrivo </string>
     <string name="excluded_apps_summary">Le applicazioni escluse non saranno mostrate nella lockscreen </string>
     <string name="notification_color">Colore di sfondo delle notifiche </string>
 
-    <!-- Lock Screen Shortcuts -->
-    <string name="title_shortcuts">Scorciatoie </string>
-    <string name="lockscreen_target_info">Trascina lo slider per assegnare scorciatoie </string>
-    <string name="lockscreen_target_title">Scorciatoie slider </string>
-    <string name="lockscreen_target_summary">Vedi o cambia scorciatoie della lockscreen </string>
-    <string name="lockscreen_target_reset">Scorciatoie della lockscreen ripristinate </string>
-    <string name="lockscreen_target_reset_title">Ripristina</string>
-    <string name="lockscreen_target_reset_message">Eliminare tutte le scorciatoie create?</string>
-    <string name="lockscreen_target_empty">Vuoto </string>
-    <string name="lockscreen_target_edit_title">Modifica scorciatoie e icone </string>
-    <string name="lockscreen_target_edit_msg">Seleziona o cambia le scorciatoie della lockscreen </string>
-    <string name="lockscreen_glowpad_torch_title">Torcia </string>
-    <string name="lockscreen_glowpad_torch_summary">Tocca due volte e tieni premuto per attivare la torcia </string>
+    <!-- Lock Screen -->
+    <string name="title_shortcuts">Scorciatoie</string>
+    <!-- Lock Screen Targets -->
+    <string name="lockscreen_target_info">Trascina lo slider per impostare un\'azione</string>
+    <string name="lockscreen_target_title">Azioni slider</string>
+    <string name="lockscreen_target_summary">Vedi o cambia opzioni personalizzate</string>
+    <string name="lockscreen_target_color_title">Colore icona opzione</string>
+    <string name="lockscreen_eight_targets_title">Otto opzioni per lo slider</string>
+    <string name="lockscreen_eight_targets_summary">Attiva otto opzioni per lo slider</string>
+    <string name="lockscreen_enable_eight_targets_dialog">Cambiare questa opzione ripristinerà le tue azioni predfinite</string>
+    <string name="lockscreen_enable_eight_targets_enabled_dialog">\n\nCon otto opzioni non puoi usare allo stesso tempo le scorciatoie nella lockscreen</string>
+    <string name="lockscreen_glowpad_torch_title">Torcia</string>
+    <string name="lockscreen_glowpad_torch_summary">Doppio tocco e tieni premuto</string>
+    <string name="lockscreen_target_reset">Azioni slider predefinite ripristinate</string>
+    <string name="lockscreen_target_reset_message">Eliminare tutte le azioni create?</string>
+    <string name="lockscreen_target_empty">Niente</string>
+    <string name="lockscreen_target_edit_title">Modifica azione ed icona</string>
+    <string name="lockscreen_target_edit_msg">Vedi o cambia l\'azione o l\'icona</string>
 
-    <!-- Lock screen shortcuts -->
-    <string name="picker_activities">Attività </string>
-    <string name="select_custom_app_title">Seleziona applicazione personalizzata </string>
-    <string name="select_custom_activity_title">Seleziona attività personalizzata </string>
-    <string name="icon_picker_choose_icon_title">Scegli icona </string>
-    <string name="icon_picker_alarm">Sveglia </string>
+    <!-- Description of accessibility direction for targets [CHAR LIMIT=NONE] -->
+    <string name="accessibility_target_direction">Swipe per attivare un\'azione</string>
+    <!-- Description of the unlock target in the Slide unlock screen. [CHAR LIMIT=NONE] -->
+    <string name="description_target_unlock">Sblocca</string>
+
+    <!-- Lockscreen Shortcuts -->
+    <string name="lockscreen_shortcuts_title">Scorciatouie</string>
+    <string name="lockscreen_shortcuts_summary">Vedi o cambia scorciatoie personalizzate lockscreen</string>
+    <string name="lockscreen_shorcuts_longpress_title">Scorciatoie tieni premuto</string>
+    <string name="lockscreen_shorcuts_longpress_summary">Apre azione personalizzata se si tiene premuto</string>
+
+    <!-- Lock screen targets and shortcuts -->
+    <string name="picker_activities">Attività</string>
+    <string name="select_custom_activity_title">Seleziona attività personalizzata</string>
+    <string name="icon_picker_alarm">Allarme</string>
     <string name="icon_picker_browser">Browser</string>
-    <string name="icon_picker_calendar">Calendario </string>
-    <string name="icon_picker_camera">Fotocamera </string>
-    <string name="icon_picker_chrome">Chrome</string>
-    <string name="icon_picker_contacts">Contatti</string>
+    <string name="icon_picker_calendar">Calendario</string>
+    <string name="icon_picker_camera">Fotocamera</string>
     <string name="icon_picker_email">Email</string>
     <string name="icon_picker_email2">Email Holo</string>
     <string name="icon_picker_facebook">Facebook</string>
-    <string name="icon_picker_gallery">Galleria </string>
-    <string name="icon_picker_google_small">Google (piccola)</string>
+    <string name="icon_picker_gallery">Galleria</string>
+    <string name="icon_picker_google_small">Google (piccolo)</string>
     <string name="icon_picker_googleplus">Google Plus</string>
-    <string name="icon_picker_googletalk">Hangout</string>
+    <string name="icon_picker_googletalk">Hangouts</string>
     <string name="icon_picker_maps">Maps</string>
+    <string name="icon_picker_sms">Messaggi</string>
     <string name="icon_picker_movie">Film</string>
     <string name="icon_picker_music">Musica</string>
-    <string name="icon_picker_nav_normal">Navigazione </string>
-    <string name="icon_picker_phone">Telefono </string>
+    <string name="icon_picker_nav_normal">Navigatore</string>
+    <string name="icon_picker_phone">Telefono</string>
     <string name="icon_picker_podcast">Podcast</string>
     <string name="icon_picker_rss">Rss</string>
     <string name="icon_picker_search">Cerca</string>
-    <string name="icon_picker_sms">Messaggi </string>
     <string name="icon_picker_twitter">Twitter</string>
-
+    
     <!-- String for IconPicker -->
     <string name="icon_picker_title">Scegli sorgente icona</string>
     <string name="icon_picker_system_icons_title">Icone di sistema </string>
@@ -1208,8 +1225,8 @@ name="quiet_hours_auto_sms_call_title">Chiamate in arrivo </string>
     <string name="development_shortcut_summary">Attiva \'Cancella dati \' e \'Chiusura Forzata \' nella lista delle applicazioni recenti </string>
 
     <!-- Recents panel menu -->
-    <string name="recents_panel_settings_title">Applicazioni Recenti </string>
-    <string name="recents_panel_settings_summary">Slim Recents, pulsante pulisci tutto e altro </string>
+    <string name="recents_panel_settings_title">Applicazioni recenti </string>
+    <string name="recents_panel_settings_summary">Slim recents, pulsante pulisci tutto e altro </string>
 
     <!-- Recents clear all -->
     <string name="aosp_recents_category">Pannello AOSP</string>
@@ -1223,16 +1240,16 @@ name="quiet_hours_auto_sms_call_title">Chiamate in arrivo </string>
     <string name="recent_clear_all_button_location_bottom_right">In basso a destra </string>
 
     <!-- New Recents Screen -->
-    <string name="new_recents_category">Slim Recents</string>
+    <string name="new_recents_category">Slim recents</string>
     <string name="new_recents_screen_title">Slim recents</string>
     <string name="new_recents_screen_summary">Prende il posto dell\'attuale pannello applicazioni recenti </string>
-    <string name="recent_panel_scale_title">Grandezza </string>
-    <string name="recent_panel_scale_summary">Grandezza pannello in percentuale .</string>
-    <string name="recent_panel_100">100% (Predefinito)</string>
-    <string name="recent_panel_85">85%</string>
-    <string name="recent_panel_70">70%</string>
+    <string name="recent_panel_scale_title">Grandezza</string>
+    <string name="recent_panel_scale_summary">Grandezza pannello</string>
+    <string name="recent_panel_100">Grande(Predefinito)</string>
+    <string name="recent_panel_85">Medio</string>
+    <string name="recent_panel_70">Piccolo</string>
     <string name="recent_panel_expanded_mode_title">Modalità Estensione</string>
-    <string name="recent_panel_expanded_mode_summary">Modlità anteprima app Slim Recents </string>
+    <string name="recent_panel_expanded_mode_summary">Modlità anteprima app nel pannello slim recents </string>
     <string name="recent_panel_expanded_mode_auto">Automatica</string>
     <string name="recent_panel_expanded_mode_always">Sempre</string>
     <string name="recent_panel_expanded_mode_never">Mai</string>
@@ -1283,9 +1300,17 @@ name="quiet_hours_auto_sms_call_title">Chiamate in arrivo </string>
     <string name="ime_switcher_notify_summary">Mostra una notifica con il metodo di input </string>
 
     <!-- Themes settings  -->
-    <string name="themes_settings_title">Temi </string>
-    <string name="themes_settings_summary">Cambia tema o passa alla modalità Dark/Light </string>
-    <string name="themes_engine_summary">Cambia tema </string>
+    <string name="themes_settings_title">Temi</string>
+
+    <!-- The following are entries under the themes menu -->
+    <string name="themepacks_settings_title">Temi</string>
+    <string name="styles_settings_title">Stile</string>
+    <string name="icons_settings_title">Icone</string>
+    <string name="fonts_settings_title">Font</string>
+    <string name="wallpaper_settings_title">Sfondi</string>
+    <string name="lockscreen_wallpaper_settings_title">Sfondo lockscreen</string>
+    <string name="bootanim_settings_title">Bootanimation</string>
+    <string name="soundpack_settings_title">Pacchetti suoni</string>
 
     <!-- DarkUI -->
     <string name="theme_auto_mode_title">UI-Dark</string>
@@ -1317,7 +1342,7 @@ name="quiet_hours_auto_sms_call_title">Chiamate in arrivo </string>
 
     <!-- Contextual notification panel header -->
     <string name="notification_drawer_category_title">Drawer Notifiche </string>
-    <string name="custom_statusbar_header_title">Testato del pannello contestuale </string>
+    <string name="custom_statusbar_header_title">Testata del pannello contestuale </string>
     <string name="custom_statusbar_header_summary">Imposta come testata del Drawer notifiche un immagine a seconda della data e dell\'ora </string>    
 
     <!-- Minimum Vibration Duration -->
@@ -1979,6 +2004,12 @@ name="quiet_hours_auto_sms_call_title">Chiamate in arrivo </string>
     <!--Notification peek-->
     <string name="notification_peek_title">Notifiche peek</string>
     <string name="notification_peek_summary">Mostra l\'ultima notifica quando si prende il telefono</string>
+    <string name="peek_pickup_timeout_title">Timeout disattivazione peek</string>
+    <string name="peek_pickup_15seconds">15 secondi (consigliato)</string>
+    <string name="peek_pickup_30seconds">30 secondi</string>
+    <string name="peek_pickup_45seconds">45 secondi</string>
+    <string name="peek_pickup_60seconds">1 minuto</string>
+    <string name="peek_pickup_120seconds">2 minuti</string>
 
     <!-- Battery Bar -->
     <string name="battery_bar_title">Barra batteria</string>
