@@ -382,7 +382,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="lock_before_unlock_summary">Mostra slider di sblocco prima del meccanismo sicuro di sblocco</string>
 
     <!-- Quick settings panel  -->
-    <string name="quick_settings_panel_title">Pannello Quick Settings</string>
+    <string name="quick_settings_panel_title">Pannello quick settings</string>
     <string name="quick_settings_summary">Aggiungi o rimuovi tiles e cambia altre opzioni dei quick settings</string>
     <string name="title_static_tiles">Tiles Statici</string>
     <string name="tile_picker_title">Tiles e disposizione</string>
@@ -432,7 +432,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="custom_tile_resolve_name">Sconosciuto</string>
     <string name="title_tile_theme">Cambia Tema</string>
 
-    <string name="title_dynamic_tiles">Tile Dinamici</string>
+    <string name="title_dynamic_tiles">Tile dinamici</string>
     <string name="dynamic_tiles_note_title">Nota</string>
     <string name="dynamic_tiles_note_summary">I tile dinamici non sono sempre visibili e sono attivati da eventi di sistema</string>
     <string name="title_dynamic_alarm">Sveglia</string>
@@ -492,11 +492,11 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="quick_tiles_bg_color_title">Colore di sfondo dei tile</string>
     <string name="quick_tiles_bg_pressed_color_title">Tiles pressed background color</string>
     <string name="quick_tiles_text_color_title">Colore testo dei tile</string>
-    <string name="quick_tiles_alpha_title">Trasparenza sfondo dei Tile</string>
+    <string name="quick_tiles_alpha_title">Trasparenza sfondo dei tile</string>
     <string name="qs_style_reset_message">Ripristinare i colori predefiniti?</string>
 
     <!-- QuickSettings fliptiles -->
-    <string name="flip_qs_tiles_title">Gira Tile</string>
+    <string name="flip_qs_tiles_title">Gira tile</string>
     <string name="flip_qs_tiles_summary">Gira i tile al tocco</string>
 
     <!-- QuickSettings haptic feedback -->
@@ -580,7 +580,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="clock_date_display">Data</string>
     <string name="clock_date_display_summar">Mostra data personalizzata prima dell\'ora</string>
     <string name="clock_date_style">Stile data</string>
-    <string name="clock_date_format">Formattazione Data</string>
+    <string name="clock_date_format">Formattazione data</string>
     <string name="clock_date_string_edittext_title">Must be in DateFormat eg. MM/dd/yy</string>
     <string name="clock_date_string_edittext_summary">Enter string</string>
     <string name="am_pm_clock_normal">Grandezza font normale </string>
@@ -738,7 +738,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="shortcut_action_theme_switch">Theme switcher</string>
     <string name="shortcut_action_torch">Torcia</string>
     <string name="shortcut_action_omniswitch">OmniSwitch</string>
-    <string name="shortcut_action_longpress">Tieni Premuto:</string>
+    <string name="shortcut_action_longpress">Tieni premuto:</string>
     <string name="shortcut_action_select_action_longpress">Scegli l\'azione tieni premuto:</string>
     <string name="shortcut_action_select_action">Scegli azione:</string>
     <string name="shortcut_action_select_action_newbutton">Scegli nuovo bottone:</string>
@@ -748,7 +748,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="shortcut_action_max">Hai raggiunto il numero massimo di caratteri</string>
     <string name="shortcut_action_warning">Attenzione</string>
     <string name="shortcut_action_warning_message">Non è possibile eliminare l\'ultimo carattere</string>
-    <string name="shortcut_action_disable_message">Disattivato\nAggiungi un carattere per abilitare questa feature</string>
+    <string name="shortcut_action_disable_message">Disattivato\nAggiungi un\'opzione per abilitare questa feature</string>
     <string name="shortcut_image_not_valid">L\'applicazione scelta non ha dato immagini o non accetta il cambio immagine. Usa un\'altra app</string>
     <string name="shortcut_duplicate_entry">L\'applicazione scelta non può essere aggiunta due volte</string>
     <string name="shortcut_action_help_shortcut">scorciatoia</string>
@@ -834,17 +834,17 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Notification drawer settings  -->
     <string name="notification_drawer_title">Notification drawer</string>
-    <string name="notification_drawer_summary">Aggiungi scorciatoie, Quick Settings e altro </string>
+    <string name="notification_drawer_summary">Aggiungi scorciatoie, quick settings e altro </string>
     <string name="notification_shortcuts_settings_title">Scorciatoie </string>
-    <string name="notification_shortcuts_settings_summary">Aggiungi Quick Settings in fondo al Notification Drawer </string>
+    <string name="notification_shortcuts_settings_summary">Aggiungi quick settings in fondo al notification drawer </string>
 
     <!-- Notification hide labels -->
-    <string name="notification_hide_labels_title">Nascondi gestore/rete Wi-Fi nel Notification Drawer</string>
+    <string name="notification_hide_labels_title">Nascondi gestore/rete Wi-Fi</string>
     <string name="notification_hide_labels_disable">Mostra tutto </string>
-    <string name="notification_hide_labels_carrier">Nascondi Gestore </string>
+    <string name="notification_hide_labels_carrier">Nascondi gestore </string>
     <string name="notification_hide_labels_wifi">Nascondi Wi-Fi </string>
     <string name="notification_hide_labels_all">Nascondi tutto </string>
-    <string name="notification_hide_labels_text">nel Notification Drawer </string>
+    <string name="notification_hide_labels_text">nel notification drawer </string>
 
     <!-- Navigation settings -->
     <string name="navigation_settings_options_title">Opzioni di navigazione</string>
@@ -865,18 +865,18 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="navigation_menu_right">Destra </string>
     <string name="navigation_menu_left">Sinistra </string>
     <string name="navigation_menu_both">Entrambe </string>
-    <string name="navigation_menu_default_jb_behavior">Mostra su richiesta (predefinito)</string>
+    <string name="navigation_menu_default_jb_behavior">Mostra su richiesta (Predefinito)</string>
     <string name="navigation_menu_never_show">Non mostrare mai </string>
     <string name="navigation_menu_always_show">Mostra sempre </string>
     <string name="navigation_bar">Navigation bar</string>
     <string name="navbar_button_cat">Pulsanti della Navigation bar</string>
-    <string name="title_pref_menu_location">Posizione Menu</string>
-    <string name="summary_pref_menu_location">Dove vuoi che appaia il pulsante menù?</string>
-    <string name="title_pref_menu_display">Visibilità Menu</string>
-    <string name="summary_pref_menu_display">Quando e dove vuoi che appaia il pulsante menù?</string>
+    <string name="title_pref_menu_location">Posizione menu</string>
+    <string name="summary_pref_menu_location">Dove vuoi che appaia il pulsante menu?</string>
+    <string name="title_pref_menu_display">Visibilità menu</string>
+    <string name="summary_pref_menu_display">Quando e dove vuoi che appaia il pulsante menu?</string>
     <string name="navbar_enable_bar">Attiva navigation bar </string>
     <string name="navbar_enable_bar_summary">Attiva la navigation bar </string>
-    <string name="navigation_bar_left_title">Modalità Mancino</string>
+    <string name="navigation_bar_left_title">Modalità mancino</string>
     <string name="navigation_bar_left_summary">In modalità orizzontale la navigation bar è sulla sinistra </string>
     <string name="navigation_bar_height_title">Altezza navigation bar </string>
     <string name="navigation_bar_height_summary">Altezza della navigation bar in verticale</string>
@@ -890,16 +890,16 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="navbar_style_dimen_summary">Vedi o cambia le dimensioni della navigation bar</string>
     <string name="navbar_button_title">Pulsanti </string>
     <string name="navigation_button_summary">Vedi o cambia le impostazioni della navigation bar </string>
-    <string name="navbar_targets_title">Scorciatoie "Anello" </string>
+    <string name="navbar_targets_title">Scorciatoie anello</string>
     <string name="navbar_targets_summary">Vedi o cambia le impostazioni dell\'anello della navigation bar </string>
     <string name="navbar_cat">Navigation bar</string>
     <string name="navbar_dimensions_reset_message">Ripristinare tutte le impostazioni di default?</string>
 
     <!-- Navigation bar button style -->
-    <string name="nav_bar_button_style_summary">Change navigation bar button colors</string>
+    <string name="nav_bar_button_style_summary">Cambia colori pulsanti navigation bar</string>
     <string name="button_transparency_title">Trasparenza pulsante </string>
-    <string name="nav_button_color_mode_summary">Change the navigation bar button color mode</string>
-    <string name="navigation_bar_glow_tint_title">Glow color</string>
+    <string name="nav_button_color_mode_summary">Cambia la modalità colore dei pulsanti della navigation bar</string>
+    <string name="navigation_bar_glow_tint_title">Colore bagliore</string>
 
     <!-- Basic Numbers -->
     <string name="two">Due </string>
@@ -1058,15 +1058,15 @@ name="quiet_hours_auto_sms_call_title">Chiamate in arrivo </string>
     <string name="Lockscreen_notifications_header">Notifiche in lockscreen </string>
     <string name="lockscreen_notifications">Notifiche in lockscreen </string>
     <string name="lockscreen_notifications_summary">Mostra notifiche nella lockscreen </string>
-    <string name="pocket_mode">Modalità Pocket</string>
+    <string name="pocket_mode">Modalità pocket</string>
     <string name="pocket_mode_summary">Lo schermo si accende e mostra tutte le notifiche quando il dispositivo è tirato fuori dalla tasca. Lo schermo si spegne quando il dispositivo torna in tasca </string>
     <string name="show_always">Mostra sempre </string>
     <string name="show_always_summary">Accendi sempre lo schermo quando tirato fuori dalla tasca, anche quando non ci sono notifiche </string>
     <string name="hide_low_priority">Nascondi bassa priorità </string>
-    <string name="hide_low_priority_summary">Nascondi le notifiche di bassa priorità come il meteo di Google Now </string>
+    <string name="hide_low_priority_summary">Nascondi le notifiche di bassa priorità come il meteo di google now </string>
     <string name="hide_non_clearable">Nascondi le non toglibili </string>
     <string name="hide_non_clearable_summary">Nascondi tutte le notifiche che non si possono togliere </string>
-    <string name="dismiss_all">Permetti di togliere tutte le notifiche </string>
+    <string name="dismiss_all">Permetti di togliere tutto</string>
     <string name="dismiss_all_summary">Permetti di togliere anche le notifiche non toglibili. Naturalmente rimarranno nel pannello di notifica</string>
     <string name="expanded_view">Notifiche estese </string>
     <string name="expanded_view_summary">Mostra notifiche estese quando possibile </string>
@@ -1092,7 +1092,7 @@ name="quiet_hours_auto_sms_call_title">Chiamate in arrivo </string>
     <string name="lockscreen_target_title">Azioni slider</string>
     <string name="lockscreen_target_summary">Vedi o cambia opzioni personalizzate</string>
     <string name="lockscreen_target_color_title">Colore icona opzione</string>
-    <string name="lockscreen_eight_targets_title">Otto opzioni per lo slider</string>
+    <string name="lockscreen_eight_targets_title">Otto opzioni</string>
     <string name="lockscreen_eight_targets_summary">Attiva otto opzioni per lo slider</string>
     <string name="lockscreen_enable_eight_targets_dialog">Cambiare questa opzione ripristinerà le tue azioni predfinite</string>
     <string name="lockscreen_enable_eight_targets_enabled_dialog">\n\nCon otto opzioni non puoi usare allo stesso tempo le scorciatoie nella lockscreen</string>
@@ -1248,7 +1248,7 @@ name="quiet_hours_auto_sms_call_title">Chiamate in arrivo </string>
     <string name="recent_panel_100">Grande(Predefinito)</string>
     <string name="recent_panel_85">Medio</string>
     <string name="recent_panel_70">Piccolo</string>
-    <string name="recent_panel_expanded_mode_title">Modalità Estensione</string>
+    <string name="recent_panel_expanded_mode_title">Modalità estensione</string>
     <string name="recent_panel_expanded_mode_summary">Modlità anteprima app nel pannello slim recents </string>
     <string name="recent_panel_expanded_mode_auto">Automatica</string>
     <string name="recent_panel_expanded_mode_always">Sempre</string>
@@ -1343,7 +1343,7 @@ name="quiet_hours_auto_sms_call_title">Chiamate in arrivo </string>
     <!-- Contextual notification panel header -->
     <string name="notification_drawer_category_title">Drawer Notifiche </string>
     <string name="custom_statusbar_header_title">Testata del pannello contestuale </string>
-    <string name="custom_statusbar_header_summary">Imposta come testata del Drawer notifiche un immagine a seconda della data e dell\'ora </string>    
+    <string name="custom_statusbar_header_summary">Imposta come testata del drawer notifiche un immagine a seconda della data e dell\'ora </string>    
 
     <!-- Minimum Vibration Duration -->
     <string name="minimum_vibration_duration">Durata minima vibrazione </string>
@@ -1376,8 +1376,8 @@ name="quiet_hours_auto_sms_call_title">Chiamate in arrivo </string>
     <string name="superuser">Superuser</string>
 
     <!-- Emulate menu key -->
-    <string name="emulate_menu_key_title">Emula tasto menù hardware </string>
-    <string name="emulate_menu_key_summary">Premere il tasto menù sulla navbar mostrerà il menù in basso </string>
+    <string name="emulate_menu_key_title">Emula tasto menu hardware </string>
+    <string name="emulate_menu_key_summary">Premere il tasto menu sulla navbar mostrerà il menu in basso </string>
 
     <!-- App ops -->
     <string name="app_ops_summaries_coarse_location">Locazione </string>
@@ -1607,7 +1607,7 @@ name="quiet_hours_auto_sms_call_title">Chiamate in arrivo </string>
     <string name="ime_duration_title">Durata IME </string>
 
     <!-- Smooth ProgressBar -->
-    <string name="progressbar_title">Barra di Avanzamento </string>
+    <string name="progressbar_title">Barra di avanzamento </string>
     <string name="progressbar_summary">Vedi o cambia le impostazioni della barra di avanzamento </string>
     <string name="progressbar_mirror_title">Modalità specchio </string>
     <string name="progressbar_reverse_title">Invertito </string>
@@ -1619,12 +1619,12 @@ name="quiet_hours_auto_sms_call_title">Chiamate in arrivo </string>
     <string name="progressbar_color_2_title">Colore 2</string>
     <string name="progressbar_color_3_title">Colore 3</string>
     <string name="progressbar_color_4_title">Colore 4</string>
-    <string name="sample_progressbar_text">Barra di avanzamento: Anteprima </string>
+    <string name="sample_progressbar_text">Barra di avanzamento: anteprima </string>
     <string name="progressbar_interpolator">Movimento </string>
     <string name="progressbar_none">Nessuno </string>
     <string name="progressbar_acclerate">Accelera </string>
     <string name="progressbar_linear">Lineare </string>
-    <string name="progressbar_acceleratedecelerate">Accelera Decelera </string>
+    <string name="progressbar_acceleratedecelerate">Accelera decelera </string>
     <string name="progressbar_decelerate">Decelera </string>
     <string name="progressbar_reset_message">Ripristinare le impostazioni della barra di avanzamento? </string>
     <string name="ram_bar_button_reset">Ripristina colori </string>
@@ -1733,12 +1733,12 @@ name="quiet_hours_auto_sms_call_title">Chiamate in arrivo </string>
     <string name="system_bar_visibility_summary">Durante l\'immersive mode, la barra di stato e la navigation bar sono mostrate nella lockscreen </string>
 
     <!-- Notification Reminders -->
-    <string name="noti_reminder_category">Ricorda Notifiche </string>
-    <string name="noti_reminder_enable_title">Attiva il Ricorda Notifiche </string>
+    <string name="noti_reminder_category">Ricorda notifiche </string>
+    <string name="noti_reminder_enable_title">Attiva il ricorda notifiche </string>
     <string name="noti_reminder_sound_title">Suono di notifica </string>
     <string name="noti_reminder_sound_looping">Fino a che non viene pulita </string>
-    <string name="noti_reminder_ringtone">Suoneria di Notifica</string>
-    <string name="noti_reminder_interval">Intervallo Rotazione </string>
+    <string name="noti_reminder_ringtone">Suoneria di notifica</string>
+    <string name="noti_reminder_interval">Intervallo rotazione </string>
     <string name="noti_reminder_interval_1s">1 secondo </string>
     <string name="noti_reminder_interval_1dot5s">1.5 secondi </string>
     <string name="noti_reminder_interval_2s">2 secondi </string>
@@ -1762,6 +1762,10 @@ name="quiet_hours_auto_sms_call_title">Chiamate in arrivo </string>
     <string name="lockscreen_lock_color_summary">Colore del lucchetto di sblocco </string>
     <string name="lockscreen_dots_color_title">Colore puntini </string>
     <string name="lockscreen_dots_color_summary">Colore dei puntini intorno al lucchetto </string>
+    <string name="lockscreen_targets_color_title">Colore obiettivo</string>
+    <string name="lockscreen_targets_color_summary">Colore dell\'obiettivo scelto</string>
+    <string name="lockscreen_misc_color_title">Colori vari</string>
+    <string name="lockscreen_misc_color_summary">Colore degli elementi rimanenti</string>
 
     <!-- Lockscreen Wallpaper -->
     <string name="lockscreen_wallpaper_title">Sfondo lockscreen </string>
@@ -1773,21 +1777,21 @@ name="quiet_hours_auto_sms_call_title">Chiamate in arrivo </string>
     <string name="double_tap_sleep_secure_lockscreen_category">Lockscreen sicura </string>
     <string name="status_bar_double_tap_sleep_status_bar_title">Barra di stato </string>
     <string name="status_bar_double_tap_sleep_status_bar_summary">Doppio tocco ovunque sulla barra di stato </string>
-    <string name="status_bar_double_tap_sleep_glowpad_title">Glow pad</string>
-    <string name="status_bar_double_tap_sleep_glowpad_summary">Double tap the glow pad</string>
-    <string name="status_bar_double_tap_sleep_pin_password_title">Pin e Password </string>
-    <string name="status_bar_double_tap_sleep_pin_password_summary">Double tap the text entry view</string>
-    <string name="status_bar_double_tap_sleep_pattern_title">Tipo</string>
-    <string name="status_bar_double_tap_sleep_pattern_summary">Doppio tocco ovunque </string>
+    <string name="status_bar_double_tap_sleep_glowpad_title">Pad bagliore</string>
+    <string name="status_bar_double_tap_sleep_glowpad_summary">Doppio tap sul pad</string>
+    <string name="status_bar_double_tap_sleep_pin_password_title">Pin e password </string>
+    <string name="status_bar_double_tap_sleep_pin_password_summary">Doppio tocco sul testo di entrata</string>
+    <string name="status_bar_double_tap_sleep_pattern_title">Sempre</string>
+    <string name="status_bar_double_tap_sleep_pattern_summary">Doppio tocco ovunque</string>
 
     <!-- Notification count -->
-    <string name="notification_count_title">Contatore Notifiche </string>
+    <string name="notification_count_title">Contatore notifiche </string>
     <string name="notification_count_summary">Mostra il numero di notifiche in sospeso sulla barra di stato </string>
 
     <!-- System Bars -->
     <string name="system_bars_title">Barre di sistema </string>
     <string name="system_bars_summary">Cambia opzioni della barra di stato e della navigation bar </string>
-    <string name="immersive_mode_title">Modalità Immersive</string>
+    <string name="immersive_mode_title">Modalità immersive</string>
     <string name="summary_immersive_mode">%1$s</string>
     <string name="immersive_mode_summary_status_bar">Con la barra di stato </string>
     <string name="immersive_mode_summary_no_status_bar">Senza barra di stato </string>
@@ -1850,7 +1854,7 @@ name="quiet_hours_auto_sms_call_title">Chiamate in arrivo </string>
     <string name="voice_tts_new_sms">Nuovo messaggio da </string>
     <!-- require add space in the end of string -->
     <string name="voice_tts_new_notif">Nuova notifica da </string>
-    <string name="voice_tts_title">Modalità alla Guida </string>
+    <string name="voice_tts_title">Modalità alla guida </string>
     <string name="voice_tts_summary">Attiva la modalità alla guida e poi scegli cosa vuoi che sia riprodotto </string>
     <string name="tts_settings_reset_message">Ripristinare tutte le impostazioni di default? </string>
     <string name="voice_tts_notification_title">Modalità alla Guida </string>
@@ -1929,8 +1933,8 @@ name="quiet_hours_auto_sms_call_title">Chiamate in arrivo </string>
     <string name="time_five_to">Cinque alle</string>
 
     <!-- Pie Control -->
-    <string name="pie_control_title">PIE</string>
-    <string name="pie_control_summary">Attiva pie control per aiutarti durante l\'immersive mode </string>
+    <string name="pie_control_title">Pie control</string>
+    <string name="pie_control_summary">Attiva controlli pie per aiutarti durante l\'immersive mode </string>
     <string name="pie_control_size">Grandezza </string>
     <string name="pie_control_trigger_positions">Opzioni inneschi </string>
     <string name="pie_control_trigger_left">Innesco a sinistra </string>
@@ -1951,7 +1955,7 @@ name="quiet_hours_auto_sms_call_title">Chiamate in arrivo </string>
     <string name="pie_icon_color_mode_dialog_title">Colora</string>
     <string name="pie_icon_color_mode_summary">Cambia la modalità del colore dei pulsanti </string>
     <string name="pie_trigger_note_title">Nota</string>
-    <string name="pie_trigger_note_summary">Per evitare conflitti con la barra di stato o la navigation bar, gli inneschi su questi lati sono automaticamente spenti se uno o entrambi sono disponibili </string>
+    <string name="pie_trigger_note_summary">Per evitare conflitti con la barra di stato o la navigation bar, i rispettivi inneschi sono automaticamente spenti se uno o entrambi sono disponibili </string>
     <string name="pie_background_color_title">Colore sfondo </string>
     <string name="pie_snap_color_title">Colore agganci </string>
     <string name="pie_text_color_title">Colore testo </string>
@@ -1972,7 +1976,7 @@ name="quiet_hours_auto_sms_call_title">Chiamate in arrivo </string>
     <string name="pie_button_second_layer_summary">Cambia pulsanti del secondo arco del pie </string>
     <string name="pie_button_style_summary">Cambia stile pulsanti pie </string>
     <string name="pie_style_reset_message">Ripristinare i valori di default? </string>
-    <string name="pie_disable_ime_triggers_title">Riduci grandezza inneschi con la tastiera </string>
+    <string name="pie_disable_ime_triggers_title">Riduci grandezza con la tastiera</string>
     <string name="pie_disable_ime_triggers_summary">Riduci gli inneschi da destra e sinistra se c\'è la tastiera </string>    
  <!-- Shortcuts -->
     <string name="shortcut_picker">Azioni</string>
