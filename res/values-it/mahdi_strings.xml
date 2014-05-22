@@ -254,13 +254,13 @@
 
     <!-- Blacklist preferences -->
     <string name="blacklist_title">Blacklist</string>
-    <string name="blacklist_edit_dialog_title">Modifica Black List</string>
+    <string name="blacklist_edit_dialog_title">Modifica blacklist</string>
     <string name="blacklist_prefs">Impostazioni</string>
     <string name="blacklist_button_delete">Cancella</string>
-    <string name="blacklist_empty_text">Non hai nessun numero nella Black List. Aggiungilo premendo il tasto Aggiungi (+).</string>
-    <string name="blacklist_disabled_empty_text">Per bloccare chiamate o messaggi da un numero, abilitare la Black List </string>
+    <string name="blacklist_empty_text">Non hai nessun numero nella blacklist. Aggiungilo premendo il tasto Aggiungi (+).</string>
+    <string name="blacklist_disabled_empty_text">Per bloccare chiamate o messaggi da un numero, abilitare la blacklist </string>
     <string name="blacklist_summary_disabled">Disattiva</string>
-    <string name="blacklist_summary">Chiamate in arrivo e messaggi dai numeri in Black List saranno bloccati.</string>
+    <string name="blacklist_summary">Chiamate in arrivo e messaggi dai numeri in blacklist saranno bloccati.</string>
     <string name="blacklist_notify">Mostra Notifica</string>
     <string name="blacklist_private_numbers_title">Numeri Privati</string>
     <string name="blacklist_private_numbers_summary_disabled">Non bloccare chiamate dai numeri privati</string>
@@ -279,7 +279,7 @@
     <!-- Blacklist management -->
     <string name="add_blacklist_number">Aggiungi numero</string>
     <string name="remove_blacklist_number_title">Rimuovi numero</string>
-    <string name="remove_blacklist_entry">Vuoi rimuovere questo numero dalla Black List?</string>
+    <string name="remove_blacklist_entry">Vuoi rimuovere questo numero dalla blacklist?</string>
     <string name="select_contact">Seleziona Contatto</string>
 
     <!-- Performance Control -->
@@ -873,7 +873,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="title_pref_menu_location">Posizione menu</string>
     <string name="summary_pref_menu_location">Dove vuoi che appaia il pulsante menu?</string>
     <string name="title_pref_menu_display">Visibilità menu</string>
-    <string name="summary_pref_menu_display">Quando e dove vuoi che appaia il pulsante menu?</string>
+    <string name="summary_pref_menu_display">Quando vuoi che appaia il pulsante menu?</string>
     <string name="navbar_enable_bar">Attiva navigation bar </string>
     <string name="navbar_enable_bar_summary">Attiva la navigation bar </string>
     <string name="navigation_bar_left_title">Modalità mancino</string>
@@ -1530,7 +1530,7 @@ name="quiet_hours_auto_sms_call_title">Chiamate in arrivo </string>
     <string name="listview_cache_none">No cache</string>
     <string name="listview_cache_anim">Cache animazione</string>
     <string name="listview_cache_scroll">Cache scroll</string>
-    <string name="listview_cache_all">Animazione \u0026 scroll</string>
+    <string name="listview_cache_all">Animazione &amp; scroll</string>
     <string name="listview_blacklist_title">Applicazione esclusa</string>
     <string name="listview_blacklist_summary">Prevenzione animazione in-app</string>
     <string name="listview_test">Lista di test</string>
@@ -1678,9 +1678,9 @@ name="quiet_hours_auto_sms_call_title">Chiamate in arrivo </string>
     <string name="network_1x">1x </string>
     <string name="network_global">Globale </string>
     <string name="battery_saver_action_undefined">Indefinito </string>
-    <string name="battery_saver_title">Modalità Salva Batteria </string>
+    <string name="battery_saver_title">Modalità salva batteria </string>
     <string name="battery_saver_summary">Scegli modalità risparmio batteria per i dati mobili e il Wi-Fi </string>
-    <string name="pref_battery_saver_enable_title">Salva Batteria </string>
+    <string name="pref_battery_saver_enable_title">Salva batteria </string>
     <string name="pref_battery_saver_enable_summary">Questo imposterà automaticamente l\'uso della batteria e cambierà la tua modalità di rete a quella da te definita a seconda se si è in Wi-Fi o con i dati mobili </string>
     <string name="pref_battery_saver_enable_no_mobiledata_summary">Questo imposterà automaticamente l\'uso della batteria a quello definito dall\'utente </string>
     <string name="pref_battery_saver_normal_mode_title">Modalità rete normale </string>
