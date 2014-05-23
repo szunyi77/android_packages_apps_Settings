@@ -43,7 +43,7 @@
              android:defaultValue="0xffcccccc"
              android:dependency="quick_tiles_custom_color" />
 
-        <com.android.settings.mahdi.SeekBarPreferenceSlim
+        <SlimSeekBarPreference
              android:key="quick_tiles_alpha"
              android:title="@string/quick_tiles_alpha_title"
              android:dependency="quick_tiles_custom_color" />

@@ -29,6 +29,7 @@ import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
+import android.preference.SlimSeekBarPreference;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.Menu;
@@ -40,7 +41,6 @@ import com.android.internal.util.mahdi.QSUtils;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
 import com.android.settings.Utils;
-import com.android.settings.mahdi.SeekBarPreferenceSlim;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
@@ -75,7 +75,7 @@ public class QuickSettingsTilesStyle extends SettingsPreferenceFragment implemen
     private ColorPickerPreference mQuickTilesBgColor;
 //    private ColorPickerPreference mQuickTilesBgPressedColor;
     private ColorPickerPreference mQuickTilesTextColor;
-    private SeekBarPreferenceSlim mQsTileAlpha;
+    private SlimSeekBarPreference mQsTileAlpha;
 
     private boolean mCheckPreferences;
 
@@ -161,7 +161,7 @@ public class QuickSettingsTilesStyle extends SettingsPreferenceFragment implemen
             Settings.System.putFloat(getContentResolver(),
                     Settings.System.QUICK_TILES_BG_ALPHA, 0.0f);
         }
-        mQsTileAlpha = (SeekBarPreferenceSlim) findPreference(PREF_QUICK_TILES_ALPHA);
+        mQsTileAlpha = (SlimSeekBarPreference) findPreference(PREF_QUICK_TILES_ALPHA);
         mQsTileAlpha.setInitValue((int) (transparency * 100));
         mQsTileAlpha.setOnPreferenceChangeListener(this);
 
