@@ -2162,4 +2162,9 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="headset_plug_actions_kill">Kill app</string>
     <string name="headset_plug_force_actions_title">Force remove action</string>
     <string name="headset_plug_force_actions_summary">Run remove action also if shortcut was already running</string>
+
+    <!--Blacklist-->
+    <string name="blacklist_button_title">Blacklist</string>
+    <string name="peek_blacklist_label">Blacklist from Peek</string>
+    <string name="floating_blacklist_label">Blacklist from Floating Mode</string>
 </resources>
