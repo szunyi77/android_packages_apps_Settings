@@ -155,6 +155,19 @@ public class BatteryBar extends SettingsPreferenceFragment implements OnPreferen
         return false;
     }
 
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        boolean value;
+
+        if (preference == mBatteryBarChargingAnimation) {
+
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_BATTERY_BAR_ANIMATE,
+                    ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+            return true;
+        }
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
+    }
+
     private void batteryBarColorReset() {
         Settings.System.putInt(getActivity().getContentResolver(),
                 Settings.System.STATUSBAR_BATTERY_BAR_COLOR, DEFAULT_STATUSBAR_BATTERY_BAR_COLOR);
