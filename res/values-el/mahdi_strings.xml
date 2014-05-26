@@ -294,7 +294,6 @@
     <xliff:g id="level">%1$d</xliff:g> lux</string>
   <string name="auto_brightness_last_level_format">
     <xliff:g id="level">%1$d</xliff:g> -\n\u221e lux</string>
-    <xliff:g id="percent">%s</xliff:g>%%</string>
   <string name="auto_brightness_adjust_button">Ρύθμιση</string>
   <string name="auto_brightness_close_button">Κλείσιμο</string>
   <string name="auto_brightness_reset_button">Επαναφορά</string>
