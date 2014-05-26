@@ -1289,9 +1289,9 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="new_recents_screen_summary">Replaces the recents screen with one based on the new google cards optic</string>
     <string name="recent_panel_scale_title">Panel size</string>
     <string name="recent_panel_scale_summary">Recent apps panel size</string>
-    <string name="recent_panel_100">100 percent (default)</string>
-    <string name="recent_panel_85">85 percent</string>
-    <string name="recent_panel_70">70 percent</string>
+    <string name="recent_panel_100">Large (default)</string>
+    <string name="recent_panel_85">Medium</string>
+    <string name="recent_panel_70">Small</string>
     <string name="recent_panel_expanded_mode_title">Expanded mode</string>
     <string name="recent_panel_expanded_mode_summary">Recent tasks expanded preview mode</string>
     <string name="recent_panel_expanded_mode_auto">Auto (default)</string>
