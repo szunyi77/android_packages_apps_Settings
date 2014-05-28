@@ -2168,4 +2168,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="peek_blacklist_label">Blacklist from Peek</string>
     <string name="floating_blacklist_label">Blacklist from Floating Mode</string>
     <string name="hover_blacklist_label">Blacklist from Hover</string>
+
+    <!-- Protected Apps -->
+    <string name="menu_hidden_apps_delete">Reset</string>
+    <string name="menu_hidden_apps_reset_lock">Reset pattern lock</string>
+    <string name="protected_apps">Protected apps</string>
+    <string name="saving_protected_components">Saving component state</string>
 </resources>
