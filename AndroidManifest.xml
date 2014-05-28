@@ -1992,7 +1992,7 @@
 
         <activity android:name=".profiles.ProfileGroupConfig" />
 
-        <activity android:name=".profiles.WifiTriggers" />
+        <activity android:name=".profiles.WifiTriggerAPPreference" />
 
         <activity android:name=".profiles.NFCProfileWriter" />
 
