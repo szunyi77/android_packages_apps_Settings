@@ -48,7 +48,6 @@
         <ListPreference
             android:key="shake_auto_timeout"
             android:title="@string/shake_secure_timeout_title"
-            android:dependency="shake_to_secure"
             android:entries="@array/shake_secure_timeout_entries"
             android:entryValues="@array/shake_secure_timeout_values"
             android:persistent="false"/>
