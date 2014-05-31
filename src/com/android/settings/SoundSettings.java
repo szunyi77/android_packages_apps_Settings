@@ -89,7 +89,6 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private static final String KEY_POWER_NOTIFICATIONS_VIBRATE = "power_notifications_vibrate";
     private static final String KEY_POWER_NOTIFICATIONS_RINGTONE = "power_notifications_ringtone";
     private static final String PREF_LESS_NOTIFICATION_SOUNDS = "less_notification_sounds";
-    private static final String KEY_VIBRATE_DURING_CALLS = "notification_vibrate_during_calls";
     private static final String KEY_QUIET_HOURS = "quiet_hours";
 
     private static final String[] NEED_VOICE_CAPABILITY = {
@@ -116,7 +115,6 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private CheckBoxPreference mLockSounds;
     private Preference mRingtonePreference;
     private Preference mNotificationPreference;
-    private CheckBoxPreference mVibrateDuringCalls;
     private Preference mDockAudioSettings;
     private CheckBoxPreference mDockSounds;
     private Intent mDockIntent;
@@ -232,15 +230,10 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         mLockSounds.setChecked(Settings.System.getInt(resolver,
                 Settings.System.LOCKSCREEN_SOUNDS_ENABLED, 1) != 0);
 
-        mVibrateDuringCalls = (CheckBoxPreference) findPreference(KEY_VIBRATE_DURING_CALLS);
-        mVibrateDuringCalls.setChecked(Settings.System.getInt(resolver,
-                Settings.System.NOTIFICATION_VIBRATE_DURING_ALERTS_DISABLED, 0) != 0);
-
         if (mVib == null || !mVib.hasVibrator()) {
             removePreference(KEY_VIBRATE);
             removePreference(KEY_HAPTIC_FEEDBACK);
             removePreference(KEY_VIBRATION_DURATION);
-            removePreference(KEY_VIBRATE_DURING_CALLS);
           }
 
         if (TelephonyManager.PHONE_TYPE_CDMA == activePhoneType) {
@@ -423,11 +416,6 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         } else if (preference == mLockSounds) {
             Settings.System.putInt(getContentResolver(), Settings.System.LOCKSCREEN_SOUNDS_ENABLED,
                     mLockSounds.isChecked() ? 1 : 0);
-
-        } else if (preference == mVibrateDuringCalls) {
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.NOTIFICATION_VIBRATE_DURING_ALERTS_DISABLED,
-                    mVibrateDuringCalls.isChecked() ? 1 : 0);
 
         } else if (preference == mMusicFx) {
             // let the framework fire off the intent

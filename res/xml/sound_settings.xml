@@ -74,12 +74,6 @@
              android:title="@string/vibrate_when_ringing_title"
              android:persistent="false" />
 
-        <CheckBoxPreference
-            android:key="notification_vibrate_during_calls"
-            android:title="@string/notification_vibrate_during_calls_title"
-            android:persistent="false"
-            android:defaultValue="false" />
-
     <PreferenceCategory
         android:title="@string/sound_category_system_title"/>
 

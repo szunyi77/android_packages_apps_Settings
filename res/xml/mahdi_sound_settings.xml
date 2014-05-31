@@ -41,12 +41,6 @@
             settings:unitsRight="sec"
             android:persistent="false" />
 
-        <PreferenceScreen
-            android:key="volume_steps_settings"
-            android:fragment="com.android.settings.mahdi.VolumeSteps"
-            android:title="@string/volume_steps_title"
-            android:summary="@string/volume_steps_summary" />
-
         <com.android.settings.mahdi.SystemSettingCheckBoxPreference
             android:key="volume_music_controls"
             android:title="@string/volbtn_music_controls_title"
