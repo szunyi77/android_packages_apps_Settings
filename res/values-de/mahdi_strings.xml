@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2012-2013 The Mahdi-Rom Project
+<!-- Copyright (C) 2012-2014 The Mahdi-Rom Project
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -92,6 +92,7 @@ limitations under the License.
     <!-- Power menu enable disable -->
     <string name="power_menu_title">Ein/Aus-Taste</string>
     <string name="power_menu_summary">Konfiguration des Ein/Aus-Tastenmenüs</string>
+    <string name="lockscreen_enable_power_menu_title">Ein/Aus-Tastenmenü im Sperrbildschirm aktivieren</string>
     <string name="power_menu_reboot_title">Neustartmenü</string>
     <string name="power_menu_screenshot_title">Bildschirmfoto</string>
     <string name="power_menu_screenrecord_title">Bildschirmrekorder</string>
@@ -99,7 +100,8 @@ limitations under the License.
     <string name="power_menu_airplane_title">Flugmodus</string>
     <string name="power_menu_silent_title">Lautlos</string>
     <string name="power_menu_expanded_desktop">Erweiterter Desktop</string> 
-
+    <string name="power_menu_mobile_data">Mobile Datenverbindung</string>
+	
     <!-- Advanced reboot options -->
     <string name="advanced_reboot_title">Erweitertes Neustartmenü</string>
     <string name="advanced_reboot_summary">Bei entsperrtem Bildschirm dem Neustartmenü Optionen für Neustart in Recovery und Bootloader hinzufügen.</string>
@@ -394,6 +396,10 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="shake_to_secure_dlg_title">Achtung:</string>
     <string name="shake_to_secure_dlg_message">Das Gerät wird ungesichert sein, bis durch erneutes Schütteln eine erneute vorübergehende Sicherung aktiviert wird. Wenn Ihr Gerät erfolgreich entsperrt wird es unsicher, bis Sie erneut schütteln.</string>
     <string name="shake_secure_timeout_title">Automatisch wieder sichern</string>
+    <string name="shake_all">In alle Richtungen schütteln</string>
+    <string name="shake_horizontal">Horizontal schütteln</string>
+    <string name="shake_vertical">Vertikal schütteln</string>
+    <string name="shake_back_forth">Vor und Zurück schütteln</string>
     <string name="shake_secure_timeout_disabled">Nicht wieder sichern</string>
     <string name="shake_secure_timeout_1min">1 Minute nach Bildschirmabschaltung</string>
     <string name="shake_secure_timeout_5min">5 Minuten nach Bildschirmabschaltung</string>
@@ -500,6 +506,7 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="title_tile_profile">Profile</string>
     <string name="title_tile_autorotate">Bildschirmausrichtung</string>
     <string name="title_tile_settings">Einstellungen</string>
+    <string name="title_tile_shake">Schüttelevents</string> 
     <string name="title_tile_sound">Klingelmodus</string>
     <string name="title_tile_sync">Synchronisation</string>
     <string name="title_tile_wifiap">WLAN-Hotspot</string>
@@ -524,10 +531,12 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="custom_toggle_extras">Extras</string>
     <string name="custom_toggle_collapse_check">Benachrichtigungsschattierung</string>
     <string name="custom_toggle_match_state_check">Symbolübereinstimmung</string>
+    <string name="custom_toggle_double_click_check">Zweimal Tippen um zur vorherigen Aktion zu wechseln</string> 
     <string name="custom_tile_long_press">Langer Druck:</string>
     <string name="custom_tile_null_warning">Zuerst muss eine Aktion festgelegt werden</string>
     <string name="custom_tile_resolve_name">Unbekannt</string>
     <string name="title_tile_theme">Design-Umschalter</string>
+    <string name="title_tile_batterysaver">Energiesparmodus</string>
 
     <string name="title_dynamic_tiles">Dynamische Kacheln</string>
     <string name="dynamic_tiles_note_title">Hinweis</string>
@@ -535,6 +544,7 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="title_dynamic_alarm">Wecker</string>
     <string name="title_dynamic_bugreport">Fehlerprotokollierung</string>
     <string name="title_dynamic_dock_battery">Dock-Akku</string>
+    <string name="title_dynamic_equalizer">Equalizer</string>
     <string name="title_dynamic_ime">Eingabemethode wählen</string>
     <string name="title_dynamic_usbtether">USB-Tethering</string>
     <string name="title_dynamic_wifi">Kabellose Übertragung</string>
@@ -556,6 +566,7 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="smart_pulldown_off">Deaktiviert</string>
     <string name="smart_pulldown_dismissable">keine löschbaren</string>
     <string name="smart_pulldown_persistent">keine dauerhaften</string>
+    <string name="smart_pulldown_all">Keine löschbaren oder dauerhaften</string>
 
     <!-- QuickSettings: Custom Tile -->
     <string name="custom_tile_dialog_text">Jede Aktion wird eine neue Funktion zu den Kacheln hinzuzufügen. Jeder Tip aktiviert die nächste Funktion. Langer Druck fügt eine weitere Funktion für langes Drücken hinzu. Wenn keine Tipp-Aktion festgelegt wurde wird das Symbol für langes Drücken gesetzt. Damit können sie Funktionen durch kurzes Tippen ändern und Aktionen durch langes Drücken starten.</string>
@@ -586,6 +597,8 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="tiles_per_row_title">Kacheln pro Reihe</string>
     <string name="tiles_per_row_duplicate_landscape_title">Querformat anpassen</string>
     <string name="tiles_per_row_duplicate_landscape_summary">Querformat verdoppelt die Anzahl der Kacheln pro Reihe</string>
+    <string name="quick_tiles_color_title">Bnutzerdefinierte Farben aktivieren</string>
+    <string name="quick_tiles_color_summary">Aktivierte benutzerdefinierte Farben überschreiben die Änderungen von Themen</string>
     <string name="quick_tiles_bg_color_title">Hintergrundfarbe </string>
     <string name="quick_tiles_bg_pressed_color_title">Hintergrundfarbe gedrückt</string>
     <string name="quick_tiles_text_color_title">Textfarbe</string>
@@ -806,6 +819,7 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="adb_over_network_warning">WARNUNG:\n\nWenn ADB über Netzwerk eingeschaltet wird, ist das Gerät anfällig für das Eindringen Fremder aus allen verbundenen Netzwerken - auch Mobilfunknetzwerken.\n\nEine Verbindung sollte nur mit einem vertrauenswürdigen Netzwerk hergestellt werden.\n\nTrotzdem aktivieren?</string>
 
     <!-- Button shorcut actions -->
+    <string name="shortcut_action_keyguard_camera">Sperrbildschirm-Kamera</string>	
     <string name="shortcut_action_navbar">Navigationsleiste</string>
     <string name="shortcut_action_pie">Pie Steuerung</string>
     <string name="shortcut_action_app">App</string>
@@ -849,6 +863,7 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="shortcut_duplicate_entry">Die gewünschte Aktion kann nicht zweimal ausgewählt werden</string>
     <string name="shortcut_action_help_shortcut">Verknüpfung</string>
     <string name="shortcut_action_help_button">Eintrag</string>
+    <string name="shortcut_action_help_app">App</string>
     <string name="shortcut_action_help_icon">, Auswahl der Symbole öffnet die Konfigurationsoptionen</string>
     <string name="shortcut_action_help_main">Um einen %1$s hinzuzufügen wähle das Hinzufügensymbol. Wenn ein %1$s hinzugefügt wurde, kann durch verschieben des Positionssymbols dessen Plazierung angepasst werden. %2$s\n\nUm einen %1$s, zu entfernen diesen einfach nach links oder rechts raus wischen.\n\nUm die Standardwerte wieder herzustellen benutze das Zurücksetzen-Symbol.</string>
     <string name="shortcut_action_help_delete_last_entry">Löschen aller %1$s deaktiviert die Funktion.</string>
@@ -1024,9 +1039,9 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="quiet_hours_dim">Benachrichtigungslicht deaktivieren</string>
     <string name="quiet_hours_dim_on">Benachrichtigungslicht deaktiviert</string>
     <string name="quiet_hours_dim_off">Benachrichtigungslicht wie eingestellt</string>
-    <string name="quiet_hours_system">Systemtöne deaktivieren</string>
-    <string name="quiet_hours_system_on">Systemtöne deaktiviert</string>
-    <string name="quiet_hours_system_off">Systemtöne wie eingestellt</string>
+    <string name="quiet_hours_system">Stummschaltung Systemtöne</string>
+    <string name="quiet_hours_system_on">Systemtöne werden nicht wiedergegeben</string>
+    <string name="quiet_hours_system_off">Systemtöne werden normal wiedergegeben</string>
     <string name="quiet_hours_haptic">Haptisches Feedback deaktivieren</string>
     <string name="quiet_hours_haptic_on">Haptisches Feedback deaktiviert</string>
     <string name="quiet_hours_haptic_off">Haptisches Feedback wie eingestellt</string>
@@ -1124,9 +1139,16 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="screen_recorder_bitrate_50000000">50000000</string>
     <string name="screen_recorder_bitrate_100000000">100000000</string>
 
+    <!-- Custom lockscreen options -->
+    <string name="lockscreen_custom_title">Sperrbildschirm Benutzeroptionen</string>
+    <string name="lockscreen_custom_summary">Konfiguration von Verknüpfungen und Benachrichtigungen</string>
+
     <!-- Lockscreen widget settings -->
     <string name="title_widgets">Widgets</string>
     <string name="lockscreen_widgets_title">Widgets</string>
+    <string name="lockscreen_allow_all_title">Alle Widgets erlauben</string>
+    <string name="lockscreen_allow_all_summary">Auch Widgets die den Sperrbildschirm nicht nativ unterstützen</string>
+    <string name="lockscreen_allow_all_warning">Einige Widgets verhalten sich nicht wie erwartet, wenn diese auf dem Sperrbildschirm platziert werden. Manche Widgets können persönlichen Daten darstellen. Bitte diese Warnung beachten bevor Sie fortfahren.</string>
     <string name="lockscreen_camera_widget_title">Kamera-Widget aktivieren</string>
     <string name="lockscreen_camera_widget_summary">Kamera auf der rechten Seite des Sperrbildschirms anzeigen</string>
     <string name="lockscreen_maximize_widgets_title">Widgets maximieren</string>
@@ -1191,7 +1213,7 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="lockscreen_target_reset_message">Anwendungen vom Sperrbildschirm löschen und auf Standard zurücksetzen?</string>
     <string name="lockscreen_target_empty">Nicht zugewiesen</string>
     <string name="lockscreen_target_edit_title">Zuordnung bearbeiten</string>
-    <string name="lockscreen_target_edit_msg">Anwendung oder Symbol zum Ändern berühren</string>
+    <string name="lockscreen_target_edit_msg">Anwendung oder Symbol zum ändern berühren</string>
 
     <!-- Description of accessibility direction for targets [CHAR LIMIT=NONE] -->
     <string name="accessibility_target_direction">Schieber zur gewünschten Position ziehen um ein Ziel zu aktivieren</string>
@@ -1262,8 +1284,8 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="development_shortcut_summary">Aktiviert \'wipe data\' und \'force close\' Optionen in den Benachrichtigungen und im Anwendungsverlauf</string>
 
     <!-- Recents panel menu -->
-    <string name="recents_panel_settings_title">Anwendungsverlauf</string>
-    <string name="recents_panel_settings_summary">Konfiguration des Anwendungsverlaufs</string>
+    <string name="recents_panel_settings_title">Multitasking</string>
+    <string name="recents_panel_settings_summary">Konfiguration der Multitaskingoptionen und des Anwendungsverlaufs</string>
 
     <!-- Recents clear all -->
     <string name="aosp_recents_category">Google Anwendungsverlauf</string>
@@ -1282,9 +1304,9 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="new_recents_screen_summary">Ersetzt den Bildschirm des Anwendungsverlaufs mit einer auf Grundlage der neuen Google-Karten-Optik basierenden Alternative.</string>
     <string name="recent_panel_scale_title">Platzbedarf</string>
     <string name="recent_panel_scale_summary">Feldgröße in Prozent.</string>
-    <string name="recent_panel_100">100% (Standard)</string>
-    <string name="recent_panel_85">85%</string>
-    <string name="recent_panel_70">70%</string>
+    <string name="recent_panel_100">Groß (Standard)</string>
+    <string name="recent_panel_85">Mittel</string>
+    <string name="recent_panel_70">Klein</string>
     <string name="recent_panel_expanded_mode_title">Darstellung</string>
     <string name="recent_panel_expanded_mode_summary">Darstellung der Anwendungsvorschau festlegen</string>
     <string name="recent_panel_expanded_mode_auto">Automatisch (Standard)</string>
@@ -1297,7 +1319,7 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
 
     <!-- Message of dialog confirming that user wants to restart their device with a new runtime -->
     <string name="custom_runtime_warning_title">Achtung!</string>
-    <string name="custom_runtime_warning_message">ART wird von Mahdi-Rom nicht unterstützt. Diese Einstellung ist nur für experimentelle Versuche und kann zu Datenverlust bis zur Funktionsuntüchtigkeit des Geräts führen. Besuche &lt;a href=\"http://source.android.com/devices/tech/dalvik/art.html\"&gt;Introducing ART&lt;/a&gt; für weiter Informationen.&lt;br/&gt;&lt;br/&gt;Bitte keine Fehlerberichte bei aktivierter ART Runtime.&lt;br/&gt;&lt;br/&gt; Willst du ganz sicher die Runtime von <xliff:g id="old" example="libdvm.so">%1$s</xliff:g> zu <xliff:g id="new" example="libart.so">%2$s</xliff:g> wechseln?</string>
+    <string name="custom_runtime_warning_message">ART wird von Mahdi-Rom nicht unterstützt. Diese Einstellung ist nur für experimentelle Versuche und kann zu Datenverlust bis hin zur Funktionsuntüchtigkeit des Geräts führen. Besuche &lt;a href=\"http://source.android.com/devices/tech/dalvik/art.html\"&gt;Introducing ART&lt;/a&gt; für weitere Informationen.&lt;br/&gt;&lt;br/&gt;Bitte keine Fehlerberichte bei aktivierter ART Runtime.&lt;br/&gt;&lt;br/&gt; Willst du ganz sicher die Runtime von <xliff:g id="old" example="libdvm.so">%1$s</xliff:g> zu <xliff:g id="new" example="libart.so">%2$s</xliff:g> wechseln?</string>
 
     <!-- Less Notification sounds -->
     <string name="notifications_category_title">Benachrichtigungen</string>
@@ -1805,6 +1827,14 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="lockscreen_misc_color_title">Sonstige Farben</string>
     <string name="lockscreen_misc_color_summary">Farbe der verbleibenden Elemente</string>
 
+    <!-- Themes -->
+    <string name="theme_settings_title_slim">Themen</string>
+    <string name="theme_auto_mode_title">Dunkles UI</string>
+    <string name="theme_auto_mode_off">Manuell</string>
+    <string name="theme_auto_mode_lightsensor">Bei Änderung der Lichtverhältnisse</string>
+    <string name="theme_auto_mode_twilight">Tageszeitabhängig</string>
+    <string name="theme_auto_switch_mode_error">Automatischer Änderungsmodus durch Lichtverhältnisse aktiviert. Manuelles Umschalten nicht möglich.</string>
+	
     <!-- Double-tap to sleep -->
     <string name="double_tap_sleep_title">Double-Tap-Schlafmodus</string>
     <string name="double_tap_to_sleep_summary">Konfiguration des Double-Tap-Schlafmodus</string>
@@ -1956,7 +1986,7 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="time_oclock">Uhr</string>
     <string name="time_five_past">Fünf nach</string>
     <string name="time_ten_past">Zehn nach</string>
-    <string name="time_quarter_past">Vietel nach</string>
+    <string name="time_quarter_past">Viertel nach</string>
     <string name="time_twenty_past">Zwanzig nach</string>
     <string name="time_twenty_five_past">Fünfundzwanzig nach</string>
     <string name="time_half_past">halb</string>
@@ -2025,7 +2055,7 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="background_result_not_successful">Hintergrundbild nicht geändert</string>
     <string name="setting_lockscreen_background">Hintergrund wird eingerichtet</string>
     <!-- Custom lockscreen -->
-    <string name="lockscreen_enable_modlock_title">Benutzerdefinierte Display-Sperre</string>
+    <string name="lockscreen_enable_modlock_title">Benutzerdefinierter Sperrbildschirm</string>
 
     <!-- Bluetooth accept all file types -->
     <string name="bluetooth_accept_all_files">Akzeptieren aller Dateitypen</string>
@@ -2041,13 +2071,19 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <!--Notification category-->
     <string name="notification_category">Benachrichtigungen</string>
     <!--Notification peek-->
-    <string name="notification_peek_title">Benachrichtigung bei Aufnahme</string>
+    <string name="notification_peek_title">Peek-Benachrichtigungen</string>
     <string name="notification_peek_summary">Anzeige der neuesten Benachrichtigungen nach Aufnahme des Gerätes</string>
-
+    <string name="peek_pickup_timeout_title">Aufnahme-Timeout</string>
+    <string name="peek_pickup_15seconds">15 Sekunden (Standard)</string>
+    <string name="peek_pickup_30seconds">30 Sekunden</string>
+    <string name="peek_pickup_45seconds">45 Sekunden</string>
+    <string name="peek_pickup_60seconds">1 Minute</string>
+    <string name="peek_pickup_120seconds">2 Minuten</string>
+	
     <!-- Battery Bar -->
     <string name="battery_bar_title">Batterieleiste</string>
-    <string name="battery_bar_summary">Konfiguration der Baterieleiste</string>
-    <string name="battery_bar">Battery bar location</string>
+    <string name="battery_bar_summary">Konfiguration der Batterieleiste</string>
+    <string name="battery_bar">Position</string>
     <string name="battery_bar_color">Farbe</string>
     <string name="battery_bar_cat">Aussehen</string>
     <string name="battery_bar_style_title">Ausrichtung</string>
@@ -2058,6 +2094,7 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
 
     <!-- Volume Steps -->
     <string name="volume_steps_title">Lautstärkestufen</string>
+    <string name="volume_steps_summary">Anzahl der Stufen zwischen Minmum und Maximum</string>
     <string name="volume_steps_60">60</string>
     <string name="volume_steps_45">45</string>
     <string name="volume_steps_30">30</string>
@@ -2071,4 +2108,30 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="volume_steps_ring_title">Klingelton</string>
     <string name="volume_steps_system_title">System</string>
     <string name="volume_steps_voice_call_title">Anrufe</string>
+
+    <!-- Shake Events -->
+    <string name="shake_events_title">Schüttelevents</string>
+    <string name="keyguard_shake_events_title">Schüttelevents</string>
+    <string name="shake_events_summary">Benutzerdefinierte Aktionen durch Schütteln des Geräts durchführen</string>
+    <string name="shake_events_enabled_title">Schütteln aktivieren</string>
+    <string name="shake_events_normal_title">Schüttelevents aktivieren</string>
+    <string name="shake_events_disabled_title">Apps ausschließen</string>
+    <string name="shake_events_disabled_summary">Funktion wird bei Verwendung dieser Apps deaktiviert</string>
+    <string name="shake_event_x_title">Funktion bei horizontalem schütteln</string>
+    <string name="shake_event_y_title">Funktion bei vertikalem schütteln</string>
+    <string name="shake_event_z_title">Funktion bei vor und zurück schütteln</string>
+    <string name="keyguard_shake_events_cat">Sperrbildschirm</string>
+    <string name="keyguard_shake_events_title">Sperrbildschirm Schüttelevents</string>
+
+    <!-- Shake sensitivity -->
+    <string name="shake_sensitivity_title">Schüttelempfindlichkeit</string>
+    <string name="shake_sensitivity_summary">Globale Empfindlichkeit aller Schüttelpräferenzen</string>
+    <string name="shake_sensitivity_less_sensitive">Weniger Empfindlich</string>
+    <string name="shake_sensitivity_more_sensitive">Mehr Empfindlich</string>
+
+    <!-- Data Usage -->
+    <!-- Subtitle of dialog for editing data usage cycle reset date. [CHAR LIMIT=32] -->
+    <string name="data_usage_cycle_editor_subtitle_cm">Zyklusdatum:</string>
+    <!-- Subtitle of dialog for editing data usage cycle length. [CHAR LIMIT=32] -->
+    <string name="data_usage_lengths_spinner_subtitle">Zykluslänge:</string>
 </resources>
