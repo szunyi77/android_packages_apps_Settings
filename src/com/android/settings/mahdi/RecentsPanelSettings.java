@@ -43,6 +43,7 @@ public class RecentsPanelSettings extends SettingsPreferenceFragment implements
     private static final String TAG = "RecentsPanelSettings";
 
     private static final String CUSTOM_RECENT_MODE = "custom_recent_mode";
+    private static final String RECENT_PANEL_SHOW_TOPMOST = "recent_panel_show_topmost";
     private static final String RECENT_PANEL_LEFTY_MODE = "recent_panel_lefty_mode";
     private static final String RECENT_PANEL_SCALE = "recent_panel_scale";
     private static final String RECENT_PANEL_EXPANDED_MODE = "recent_panel_expanded_mode";
@@ -50,6 +51,7 @@ public class RecentsPanelSettings extends SettingsPreferenceFragment implements
     private static final String RECENT_MENU_CLEAR_ALL_LOCATION = "recent_menu_clear_all_location";
 
     private CheckBoxPreference mRecentsCustom;
+    private CheckBoxPreference mRecentsShowTopmost;
     private CheckBoxPreference mRecentPanelLeftyMode;
     private ListPreference mRecentPanelScale;
     private ListPreference mRecentPanelExpandedMode;
@@ -69,6 +71,11 @@ public class RecentsPanelSettings extends SettingsPreferenceFragment implements
         mRecentsCustom = (CheckBoxPreference) findPreference(CUSTOM_RECENT_MODE);
         mRecentsCustom.setChecked(enableRecentsCustom);
         mRecentsCustom.setOnPreferenceChangeListener(this);
+
+        mRecentsShowTopmost = (CheckBoxPreference) prefSet.findPreference(RECENT_PANEL_SHOW_TOPMOST);
+        mRecentsShowTopmost.setChecked(Settings.System.getInt(resolver,
+                Settings.System.RECENT_PANEL_SHOW_TOPMOST, 0) == 1);
+        mRecentsShowTopmost.setOnPreferenceChangeListener(this);
 
         mRecentPanelLeftyMode = (CheckBoxPreference) findPreference(RECENT_PANEL_LEFTY_MODE);
         mRecentPanelLeftyMode.setOnPreferenceChangeListener(this);
@@ -142,6 +149,10 @@ public class RecentsPanelSettings extends SettingsPreferenceFragment implements
                     ((Boolean) newValue) ? true : false);
             updatePreference();
             Helpers.restartSystemUI();
+            return true;
+        } else if (preference == mRecentsShowTopmost) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(resolver, Settings.System.RECENT_PANEL_SHOW_TOPMOST, value ? 1 : 0);
             return true;
         } else if (preference == mRecentPanelScale) {
             int value = Integer.parseInt((String) newValue);
