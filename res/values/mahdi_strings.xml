@@ -1366,6 +1366,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Themes settings  -->
     <string name="themes_settings_title">Themes</string>
+    <string name="title_cm_themes">Themes chooser</string>
 
     <!-- The following are entries under the themes menu -->
     <string name="themepacks_settings_title">Theme Packs</string>

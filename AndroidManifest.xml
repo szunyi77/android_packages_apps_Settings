@@ -1860,7 +1860,7 @@
 
         <activity android:name=".ApnEditor" />
 
-        <!-- Pseudo-activity used to provide an intent-filter entry point to quick tiles settings -->
+        <!-- Quick tiles settings -->
         <activity android:name="Settings$QuickSettingsTilesSettingsActivity"
                 android:label="@string/tile_picker_title"
                 android:taskAffinity=""
@@ -1873,7 +1873,7 @@
                 android:value="com.android.settings.mahdi.quicksettings.QuickSettingsTiles" />
         </activity>	
 
-        <!-- Pseudo-activity used to provide an intent-filter entry point to quite hours settings -->
+        <!-- Quite hours settings -->
         <activity android:name="Settings$QuietHoursSettingsActivity"
                 android:label="@string/quiet_hours_title"
                 android:taskAffinity=""
@@ -1886,7 +1886,7 @@
                 android:value="com.android.settings.mahdi.QuietHours" />
         </activity>        
 
-        <!-- Pseudo-activity used to provide an intent-filter entry point to rotation settings -->
+        <!-- Rotation settings -->
         <activity android:name="Settings$DisplayRotationSettingsActivity"
                 android:label="@string/display_rotation_title"
                 android:taskAffinity=""
@@ -1899,7 +1899,7 @@
                 android:value="com.android.settings.mahdi.DisplayRotation" />
         </activity>
 
-        <!-- Pseudo-activity used to provide an intent-filter entry point to expanded-desktop config -->
+        <!-- Immersive mode -->
          <activity android:name="Settings$PowerMenuSettingsActivity"
             android:label="@string/power_menu_title"
             android:excludeFromRecents="true" >
@@ -1911,7 +1911,7 @@
                 android:value="com.android.settings.mahdi.PowerMenu" />
         </activity>
 
-        <!-- Pseudo-activity used to provide an intent-filter entry point to lockscreen config -->
+        <!-- Lockscreen config -->
         <activity android:name="Settings$LockscreenSettingsActivity"
                 android:label="@string/lock_screen_title">
             <intent-filter>
@@ -1922,7 +1922,7 @@
                 android:value="com.android.settings.mahdi.LockscreenInterface" />
         </activity>
 
-        <!-- Pseudo-activity used to provide an intent-filter entry point to quite hours settings -->
+        <!-- Navigation bar settings -->
         <activity android:name="Settings$NavbarSettingsActivity"
                 android:label="@string/navigation_settings_title"
                 android:taskAffinity=""
@@ -1935,15 +1935,16 @@
                 android:value="com.android.settings.mahdi.NavbarSettings" />
         </activity>
 
-        <!-- Pseudo-activity used to provide an intent-filter entry point to trds settings -->
-        <!-- TRDS -->
+        <!-- Theme Settings -->
         <activity
             android:name=".mahdi.themes.ThemeSettings"
-            android:label="@string/theme_settings_title_slim" >
+            android:label="@string/themes_settings_title" >
         </activity>
         <activity
             android:name="Settings$ThemeSettingsActivity"
-            android:label="@string/theme_settings_title_slim" >
+            android:label="@string/themes_settings_title"
+                  android:taskAffinity=""
+                  android:excludeFromRecents="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.settings.THEME_SETTINGS" />
@@ -1953,7 +1954,7 @@
                 android:value="com.android.settings.mahdi.themes.ThemeSettings" />
         </activity>
 
-        <!-- Pseudo-activity used to provide an intent-filter entry point to profiles config -->
+        <!-- Profiles config -->
         <activity android:name=".profiles.ProfilesSettings" />
         <activity android:name="Settings$ProfilesSettingsActivity"
                 android:label="@string/profile_settings"
@@ -1973,7 +1974,6 @@
                 android:resource="@id/profiles_settings" />
             </activity>
 
-        <!-- Keep compatibility with old shortcuts. -->
         <activity-alias android:name="ProfileSettings"
                 android:label="@string/profile_settings"
                 android:exported="true"
@@ -2039,10 +2039,8 @@
                 android:resource="@id/interface_animation" />
         </activity>
 
-
+        <!-- Rambar -->
         <activity android:name=".mahdi.RamBar" />  
-
-    <!-- Pseudo-activity used to provide an intent-filter entry point to ass display rotation config -->
         <activity android:name="Settings$RamBarActivity"
                 android:label="@string/ram_bar_title">
             <intent-filter>
@@ -2069,6 +2067,7 @@
                 android:resource="@id/voice_wakeup_settings" />
         </activity>
 
+        <!-- Battery Saver -->
         <activity
              android:name=".mahdi.batterysaver.BatterySaverSettings"
              android:label="@string/data_usage_enable_batterysaver" >
@@ -2116,7 +2115,7 @@
             </intent-filter>
         </activity>
 
-        <!-- Pseudo-activity used to provide an intent-filter entry to shake event settings -->
+        <!-- Shake events -->
         <activity android:name="Settings$ShakeEventsSettingsActivity"
                 android:label="@string/shake_events_title"
                 android:taskAffinity=""

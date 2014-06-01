@@ -219,19 +219,12 @@
     <!-- Custom Settings -->
     <header android:title="@string/custom_settings_category" />
 
-    <!-- DarkUI -->
-    <header
-        android:id="@+id/theme_settings_slim"
-        android:fragment="com.android.settings.mahdi.themes.ThemeSettings"
-        android:icon="@drawable/ic_settings_themes"
-        android:title="@string/theme_auto_mode_title" />
-
     <!-- Themes -->
     <header
         android:id="@+id/theme_settings"
         android:title="@string/themes_settings_title"
         android:breadCrumbTitle="@string/themes_settings_title"
-        android:fragment="com.android.settings.ThemeSettings"
+        android:fragment="com.android.settings.mahdi.themes.ThemeSettings"
         android:icon="@drawable/prd_ic_themepacks" />
 
     <!-- Customization -->
