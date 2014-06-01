@@ -31,6 +31,10 @@ limitations under the License.
     <string name="mem_info">Speicher</string>
     <!-- About phone screen, status item label -->
 
+    <!-- Updater -->
+    <string name="updater_title">Systemupdates</string>
+    <string name="updater_summary">Nach Updates suchen</string>
+
     <!-- General strings -->
     <string name="ok">OK</string>
     <string name="reset">Zurücksetzen</string>
@@ -497,6 +501,7 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="title_tile_bluetooth">Bluetooth</string>
     <string name="title_tile_brightness">Helligkeit</string>
     <string name="title_tile_camera">Kamera</string>
+    <string name="title_tile_compass">Kompass</string>
     <string name="title_tile_power">Ein/Aus-Taste</string>
     <string name="title_tile_location">Standort</string>
     <string name="title_tile_torch">Taschenlampe</string>
@@ -1289,10 +1294,10 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
 
     <!-- Recents clear all -->
     <string name="aosp_recents_category">Google Anwendungsverlauf</string>
-    <string name="show_recent_clear_all_button_title">Clear-All-Button</string>
-    <string name="show_recent_clear_all_button_summary">Fügt dem Anwendungsverlauf einen Clear-All-Button hinzu</string>
-    <string name="recent_clear_all_button_location_title">Position des Clear-All-Button</string>
-    <string name="recent_clear_all_button_location_summary">Position des Clear-All-Button wählen</string>
+    <string name="show_recent_clear_all_button_title">Löschtaste anzeigen</string>
+    <string name="show_recent_clear_all_button_summary">Ermöglicht das Löschen aller Anwendungen auf einmal</string>
+    <string name="recent_clear_all_button_location_title">Position der Löschtaste festlegen</string>
+    <string name="recent_clear_all_button_location_summary">Position der Taste wählen</string>
     <string name="recent_clear_all_button_location_top_left">Oben Links</string>
     <string name="recent_clear_all_button_location_top_right">Oben Rechts</string>
     <string name="recent_clear_all_button_location_bottom_left">Unten Links</string>
@@ -2073,13 +2078,19 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <!--Notification peek-->
     <string name="notification_peek_title">Peek-Benachrichtigungen</string>
     <string name="notification_peek_summary">Anzeige der neuesten Benachrichtigungen nach Aufnahme des Gerätes</string>
-    <string name="peek_pickup_timeout_title">Aufnahme-Timeout</string>
+    <string name="peek_pickup_timeout_title">Aufnahmezeit</string>
+    <string name="peek_wake_timeout_title">Aktiv bleiben</string>
     <string name="peek_pickup_15seconds">15 Sekunden (Standard)</string>
     <string name="peek_pickup_30seconds">30 Sekunden</string>
     <string name="peek_pickup_45seconds">45 Sekunden</string>
     <string name="peek_pickup_60seconds">1 Minute</string>
     <string name="peek_pickup_120seconds">2 Minuten</string>
-	
+    <string name="peek_wake_4seconds">4 Sekunden</string>
+    <string name="peek_wake_7seconds">7 Sekunden (Standard)</string>
+    <string name="peek_wake_10seconds">10 Sekunden</string>
+    <string name="peek_wake_20seconds">20 Sekunden</string>
+    <string name="peek_wake_30seconds">30 Sekunden</string>
+    
     <!-- Battery Bar -->
     <string name="battery_bar_title">Batterieleiste</string>
     <string name="battery_bar_summary">Konfiguration der Batterieleiste</string>
@@ -2134,4 +2145,22 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="data_usage_cycle_editor_subtitle_cm">Zyklusdatum:</string>
     <!-- Subtitle of dialog for editing data usage cycle length. [CHAR LIMIT=32] -->
     <string name="data_usage_lengths_spinner_subtitle">Zykluslänge:</string>
+
+    <!-- Headset plug -->
+    <string name="headset_settings">Kopfhörer</string>
+    <string name="headset_plug_enable_title">Beim Einstecken</string>
+    <string name="headset_plug_positive_title">Deaktiviert</string>
+    <string name="headset_plug_neutral_title">Standard</string>
+    <string name="headset_plug_neutral_summary">Standard Musik-App</string>
+    <string name="headset_plug_music_active_title">Bei aktivem Audio deaktivieren</string>
+    <string name="headset_plug_music_active_summary">Aktion bei bereits aktiver Audiosausgabe nicht ausführen</string>
+    <string name="headset_plug_app_running_title">Bei bereits aktivierter App</string>
+    <string name="headset_plug_app_running_nothing">Deaktiviert</string>
+    <string name="headset_plug_app_running_front">App anzeigen</string>
+    <string name="headset_plug_actions_title">Beim Ausstecken</string>
+    <string name="headset_plug_actions_disabled">Deaktiviert</string>
+    <string name="headset_plug_actions_front">App anzeigen</string>
+    <string name="headset_plug_actions_kill">App beenden</string>
+    <string name="headset_plug_force_actions_title">Forciertes Ausstecken</string>
+    <string name="headset_plug_force_actions_summary">Aktion auch bei aktiver App-Ausführung duchführen</string>
 </resources>
