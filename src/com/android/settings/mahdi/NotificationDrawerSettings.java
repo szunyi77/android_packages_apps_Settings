@@ -45,7 +45,6 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment
 
     private static final String PREF_NOTIFICATION_OPTIONS = "options";
     private static final String PREF_NOTIFICATION_HIDE_LABELS = "notification_hide_labels";
-    private static final String STATUS_BAR_CUSTOM_HEADER = "custom_status_bar_header";
     private static final String PREF_NOTI_REMINDER_SOUND = "noti_reminder_sound";
     private static final String PREF_NOTI_REMINDER_ENABLED = "noti_reminder_enabled";
     private static final String PREF_NOTI_REMINDER_INTERVAL = "noti_reminder_interval";
@@ -53,7 +52,6 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment
     private static final String PREF_BRIGHTNESS_SLIDER = "notification_brightness_slider";
 
     private ListPreference mHideLabels;
-    private CheckBoxPreference mStatusBarCustomHeader;
     private CheckBoxPreference mReminder;
     private ListPreference mReminderInterval;
     private ListPreference mReminderMode;
@@ -74,11 +72,6 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment
         mHideLabels.setValue(String.valueOf(hideCarrier));
         mHideLabels.setOnPreferenceChangeListener(this);
         updateHideNotificationLabelsSummary(hideCarrier);
-
-        mStatusBarCustomHeader = (CheckBoxPreference) findPreference(STATUS_BAR_CUSTOM_HEADER);
-        mStatusBarCustomHeader.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
-            Settings.System.STATUS_BAR_CUSTOM_HEADER, 0) == 1);
-        mStatusBarCustomHeader.setOnPreferenceChangeListener(this);
 
         mReminder = (CheckBoxPreference) findPreference(PREF_NOTI_REMINDER_ENABLED);
         mReminder.setChecked(Settings.System.getIntForUser(getContentResolver(),
@@ -148,11 +141,6 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment
             Settings.System.putInt(getContentResolver(), Settings.System.NOTIFICATION_HIDE_LABELS,
                     hideLabels);
             updateHideNotificationLabelsSummary(hideLabels);
-            return true;
-        } else if (preference == mStatusBarCustomHeader) {
-            boolean value = (Boolean) objValue;
-            Settings.System.putInt(resolver,
-                Settings.System.STATUS_BAR_CUSTOM_HEADER, value ? 1 : 0);
             return true;
         } else if (preference == mReminder) {
             Settings.System.putIntForUser(getContentResolver(),
