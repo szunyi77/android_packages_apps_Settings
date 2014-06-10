@@ -2071,6 +2071,22 @@ name="quiet_hours_auto_sms_call_title">Chiamate in arrivo </string>
     <string name="battery_bar_animate_title">Animazione in carica</string>
     <string name="battery_bar_animate_summary">L\'animazione di carica potrebbe essere di una povera esperienza d\'uso.Attivala a tua discrezione</string>
     <string name="battery_bar_reset_message">Ripristinare la barra batteria predefinita?</string>
+
+    <!-- Volume Steps -->
+    <string name="volume_steps_title">Numero livelli volume</string>
+    <string name="volume_steps_60">60</string>
+    <string name="volume_steps_45">45</string>
+    <string name="volume_steps_30">30</string>
+    <string name="volume_steps_15">15</string>
+    <string name="volume_steps_7">7</string>
+    <string name="volume_steps_5">5</string>
+    <string name="volume_steps_alarm_title">Sveglia</string>
+    <string name="volume_steps_dtmf_title">DTMF</string>
+    <string name="volume_steps_music_title">Musica</string>
+    <string name="volume_steps_notification_title">Notifiche</string>
+    <string name="volume_steps_ring_title">Suoneria</string>
+    <string name="volume_steps_system_title">Sistema</string>
+    <string name="volume_steps_voice_call_title">Chiamata vocale</string>
     
     <!-- Shake Events -->
     <string name="shake_events_title">Opzioni scuotimento</string>
