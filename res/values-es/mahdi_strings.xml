@@ -16,7 +16,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- Custom settings  -->
-    <string name="custom_settings_category">Personal</string>
+    <string name="custom_settings_category">Extras</string>
     <!-- Customization Interface settings  -->
     <string name="customization_settings_title">Personalización</string>
 
@@ -30,7 +30,11 @@
     <string name="cpu_info">CPU</string>
     <!-- About phone screen, Free memory info -->
     <string name="mem_info">Memoria</string>
-    <!-- About phone screen, status item label --> 
+    <!-- About phone screen, status item label -->
+
+    <!-- Updater --> 
+    <string name="updater_title">Actualizaciones</string>
+    <string name="updater_summary">Compruebe si hay actualizaciones y más</string>
 
     <!-- General strings -->
     <string name="ok">OK</string>
@@ -93,6 +97,7 @@
     <!-- Power menu enable disable -->
     <string name="power_menu_title">Menú de encendido</string> 
     <string name="power_menu_summary">Ver o cambiar la lista de menú de encendido</string>
+    <string name="lockscreen_enable_power_menu_title">Habilitar menú de encendido LockScreen</string>
     <string name="power_menu_reboot_title">Menú de reinicio</string>
     <string name="power_menu_screenshot_title">Captura de pantalla</string>
     <string name="power_menu_screenrecord_title">Grabador de pantalla</string>
@@ -100,6 +105,7 @@
     <string name="power_menu_airplane_title">Modo avión</string>
     <string name="power_menu_silent_title">Panel de sonido</string>
     <string name="power_menu_expanded_desktop">Modo Inmersivo</string>
+    <string name="power_menu_mobile_data">Datos de móvil</string>
 
     <!-- Advanced reboot options -->
     <string name="advanced_reboot_title">Reinicio avanzado</string>
@@ -392,6 +398,10 @@ dos con el fin de insertar puntos de control adicionales. \'Borrar\' elimina lin
     <string name="shake_to_secure_dlg_title">Advertencia:</string>
     <string name="shake_to_secure_dlg_message">Su dispositivo no estará seguro hasta que agite para permitir un cierre de seguridad temporal. Una vez seguro: Si el dispositivo está desbloqueado con éxito se convertirá en no seguro hasta agitar de nuevo.</string>
     <string name="shake_secure_timeout_title">Volver automáticamente seguro</string>
+    <string name="shake_all">Agite cualquier dirección</string>
+    <string name="shake_horizontal">Agite horizontalmente</string>
+    <string name="shake_vertical">Agite verticalmente</string>
+    <string name="shake_back_forth">Agite delante y detrás</string>
     <string name="shake_secure_timeout_disabled">Nunca asegure automáticamente</string>
     <string name="shake_secure_timeout_1min">1 minutos después de la pantalla apagada</string>
     <string name="shake_secure_timeout_5min">5 minutos después de la pantalla apagada</string>
@@ -489,6 +499,7 @@ dos con el fin de insertar puntos de control adicionales. \'Borrar\' elimina lin
     <string name="title_tile_bluetooth">Bluetooth</string>
     <string name="title_tile_brightness">Brillo</string>
     <string name="title_tile_camera">Cámara</string>
+    <string name="title_tile_compass">Brújula</string>
     <string name="title_tile_power">Power</string>
     <string name="title_tile_location">Ubicación</string>
     <string name="title_tile_torch">Linterna</string>
@@ -498,6 +509,7 @@ dos con el fin de insertar puntos de control adicionales. \'Borrar\' elimina lin
     <string name="title_tile_profile">Perfil</string>
     <string name="title_tile_autorotate">Orientación</string>
     <string name="title_tile_settings">Ajustes</string>
+    <string name="title_tile_shake">Agite eventos</string>
     <string name="title_tile_sound">Sonido</string>
     <string name="title_tile_sync">Sync</string>
     <string name="title_tile_wifiap">Wi-Fi AP</string>
@@ -522,10 +534,12 @@ dos con el fin de insertar puntos de control adicionales. \'Borrar\' elimina lin
     <string name="custom_toggle_extras">Extras toggle Personal</string>
     <string name="custom_toggle_collapse_check">Quitar notificación</string>
     <string name="custom_toggle_match_state_check">Acción de clic coincide con el icono</string>
+    <string name="custom_toggle_double_click_check">Pulse dos veces para cambiar a la acción anterior</string>
     <string name="custom_tile_long_press">Pulsación larga:</string>
     <string name="custom_tile_null_warning">Se debe establecer primero una acción</string>
     <string name="custom_tile_resolve_name">Desconocido</string>
     <string name="title_tile_theme">Interruptor de Tema</string>
+    <string name="title_tile_batterysaver">Modo ahorro de batería</string>
 
     <string name="title_dynamic_tiles">Toggles dinámicos</string>
     <string name="dynamic_tiles_note_title">Nota</string>
@@ -533,6 +547,7 @@ dos con el fin de insertar puntos de control adicionales. \'Borrar\' elimina lin
     <string name="title_dynamic_alarm">Alarma</string>
     <string name="title_dynamic_bugreport">Informe de error</string>
     <string name="title_dynamic_dock_battery">Batería</string>
+    <string name="title_dynamic_equalizer">Ecualizador</string>
     <string name="title_dynamic_ime">Teclado</string>
     <string name="title_dynamic_usbtether">USB Tether</string>
     <string name="title_dynamic_wifi">Wi-Fi display</string>
@@ -554,6 +569,7 @@ dos con el fin de insertar puntos de control adicionales. \'Borrar\' elimina lin
     <string name="smart_pulldown_off">Apagado</string>
     <string name="smart_pulldown_dismissable">Descartable</string>
     <string name="smart_pulldown_persistent">Persistente</string>
+    <string name="smart_pulldown_all">No descartable o persistente</string>
 	
     <!-- QuickSettings: Custom Tile -->
     <string name="custom_tile_dialog_text">Cada acción añadirá un nuevo estado de toggle.Cada clic cambia al siguiente estado.Pulsación larga para añadir acciones de pulsación larga.Si no existe la acción al clicar, el icono de pulsación larga será usado por el toggle.Esto le permite cambiar los estados haciendo clic e iniciar acciones de larga pulsación.</string>
@@ -584,6 +600,8 @@ dos con el fin de insertar puntos de control adicionales. \'Borrar\' elimina lin
     <string name="tiles_per_row_title">Toggles por fila</string>
     <string name="tiles_per_row_duplicate_landscape_title">Cantidad escala horizontal</string>
     <string name="tiles_per_row_duplicate_landscape_summary">Vista horizontal duplica toggles por cantidad de fila</string>
+    <string name="quick_tiles_color_title">Habilitar colores personalizados</string>
+    <string name="quick_tiles_color_summary">Habilitar colores personalizados anulará temas</string>
     <string name="quick_tiles_bg_color_title">Color de fondo de toggle</string>
     <string name="quick_tiles_bg_pressed_color_title">Color de fondo al presionar toggle</string>
     <string name="quick_tiles_text_color_title">Color de texto del toggle</string>
@@ -688,6 +706,10 @@ dos con el fin de insertar puntos de control adicionales. \'Borrar\' elimina lin
     <string name="clock_date_style_uppercase">Mayúsculas</string>
     <string name="clock_date_format_custom">Formato java personalizado</string>
     <string name="status_bar_clock_style_reset_message">¿Resetear colores de reloj?</string>
+
+    <!-- Statusbar Second Clock -->
+    <string name="clock_use_second">Segundos</string>
+    <string name="clock_use_second_summary">Mostrar segundos en el reloj</string>
 
     <!-- StatusBar Battery Settings -->    
     <string name="status_bar_battery_title">Estilo estado de batería</string>
@@ -805,6 +827,7 @@ dos con el fin de insertar puntos de control adicionales. \'Borrar\' elimina lin
     <string name="adb_over_network_warning">ADVERTENCIA: Cuando ADB sobre la red está activada, el teléfono está abierto para las intrusiones en todas las redes conectadas, incluyendo la red de datos!\n\nSólo utilizar esta función cuando está conectado en redes de confianza.\n\n¿Quiere activar esta función?</string>
 
     <!-- Button shorcut actions -->
+    <string name="shortcut_action_keyguard_camera">Keyguard cámara</string>
     <string name="shortcut_action_navbar">Barra de navegación</string>
     <string name="shortcut_action_pie">Controles Pie</string>
     <string name="shortcut_action_app">Aplicación personalizada</string>
@@ -848,6 +871,7 @@ dos con el fin de insertar puntos de control adicionales. \'Borrar\' elimina lin
     <string name="shortcut_duplicate_entry">La acción elegida no se puede añadir dos veces</string>
     <string name="shortcut_action_help_shortcut">accesos directos</string>
     <string name="shortcut_action_help_button">botón</string>
+    <string name="shortcut_action_help_app">app</string>
     <string name="shortcut_action_help_icon">, mientras selecciona el icono se abrirá opciones de personalización</string>
     <string name="shortcut_action_help_main">Para agregar %1$s, selecciona el icono Añadir. Una vez que %1$s es añadido, selecciona la fila que cambiará%2$s\n\nPara borrar %1$s, desliza la fila horizontalmente a la izquierda o derecha.  Reordenar %1$s en la lista arrastrando verticalmente hacia la izquierda.\n\nPara restablecer los valores predeterminados seleccione icono reset.</string>
     <string name="shortcut_action_help_delete_last_entry">La eliminación de todos los %1$s en la lista desactivara la función.</string>
@@ -1027,6 +1051,9 @@ dos con el fin de insertar puntos de control adicionales. \'Borrar\' elimina lin
     <string name="quiet_hours_dim">Desactivar led</string>
     <string name="quiet_hours_dim_on">Led esta desactivado</string>
     <string name="quiet_hours_dim_off">Led funciona normal</string>
+    <string name="quiet_hours_system">Desactivar sonidos de sistema</string>
+    <string name="quiet_hours_system_on">Sonidos de sistema se descativarán</string>
+    <string name="quiet_hours_system_off">Sonidos de sistema funciona normal</string>
     <string name="quiet_hours_haptic">Desactivar haptic feedback</string>
     <string name="quiet_hours_haptic_on">Haptic feedback esta desactivado</string>
     <string name="quiet_hours_haptic_off">Haptic feedback funciona normal</string>
@@ -1126,8 +1153,15 @@ dos con el fin de insertar puntos de control adicionales. \'Borrar\' elimina lin
     <string name="screen_recorder_bitrate_50000000">50000000</string>
     <string name="screen_recorder_bitrate_100000000">100000000</string>
 
+    <!-- Custom lockscreen options -->
+    <string name="lockscreen_custom_title">Opciones pantalla de bloqueo personal</string>
+    <string name="lockscreen_custom_summary">Añade accesos directos, activa notificaciones y más</string>
+
     <!-- Lockscreen widget settings -->
     <string name="title_widgets">Widgets</string>
+    <string name="lockscreen_allow_all_title">Permitir todos los widgets</string>
+    <string name="lockscreen_allow_all_summary">Permitir widgets que nativamente no soporta su colocación de la pantalla de bloqueo</string>
+    <string name="lockscreen_allow_all_warning">Algunos widgets no pueden comportarse como se esperaba cuando se coloca sobre la pantalla de bloqueo. Otros widgets pueden exponer sus datos personales a cualquier persona que tenga acceso a su dispositivo. Por favor, ser conscientes de estas advertencias antes de continuar.</string>
     <string name="lockscreen_widgets_title">Widgets</string>
     <string name="lockscreen_camera_widget_title">Activar widget de cámara</string>
     <string name="lockscreen_camera_widget_summary">Mostrar widget de cámara en la pantalla de bloqueo</string>
@@ -1340,6 +1374,7 @@ dos con el fin de insertar puntos de control adicionales. \'Borrar\' elimina lin
 
     <!-- Themes settings  -->
     <string name="themes_settings_title">Temas</string>
+    <string name="title_cm_themes">Theme chooser</string>
 
     <!-- The following are entries under the themes menu -->
     <string name="themepacks_settings_title">Pack de temas</string>
@@ -2050,21 +2085,24 @@ dos con el fin de insertar puntos de control adicionales. \'Borrar\' elimina lin
     multiple font sizes in a limited amount of space. -->
     <string name="font_size_sample">Muestra</string>
 
-    <!-- vibrate during phone calls -->
-    <string name="notification_vibrate_during_calls_title">Vibrar durante la llamada</string>
-    <string name="notification_vibrate_during_calls_summary">Notificaciones entrantes vibrarán suavemente durante las llamadas telefónicas</string>
-
     <!--Notification category-->
     <string name="notification_category">Notificaciones</string>
     <!--Notification peek-->
     <string name="notification_peek_title">Notification peek</string>
     <string name="notification_peek_summary">Mostrar última notificación después de recoger su dispositivo</string>
-	<string name="peek_pickup_timeout_title">Peek pickup tiempo de espera</string>
+    <string name="peek_pickup_timeout_title">Tiempo de espera recogida</string>
+    <string name="peek_wake_timeout_title">Tiempo de espera despertar</string>
     <string name="peek_pickup_15seconds">15 seg (default)</string>
     <string name="peek_pickup_30seconds">30 seg</string>
     <string name="peek_pickup_45seconds">45 seg</string>
     <string name="peek_pickup_60seconds">1 min</string>
     <string name="peek_pickup_120seconds">2 min</string>
+    <string name="peek_wake_4seconds">4 seg</string>
+    <string name="peek_wake_7seconds">7 seg (default)</string>
+    <string name="peek_wake_10seconds">10 seg</string>
+    <string name="peek_wake_20seconds">20 seg</string>
+    <string name="peek_wake_30seconds">30 seg</string>
+
 
     <!-- Battery Bar -->
     <string name="battery_bar_title">Barra de batería</string>
@@ -2093,5 +2131,49 @@ dos con el fin de insertar puntos de control adicionales. \'Borrar\' elimina lin
     <string name="volume_steps_ring_title">Tono</string>
     <string name="volume_steps_system_title">Sistema</string>
     <string name="volume_steps_voice_call_title">Llamada de voz</string>
+
+    <!-- Shake Events -->
+    <string name="shake_events_title">Agita eventos</string>
+    <string name="keyguard_shake_events_title">Agita eventos</string>
+    <string name="shake_events_summary">Utilice eventos de agitación para realizar acciones personalizadas</string>
+    <string name="shake_events_enabled_title">Habilite shake listener</string>
+    <string name="shake_events_normal_title">Activa shake events</string>
+    <string name="shake_events_disabled_title">Desactivar apps</string>
+    <string name="shake_events_disabled_summary">Agitar se desactivará en estas apps</string>
+    <string name="shake_event_x_title">Actividad al agitar horizontalmente</string>
+    <string name="shake_event_y_title">Actividad al agitar verticalmente </string>
+    <string name="shake_event_z_title">Actividad al agitar hacia atrás y hacia adelante</string>
+    <string name="keyguard_shake_events_cat">Keyguard</string>
+    <string name="keyguard_shake_events_title">Keyguard shake events</string>
+
+    <!-- Shake sensitivity -->
+    <string name="shake_sensitivity_title">Sensibilidad de agitación</string>
+    <string name="shake_sensitivity_summary">Sensibilidad global de todas las preferencias de agitación</string>
+    <string name="shake_sensitivity_less_sensitive">Menos sensible</string>
+    <string name="shake_sensitivity_more_sensitive">Más sensible</string>
+
+    <!-- Data Usage -->
+    <!-- Subtitle of dialog for editing data usage cycle reset date. [CHAR LIMIT=32] -->
+    <string name="data_usage_cycle_editor_subtitle_cm">Fecha de cada ciclo:</string>
+    <!-- Subtitle of dialog for editing data usage cycle length. [CHAR LIMIT=32] -->
+    <string name="data_usage_lengths_spinner_subtitle">Longitud de ciclo:</string>
+
+    <!-- Headset plug -->
+    <string name="headset_settings">Auriculares</string>
+    <string name="headset_plug_enable_title">Insertar acceso directo</string>
+    <string name="headset_plug_positive_title">Desactivado</string>
+    <string name="headset_plug_neutral_title">Por defecto</string>
+    <string name="headset_plug_neutral_summary">Aplicación de música por defecto</string>
+    <string name="headset_plug_music_active_title">Desactivar el audio activo</string>
+    <string name="headset_plug_music_active_summary">No ejecutar atajo con audio activo</string>
+    <string name="headset_plug_app_running_title">Acción sobre la ejecución de acceso directo</string>
+    <string name="headset_plug_app_running_nothing">Ninguno</string>
+    <string name="headset_plug_app_running_front">Mover al principio</string>
+    <string name="headset_plug_actions_title">Acción borrar</string>
+    <string name="headset_plug_actions_disabled">Ninguno</string>
+    <string name="headset_plug_actions_front">Mover al principio</string>
+    <string name="headset_plug_actions_kill">Matar aplicación</string>
+    <string name="headset_plug_force_actions_title">Fuerza eliminar la acción</string>
+    <string name="headset_plug_force_actions_summary">Ejecutar quitar acción si atajo ya estaba corriendo</string>
 </resources>
 
