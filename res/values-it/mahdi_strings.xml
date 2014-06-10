@@ -14,6 +14,8 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Custom settings  -->
+    <string name="custom_settings_category">Mahdi</string>
     <!-- Customization Interface settings  -->
     <string name="customization_settings_title">Personalizzazioni</string>
 
@@ -1066,9 +1068,9 @@ name="quiet_hours_auto_sms_call_title">Chiamate in arrivo </string>
     <string name="hide_low_priority">Nascondi bassa priorità </string>
     <string name="hide_low_priority_summary">Nascondi le notifiche di bassa priorità come il meteo di google now </string>
     <string name="hide_non_clearable">Nascondi le non rimovibili </string>
-    <string name="hide_non_clearable_summary">Nascondi tutte le notifiche che non si possono rimuovere </string>
-    <string name="dismiss_all">Permetti di togliere tutto</string>
-    <string name="dismiss_all_summary">Permetti di togliere anche le notifiche non toglibili. Naturalmente rimarranno nel pannello di notifica</string>
+    <string name="hide_non_clearable_summary">Nascondi le notifiche che non si possono rimuovere </string>
+    <string name="dismiss_all">Permetti di rimuovere tutto</string>
+    <string name="dismiss_all_summary">Permetti di rimuovere anche le notifiche non rimovibili. Naturalmente rimarranno nel pannello di notifica</string>
     <string name="expanded_view">Notifiche estese </string>
     <string name="expanded_view_summary">Mostra notifiche estese quando possibile </string>
     <string name="force_expanded_view">Forza la vista estesa </string>
@@ -1111,7 +1113,7 @@ name="quiet_hours_auto_sms_call_title">Chiamate in arrivo </string>
     <string name="description_target_unlock">Sblocca</string>
 
     <!-- Lockscreen Shortcuts -->
-    <string name="lockscreen_shortcuts_title">Scorciatouie</string>
+    <string name="lockscreen_shortcuts_title">Scorciatoie</string>
     <string name="lockscreen_shortcuts_summary">Vedi o cambia scorciatoie personalizzate lockscreen</string>
     <string name="lockscreen_shorcuts_longpress_title">Scorciatoie tieni premuto</string>
     <string name="lockscreen_shorcuts_longpress_summary">Apre azione personalizzata se si tiene premuto</string>
@@ -1206,6 +1208,42 @@ name="quiet_hours_auto_sms_call_title">Chiamate in arrivo </string>
     <string name="slide_lock_delay_10m">10 minuti</string>
     <string name="slide_lock_delay_30m">30 minuti</string>
 
+    <!-- Lock Gesture settings -->
+    <string name="lockgesture_change_lock_pattern_label">Cambio gesture di sblocco</string>
+    <string name="lockgesture_change_lock_pin_label">Cambia PIN di sblocco</string>
+    <string name="lockgesture_need_to_unlock">Conferma gesture</string>
+    <string name="lockgesture_need_to_unlock_wrong">Prova di nuovo:</string>
+    <string name="lockgesture_recording_intro_header">Disegna una gesture di sblocco:</string>
+    <string name="lockgesture_recording_intro_footer">Premi menu per aiuto.</string>
+    <string name="lockgesture_recording_inprogress">Togli il dito quando hai fatto.</string>
+    <string name="lockgesture_pattern_entered_header">Gesture salvata.</string>
+    <string name="lockgesture_need_to_confirm">Disegna di nuovo la gesture per confermare:</string>
+    <string name="lockgesture_pattern_confirmed_header">La tua nuova gesture di sblocco:</string>
+    <string name="lockgesture_confirm_button_text">Conferma</string>
+    <string name="lockgesture_restart_button_text">Riprova</string>
+    <string name="lockgesture_retry_button_text">Indietro</string>
+    <string name="lockgesture_continue_button_text">Continua</string>
+    <string name="lockgesture_settings_title">Gesture di sblocco</string>
+    <string name="lockgesture_settings_enable_title">Require gesture</string>
+    <string name="lockgesture_settings_enable_summary">Must draw gesture to unlock screen</string>
+    <string name="lockgesture_settings_enable_visible_pattern_title">Make gesture visible</string>
+    <string name="lockgesture_settings_enable_power_button_instantly_locks">Power button instantly locks</string>
+    <string name="lockgesture_settings_choose_lock_pattern">Set unlock gesture</string>
+    <string name="lockgesture_settings_change_lock_pattern">Change unlock gesture</string>
+    <string name="lockgesture_settings_help_how_to_record">How to draw an unlock gesture</string>
+    <string name="lockgesture_too_many_failed_confirmation_attempts_header">Too many incorrect attempts!</string>
+    <string name="lockgesture_too_many_failed_confirmation_attempts_footer">Try again in <xliff:g id="number">%d</xliff:g> seconds.</string>
+    <string name="lockpassword_gesture_set_toast">Gesture has been set</string>
+    <string name="lockpassword_confirm_your_gesture_header">Confirm your gesture</string>
+    <string name="lockpassword_choose_your_gesture_header">Draw your gesture</string>
+    <string name="unlock_set_unlock_gesture_title">Gesture</string>
+    <string name="unlock_set_unlock_gesture_summary">Low security, experimental</string>
+    <string name="unlock_set_unlock_mode_gesture">Gesture</string>
+    <!-- Do not translate. -->
+    <string name="lockgesture_need_to_unlock_footer" />    
+    <!-- Do not translate. -->
+    <string name="lockgesture_need_to_unlock_wrong_footer" />
+    
     <!-- Delete apn confirmation dialog message -->
     <string name="confirm_delete_apn">L\'APN sarà eliminato </string>
 
@@ -2009,12 +2047,18 @@ name="quiet_hours_auto_sms_call_title">Chiamate in arrivo </string>
     <!--Notification peek-->
     <string name="notification_peek_title">Notifiche peek</string>
     <string name="notification_peek_summary">Mostra l\'ultima notifica quando si prende il telefono</string>
-    <string name="peek_pickup_timeout_title">Timeout disattivazione peek</string>
+    <string name="peek_pickup_timeout_title">Sensori peek attivi per...</string>
+    <string name="peek_wake_timeout_title">Timeout peek acceso</string>
     <string name="peek_pickup_15seconds">15 secondi (consigliato)</string>
     <string name="peek_pickup_30seconds">30 secondi</string>
     <string name="peek_pickup_45seconds">45 secondi</string>
     <string name="peek_pickup_60seconds">1 minuto</string>
     <string name="peek_pickup_120seconds">2 minuti</string>
+    <string name="peek_wake_4seconds">4 secondi</string>
+    <string name="peek_wake_7seconds">7 secondi (consigliato)</string>
+    <string name="peek_wake_10seconds">10 secondi</string>
+    <string name="peek_wake_20seconds">20 secondi</string>
+    <string name="peek_wake_30seconds">30 secondi</string>
 
     <!-- Battery Bar -->
     <string name="battery_bar_title">Barra batteria</string>
@@ -2027,20 +2071,48 @@ name="quiet_hours_auto_sms_call_title">Chiamate in arrivo </string>
     <string name="battery_bar_animate_title">Animazione in carica</string>
     <string name="battery_bar_animate_summary">L\'animazione di carica potrebbe essere di una povera esperienza d\'uso.Attivala a tua discrezione</string>
     <string name="battery_bar_reset_message">Ripristinare la barra batteria predefinita?</string>
+    
+    <!-- Shake Events -->
+    <string name="shake_events_title">Opzioni scuotimento</string>
+    <string name="keyguard_shake_events_title">Opzioni scuotimento</string>
+    <string name="shake_events_summary">Scuoti il telefono per opzioni personalizzate</string>
+    <string name="shake_events_enabled_title">Attiva sensore scuotimento</string>
+    <string name="shake_events_normal_title">Attiva opzioni scuotimento</string>
+    <string name="shake_events_disabled_title">App disattivate</string>
+    <string name="shake_events_disabled_summary">Lo scuotimento sarà disattivato in queste app</string>
+    <string name="shake_event_x_title">Opzione se mosso orizzontalmente</string>
+    <string name="shake_event_y_title">Opzione se mosso verticalmente</string>
+    <string name="shake_event_z_title">Opzione se mosso indietro-e-avanti</string>
+    <string name="keyguard_shake_events_cat">Lockscreen</string>
+    <string name="keyguard_shake_events_title">Opzioni scuotimento nella lockscreen</string>
 
-    <!-- Volume Steps -->
-    <string name="volume_steps_title">Numero livelli volume</string>
-    <string name="volume_steps_60">60</string>
-    <string name="volume_steps_45">45</string>
-    <string name="volume_steps_30">30</string>
-    <string name="volume_steps_15">15</string>
-    <string name="volume_steps_7">7</string>
-    <string name="volume_steps_5">5</string>
-    <string name="volume_steps_alarm_title">Sveglia</string>
-    <string name="volume_steps_dtmf_title">DTMF</string>
-    <string name="volume_steps_music_title">Musica</string>
-    <string name="volume_steps_notification_title">Notifiche</string>
-    <string name="volume_steps_ring_title">Suoneria</string>
-    <string name="volume_steps_system_title">Sistema</string>
-    <string name="volume_steps_voice_call_title">Chiamata vocale</string>
+    <!-- Shake sensitivity -->
+    <string name="shake_sensitivity_title">Sensibilità scuotimento</string>
+    <string name="shake_sensitivity_summary">Sensibilità del sensore</string>
+    <string name="shake_sensitivity_less_sensitive">Meno sensibile</string>
+    <string name="shake_sensitivity_more_sensitive">Più sensibile</string>
+
+    <!-- Data Usage -->
+    <!-- Subtitle of dialog for editing data usage cycle reset date. [CHAR LIMIT=32] -->
+    <string name="data_usage_cycle_editor_subtitle_cm">Data di ogni ciclo:</string>
+    <!-- Subtitle of dialog for editing data usage cycle length. [CHAR LIMIT=32] -->
+    <string name="data_usage_lengths_spinner_subtitle">Lunghezza ciclo:</string>
+
+    <!-- Headset plug -->
+    <string name="headset_settings">Cuffie</string>
+    <string name="headset_plug_enable_title">Inserisci scorciatoia</string>
+    <string name="headset_plug_positive_title">Disattivato</string>
+    <string name="headset_plug_neutral_title">Predefinito</string>
+    <string name="headset_plug_neutral_summary">App musica di sistema</string>
+    <string name="headset_plug_music_active_title">Disattiva se l\'audio è attivo</string>
+    <string name="headset_plug_music_active_summary">Non aprire scorciatoia se l\'audio è attivo</string>
+    <string name="headset_plug_app_running_title">Azione per la scorciatoia</string>
+    <string name="headset_plug_app_running_nothing">Nulla</string>
+    <string name="headset_plug_app_running_front">Muovi in avanti</string>
+    <string name="headset_plug_actions_title">Action on remove</string>
+    <string name="headset_plug_actions_disabled">Nulla</string>
+    <string name="headset_plug_actions_front">Muovi in avanti</string>
+    <string name="headset_plug_actions_kill">Chiudi app</string>
+    <string name="headset_plug_force_actions_title">Rimozione forzata</string>
+    <string name="headset_plug_force_actions_summary">Non aprire scorciatoia solo se già aperta</string>
 </resources>
