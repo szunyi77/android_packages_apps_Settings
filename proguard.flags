@@ -18,7 +18,6 @@
 -keep class com.android.settings.nfc.*
 -keep class com.android.settings.privacyguard.*
 -keep class com.android.settings.mahdi.**
--keep class com.android.settings.mahdi.MoreDeviceSettings
 
 # Keep click responders
 -keepclassmembers class com.android.settings.inputmethod.UserDictionaryAddWordActivity {

@@ -42,6 +42,8 @@ import android.util.Log;
 import com.android.internal.view.RotationPolicy;
 import com.android.settings.DreamSettings;
 import com.android.settings.mahdi.DisplayRotation;
+import com.android.settings.hardware.DisplayColor;
+import com.android.settings.hardware.DisplayGamma;
 
 import java.util.ArrayList;
 
@@ -52,19 +54,22 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     /** If there is no setting in the provider, use this. */
     private static final int FALLBACK_SCREEN_TIMEOUT_VALUE = 30000;
 
+    private static final String CATEGORY_ADVANCED = "advanced_display_prefs";
+    private static final String CATEGORY_DISPLAY = "display_prefs";
     private static final String KEY_SCREEN_TIMEOUT = "screen_timeout";    
     private static final String KEY_FONT_SIZE = "font_size";
+    private static final String KEY_SCREEN_SAVER = "screensaver";
+    private static final String KEY_DISPLAY_ROTATION = "display_rotation";
+    private static final String KEY_LOCKSCREEN_ROTATION = "lockscreen_rotation";
     private static final String KEY_LIGHT_OPTIONS = "category_light_options";
     private static final String KEY_NOTIFICATION_LIGHT = "notification_light";
     private static final String KEY_NOTIFICATION_PULSE = "notification_pulse";
     private static final String KEY_SCREEN_ON_NOTIFICATION_LED = "screen_on_notification_led";
     private static final String KEY_BATTERY_LIGHT = "battery_light";
-    private static final String KEY_SCREEN_SAVER = "screensaver";
-    private static final String KEY_DISPLAY_ROTATION = "display_rotation";
-    private static final String KEY_LOCKSCREEN_ROTATION = "lockscreen_rotation";
-    private static final String KEY_WAKEUP_CATEGORY = "category_wakeup_options";
     private static final String KEY_VOLUME_WAKE = "pref_volume_wake";
     private static final String KEY_WAKE_WHEN_PLUGGED_OR_UNPLUGGED = "wake_when_plugged_or_unplugged";
+    private static final String KEY_DISPLAY_COLOR = "color_calibration";
+    private static final String KEY_DISPLAY_GAMMA = "gamma_tuning";
 
     // Strings used for building the summary
     private static final String ROTATION_ANGLE_0 = "0";
@@ -117,6 +122,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
         PreferenceScreen prefSet = getPreferenceScreen();
 
+        PreferenceCategory displayPrefs = (PreferenceCategory) findPreference(CATEGORY_DISPLAY);
+
         mDisplayRotationPreference = (PreferenceScreen) findPreference(KEY_DISPLAY_ROTATION);
         
         final CheckBoxPreference lockScreenRotation =
@@ -131,7 +138,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         if (mScreenSaverPreference != null
                 && getResources().getBoolean(
                         com.android.internal.R.bool.config_dreamsSupported) == false) {
-            getPreferenceScreen().removePreference(mScreenSaverPreference);
+            displayPrefs.removePreference(mScreenSaverPreference);
         }
 
         mScreenTimeoutPreference = (ListPreference) findPreference(KEY_SCREEN_TIMEOUT);
@@ -180,12 +187,13 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             }
         }
 
-        mWakeUpOptions = (PreferenceCategory) prefSet.findPreference(KEY_WAKEUP_CATEGORY);
+        PreferenceCategory advancedPrefs = (PreferenceCategory) findPreference(CATEGORY_ADVANCED);
+
         int counter = 0;
         mVolumeWake = (CheckBoxPreference) findPreference(KEY_VOLUME_WAKE);
         if (mVolumeWake != null) {
             if (!getResources().getBoolean(R.bool.config_show_volumeRockerWake)) {
-                mWakeUpOptions.removePreference(mVolumeWake);
+                advancedPrefs.removePreference(mVolumeWake);
                 counter++;
             } else {
                 mVolumeWake.setChecked(Settings.System.getInt(resolver,
@@ -205,8 +213,11 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 Settings.Global.WAKE_WHEN_PLUGGED_OR_UNPLUGGED,
                 (wakeUpWhenPluggedOrUnpluggedConfig ? 1 : 0)) == 1);
 
-        if (counter == 2) {
-            prefSet.removePreference(mWakeUpOptions);
+        if (!DisplayColor.isSupported()) {
+            advancedPrefs.removePreference(findPreference(KEY_DISPLAY_COLOR));
+        }
+        if (!DisplayGamma.isSupported()) {
+            advancedPrefs.removePreference(findPreference(KEY_DISPLAY_GAMMA));
         }
     }
 

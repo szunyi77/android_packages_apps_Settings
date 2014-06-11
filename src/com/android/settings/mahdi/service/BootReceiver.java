@@ -19,14 +19,31 @@ package com.android.settings.mahdi.service;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.SystemProperties;
+import android.preference.PreferenceManager;
+import android.util.Log;
+
+import com.android.settings.R;
+import com.android.settings.Utils;
+import com.android.settings.hardware.DisplayColor;
+import com.android.settings.hardware.DisplayGamma;
+import com.android.settings.hardware.VibratorIntensity;
 
 import com.android.settings.mahdi.batterysaver.BatterySaverHelper;
 
 public class BootReceiver extends BroadcastReceiver {
 
+    private static final String TAG = "BootReceiver";
+
     @Override
-    public void onReceive(Context context, Intent intent) {
-        SmsCallHelper.scheduleService(context);
-        BatterySaverHelper.scheduleService(context);
+    public void onReceive(Context ctx, Intent intent) {
+        SmsCallHelper.scheduleService(ctx);
+        BatterySaverHelper.scheduleService(ctx);
+
+        /* Restore the hardware tunable values */
+        DisplayColor.restore(ctx);
+        DisplayGamma.restore(ctx);
+        VibratorIntensity.restore(ctx);
     }
 }
