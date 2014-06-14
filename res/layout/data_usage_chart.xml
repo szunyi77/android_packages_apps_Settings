@@ -38,7 +38,7 @@
         settings:primaryDrawable="@drawable/data_grid_primary"
         settings:secondaryDrawable="@drawable/data_grid_secondary"
         settings:borderDrawable="@drawable/data_grid_border"
-        settings:labelColor="@android:color/white" />
+        settings:labelColor="@android:color/holo_blue_light" />
 
     <com.android.settings.widget.ChartNetworkSeriesView
         android:id="@+id/series"
