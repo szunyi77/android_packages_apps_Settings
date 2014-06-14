@@ -44,6 +44,12 @@
         android:fragment="com.android.settings.mahdi.RecentsPanelSettings" />
 
     <PreferenceScreen
+        android:key="hover_settings"
+        android:title="@string/hover_settings_title"
+        android:summary="@string/hover_settings_summary"
+        android:fragment="com.android.settings.mahdi.HoverSettings" />
+
+    <PreferenceScreen
         android:key="power_menu"
         android:title="@string/power_menu_title"
         android:summary="@string/power_menu_summary"
