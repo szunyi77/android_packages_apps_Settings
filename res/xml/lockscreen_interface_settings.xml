@@ -63,6 +63,17 @@
             android:fragment="com.android.settings.mahdi.LockscreenWidgets"
             android:title="@string/lockscreen_widgets_title" />
 
+        <com.android.settings.mahdi.SystemSettingCheckBoxPreference
+            android:key="lockscreen_see_through"
+            android:title="@string/see_through_title"
+            android:summary="@string/see_through_summary" />
+
+        <com.android.settings.mahdi.SystemSettingCheckBoxPreference
+            android:key="battery_around_lockscreen_ring"
+            android:title="@string/battery_around_lockscreen_ring"
+            android:summary="@string/battery_around_lockscreen_ring_summary"
+            android:defaultValue="false" />
+
         <ListPreference
             android:key="lockscreen_battery_status"
             android:persistent="false"
@@ -71,12 +82,6 @@
             android:entries="@array/lockscreen_battery_status_entries"
             android:entryValues="@array/lockscreen_battery_status_values"
             android:defaultValue="0" />
-
-        <com.android.settings.mahdi.SystemSettingCheckBoxPreference
-            android:key="battery_around_lockscreen_ring"
-            android:title="@string/battery_around_lockscreen_ring"
-            android:summary="@string/battery_around_lockscreen_ring_summary"
-            android:defaultValue="false" />
 
         <PreferenceScreen
             android:key="keyguard_style"

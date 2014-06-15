@@ -1234,6 +1234,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="lockscreen_shorcuts_longpress_title">Shortcuts longpress</string>
     <string name="lockscreen_shorcuts_longpress_summary">Open custom lock screen shortcuts on longpress</string>
 
+    <!--Lockscreen See Through-->
+    <string name="see_through_title">See through</string>
+    <string name="see_through_summary">Shows the content behind your lockscreen, your data may be visible to those around you</string>
+
     <!-- Lock screen targets and shortcuts -->
     <string name="picker_activities">Activities</string>
     <string name="select_custom_activity_title">Select custom activity</string>
