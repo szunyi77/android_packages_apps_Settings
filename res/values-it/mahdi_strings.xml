@@ -333,7 +333,6 @@
     <string name="auto_brightness_dialog_title">Livello automatico luminosità</string>
     <string name="auto_brightness_level_format"><xliff:g id="level">%1$d</xliff:g> lux</string>
     <string name="auto_brightness_last_level_format"><xliff:g id="level">%1$d</xliff:g> -\n\u221e lux</string>
-    <string name="auto_brightness_brightness_format" translatable="false"><xliff:g id="percent">%s</xliff:g>%%</string>
     <string name="auto_brightness_adjust_button">Regola</string>
     <string name="auto_brightness_close_button">Chiudi</string>
     <string name="auto_brightness_reset_button">Ripristina</string>
@@ -373,7 +372,6 @@ Altre opzioni sono disponibili premendo a lungo una riga. Selezionando \'Modific
 il livello di luce ambientale del punto di controllo, ed anche inserire manualmente il valore
 desiderato di luminosità dello schermo. Selezionando \'Dividi\' puoi dividere una riga, per
 inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.</string>
-    </string>
 
     <string name="auto_brightness_sensitivity_title">Regola sensibilità</string>
     <string name="auto_brightness_sensitivity_verylow">Molto bassa</string>
