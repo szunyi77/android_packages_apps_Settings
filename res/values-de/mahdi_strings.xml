@@ -680,8 +680,6 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="clock_title_enable">Ausrichtung</string>
     <string name="clock_enabled">Aktiviert</string>
     <string name="clock_disabled">Deaktiviert</string>
-    <string name="clock_color_title">Farbe</string>
-    <string name="status_bar_clock_style_reset">Farbe zurück setzen</string>
     <string name="status_bar_show_clock_title">Zeige Uhrzeit und Datum</string>
     <string name="status_bar_am_pm_title">Tageszeitanzeige (AM/PM)</string>
     <string name="status_bar_am_pm_info">24-Stunden Uhr ist aktiviert</string>
@@ -707,6 +705,10 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="clock_date_style_uppercase">Großschreibung</string>
     <string name="clock_date_format_custom">Eigenes Format</string>
     <string name="status_bar_clock_style_reset_message">Uhrfarbe zurücksetzen?</string>
+
+	<!-- Statusbar Second Clock -->
+    <string name="clock_use_second">Sekunden</string>
+    <string name="clock_use_second_summary">Anzeige der Sekunden aktivieren</string>
 
     <!-- StatusBar Battery Settings -->
     <string name="status_bar_battery_title">Akkustandanzeige</string>
@@ -1007,7 +1009,7 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="navbar_dimensions_reset_message">Alle Abmessungen auf Standard zurücksetzen?</string>
 
     <!-- Navigation bar button style -->
-    <string name="nav_bar_button_style_summary">Aussehen der Navigagationstasten festlegen</string>
+    <string name="nav_bar_button_style_summary">Optik der Navigagationstasten festlegen</string>
     <string name="button_transparency_title">Tastentransparenz</string>
     <string name="nav_button_color_mode_summary">Navigationstasten-Farbmodus</string>
     <string name="navigation_bar_glow_tint_title">Hintergrundfarbe</string>
@@ -1364,8 +1366,9 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="ime_switcher_notify_summary">Benachrichtigung zur Auswahl der Eingabemethode in der Statusleiste anzeigen</string>
 
     <!-- Themes settings -->
-    <string name="themes_settings_title">Themen Auswahl</string>
-
+    <string name="themes_settings_title">Themen</string>
+    <string name="title_cm_themes">Themen Auswahl</string>
+	
     <!-- The following are entries under the themes menu -->
     <string name="themepacks_settings_title">Themen</string>
     <string name="styles_settings_title">Stile</string>
@@ -1384,7 +1387,7 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="theme_auto_switch_mode_error">Automatischer Änderungsmodus durch Lichtverhältnisse aktiviert. Manuelles Umschalten nicht möglich.</string>
 	
     <!-- Notification drawer background -->
-    <string name="notification_style_title">Aussehen</string>
+    <string name="notification_style_title">Optik</string>
     <string name="notification_background_title">Hintergrund</string>
     <string name="notification_background_summary">Hintergrund ändern</string>
     <string name="notification_wallpaper_title">Hintergrund</string>
@@ -1403,11 +1406,6 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
 
     <!-- Header on first screen of choose encryption password [CHAR LIMIT=30] -->
     <string name="encryptionpassword_choose_your_password_header">Verschlüsselungspasswort festlegen</string>
-
-    <!-- Contextual notification panel header -->
-    <string name="notification_drawer_category_title">Benachrichtigungsanzeige</string>
-    <string name="custom_statusbar_header_title">Kontextuelle Benachrichtigungsanzeige</string>
-    <string name="custom_statusbar_header_summary">Kopfzeilenhintergrundbild basierend auf Datum und Zeit</string>
 
     <!-- Minimum Vibration Duration -->
     <string name="minimum_vibration_duration">Kürzeste Vibrationsdauer</string>
@@ -1662,7 +1660,7 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="animation_no_scroll_summary_off">Deaktiviert</string>
 
     <!-- IME Animation Controls -->
-    <string name="ime_animation_title">Tatstatur</string>
+    <string name="ime_animation_title">Tastatur</string>
     <string name="ime_animation_summary">Konfiguration der Tastaturanimationen</string>
     <string name="ime_animation_test_title">Animation testen</string>
     <string name="ime_enter_animation_title">Einblenden</string>
@@ -1873,7 +1871,7 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="title_tile_onthego">On-The-Go</string>
 
     <!-- Swap volume buttons -->
-    <string name="swap_volume_buttons_title">Ausrichting der Lautstärke-Tasten</string>
+    <string name="swap_volume_buttons_title">Ausrichtung der Lautstärke-Tasten</string>
     <string name="swap_volume_buttons_summary">Vertauschen der Lautstärke-Tasten wenn der Bildschirm gedreht wird</string>
 
     <!-- Recents Ram Bar -->
@@ -2069,10 +2067,6 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     multiple font sizes in a limited amount of space. -->
     <string name="font_size_sample">Beispiel</string>
 
-    <!-- vibrate during phone calls -->
-    <string name="notification_vibrate_during_calls_title">Während Telefonaten vibrieren</string>
-    <string name="notification_vibrate_during_calls_summary">Vibration bei eingehenden Benachrichtigungen während eines Telefonats</string>
-
     <!--Notification category-->
     <string name="notification_category">Benachrichtigungen</string>
     <!--Notification peek-->
@@ -2091,12 +2085,12 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="peek_wake_20seconds">20 Sekunden</string>
     <string name="peek_wake_30seconds">30 Sekunden</string>
     
-    <!-- Battery Bar -->
+	<!-- Battery Bar -->
     <string name="battery_bar_title">Batterieleiste</string>
     <string name="battery_bar_summary">Konfiguration der Batterieleiste</string>
     <string name="battery_bar">Position</string>
     <string name="battery_bar_color">Farbe</string>
-    <string name="battery_bar_cat">Aussehen</string>
+    <string name="battery_bar_cat">Optik</string>
     <string name="battery_bar_style_title">Ausrichtung</string>
     <string name="battery_bar_thickness_title">Dicke</string>
     <string name="battery_bar_animate_title">Ladeanimation</string>
@@ -2123,7 +2117,7 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <!-- Shake Events -->
     <string name="shake_events_title">Schüttelevents</string>
     <string name="keyguard_shake_events_title">Schüttelevents</string>
-    <string name="shake_events_summary">Benutzerdefinierte Aktionen durch Schütteln des Geräts durchführen</string>
+    <string name="shake_events_summary">Konfiguration benutzerdefinierter Aktionen durch schütteln des Geräts</string>
     <string name="shake_events_enabled_title">Schütteln aktivieren</string>
     <string name="shake_events_normal_title">Schüttelevents aktivieren</string>
     <string name="shake_events_disabled_title">Apps ausschließen</string>
@@ -2137,9 +2131,13 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <!-- Shake sensitivity -->
     <string name="shake_sensitivity_title">Schüttelempfindlichkeit</string>
     <string name="shake_sensitivity_summary">Globale Empfindlichkeit aller Schüttelpräferenzen</string>
-    <string name="shake_sensitivity_less_sensitive">Weniger Empfindlich</string>
-    <string name="shake_sensitivity_more_sensitive">Mehr Empfindlich</string>
-
+    <string name="shake_sensitivity_even_less_sensitive">Sehr unempfindlich</string>
+    <string name="shake_sensitivity_less_sensitive">Weniger empfindlich</string>
+    <string name="shake_sensitivity_more_sensitive">Mehr empfindlich</string>
+    <string name="shake_sensitivity_very_sensitive">Sehr empfindlich</string>
+    <string name="shake_sensitivity_super_sensitive">Super empfindlich</string>
+    <string name="shake_sensitivity_ultra_sensitive">Ultra empfindlich</string>
+	
     <!-- Data Usage -->
     <!-- Subtitle of dialog for editing data usage cycle reset date. [CHAR LIMIT=32] -->
     <string name="data_usage_cycle_editor_subtitle_cm">Zyklusdatum:</string>
@@ -2163,4 +2161,16 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="headset_plug_actions_kill">App beenden</string>
     <string name="headset_plug_force_actions_title">Forciertes Ausstecken</string>
     <string name="headset_plug_force_actions_summary">Aktion auch bei aktiver App-Ausführung duchführen</string>
+
+    <!--Blacklist-->
+    <string name="blacklist_button_title">Schwarze Listen</string>
+    <string name="peek_blacklist_label">Peek</string>
+    <string name="floating_blacklist_label">Überlagerungsmodus</string>
+    <string name="hover_blacklist_label">Hover</string>
+
+    <!-- Protected Apps -->
+    <string name="menu_hidden_apps_delete">Zurücksetzen</string>
+    <string name="menu_hidden_apps_reset_lock">Zurücksetzen des Sperrmusters</string>
+    <string name="protected_apps">Geschützte Apps</string>
+    <string name="saving_protected_components">Speichern des Komponentenstatus</string>
 </resources>
