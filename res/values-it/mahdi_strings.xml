@@ -20,17 +20,21 @@
     <string name="customization_settings_title">Personalizzazioni</string>
 
     <!-- About phone screen,  Mod Version -->
-    <string name="mod_version">Versione Mahdi Rom</string>
-    <string name="mod_version_default">Sconosciuto </string>
+    <string name="mod_version">Versione Mahdi</string>
+    <string name="mod_version_default">Sconosciuto</string>
     <!-- About phone screen, Build date of ROM -->
-    <string name="build_date">Data Build </string>
+    <string name="build_date">Data build</string>
     <string name="build_date_default">2012-01-01-0000</string>
     <!-- About device screen, Cpu info. -->
     <string name="cpu_info">CPU</string>
     <!-- About phone screen, Free memory info -->
-    <string name="mem_info">Memoria </string>
+    <string name="mem_info">Memoria</string>
     <!-- About phone screen, status item label --> 
 
+    <!-- Updater --> 
+    <string name="updater_title">Aggiornamenti</string>
+    <string name="updater_summary">Controlla per aggiornamenti e altro</string>
+    
     <!-- General strings -->
     <string name="ok">OK</string>
     <string name="reset">Reset</string>
@@ -54,7 +58,10 @@
     <string name="notification_light_voicemail_title">Messaggio in Segreteria</string>
     <string name="notification_light_choose_app">Scegli applicazione</string>
     <string name="notification_light_add">Aggiungi</string>
-    <string name="notification_light_screenon_title">Attiva quando lo schermo è acceso</string>
+    
+    <!-- Screen-On Notification Light -->
+    <string name="screen_on_notification_led_title">LED a schermo acceso</string>
+    <string name="screen_on_notification_led_summary">Attiva il LED anche se lo schermo è acceso</string>
 
     <!-- Notification light dialogs -->
     <string name="edit_light_settings">Modifica valori LED</string>
@@ -101,7 +108,7 @@
 
     <!-- Advanced reboot options -->
     <string name="advanced_reboot_title">Riavvio avanzato</string>
-    <string name="advanced_reboot_summary">Quando è attivo, include nella schermata di riavvio il riavvio in recovery e in bootloader</string>
+    <string name="advanced_reboot_summary">Quando è attivo, include nella schermata di riavvio le opzioni per il riavvio in recovery e in fastboot</string>
 
    <!-- Profiles settings  -->
     <string name="profiles_settings_title">Profili</string>
@@ -123,7 +130,7 @@
     <string name="rename_dialog_title">Rinomina</string>
     <string name="rename_dialog_message">Inserisci nuovo nome</string>
     <string name="duplicate_profile_name">Nome profilo già esistente!</string>
-    <string name="duplicate_appgroup_name">Nome Gruppo Applicazioni già esistente!</string>
+    <string name="duplicate_appgroup_name">Nome gruppo applicazioni già esistente!</string>
 
     <!-- Reset Profiles -->
     <string name="profile_reset_title">Resetta</string>
@@ -158,26 +165,26 @@
     <string name="profile_appgroup_manage">Amministra Gruppi Applicazioni</string>
 
     <!-- Profile settings screen, section header for settings related to notification profiles -->
-    <string name="profile_settings">Imposta Profilo</string>
+    <string name="profile_settings">Imposta profilo</string>
     <string name="profile_name">Nome</string>
     <string name="profile_trigger_connect">Connetti</string>
     <string name="profile_trigger_disconnect">Disconnetti</string>
-    <string name="profile_trigger_notrigger">No Inneschi</string>
+    <string name="profile_trigger_notrigger">Nessun innesco</string>
 
     <!-- Profile Settings sound modes labels -->
-    <string name="sound_mode">Modalità Notifica</string>
+    <string name="sound_mode">Modalità notifica</string>
     <string name="ringer_mode">Modalità suoneria</string>
     <string name="lights_mode">Modalità LED</string>
-    <string name="vibrate_mode">Modalità Vibrazione</string>
+    <string name="vibrate_mode">Modalità vibrazione</string>
     <string name="choose_soundtone">Scegli tono notifica</string>
-    <string name="choose_ringtone">Scegli Suoneria</string>
+    <string name="choose_ringtone">Scegli suoneria</string>
 
     <!-- Sound settings screen, setting option name to pick ringtone (a list dialog comes up)-->
-    <string name="soundtone_title">Tono Notifica</string>
-    <string name="soundtone_summary">Sommario Notifiche</string>
+    <string name="soundtone_title">Tono notifica</string>
+    <string name="soundtone_summary">Sommario notifiche</string>
 
     <!-- Title for application group setting screen -->
-    <string name="profile_appgroups_title">Gruppi Applicazioni</string>
+    <string name="profile_appgroups_title">Gruppi applicazioni</string>
     <string name="profile_applist_title">Applicazioni</string>
     <string name="profile_new_appgroup">Nuovo gruppo applicazioni</string>
     <string name="profile_delete_appgroup">Eliminare questo gruppo applicazioni?</string>
@@ -189,14 +196,14 @@
     <string name="profile_settings_header">Impostazioni Profilo</string>
 
     <!-- Profiles - system settings -->
-    <string name="profile_system_settings_title">Impostazioni Sistema</string>
-    <string name="profile_lockmode_title">Modalità Schermata di sblocco</string>
+    <string name="profile_system_settings_title">Impostazioni sistema</string>
+    <string name="profile_lockmode_title">Modalità schermata di sblocco</string>
     <string name="profile_lockmode_default">Predefinito</string>
     <string name="profile_lockmode_insecure">Insicuro</string>
     <string name="profile_lockmode_disabled">Disattivato</string>
     <string name="profile_lockmode_default_summary">Usa predefinito sistema</string>
     <string name="profile_lockmode_insecure_summary">Usa modalità di blocco predefinita</string>
-    <string name="profile_lockmode_disabled_summary">La Schermata di sblocco è disattivata</string>
+    <string name="profile_lockmode_disabled_summary">La schermata di sblocco è disattivata</string>
     <string name="profile_airplanemode_title">Modalità Aereo</string>
     <string name="profile_disable_screen_lock_summary">Disattiva la lock screen di sicurezza quando questo profilo è attivo</string>
 
@@ -225,20 +232,20 @@
 
     <string name="profile_trigger_configure">Configura innesco</string>
     <string name="profile_triggers">Inneschi</string>
-    <string name="profile_trigger_filter_all">Tutti gli Inneschi</string>
-    <string name="profile_trigger_filter_wifi">Inneschi WiFi</string>
-    <string name="profile_trigger_filter_bluetooth">Inneschi Bluetooth</string>
-    <string name="profile_write_nfc_tag">Scrivi su Tag NFC</string>
-    <string name="profile_write_touch_tag">Tocca il Tag per scrivere</string>
+    <string name="profile_trigger_filter_all">Tutti gli inneschi</string>
+    <string name="profile_trigger_filter_wifi">Inneschi Wi-Fi</string>
+    <string name="profile_trigger_filter_bluetooth">Inneschi bluetooth</string>
+    <string name="profile_write_nfc_tag">Scrivi su tag NFC</string>
+    <string name="profile_write_touch_tag">Tocca il tag per scrivere</string>
     <string name="profile_write_success">Tag scritto con successo</string>
-    <string name="profile_write_failed">Scrittura del Tag fallita!</string>
-    <string name="profile_selected">Profile selected: %1$s</string>
+    <string name="profile_write_failed">Scrittura del tag fallita!</string>
+    <string name="profile_selected">Profilo selezionato: %1$s</string>
     <string name="profile_nfc_text">Writing a profile to a NFC tag allows for tapping the tag to select the profile. Tapping a second time will select the previously selected profile.</string>
     <string name="profile_unknown_nfc_tag">Profilo sconosciuto </string>
     <string name="profile_add_nfc_text">This NFC tag refers to an unknown profile. Attaching this NFC tag to an existing profile will allow for selecting the profile in the future.</string>
     <string name="profile_select">Seleziona profilo </string>
 
-    <string name="ring_mode_title">Modalità Suoneria</string>
+    <string name="ring_mode_title">Modalità suoneria</string>
     <string name="ring_mode_normal">Normale</string>
     <string name="ring_mode_vibrate">Vibrazione</string>
     <string name="ring_mode_mute">Muto</string>
@@ -290,7 +297,7 @@
 
     <!-- Sound settings -->
     <string name="volume_category">Volume</string>
-    <string name="advanced_sound_title">Opzioni Avanzate</string>
+    <string name="advanced_sound_title">Opzioni avanzate</string>
     <string name="advanced_sound_summary">Guarda o cambia opzioni per i pulsanti del volume e cuffie</string>
     <string name="link_volume_ringtones">Unisci volume suoneria e notifica \u0026 notifications volumes</string>
     <string name="volume_ring_only_description">Suoneria</string>
@@ -311,63 +318,64 @@
     <string name="button_volume_default_media">Applicazioni multimediali</string>
     <string name="button_volume_default_title">Volume di default</string>
     <string name="button_volume_default_summary">Scegli quale volume viene cambiato di default</string>
-    <!-- Launch music app on connect -->
-    <string name="volume_panel_timeout_title">Timeout Pannello</string>
+    <!-- Volume panel timeout -->
+    <string name="volume_panel_timeout_title">Timeout</string>
     <string name="volume_panel_timeout_summary">Tempo prima che il pannello viene nascosto</string>
     <!-- Launch music app on connect -->
     <string name="headset_category_title">Cuffie</string>
-    <string name="headset_connect_player_title">Apri Player predefinito alla connessione delle cuffie</string>
+    <string name="headset_connect_player_title">Apri player predefinito alla connessione delle cuffie</string>
 
     <!-- Automatic brightness customization -->
-    <string name="auto_brightness_setup_title">Luminosità Automatica</string>
-    <string name="auto_brightness_adjustment_title">Regolazione Luminosità</string>
+    <string name="auto_brightness_setup_title">Luminosità automatica</string>
+    <string name="auto_brightness_adjustment_title">Regolazione luminosità</string>
     <string name="auto_brightness_twilight_adjustment">Regolazione all\'alba e al tramonto</string>
     <string name="light_sensor_current_value">Regolazione attuale sensore: <xliff:g id="light_level">%d</xliff:g> lux</string>
     <string name="auto_brightness_dialog_title">Livello automatico luminosità</string>
     <string name="auto_brightness_level_format"><xliff:g id="level">%1$d</xliff:g> lux</string>
     <string name="auto_brightness_last_level_format"><xliff:g id="level">%1$d</xliff:g> -\n\u221e lux</string>
+    <string name="auto_brightness_brightness_format" translatable="false"><xliff:g id="percent">%s</xliff:g>%%</string>
     <string name="auto_brightness_adjust_button">Regola</string>
     <string name="auto_brightness_close_button">Chiudi</string>
     <string name="auto_brightness_reset_button">Ripristina</string>
-    <string name="auto_brightness_split_dialog_title">Split brightness level</string>
-    <string name="auto_brightness_level_dialog_title">Light level setup</string>
-    <string name="auto_brightness_lux">Ambient brightness (lux)</string>
-    <string name="auto_brightness_backlight">Screen brightness (%)</string>
-    <string name="auto_brightness_reset_dialog_title">Ripristinare livelli?</string>
-    <string name="auto_brightness_reset_confirmation">Tutti i livelli di luminosità automatica saranno ripristinati.</string>
-    <string name="auto_brightness_split_lux_format">Split position (between <xliff:g id="min">%1$d</xliff:g> and <xliff:g id="max">%2$d</xliff:g> lux)</string>
-    <string name="auto_brightness_level_options">Opzione livelli luce</string>
+    <string name="auto_brightness_split_dialog_title">Dividi livelli luminosità</string>
+    <string name="auto_brightness_level_dialog_title">Impostazioni luminosità</string>
+    <string name="auto_brightness_lux">Luminosità ambientale (lux)</string>
+    <string name="auto_brightness_backlight">Luminosità schermo (%)</string>
+    <string name="auto_brightness_reset_dialog_title">Ripristina livelli?</string>
+    <string name="auto_brightness_reset_confirmation">Tutti i livelli di luminosità saranno riportati ai rispettivi valori predefiniti.</string>
+    <string name="auto_brightness_split_lux_format">Dividi posizione (tra <xliff:g id="min">%1$d</xliff:g> e <xliff:g id="max">%2$d</xliff:g> lux)</string>
+    <string name="auto_brightness_level_options">Impostazioni livelli luminosità</string>
     <string name="auto_brightness_menu_edit">Modifica</string>
     <string name="auto_brightness_menu_split">Split</string>
     <string name="auto_brightness_menu_remove">Rimuovi</string>
     <string name="auto_brightness_preview">Anteprima</string>
     <string name="auto_brightness_preview_dialog_title">Anteprima curva luminosità</string>
-    <string name="auto_brightness_help_dialog_title">Aiuto</string>
+    <string name="auto_brightness_help_dialog_title">Guida</string>
     <string name="auto_brightness_help_text"><b>Come viene calcolata la luminosità automatica?</b>
 \n\n
-The brightness curve is calculated by performing a <i>cubic spline interpolation</i>
-on a given number of <i>control points</i>. It\'s not a \'bucket-type\' calculation where
-screen brightness will stay constant for a specific range of ambient brightness. That way,
-small changes in ambient brightness do not cause a large jump in screen brightness; however,
-it can be a little hard to predict the exact consequences of changing control points.\n
-To help with that, a preview of the calculated curve can be examined. Please note that the
-preview shows the curve in <i>logarithmic</i> scale, so that all control points can be shown
-distinctively. When using a linear scale, it wouldn\'t be possible to distinguish the tendentially
-more important control points in the lower range of ambient brightness.
-\n\n
+La curva di luminosità viene calcolata eseguendo una <i>interpolazione spline di terzo grado</i>
+su un dato numero di <i>punti di controllo</i>. Non è un algoritmo che fa rimanere costante
+la luminosità dello schermo in determinati intervalli di luminosità ambientale. In questo modo,
+piccole variazioni di luce ambientale non causano grandi variazioni di luminosità dello schermo;
+tuttavia, può essere arduo predire le esatte conseguenze di una modifica nei punti di controllo.\n
+Per rimediare a questo, si può esaminare un\'anteprima della curva calcolata. Si noti che
+l\'anteprima mostra la curva in scala <i>logaritmica</i>, in modo che i punti di controllo
+possano essere visualizzati distintamente. Se si usasse una scala lineare, non sarebbe
+possibile distinguere i punti di controllo - tendenzialmente più importanti - nella gamma
+più bassa di luminosità ambientale.\n\n
 <b>Come modificare la curva di luminosità?</b>
 \n\n
-Each line in the brightness list corresponds to one <i>control point</i> of the
-brightness curve. To edit the brightness level of the point, you can use the slider
-present in each line. The screen brightness will be changed accordingly while touching
-the slider to give a preview of the light level.\n
-Additional options are available by long-pressing a line. By selecting \'Edit\', you can
-both edit the ambient brightness level of the control point as well as manually input the
-desired screen brightness. Selecting \'Split\' allows you to to duplicate one line into
-two in order to insert additional control points. \'Remove\' deletes the selected line.
+Ogni riga nella lista corrisponde ad un <i>punto di controllo</i> della curva di luminosità.
+Per modificare il livello di luminosità del punto, puoi usare il controllo a scorrimento
+presente in ciascuna riga. La luminosità dello schermo sarà variata in accordo con il valore
+del controllo a scorrimento per fornire un\'anteprima del livello di luminosità.\n
+Altre opzioni sono disponibili premendo a lungo una riga. Selezionando \'Modifica\', puoi modificare
+il livello di luce ambientale del punto di controllo, ed anche inserire manualmente il valore
+desiderato di luminosità dello schermo. Selezionando \'Dividi\' puoi dividere una riga, per
+inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.</string>
     </string>
 
-    <string name="auto_brightness_sensitivity_title">Regola Sensibilità</string>
+    <string name="auto_brightness_sensitivity_title">Regola sensibilità</string>
     <string name="auto_brightness_sensitivity_verylow">Molto bassa</string>
     <string name="auto_brightness_sensitivity_low">Bassa</string>
     <string name="auto_brightness_sensitivity_medium">Media</string>
@@ -384,15 +392,109 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="lock_before_unlock_title">Mostra slider prima dello sblocco sicuro</string>
     <string name="lock_before_unlock_summary">Mostra slider di sblocco prima del meccanismo sicuro di sblocco</string>
 
+    <!-- Shake to secure -->
+    <string name="shake_to_secure_title">Scuoti in lockscreen per il blocco sicuro</string>
+    <string name="shake_to_secure_summary">Il blocco non ci sarà più dopo lo sblocco</string>
+    <string name="shake_to_secure_dlg_title">Attenzione:</string>
+    <string name="shake_to_secure_dlg_message">Il dispositivo non sarà sicuro affinchè non scuoti esplicitamente per attivare un blocco temporaneo. Quando diventa sicuro: se il dispositivo è sbloccato con successo diventerà insicuro fino al prossimo scuotimento.</string>
+    <string name="shake_secure_timeout_title">Ri-diventa sicuro automaticamente</string>
+    <string name="shake_all">Scuoti in ogni direzione</string>
+    <string name="shake_horizontal">Scuoti orizzontalmente</string>
+    <string name="shake_vertical">Scuoti verticalmente</string>
+    <string name="shake_back_forth">Scuoti avanti-e-indietro</string>
+    <string name="shake_secure_timeout_disabled">Mai automaticamente</string>
+    <string name="shake_secure_timeout_1min">1 minuto dopo che lo schermo si spegne</string>
+    <string name="shake_secure_timeout_5min">5 minuti dopo che lo schermo si spegne</string>
+    <string name="shake_secure_timeout_10min">10 minuti dopo che lo schermo si spegne</string>
+    <string name="shake_secure_timeout_30min">30 minuti dopo che lo schermo si spegne</string>
+
+    <!-- Lockscreen pin shuffle -->
+    <string name="lock_numpad_random_title">Cambia l\'ordine dei numeri del pad</string>
+    <string name="lock_numpad_random_dialog_title">Numeri del pad disordinati</string>
+    <string name="lock_numpad_random_off">Disattivo</string>
+    <string name="lock_numpad_random_always">Sempre</string>
+    <string name="lock_numpad_random_on_request">Su richiesta</string>
+
+    <!-- Sizes for pattern lockscreen -->
+    <string name="lock_pattern_size_3">3x3</string>
+    <string name="lock_pattern_size_4">4x4</string>
+    <string name="lock_pattern_size_5">5x5</string>
+    <string name="lock_pattern_size_6">6x6</string>
+
+    <!-- Whether a visible red line will be drawn after the user has drawn the unlock pattern incorrectly -->
+    <string name="lockpattern_settings_enable_error_path_title">Mostra sequenza errata</string>
+    <!-- Whether the dots will be drawn when using the lockscreen pattern -->
+    <string name="lockpattern_settings_enable_dots_title">Mostra punti sequenza</string>
+
+    <!-- Security settings home unlock -->
+    <string name="unlock_home_unlock_title">Sblocco home</string>
+    <string name="unlock_home_unlock_summary">La pressione del tasto home sblocca il dispositivo</string>
+
+    <!-- Quick unlock -->
+    <string name="unlock_quick_unlock_control_title">Sblocco veloce</string>
+    <string name="unlock_quick_unlock_control_summary">Sblocco automatico quando viene inserito correttamente il PIN o la password</string>
+
+    <!-- Slide lock delay -->
+    <string name="delay_and_timeout_title">Ritardo blocco</string>
+    <string name="slide_lock_delay_title">Ritardo blocco schermo</string>
+    <string name="slide_lock_timeout_delay_title">Ritardo dopo timeout</string>
+    <string name="slide_lock_screenoff_delay_title">Ritardo dopo schermo spento</string>
+    <string name="slide_lock_delay_none">Nessuno</string>
+    <string name="slide_lock_delay_1s">1 secondo</string>
+    <string name="slide_lock_delay_5s">5 secondi</string>
+    <string name="slide_lock_delay_10s">10 secondi</string>
+    <string name="slide_lock_delay_15s">15 secondi</string>
+    <string name="slide_lock_delay_30s">30 secondi</string>
+    <string name="slide_lock_delay_1m">1 minuto</string>
+    <string name="slide_lock_delay_5m">5 minuti</string>
+    <string name="slide_lock_delay_10m">10 minuti</string>
+    <string name="slide_lock_delay_30m">30 minuti</string>
+
+    <!-- Lock Gesture settings -->
+    <string name="lockgesture_change_lock_pattern_label">Cambia gesture di sblocco</string>
+    <string name="lockgesture_change_lock_pin_label">Cambia PIN di sblocco</string>
+    <string name="lockgesture_need_to_unlock">Conferma gesture salvata</string>
+    <string name="lockgesture_need_to_unlock_wrong">Prova di nuovo:</string>
+    <string name="lockgesture_recording_intro_header">Disegna una gesture di sblocco:</string>
+    <string name="lockgesture_recording_intro_footer">Premi menu per un aiuto.</string>
+    <string name="lockgesture_recording_inprogress">Rilascia dito quando hai finito.</string>
+    <string name="lockgesture_pattern_entered_header">Gesture salvata.</string>
+    <string name="lockgesture_need_to_confirm">Disegna gesture di nuovo per la conferma:</string>
+    <string name="lockgesture_pattern_confirmed_header">La tua nuova gesture di sblocco:</string>
+    <string name="lockgesture_confirm_button_text">Conferma</string>
+    <string name="lockgesture_restart_button_text">Ridisegna</string>
+    <string name="lockgesture_retry_button_text">Riprova</string>
+    <string name="lockgesture_continue_button_text">Continua</string>
+    <string name="lockgesture_settings_title">Gesture di sblocco</string>
+    <string name="lockgesture_settings_enable_title">Gesture richiesta</string>
+    <string name="lockgesture_settings_enable_summary">Devi disegnare una gesture per sbloccare lo schermo</string>
+    <string name="lockgesture_settings_enable_visible_pattern_title">Rendi la gesture visibile</string>
+    <string name="lockgesture_settings_enable_power_button_instantly_locks">Pulsante power blocca subito lo schermo</string>
+    <string name="lockgesture_settings_choose_lock_pattern">Imposta gesture di sblocco</string>
+    <string name="lockgesture_settings_change_lock_pattern">Cambia gesture di sblocco</string>
+    <string name="lockgesture_settings_help_how_to_record">Come disegnare gesture di sblocco</string>
+    <string name="lockgesture_too_many_failed_confirmation_attempts_header">Troppi tentativi sbagliati!</string>
+    <string name="lockgesture_too_many_failed_confirmation_attempts_footer">Prova di nuovo in <xliff:g id="number">%d</xliff:g> secondi.</string>
+    <string name="lockpassword_gesture_set_toast">La gesture è stata confermata</string>
+    <string name="lockpassword_confirm_your_gesture_header">Conferma la tua gesture</string>
+    <string name="lockpassword_choose_your_gesture_header">Disegna la tua gesture</string>
+    <string name="unlock_set_unlock_gesture_title">Gesture</string>
+    <string name="unlock_set_unlock_gesture_summary">Poco sicuro, sperimentale</string>
+    <string name="unlock_set_unlock_mode_gesture">Gesture</string>
+    <!-- Do not translate. -->
+    <string name="lockgesture_need_to_unlock_footer" />    
+    <!-- Do not translate. -->
+    <string name="lockgesture_need_to_unlock_wrong_footer" />
+
     <!-- Quick settings panel  -->
-    <string name="quick_settings_panel_title">Pannello quick settings</string>
+    <string name="quick_settings_panel_title">Quick settings</string>
     <string name="quick_settings_summary">Aggiungi o rimuovi tiles e cambia altre opzioni dei quick settings</string>
-    <string name="title_static_tiles">Tiles Statici</string>
-    <string name="tile_picker_title">Tiles e disposizione</string>
+    <string name="title_static_tiles">Tile statici</string>
+    <string name="tile_picker_title">Tile e disposizione</string>
     <string name="tile_picker_summary">Guarda, scegli o cambia la disposizione dei tile mostrati</string>
     <string name="tile_choose_title">Scegli un tile</string>
 
-    <string name="title_tile_airplane">Modalità Aereo</string>
+    <string name="title_tile_airplane">Modalità aereo</string>
     <string name="title_tile_battery">Batteria</string>
     <string name="title_tile_bluetooth">Bluetooth</string>
     <string name="title_tile_brightness">Luminosità</string>
@@ -400,9 +502,9 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="title_tile_power">Spegni</string>
     <string name="title_tile_location">GPS</string>
     <string name="title_tile_torch">Torcia</string>
-    <string name="title_tile_lockscreen">Blocca Schermo</string>
+    <string name="title_tile_lockscreen">Blocca schermo</string>
     <string name="title_tile_lte">LTE</string>
-    <string name="title_tile_mobiledata">Dati Mobili</string>
+    <string name="title_tile_mobiledata">Dati mobili</string>
     <string name="title_tile_profile">Profilo</string>
     <string name="title_tile_autorotate">Rotazione</string>
     <string name="title_tile_settings">Impostazioni</string>
@@ -410,18 +512,18 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="title_tile_sync">Sincronizzazione</string>
     <string name="title_tile_wifiap">Hotspot Wi-Fi</string>
     <string name="title_tile_wifi">Wi-Fi</string>
-    <string name="title_tile_user">Cambia Utente</string>
-    <string name="title_tile_networkmode">Modalità Rete</string>
+    <string name="title_tile_user">Cambia utente</string>
+    <string name="title_tile_networkmode">Modalità rete</string>
     <string name="title_tile_nfc">NFC</string>
-    <string name="title_tile_screen_timeout">Timeout Schermo</string>
+    <string name="title_tile_screen_timeout">Timeout schermo</string>
     <string name="title_tile_quiet_hours">Ore di quiete</string>
     <string name="title_tile_volume">Volumi</string>
     <string name="title_tile_immersive_mode">Immersive mode</string>
     <string name="title_tile_network_adb">ADB tramite Wi-Fi </string>
-    <string name="title_tile_navbar">Navigation Bar</string>
+    <string name="title_tile_navbar">Navigation bar</string>
     <string name="title_tile_network_traffic">Traffico di rete</string>
     <string name="title_tile_music">Musica</string>
-    <string name="title_tile_quick_record">Registrazione Veloce</string>
+    <string name="title_tile_quick_record">Registrazione veloce</string>
     <string name="title_tile_contact">Contatto</string>
     <string name="title_tile_custom">Personalizzato</string>
     <string name="custom_tile_dialog_text">Ogni azione aggiungerà un nuovo stato al tile. Ogni click lo porta al prossimo stato. Tieni premuto per aggiungere un\'azione.</string>
@@ -430,10 +532,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="custom_toggle_extras">Extra del tile personalizzato</string>
     <string name="custom_toggle_collapse_check">Chiudi dopo aver premuto</string>
     <string name="custom_toggle_match_state_check">Click action matches icon</string>
-    <string name="custom_tile_long_press">Longpress:</string>
+    <string name="custom_tile_long_press">Tieni premuto:</string>
     <string name="custom_tile_null_warning">Deve essere prima selezionata un\'azione</string>
     <string name="custom_tile_resolve_name">Sconosciuto</string>
-    <string name="title_tile_theme">Cambia Tema</string>
+    <string name="title_tile_theme">Cambia tema</string>
 
     <string name="title_dynamic_tiles">Tile dinamici</string>
     <string name="dynamic_tiles_note_title">Nota</string>
@@ -836,7 +938,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="shortcuts_color_mode_summary">Cambia la modalità del colore icona </string>
 
     <!-- Notification drawer settings  -->
-    <string name="notification_drawer_title">Notification drawer</string>
+    <string name="notification_drawer_title">Drawer notifiche</string>
     <string name="notification_drawer_summary">Aggiungi scorciatoie, quick settings e altro </string>
     <string name="notification_shortcuts_settings_title">Scorciatoie </string>
     <string name="notification_shortcuts_settings_summary">Aggiungi quick settings in fondo al notification drawer </string>
@@ -1544,7 +1646,7 @@ name="quiet_hours_auto_sms_call_title">Chiamate in arrivo </string>
     <string name="system_power_crt_mode_scale">Graduale </string>
 
     <!-- Animation Control -->
-    <string name="interface_animation_title">Controllo animazioni </string>
+    <string name="interface_animation_title">Animazioni </string>
     <string name="interface_animation_summary">Scegli animazioni alternative per varie cose </string>
 
     <!-- ListView animation -->
@@ -1869,7 +1971,7 @@ name="quiet_hours_auto_sms_call_title">Chiamate in arrivo </string>
     <string name="ram_bar_reset_message">Ripristinare lo stile della RAM bar? </string>
 
     <!-- Disable FC Notifications -->
-    <string name="disable_fc_notifications_title">Disattiva Notifiche FC</string>
+    <string name="disable_fc_notifications_title">Disattiva notifiche FC</string>
     <string name="disable_fc_notifications_summary">Questo nasconderà tutte le notifiche forzate </string>
 
     <!-- Notification drawer brightness slider -->
@@ -2110,7 +2212,7 @@ name="quiet_hours_auto_sms_call_title">Chiamate in arrivo </string>
 
     <!-- Data Usage -->
     <!-- Subtitle of dialog for editing data usage cycle reset date. [CHAR LIMIT=32] -->
-    <string name="data_usage_cycle_editor_subtitle_cm">Data di ogni ciclo:</string>
+    <string name="data_usage_cycle_editor_subtitle_cm">Data inizio ciclo:</string>
     <!-- Subtitle of dialog for editing data usage cycle length. [CHAR LIMIT=32] -->
     <string name="data_usage_lengths_spinner_subtitle">Lunghezza ciclo:</string>
 
