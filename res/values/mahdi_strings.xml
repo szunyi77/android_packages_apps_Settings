@@ -1239,13 +1239,15 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="see_through_title">See through</string>
     <string name="see_through_summary">Shows the content behind your lockscreen, your data may be visible to those around you</string>
 
-    <!-- Lock screen targets and shortcuts -->
+    <!-- Lock screen shortcuts -->
     <string name="picker_activities">Activities</string>
     <string name="select_custom_activity_title">Select custom activity</string>
     <string name="icon_picker_alarm">Alarm</string>
     <string name="icon_picker_browser">Browser</string>
     <string name="icon_picker_calendar">Calendar</string>
     <string name="icon_picker_camera">Camera</string>
+    <string name="icon_picker_chrome">Chrome</string>
+    <string name="icon_picker_contacts">Contacts</string>
     <string name="icon_picker_email">Email</string>
     <string name="icon_picker_email2">Email Holo</string>
     <string name="icon_picker_facebook">Facebook</string>

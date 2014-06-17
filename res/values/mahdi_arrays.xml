@@ -924,11 +924,13 @@
     </string-array>
 
     <!-- Lockscreen Targets -->
-    <string-array name="lockscreen_icon_picker_labels">
+    <string-array name="lockscreen_icon_picker_labels" translatable="false">
         <item>@string/icon_picker_alarm</item>
         <item>@string/icon_picker_browser</item>
         <item>@string/icon_picker_calendar</item>
         <item>@string/icon_picker_camera</item>
+        <item>@string/icon_picker_chrome</item>
+        <item>@string/icon_picker_contacts</item>
         <item>@string/icon_picker_email</item>
         <item>@string/icon_picker_email2</item>
         <item>@string/icon_picker_facebook</item>
@@ -953,6 +955,8 @@
         <item>ic_lockscreen_browser_normal</item>
         <item>ic_lockscreen_calendar_normal</item>
         <item>ic_lockscreen_camera_normal</item>
+        <item>ic_lockscreen_chrome_normal</item>
+        <item>ic_lockscreen_contacts_normal</item>
         <item>ic_lockscreen_email_normal</item>
         <item>ic_lockscreen_email2_normal</item>
         <item>ic_lockscreen_facebook_normal</item>
