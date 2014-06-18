@@ -22,7 +22,9 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.net.Uri;
@@ -37,15 +39,21 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.Display;
 import android.widget.Toast;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
 import com.android.internal.util.mahdi.DeviceUtils;
+import com.android.internal.util.mahdi.QSUtils;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
 import java.io.File;
 
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 import net.margaritov.preference.colorpicker.ColorPickerView;
+
 
 public class NotificationDrawerStyle extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
@@ -60,13 +68,32 @@ public class NotificationDrawerStyle extends SettingsPreferenceFragment implemen
             "notification_wallpaper_alpha";
     private static final String PREF_NOTIFICATION_ALPHA =
             "notification_alpha";
+    private static final String PREF_QUICK_TILES_BG_COLOR =
+            "quick_tiles_bg_color";
+    private static final String PREF_QUICK_TILES_BG_PRESSED_COLOR =
+            "quick_tiles_bg_pressed_color";
+    private static final String PREF_QUICK_TILES_ALPHA =
+            "quick_tiles_alpha";
+    private static final String PREF_QUICK_TILES_TEXT_COLOR =
+            "quick_tiles_text_color";
+    private static final String PREF_ADDITIONAL_OPTIONS =
+            "quicksettings_tiles_style_additional_options";
 
-    private static final int DLG_PICK_COLOR = 0;
+    private static final int DEFAULT_QUICK_TILES_TEXT_COLOR = 0xffcccccc;
+
+    private static final int MENU_RESET = Menu.FIRST;
+
+    private static final int DLG_RESET = 0;
+    private static final int DLG_PICK_COLOR = 1;
 
     private ListPreference mNotificationWallpaper;
     private ListPreference mNotificationWallpaperLandscape;
     SlimSeekBarPreference mWallpaperAlpha;
     SlimSeekBarPreference mNotificationAlpha;
+    private ColorPickerPreference mQuickTilesBgColor;
+    private ColorPickerPreference mQuickTilesBgPressedColor;
+    private ColorPickerPreference mQuickTilesTextColor;
+    private SlimSeekBarPreference mQsTileAlpha;
 
     private File mImageTmp;
 
@@ -75,9 +102,29 @@ public class NotificationDrawerStyle extends SettingsPreferenceFragment implemen
 
     private Activity mActivity;
 
+    private boolean mCheckPreferences;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        refreshSettings();
+    }
+
+    private PreferenceScreen refreshSettings() {
+        mCheckPreferences = false;
+        PreferenceScreen prefs = getPreferenceScreen();
+        if (prefs != null) {
+            prefs.removeAll();
+        }
+
+        PackageManager pm = getPackageManager();
+        Resources systemUiResources;
+        try {
+            systemUiResources = pm.getResourcesForApplication("com.android.systemui");
+        } catch (Exception e) {
+            Log.e(TAG, "can't access systemui resources",e);
+            return null;
+        }
 
         mActivity = getActivity();
 
@@ -100,6 +147,7 @@ public class NotificationDrawerStyle extends SettingsPreferenceFragment implemen
         }
 
         float transparency;
+
         try{
             transparency = Settings.System.getFloat(getContentResolver(),
                     Settings.System.NOTIFICATION_BACKGROUND_ALPHA);
@@ -124,7 +172,68 @@ public class NotificationDrawerStyle extends SettingsPreferenceFragment implemen
         mNotificationAlpha.setInitValue((int) (transparency * 100));
         mNotificationAlpha.setOnPreferenceChangeListener(this);
 
+        int intColor;
+        String hexColor;
+
+        mQuickTilesBgColor = (ColorPickerPreference) findPreference(PREF_QUICK_TILES_BG_COLOR);
+        mQuickTilesBgColor.setOnPreferenceChangeListener(this);
+        intColor = Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.QUICK_TILES_BG_COLOR, -2);
+        if (intColor == -2) {
+            intColor = systemUiResources.getColor(systemUiResources.getIdentifier(
+                    "com.android.systemui:color/qs_background_color", null, null));
+            mQuickTilesBgColor.setSummary(getResources().getString(R.string.default_string));
+        } else {
+            hexColor = String.format("#%08x", (0xffffffff & intColor));
+            mQuickTilesBgColor.setSummary(hexColor);
+        }
+        mQuickTilesBgColor.setNewPreviewColor(intColor);
+
+
+        mQuickTilesBgPressedColor =
+                (ColorPickerPreference) findPreference(PREF_QUICK_TILES_BG_PRESSED_COLOR);
+        mQuickTilesBgPressedColor.setOnPreferenceChangeListener(this);
+        intColor = Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.QUICK_TILES_BG_PRESSED_COLOR, -2);
+        if (intColor == -2) {
+            intColor = systemUiResources.getColor(systemUiResources.getIdentifier(
+                    "com.android.systemui:color/qs_background_pressed_color", null, null));
+            mQuickTilesBgPressedColor.setSummary(getResources().getString(R.string.default_string));
+        } else {
+            hexColor = String.format("#%08x", (0xffffffff & intColor));
+            mQuickTilesBgPressedColor.setSummary(hexColor);
+        }
+        mQuickTilesBgPressedColor.setNewPreviewColor(intColor);
+
+        mQuickTilesTextColor = (ColorPickerPreference) findPreference(PREF_QUICK_TILES_TEXT_COLOR);
+        mQuickTilesTextColor.setOnPreferenceChangeListener(this);
+        intColor = Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.QUICK_TILES_TEXT_COLOR, -2);
+        if (intColor == -2) {
+            intColor = DEFAULT_QUICK_TILES_TEXT_COLOR;
+            mQuickTilesTextColor.setSummary(getResources().getString(R.string.default_string));
+        } else {
+            hexColor = String.format("#%08x", (0xffffffff & intColor));
+            mQuickTilesTextColor.setSummary(hexColor);
+        }
+        mQuickTilesTextColor.setNewPreviewColor(intColor);
+
+        try{
+            transparency = Settings.System.getFloat(getContentResolver(),
+                    Settings.System.QUICK_TILES_BG_ALPHA);
+        } catch (Exception e) {
+            transparency = 0;
+            Settings.System.putFloat(getContentResolver(),
+                    Settings.System.QUICK_TILES_BG_ALPHA, 0.0f);
+        }
+        mQsTileAlpha = (SlimSeekBarPreference) findPreference(PREF_QUICK_TILES_ALPHA);
+        mQsTileAlpha.setInitValue((int) (transparency * 100));
+        mQsTileAlpha.setOnPreferenceChangeListener(this);
+
+        setHasOptionsMenu(true);
+        mCheckPreferences = true;
         updateCustomBackgroundSummary();
+        return prefs;
     }
 
 
@@ -269,7 +378,7 @@ public class NotificationDrawerStyle extends SettingsPreferenceFragment implemen
             Settings.System.putFloat(getContentResolver(),
                     Settings.System.NOTIFICATION_ALPHA, valNav / 100);
             return true;
-        }else if (preference == mNotificationWallpaper) {
+        } else if (preference == mNotificationWallpaper) {
             int indexOf = mNotificationWallpaper.findIndexOfValue(newValue.toString());
             switch (indexOf) {
                 //Displays color dialog when user has chosen color fill
@@ -290,7 +399,7 @@ public class NotificationDrawerStyle extends SettingsPreferenceFragment implemen
                     break;
             }
             return true;
-        }else if (preference == mNotificationWallpaperLandscape) {
+        } else if (preference == mNotificationWallpaperLandscape) {
             int indexOf = mNotificationWallpaperLandscape.findIndexOfValue(newValue.toString());
             switch (indexOf) {
                 //Launches intent for user to select an image/crop it to set as background
@@ -304,8 +413,59 @@ public class NotificationDrawerStyle extends SettingsPreferenceFragment implemen
                     break;
             }
             return true;
+        } else if (preference == mQuickTilesBgColor) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.QUICK_TILES_BG_COLOR,
+                    intHex);
+            return true;
+
+        } else if (preference == mQuickTilesBgPressedColor) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.QUICK_TILES_BG_PRESSED_COLOR,
+                    intHex);
+            return true;
+        } else if (preference == mQuickTilesTextColor) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.QUICK_TILES_TEXT_COLOR,
+                    intHex);
+            return true;
+        } else if (preference == mQsTileAlpha) {
+            float valNav = Float.parseFloat((String) newValue);
+            Settings.System.putFloat(getContentResolver(),
+                    Settings.System.QUICK_TILES_BG_ALPHA, valNav / 100);
+            return true;
         }
         return false;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        menu.add(0, MENU_RESET, 0, R.string.reset)
+                .setIcon(R.drawable.ic_settings_backup) // use the backup icon
+                .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case MENU_RESET:
+                showDialogInner(DLG_RESET);
+                return true;
+             default:
+                return super.onContextItemSelected(item);
+        }
     }
 
     private void showDialogInner(int id) {
@@ -332,6 +492,24 @@ public class NotificationDrawerStyle extends SettingsPreferenceFragment implemen
         public Dialog onCreateDialog(Bundle savedInstanceState) {
             int id = getArguments().getInt("id");
             switch (id) {
+                case DLG_RESET:
+                    return new AlertDialog.Builder(getActivity())
+                    .setTitle(R.string.reset)
+                    .setMessage(R.string.qs_style_reset_message)
+                    .setNegativeButton(R.string.cancel, null)
+                    .setPositiveButton(R.string.dlg_ok,
+                        new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            Settings.System.putInt(getActivity().getContentResolver(),
+                                    Settings.System.QUICK_TILES_BG_COLOR, -2);
+                            Settings.System.putInt(getActivity().getContentResolver(),
+                                    Settings.System.QUICK_TILES_BG_PRESSED_COLOR, -2);
+                            Settings.System.putInt(getActivity().getContentResolver(),
+                                    Settings.System.QUICK_TILES_TEXT_COLOR, -2);
+                            getOwner().refreshSettings();
+                        }
+                    })
+                    .create();
                 case DLG_PICK_COLOR:
                     final ColorPickerView colorView = new ColorPickerView(getOwner().mActivity);
                     String currentColor = Settings.System.getString(
@@ -358,6 +536,7 @@ public class NotificationDrawerStyle extends SettingsPreferenceFragment implemen
                                 "color=" + String.format("#%06X",
                                 (0xFFFFFF & colorView.getColor())));
                             getOwner().updateCustomBackgroundSummary();
+            
                         }
                     })
                     .create();
@@ -368,6 +547,7 @@ public class NotificationDrawerStyle extends SettingsPreferenceFragment implemen
         @Override
         public void onCancel(DialogInterface dialog) {
 
-        }
+        }            
     }
+
 }

@@ -561,18 +561,14 @@
     <string name="music_tile_mode_tracktitle">Показывать название композиции</string>
 
     <!-- Quick access ribbon -->
-    <string name="category_quick_access">Лента быстрого доступа</string>
-    <string name="title_quick_access">Показывать в панели</string>
+    <string name="title_quick_access">Лента быстрого доступа</string>
     <string name="title_quick_access_linked">Связанное расположение</string>
     <string name="summary_quick_access_linked">Используются плитки и их размещение из панели быстрых настроек</string>
 
     <!-- QuickSettings style options -->
-    <string name="quicksettings_tiles_style">Стиль быстрых настроек</string>
+    <string name="title_qs_small_icons">Маленькие плитки</string>
+    <string name="summary_qs_small_icons">Использовать плитки меньшего размера для увеличения количества столбцов</string>
     <string name="summary_quicksettings_tiles_style">Просмотреть/изменить установки стиля быстрых настроек</string>
-    <string name="quicksettings_tiles_style_additional_options">Дополнительные настройки</string>
-    <string name="tiles_per_row_title">Плиток в ряд</string>
-    <string name="tiles_per_row_duplicate_landscape_title">Изменять количество в ландшафтном режиме</string>
-    <string name="tiles_per_row_duplicate_landscape_summary">В ландшафтном режиме количество плиток в ряду удваивается</string>
     <string name="quick_tiles_color_title">Включить пользовательские цвета</string>
     <string name="quick_tiles_color_summary">Пользовательские цвета заменят цвета тем</string>
     <string name="quick_tiles_bg_color_title">Цвет фона плиток</string>
@@ -1368,8 +1364,7 @@
     <string name="theme_auto_mode_twilight">В дневное время</string>
     <string name="theme_auto_switch_mode_error">Активирован режим автоматического изменения в зависимости от освещения. Ручной режим недоступен.</string>
 
-    <!-- Notification drawer background -->
-    <string name="notification_style_title">Стиль панели уведомлений</string>    
+    <!-- Notification drawer background -->   
     <string name="notification_background_title">Стиль фона панели уведомлений</string>
     <string name="notification_background_summary">Изменить Стиль фона панели уведомлений</string>
     <string name="notification_wallpaper_title">Фон панели уведомлений</string>

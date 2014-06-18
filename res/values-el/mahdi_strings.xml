@@ -582,18 +582,14 @@
   <string name="music_tile_mode_tracktitle">Εμφάνιση τίτλου τραγουδιού</string>
 
   <!-- Quick access ribbon -->
-  <string name="category_quick_access">Μπάρα γρήγορης πρόσβασης</string>
-  <string name="title_quick_access">Εμφάνιση στο συρτάρι</string>
+  <string name="title_quick_access">Μπάρα γρήγορης πρόσβασης</string>
   <string name="title_quick_access_linked">Συνδεδεμένη διάταξη</string>
   <string name="summary_quick_access_linked">Χρησιμοποιήστε τα πλακίδια και την διάταξη του πάνελ γρήγορων ρυθμίσεων</string>
 
   <!-- QuickSettings style options -->
-  <string name="quicksettings_tiles_style">Ρυθμίσεις στυλ</string>
+  <string name="title_qs_small_icons">Εμφάνιση μικρότερων πλακιδίων</string>
+  <string name="summary_qs_small_icons">Χρήση μικρότερων πλακιδίων για αύξηση του αριθμού των στηλών</string>
   <string name="summary_quicksettings_tiles_style">Αλλαγή του χρώματος των πλακιδίων και άλλα</string>
-  <string name="quicksettings_tiles_style_additional_options">Επιπρόσθετες ρυθμίσεις</string>
-  <string name="tiles_per_row_title">Πλακίδια ανα σειρά</string>
-  <string name="tiles_per_row_duplicate_landscape_title">Ποσότητα πλακιδίων σε λειτ. τοπίου</string>
-  <string name="tiles_per_row_duplicate_landscape_summary">Σε λειτουργία τοπίου τα πλακίδια είναι διπλάσια σε ποσότητα ανα σειρά.</string>
   <string name="quick_tiles_color_title">Προσαρμοσμένα χρώματα</string>
   <string name="quick_tiles_color_summary">Ενεργοποιόντας τα προσαρμοσμένα χρώματα,τα θέματα θα παρακάπτονται</string>
   <string name="quick_tiles_bg_color_title">Χρώμα φόντου πλακιδίων</string>
@@ -1386,7 +1382,6 @@
   <string name="theme_auto_switch_mode_error">Η αυτόματη αλλαγή κατάστασης φωτισμού είναι ενεργή.Η χειροκίνητη αλλαγή δεν είναι δυνατή.</string>
 
   <!-- Notification drawer background -->
-  <string name="notification_style_title">Στυλ</string>
   <string name="notification_background_title">Στυλ φόντου</string>
   <string name="notification_background_summary">Αλλαγή του φόντου του συρταριού ειδοποιήσεων</string>
   <string name="notification_wallpaper_title">Φόντο</string>

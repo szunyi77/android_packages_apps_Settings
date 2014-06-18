@@ -475,18 +475,14 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="music_tile_mode_tracktitle">Show track title</string>
 
     <!-- Quick access ribbon -->
-    <string name="category_quick_access">Gyors hozzáférésű szalag</string>
-    <string name="title_quick_access">Mutassa a panelen</string>
+    <string name="title_quick_access">Gyors hozzáférésű szalag</string>
     <string name="title_quick_access_linked">Csatolt elrendezés</string>
     <string name="summary_quick_access_linked">Ugyanazt az elrendezést és csempéket használja, mint a Gyors Beállítások panelen</string>
 
     <!-- QuickSettings style options -->
-    <string name="quicksettings_tiles_style">Stílus</string>
+    <string name="title_qs_small_icons">Kisebb csempék</string>
+    <string name="summary_qs_small_icons">Kisebb csempék használata a megjeleníthető elemek számának növeléséhez</string>
     <string name="summary_quicksettings_tiles_style">Megtekinted vagy megváltoztatod a gyors elérés stílus beállításait</string>
-    <string name="quicksettings_tiles_style_additional_options">További beállítások</string>
-    <string name="tiles_per_row_title">Csempék soronként</string>
-    <string name="tiles_per_row_duplicate_landscape_title">Fekvő mód mértéke</string>
-    <string name="tiles_per_row_duplicate_landscape_summary">Fekvő módban megduplázza a soronkénti mennyiséget</string>
     <string name="quick_tiles_bg_color_title">Csempe háttér színe</string>
     <string name="quick_tiles_bg_pressed_color_title">Csempe nyomás háttér színe</string>
     <string name="quick_tiles_text_color_title">Csempe szöveg szín</string>
@@ -1268,8 +1264,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="ime_switcher_notify">Választó értesítés</string>
     <string name="ime_switcher_notify_summary">Billentyűzet váltó megjelenítése</string>
 
-    <!-- Notification drawer background -->
-    <string name="notification_style_title">Stílus</string>    
+    <!-- Notification drawer background -->    
     <string name="notification_background_title">Háttér stílus</string>
     <string name="notification_background_summary">Változtasd meg az értesítési panel hátterét</string>
     <string name="notification_wallpaper_title">Háttér</string>

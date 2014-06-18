@@ -588,18 +588,14 @@ dos con el fin de insertar puntos de control adicionales. \'Borrar\' elimina lin
     <string name="music_tile_mode_tracktitle">Mostrar título de la pista</string>
 
     <!-- Quick access ribbon -->
-    <string name="category_quick_access">Cinta de accesos rápidos</string>
-    <string name="title_quick_access">Mostrar en el panel de notificaciones</string>
+    <string name="title_quick_access">Cinta de accesos rápidos</string>
     <string name="title_quick_access_linked">Vincular disposición</string>
     <string name="summary_quick_access_linked">Usar los mismos toggles y disposición del panel de configuración rápida</string>
 
     <!-- QuickSettings style options -->
-    <string name="quicksettings_tiles_style">Ajustes de estilo</string>
+    <string name="title_qs_small_icons">Controles pequeños</string>
+    <string name="summary_qs_small_icons">Usar controles pequeños para incrementar el número de columnas</string>
     <string name="summary_quicksettings_tiles_style">Cambiar el color de toggles y más</string>
-    <string name="quicksettings_tiles_style_additional_options">Opciones adicionales</string>
-    <string name="tiles_per_row_title">Toggles por fila</string>
-    <string name="tiles_per_row_duplicate_landscape_title">Cantidad escala horizontal</string>
-    <string name="tiles_per_row_duplicate_landscape_summary">Vista horizontal duplica toggles por cantidad de fila</string>
     <string name="quick_tiles_color_title">Habilitar colores personalizados</string>
     <string name="quick_tiles_color_summary">Habilitar colores personalizados anulará temas</string>
     <string name="quick_tiles_bg_color_title">Color de fondo de toggle</string>
@@ -1394,8 +1390,7 @@ dos con el fin de insertar puntos de control adicionales. \'Borrar\' elimina lin
     <string name="theme_auto_switch_mode_error">Modo de cambio automático de la condición de luz está activada. Cambio manual no es posible</string>
 
 
-    <!-- Notification drawer background -->
-    <string name="notification_style_title">Estilo</string>    
+    <!-- Notification drawer background -->   
     <string name="notification_background_title">Estilo de fondo</string>
     <string name="notification_background_summary">Cambia el fondo del panel de notificación</string>
     <string name="notification_wallpaper_title">Fondo</string>

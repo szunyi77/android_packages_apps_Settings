@@ -477,18 +477,12 @@ Xóa sẽ gỡ bỏ dòng.
     <string name="music_tile_mode_tracktitle">Hiện tựa đề nhạc</string>
 
     <!-- Quick access ribbon -->
-    <string name="category_quick_access">Thanh phím tắt</string>
-    <string name="title_quick_access">Hiện trong bảng thông báo</string>
+    <string name="title_quick_access">Thanh phím tắt</string>
     <string name="title_quick_access_linked">Kết nối nền</string>
     <string name="summary_quick_access_linked">Dùng chung phím tắt và nền như bảng cài đặt phím tắt</string>
 
     <!-- QuickSettings style options -->
-    <string name="quicksettings_tiles_style">Cài đặt kiểu</string>
     <string name="summary_quicksettings_tiles_style">Thay đổi màu của khung phím tắt và còn nữa</string>
-    <string name="quicksettings_tiles_style_additional_options">Tùy chọn thêm</string>
-    <string name="tiles_per_row_title">Số khung mỗi dòng</string>
-    <string name="tiles_per_row_duplicate_landscape_title">Số lượng khung khi quay ngang</string>
-    <string name="tiles_per_row_duplicate_landscape_summary">Nằm ngang hiển thị gấp đôi số khung mỗi dòng</string>
     <string name="quick_tiles_bg_color_title">Màu nên khung phím tắt</string>
     <string name="quick_tiles_bg_pressed_color_title">Màu nên khi chọn khung phím tắt</string>
     <string name="quick_tiles_text_color_title">Màu chữ khung phím tắt</string>
@@ -1287,8 +1281,7 @@ Xóa sẽ gỡ bỏ dòng.
     <string name="theme_auto_mode_twilight">Vào ba ngày</string>
     <string name="theme_auto_switch_mode_error">Tự động phụ thuộc vào điều kiện ánh sách được bật. Không thể chuyển thủ công.</string>
 
-    <!-- Notification drawer background -->
-    <string name="notification_style_title">Kiểu</string>    
+    <!-- Notification drawer background -->    
     <string name="notification_background_title">Kiểu nền</string>
     <string name="notification_background_summary">Đổi nền trang thông báo</string>
     <string name="notification_wallpaper_title">Nền</string>

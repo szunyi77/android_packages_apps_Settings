@@ -20,17 +20,11 @@
         android:key="options"
         android:title="@string/title_general">
 
-        <PreferenceScreen
-            android:key="mahdi_notification_shortcuts"
-            android:fragment="com.android.settings.mahdi.dslv.ButtonsListViewSettings"
-            android:summary="@string/notification_shortcuts_settings_summary"
-            android:title="@string/notification_shortcuts_settings_title">
-            <extra android:name="buttonMode" android:value="5" />
-            <extra android:name="maxAllowedButtons" android:value="16" />
-            <extra android:name="disableLongpress" android:value="true" />
-            <extra android:name="useAppPickerOnly" android:value="true" />
-            <extra android:name="fragment" android:value="com.android.settings.mahdi.fragments.NotificationsShortcutFragment" />
-        </PreferenceScreen>
+        <Preference
+            android:fragment="com.android.settings.mahdi.NotificationDrawerStyle"
+            android:key="notification_style"
+            android:title="@string/notification_background_title"
+            android:summary="@string/notification_background_summary" />
 
         <CheckBoxPreference
             android:key="notification_brightness_slider"
@@ -55,7 +49,7 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="@string/category_quick_access" >
+        android:title="@string/notification_shortcuts_settings_title" >
 
         <com.android.settings.mahdi.SystemSettingCheckBoxPreference
             android:key="qs_quick_access"
@@ -79,16 +73,17 @@
             <extra android:name="config_ribbon" android:value="true" />
         </PreferenceScreen>
 
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/notification_style_title">
-
-        <Preference
-            android:fragment="com.android.settings.mahdi.NotificationDrawerStyle"
-            android:key="notification_style"
-            android:title="@string/notification_background_title"
-            android:summary="@string/notification_background_summary" />
+        <PreferenceScreen
+            android:key="mahdi_notification_shortcuts"
+            android:fragment="com.android.settings.mahdi.dslv.ButtonsListViewSettings"
+            android:summary="@string/notification_shortcuts_settings_summary"
+            android:title="@string/notification_shortcuts_settings_title">
+            <extra android:name="buttonMode" android:value="5" />
+            <extra android:name="maxAllowedButtons" android:value="16" />
+            <extra android:name="disableLongpress" android:value="true" />
+            <extra android:name="useAppPickerOnly" android:value="true" />
+            <extra android:name="fragment" android:value="com.android.settings.mahdi.fragments.NotificationsShortcutFragment" />
+        </PreferenceScreen>
 
     </PreferenceCategory>
 

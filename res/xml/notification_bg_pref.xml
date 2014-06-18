@@ -16,6 +16,42 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
+    <PreferenceCategory
+        android:title="@string/quick_settings_panel_title">
+
+        <com.android.settings.mahdi.SystemSettingCheckBoxPreference
+             android:key="quick_tiles_custom_color"
+             android:title="@string/quick_tiles_color_title"
+             android:summary="@string/quick_tiles_color_summary" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+             android:key="quick_tiles_bg_color"
+             android:title="@string/quick_tiles_bg_color_title"
+             android:defaultValue="0xff161616"
+             android:dependency="quick_tiles_custom_color" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+             android:key="quick_tiles_bg_pressed_color"
+             android:title="@string/quick_tiles_bg_pressed_color_title"
+             android:defaultValue="0xff919191"
+             android:dependency="quick_tiles_custom_color" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+             android:key="quick_tiles_text_color"
+             android:title="@string/quick_tiles_text_color_title"
+             android:defaultValue="0xffcccccc"
+             android:dependency="quick_tiles_custom_color" />
+
+        <SlimSeekBarPreference
+             android:key="quick_tiles_alpha"
+             android:title="@string/quick_tiles_alpha_title"
+             android:dependency="quick_tiles_custom_color" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/notification_drawer_title">
+
         <ListPreference
             android:key="notification_wallpaper"
             android:persistent="false"
@@ -39,5 +75,7 @@
         <SlimSeekBarPreference
              android:key="notification_alpha"
              android:title="@string/notif_alpha_title" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>

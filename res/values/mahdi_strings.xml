@@ -487,7 +487,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="lockgesture_need_to_unlock_wrong_footer" />
 
     <!-- Quick settings panel  -->
-    <string name="quick_settings_panel_title">Quick settings panel</string>
+    <string name="quick_settings_panel_title">Quick settings</string>
     <string name="quick_settings_summary">Add or remove tiles and change other quick settings options</string>
     <string name="title_static_tiles">Static tiles</string>
     <string name="tile_picker_title">Tiles and layout</string>
@@ -588,22 +588,19 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="music_tile_mode_tracktitle">Show track title</string>
 
     <!-- Quick access ribbon -->
-    <string name="category_quick_access">Quick access ribbon</string>
-    <string name="title_quick_access">Show in drawer</string>
+    <string name="title_quick_access">Quick access ribbon</string>
     <string name="title_quick_access_linked">Linked layout</string>
     <string name="summary_quick_access_linked">Use the same tiles and layout as the Quick Settings panel</string>
 
     <!-- QuickSettings style options -->
-    <string name="quicksettings_tiles_style">Style settings</string>
     <string name="summary_quicksettings_tiles_style">Change the color of the tiles and more</string>
-    <string name="quicksettings_tiles_style_additional_options">Additional options</string>
     <string name="quick_tiles_color_title">Enable custom colors</string>
     <string name="quick_tiles_color_summary">Enabling custom colors will override themes</string>
     <string name="quick_tiles_bg_color_title">Tiles background color</string>
     <string name="quick_tiles_bg_pressed_color_title">Tiles pressed background color</string>
     <string name="quick_tiles_text_color_title">Tiles text color</string>
     <string name="quick_tiles_alpha_title">Tiles background transparency</string>
-    <string name="qs_style_reset_message">Reset all colors to default?</string>
+    <string name="qs_style_reset_message">Reset all quick settings colors to default?</string>
 
     <!-- QuickSettings fliptiles -->
     <string name="flip_qs_tiles_title">Flip tiles</string>
@@ -1403,10 +1400,9 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="theme_auto_mode_twilight">On daytime</string>
     <string name="theme_auto_switch_mode_error">Automatic light condition change mode is enabled. Manual switching is not possible.</string>
 
-    <!-- Notification drawer background -->
-    <string name="notification_style_title">Style</string>    
+    <!-- Notification drawer background -->   
     <string name="notification_background_title">Background style</string>
-    <string name="notification_background_summary">Change your notification drawer background</string>
+    <string name="notification_background_summary">Change your notification drawer background and more</string>
     <string name="notification_wallpaper_title">Background</string>
     <string name="notification_wallpaper_landscape_title">Different landscape background</string>
     <string name="notification_background_color_fill">Color fill</string>
