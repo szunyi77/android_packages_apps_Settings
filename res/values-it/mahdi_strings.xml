@@ -2165,4 +2165,22 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <string name="menu_hidden_apps_reset_lock">Ripristina modello di sblocco</string>
     <string name="protected_apps">Applicazioni protette</string>
     <string name="saving_protected_components">Salvataggio dei componenti di stato</string>
+    
+    <!-- Hover -->
+    <string name="hover_settings_title">Hover</string>
+    <string name="hover_settings_summary">Hover è un sistema alternativo di notifica al quale si può accedere da qualsiasi app</string>
+    <string name="hover_require_fullscreen_mode_title">Solo a schermo intero</string>
+    <string name="hover_require_fullscreen_mode_summary">Mostra solo quando la barra di stato è nascosta</string>
+    <string name="hover_exclude_low_priority_title">Escludi bassa priorità</string>
+    <string name="hover_exclude_low_priority_summary">Escludi notifiche che non sono importanti</string>
+    <string name="hover_exclude_non_clearable_title">Escludi non rimovibili</string>
+    <string name="hover_exclude_non_clearable_summary">Escludi le notifiche che non si possono rimuovere</string>
+    <string name="hover_exclude_topmost_title">Escudi app corrente</string>
+    <string name="hover_exclude_topmost_summary">Escludi notifiche dall\'app attualmente in uso</string>
+    <string name="hover_long_fadeout_title">Hover acceso per...</string>
+    <string name="hover_long_fadeout_3seconds">3 secondi</string>
+    <string name="hover_long_fadeout_5seconds">5 secondi (predefinito)</string>
+    <string name="hover_long_fadeout_7seconds">7 secondi</string>
+    <string name="hover_long_fadeout_10seconds">10 secondi</string>
+    <string name="hover_long_fadeout_15seconds">15 secondi</string>
 </resources>
