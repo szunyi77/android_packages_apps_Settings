@@ -587,8 +587,6 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
 
     <!-- Quick access ribbon -->
     <string name="title_quick_access">Barra di accesso rapido</string>
-    <string name="category_quick_access">Barra di accesso rapido</string>
-    <string name="title_quick_access">Mostra nel drawer</string>
     <string name="title_quick_access_linked">Disposizione collegata</string>
     <string name="summary_quick_access_linked">Usa gli stessi tile e la stessa disposizione dei quick settings</string>
  
@@ -611,7 +609,11 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <!-- QuickSettings haptic feedback -->
     <string name="haptic_qs_tiles_title">Vibra al tocco</string>
     <string name="haptic_qs_tiles_summary">Il telefono vibra al tocco del tile</string>
-
+    
+    <!-- QuickSettings smaller tiles -->
+    <string name="title_qs_small_icons">Mostra tile più piccoli</string>
+    <string name="summary_qs_small_icons">Mostra tile più piccoli per usarne di più</string>
+ 
     <!-- This exists as part of Power widget already, re-use them
          If Power widget is removed, re-enable these -->
     <string name="pref_ring_mode_title">Modalità suoneria</string>
@@ -937,12 +939,21 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <string name="shortcuts_color_mode_title">Modalità colore icona </string>
     <string name="shortcuts_color_mode_summary">Cambia la modalità del colore icona </string>
 
-    <!-- Notification drawer settings  -->
+    <!-- Status bar auto-collapse behaviour  -->
     <string name="notification_drawer_title">Drawer notifiche</string>
     <string name="notification_drawer_summary">Aggiungi scorciatoie, quick settings e altro </string>
     <string name="notification_shortcuts_settings_title">Scorciatoie </string>
     <string name="notification_shortcuts_settings_summary">Aggiungi quick settings in alto nel notification drawer </string>
 
+    <!-- Notification hide labels -->
+    <string name="notification_drawer_collapse_on_dismiss_title">Chiusura automatica</string>
+    <string name="collapse_on_dismiss_never">Disattivata</string>
+    <string name="collapse_on_dismiss_if_empty">Se non rimane niente</string>
+    <string name="collapse_on_dismiss_if_no_clearable">Se non ne rimangono rimovibili</string>
+    <string name="collapse_on_dismiss_never_summary">Lascia aperto dopo la rimozione</string>
+    <string name="collapse_on_dismiss_if_empty_summary">Chiudi dopo aver rimosso l\'ultima notifica</string>
+    <string name="collapse_on_dismiss_if_no_clearable_summary">Chiudi dopo aver rimosso l\'ultima notifica rimovibile</string>
+ 
     <!-- Notification hide labels -->
     <string name="notification_hide_labels_title">Nascondi gestore/rete Wi-Fi</string>
     <string name="notification_hide_labels_disable">Mostra tutto </string>
@@ -1225,14 +1236,20 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <string name="lockscreen_shortcuts_summary">Vedi o cambia scorciatoie personalizzate lockscreen</string>
     <string name="lockscreen_shorcuts_longpress_title">Scorciatoie tieni premuto</string>
     <string name="lockscreen_shorcuts_longpress_summary">Apre azione personalizzata se si tiene premuto</string>
+    
+    <!--Lockscreen See Through-->
+    <string name="see_through_title">Lockscreen trasparente</string>
+    <string name="see_through_summary">Mostra i contenuti dietro la lockscreen, i tuoi possono essere visibili a chi ti è vicino</string>
 
-    <!-- Lock screen targets and shortcuts -->
+    <!-- Lock screen shortcuts -->
     <string name="picker_activities">Attività</string>
     <string name="select_custom_activity_title">Seleziona attività personalizzata</string>
     <string name="icon_picker_alarm">Allarme</string>
     <string name="icon_picker_browser">Browser</string>
     <string name="icon_picker_calendar">Calendario</string>
     <string name="icon_picker_camera">Fotocamera</string>
+    <string name="icon_picker_chrome">Chrome</string>
+    <string name="icon_picker_contacts">Contatti</string>
     <string name="icon_picker_email">Email</string>
     <string name="icon_picker_email2">Email holo</string>
     <string name="icon_picker_facebook">Facebook</string>
