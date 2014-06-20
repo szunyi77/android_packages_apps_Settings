@@ -20,6 +20,11 @@
         android:key="options"
         android:title="@string/title_general">
 
+        <PreferenceScreen
+            android:key="heads_up"
+            android:fragment="com.android.settings.headsup.HeadsUpDoNotDisturbSettings"
+            android:title="@string/category_heads_up" />
+
         <Preference
             android:fragment="com.android.settings.mahdi.NotificationDrawerStyle"
             android:key="notification_style"
