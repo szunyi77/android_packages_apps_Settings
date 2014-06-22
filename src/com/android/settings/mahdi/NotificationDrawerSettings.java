@@ -19,9 +19,6 @@ package com.android.settings.mahdi;
 import android.content.ContentResolver;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
-import android.media.Ringtone;
-import android.media.RingtoneManager;
-import android.net.Uri;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
@@ -29,7 +26,6 @@ import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
-import android.preference.RingtonePreference;
 import android.provider.Settings;
 import android.os.UserHandle;
 
@@ -45,18 +41,10 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment
 
     private static final String PREF_NOTIFICATION_OPTIONS = "options";
     private static final String PREF_NOTIFICATION_HIDE_LABELS = "notification_hide_labels";
-    private static final String PREF_NOTI_REMINDER_SOUND = "noti_reminder_sound";
-    private static final String PREF_NOTI_REMINDER_ENABLED = "noti_reminder_enabled";
-    private static final String PREF_NOTI_REMINDER_INTERVAL = "noti_reminder_interval";
-    private static final String PREF_NOTI_REMINDER_RINGTONE = "noti_reminder_ringtone";
     private static final String PREF_BRIGHTNESS_SLIDER = "notification_brightness_slider";
     private static final String UI_COLLAPSE_BEHAVIOUR = "notification_drawer_collapse_on_dismiss";
 
     private ListPreference mHideLabels;
-    private CheckBoxPreference mReminder;
-    private ListPreference mReminderInterval;
-    private ListPreference mReminderMode;
-    private RingtonePreference mReminderRingtone;
     private CheckBoxPreference mBrightnessSlider;
     private ListPreference mCollapseOnDismiss;
 
@@ -74,41 +62,6 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment
         mHideLabels.setValue(String.valueOf(hideCarrier));
         mHideLabels.setOnPreferenceChangeListener(this);
         updateHideNotificationLabelsSummary(hideCarrier);
-
-        mReminder = (CheckBoxPreference) findPreference(PREF_NOTI_REMINDER_ENABLED);
-        mReminder.setChecked(Settings.System.getIntForUser(getContentResolver(),
-                Settings.System.REMINDER_ALERT_ENABLED, 0, UserHandle.USER_CURRENT) == 1);
-        mReminder.setOnPreferenceChangeListener(this);
-
-        mReminderInterval = (ListPreference) findPreference(PREF_NOTI_REMINDER_INTERVAL);
-        int interval = Settings.System.getIntForUser(getContentResolver(),
-                Settings.System.REMINDER_ALERT_INTERVAL, 0, UserHandle.USER_CURRENT);
-        mReminderInterval.setOnPreferenceChangeListener(this);
-        updateReminderIntervalSummary(interval);
-
-        mReminderMode = (ListPreference) findPreference(PREF_NOTI_REMINDER_SOUND);
-        int mode = Settings.System.getIntForUser(getContentResolver(),
-                Settings.System.REMINDER_ALERT_NOTIFY, 0, UserHandle.USER_CURRENT);
-        mReminderMode.setValue(String.valueOf(mode));
-        mReminderMode.setOnPreferenceChangeListener(this);
-        updateReminderModeSummary(mode);
-
-        mReminderRingtone =
-                (RingtonePreference) findPreference(PREF_NOTI_REMINDER_RINGTONE);
-        Uri ringtone = null;
-        String ringtoneString = Settings.System.getStringForUser(getContentResolver(),
-                Settings.System.REMINDER_ALERT_RINGER, UserHandle.USER_CURRENT);
-        if (ringtoneString == null) {
-            // Value not set, defaults to Default Ringtone
-            ringtone = RingtoneManager.getDefaultUri(
-                    RingtoneManager.TYPE_RINGTONE);
-        } else {
-            ringtone = Uri.parse(ringtoneString);
-        }
-        Ringtone alert = RingtoneManager.getRingtone(getActivity(), ringtone);
-        mReminderRingtone.setSummary(alert.getTitle(getActivity()));
-        mReminderRingtone.setOnPreferenceChangeListener(this);
-        mReminderRingtone.setEnabled(mode != 0);
 
         mBrightnessSlider = (CheckBoxPreference) findPreference(PREF_BRIGHTNESS_SLIDER);
         mBrightnessSlider.setChecked(Settings.System.getIntForUser(getContentResolver(),
@@ -152,33 +105,6 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment
                     hideLabels);
             updateHideNotificationLabelsSummary(hideLabels);
             return true;
-        } else if (preference == mReminder) {
-            Settings.System.putIntForUser(getContentResolver(),
-                    Settings.System.REMINDER_ALERT_ENABLED,
-                    (Boolean) objValue ? 1 : 0, UserHandle.USER_CURRENT);
-            return true;
-        } else if (preference == mReminderInterval) {
-            int interval = Integer.valueOf((String) objValue);
-            Settings.System.putIntForUser(getContentResolver(),
-                    Settings.System.REMINDER_ALERT_INTERVAL,
-                    interval, UserHandle.USER_CURRENT);
-            updateReminderIntervalSummary(interval);
-        } else if (preference == mReminderMode) {
-            int mode = Integer.valueOf((String) objValue);
-            Settings.System.putIntForUser(getContentResolver(),
-                    Settings.System.REMINDER_ALERT_NOTIFY,
-                    mode, UserHandle.USER_CURRENT);
-            updateReminderModeSummary(mode);
-            mReminderRingtone.setEnabled(mode != 0);
-            return true;
-        } else if (preference == mReminderRingtone) {
-            Uri val = Uri.parse((String) objValue);
-            Ringtone ringtone = RingtoneManager.getRingtone(getActivity(), val);
-            mReminderRingtone.setSummary(ringtone.getTitle(getActivity()));
-            Settings.System.putStringForUser(getContentResolver(),
-                    Settings.System.REMINDER_ALERT_RINGER,
-                    val.toString(), UserHandle.USER_CURRENT);
-            return true;
         } else if (preference == mBrightnessSlider) {
             boolean value = (Boolean) objValue;
             Settings.System.putInt(resolver,
@@ -213,51 +139,6 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment
         text.append(" " + res.getString(R.string.notification_hide_labels_text));
 
         mHideLabels.setSummary(text.toString());
-    }
-
-    private void updateReminderIntervalSummary(int value) {
-        int resId;
-        switch (value) {
-            case 1000:
-                resId = R.string.noti_reminder_interval_1s;
-                break;
-            case 2000:
-                resId = R.string.noti_reminder_interval_2s;
-                break;
-            case 2500:
-                resId = R.string.noti_reminder_interval_2dot5s;
-                break;
-            case 3000:
-                resId = R.string.noti_reminder_interval_3s;
-                break;
-            case 3500:
-                resId = R.string.noti_reminder_interval_3dot5s;
-                break;
-            case 4000:
-                resId = R.string.noti_reminder_interval_4s;
-                break;
-            default:
-                resId = R.string.noti_reminder_interval_1dot5s;
-                break;
-        }
-        mReminderInterval.setValue(Integer.toString(value));
-        mReminderInterval.setSummary(getResources().getString(resId));
-    }
-
-    private void updateReminderModeSummary(int value) {
-        int resId;
-        switch (value) {
-            case 1:
-                resId = R.string.enabled;
-                break;
-            case 2:
-                resId = R.string.noti_reminder_sound_looping;
-                break;
-            default:
-                resId = R.string.disabled;
-                break;
-        }
-        mReminderMode.setSummary(getResources().getString(resId));
     }
 
     private void updateCollapseBehaviourSummary(int setting) {

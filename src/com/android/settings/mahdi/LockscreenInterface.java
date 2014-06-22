@@ -55,8 +55,6 @@ import com.android.settings.ChooseLockSettingsHelper;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
-import com.android.settings.mahdi.lsn.LockscreenNotificationsPreference;
-
 public class LockscreenInterface extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
@@ -81,8 +79,8 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     private static final String PEEK_APPLICATION = "com.jedga.peek";
         
     private SwitchPreference mEnableModLock;
-    private LockscreenNotificationsPreference mLockscreenNotifications;
-    private SwitchPreference mNotificationPeek;
+    private PreferenceScreen mLockscreenNotifications;
+    private CheckBoxPreference mNotificationPeek;
     private ListPreference mPeekPickupTimeout;
     private ListPreference mPeekWakeTimeout;
     private PreferenceCategory mStyleCategory;
@@ -162,9 +160,9 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
             mEnableModLock.setOnPreferenceChangeListener(this);
         }
 
-        mLockscreenNotifications = (LockscreenNotificationsPreference) prefs.findPreference(KEY_LOCKSCREEN_NOTIFICATONS);
+        mLockscreenNotifications = (PreferenceScreen) prefs.findPreference(KEY_LOCKSCREEN_NOTIFICATONS);
 
-        mNotificationPeek = (SwitchPreference) prefs.findPreference(KEY_NOTIFICATON_PEEK);
+        mNotificationPeek = (CheckBoxPreference) prefs.findPreference(KEY_NOTIFICATON_PEEK);
         mNotificationPeek.setChecked(Settings.System.getInt(getContentResolver(), Settings.System.PEEK_STATE, 0) == 1);
         mNotificationPeek.setOnPreferenceChangeListener(this);
         updateVisiblePreferences();

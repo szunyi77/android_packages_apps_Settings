@@ -32,22 +32,16 @@
         android:fragment="com.android.settings.mahdi.quicksettings.QuickSettings" />
 
     <PreferenceScreen
-        android:key="notification_drawer"
-        android:title="@string/notification_drawer_title"
-        android:summary="@string/notification_drawer_summary" 
-        android:fragment="com.android.settings.mahdi.NotificationDrawerSettings" />
+        android:key="notification_settings"
+        android:title="@string/notification_settings_title"
+        android:summary="@string/notification_settings_summary"
+        android:fragment="com.android.settings.mahdi.NotificationSettings" />
 
     <PreferenceScreen
         android:key="recents_panel"
         android:title="@string/recents_panel_settings_title"
         android:summary="@string/recents_panel_settings_summary"
         android:fragment="com.android.settings.mahdi.RecentsPanelSettings" />
-
-    <PreferenceScreen
-        android:key="hover_settings"
-        android:title="@string/hover_settings_title"
-        android:summary="@string/hover_settings_summary"
-        android:fragment="com.android.settings.mahdi.HoverSettings" />
 
     <PreferenceScreen
         android:key="power_menu"

@@ -487,8 +487,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="lockgesture_need_to_unlock_wrong_footer" />
 
     <!-- Quick settings panel  -->
-    <string name="quick_settings_panel_title">Quick settings</string>
-    <string name="quick_settings_summary">Add or remove tiles and change other quick settings options</string>
+    <string name="quick_settings_panel_title">Panel settings</string>
+    <string name="quick_settings_summary">View or change options for quick settings and notification drawer</string>
     <string name="title_static_tiles">Static tiles</string>
     <string name="tile_picker_title">Tiles and layout</string>
     <string name="tile_picker_summary">View, select or change the layout of the displayed tiles</string>
@@ -2185,7 +2185,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Hover -->
     <string name="hover_settings_title">Hover</string>
-    <string name="hover_settings_summary">Hover is an alternative notification system which can be accessed within any app</string>
     <string name="hover_exclude_low_priority_title">Exclude low priority</string>
     <string name="hover_exclude_low_priority_summary">Exclude notifications marked as low priority</string>
     <string name="hover_exclude_non_clearable_title">Exclude non-clearable</string>
@@ -2201,7 +2200,12 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Heads Up -->
     <string name="category_heads_up">Heads up</string>
+    <string name="heads_up_summary">Heads up allows for a floating notification to display on top of your current activity</string>
     <string name="title_heads_up_enabled">Enable heads up</string>
     <string name="add_heads_up_dnd_package">Add app to \'Do not disturb\'</string>
     <string name="heads_up_dnd_title">Do not disturb</string>
+
+    <!-- Notification settings -->
+    <string name="notification_settings_title">Notifications</string>
+    <string name="notification_settings_summary">Customize the way you recieve notifications with options like Hover, Heads up and more</string>
 </resources>

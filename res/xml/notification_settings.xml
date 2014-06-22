@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2014 Mahdi-Rom
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceScreen
+        android:key="heads_up"
+        android:fragment="com.android.settings.headsup.HeadsUpDoNotDisturbSettings"
+        android:title="@string/category_heads_up"
+        android:summary="@string/heads_up_summary" />
+
+    <PreferenceCategory
+        android:title="@string/hover_settings_title">
+
+        <ListPreference
+            android:key="hover_long_fade_out_delay"
+            android:title="@string/hover_long_fadeout_title"
+            android:persistent="false"
+            android:entries="@array/hover_long_fadeout_entries"
+            android:entryValues="@array/hover_long_fadeout_values" />
+
+        <CheckBoxPreference
+            android:key="hover_exclude_non_clearable"
+            android:title="@string/hover_exclude_non_clearable_title"
+            android:summary="@string/hover_exclude_non_clearable_summary"
+            android:defaultValue="false" />
+
+        <CheckBoxPreference
+            android:key="hover_exclude_low_priority"
+            android:title="@string/hover_exclude_low_priority_title"
+            android:summary="@string/hover_exclude_low_priority_summary"
+            android:defaultValue="false" />
+
+        <CheckBoxPreference
+            android:key="hover_exclude_topmost"
+            android:title="@string/hover_exclude_topmost_title"
+            android:summary="@string/hover_exclude_topmost_summary"
+            android:defaultValue="false" />        
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/noti_reminder_category">
+
+        <CheckBoxPreference
+            android:key="noti_reminder_enabled"
+            android:title="@string/noti_reminder_enable_title"
+            android:summaryOn="@string/enabled"
+            android:summaryOff="@string/disabled"
+            android:defaultValue="false" />
+
+        <ListPreference
+            android:key="noti_reminder_interval"
+            android:defaultValue="1500"
+            android:title="@string/noti_reminder_interval"
+            android:entries="@array/noti_reminder_interval_entries"
+            android:entryValues="@array/noti_reminder_interval_values"
+            android:dependency="noti_reminder_enabled" />
+
+        <ListPreference
+            android:key="noti_reminder_sound"
+            android:defaultValue="0"
+            android:title="@string/noti_reminder_sound_title"
+            android:entries="@array/noti_reminder_sound_entries"
+            android:entryValues="@array/noti_reminder_sound_values"
+            android:dependency="noti_reminder_enabled" />
+
+        <RingtonePreference
+            android:key="noti_reminder_ringtone"
+            android:title="@string/noti_reminder_ringtone"
+            android:ringtoneType="all"
+            android:showSilent="false"
+            android:dependency="noti_reminder_enabled" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
