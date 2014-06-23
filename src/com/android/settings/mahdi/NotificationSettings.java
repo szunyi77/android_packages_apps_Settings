@@ -34,6 +34,7 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
     private static final String PREF_HOVER_EXCLUDE_NON_CLEARABLE = "hover_exclude_non_clearable";
     private static final String PREF_HOVER_EXCLUDE_LOW_PRIORITY = "hover_exclude_low_priority";
     private static final String PREF_HOVER_EXCLUDE_TOPMOST = "hover_exclude_topmost";
+    private static final String PREF_HOVER_EXCLUDE_FROM_INSECURE_LOCK_SCREEN = "hover_exclude_from_insecure_lock_screen";
     private static final String PREF_NOTI_REMINDER_SOUND = "noti_reminder_sound";
     private static final String PREF_NOTI_REMINDER_ENABLED = "noti_reminder_enabled";
     private static final String PREF_NOTI_REMINDER_INTERVAL = "noti_reminder_interval";
@@ -44,6 +45,7 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
     private CheckBoxPreference mHoverExcludeNonClearable;
     private CheckBoxPreference mHoverExcludeNonLowPriority;
     private CheckBoxPreference mHoverExcludeTopmost;
+    private CheckBoxPreference mHoverExcludeFromInsecureLockScreen;
     private CheckBoxPreference mReminder;
     private ListPreference mReminderInterval;
     private ListPreference mReminderMode;
@@ -78,6 +80,11 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
         mHoverExcludeTopmost.setChecked(Settings.System.getIntForUser(getContentResolver(),
                 Settings.System.HOVER_EXCLUDE_TOPMOST, 0, UserHandle.USER_CURRENT) == 1);
         mHoverExcludeTopmost.setOnPreferenceChangeListener(this);
+
+        mHoverExcludeFromInsecureLockScreen = (CheckBoxPreference) findPreference(PREF_HOVER_EXCLUDE_FROM_INSECURE_LOCK_SCREEN);
+        mHoverExcludeFromInsecureLockScreen.setChecked(Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.HOVER_EXCLUDE_FROM_INSECURE_LOCK_SCREEN, 0, UserHandle.USER_CURRENT) == 1);
+        mHoverExcludeFromInsecureLockScreen.setOnPreferenceChangeListener(this);
 
         mReminder = (CheckBoxPreference) findPreference(PREF_NOTI_REMINDER_ENABLED);
         mReminder.setChecked(Settings.System.getIntForUser(getContentResolver(),
@@ -157,6 +164,11 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
         } else if (preference == mHoverExcludeTopmost) {
             Settings.System.putIntForUser(getContentResolver(),
                     Settings.System.HOVER_EXCLUDE_TOPMOST,
+                    (Boolean) objValue ? 1 : 0, UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mHoverExcludeFromInsecureLockScreen) {
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.HOVER_EXCLUDE_FROM_INSECURE_LOCK_SCREEN,
                     (Boolean) objValue ? 1 : 0, UserHandle.USER_CURRENT);
             return true;
         } else if (preference == mReminder) {

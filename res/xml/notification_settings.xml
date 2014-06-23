@@ -47,7 +47,13 @@
             android:key="hover_exclude_topmost"
             android:title="@string/hover_exclude_topmost_title"
             android:summary="@string/hover_exclude_topmost_summary"
-            android:defaultValue="false" />        
+            android:defaultValue="false" />
+
+        <CheckBoxPreference
+            android:key="hover_exclude_from_insecure_lock_screen"
+            android:title="@string/hover_exclude_from_insecure_lock_screen_title"
+            android:summary="@string/hover_exclude_from_insecure_lock_screen_summary"
+            android:defaultValue="false" />
 
     </PreferenceCategory>
 
