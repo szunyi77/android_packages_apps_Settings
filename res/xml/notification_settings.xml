@@ -16,11 +16,11 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <PreferenceScreen
-        android:key="heads_up"
-        android:fragment="com.android.settings.headsup.HeadsUpDoNotDisturbSettings"
+    <com.android.settings.mahdi.SystemSettingSwitchPreference
+        android:key="heads_up_enabled"
+        android:fragment="com.android.settings.headsup.HeadsUpSettings"
         android:title="@string/category_heads_up"
-        android:summary="@string/heads_up_summary" />
+        android:summary="@string/summary_heads_up" />
 
     <PreferenceCategory
         android:title="@string/hover_settings_title">

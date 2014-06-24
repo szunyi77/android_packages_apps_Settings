@@ -2164,6 +2164,8 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".headsup.HeadsUpSettings" />
+
         <!-- Mahdi-Rom activities End -->
 
         <receiver android:name=".widget.SettingsAppWidgetProvider"
