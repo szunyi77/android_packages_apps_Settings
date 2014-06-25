@@ -30,6 +30,7 @@ import static com.android.internal.util.mahdi.QSConstants.TILE_CUSTOM;
 import static com.android.internal.util.mahdi.QSConstants.TILE_CUSTOM_KEY;
 import static com.android.internal.util.mahdi.QSConstants.TILE_CUSTOM_DELIMITER;
 import static com.android.internal.util.mahdi.QSConstants.TILE_DELIMITER;
+import static com.android.internal.util.mahdi.QSConstants.TILE_HEADS_UP;
 import static com.android.internal.util.mahdi.QSConstants.TILE_IMMERSIVEMODE;
 import static com.android.internal.util.mahdi.QSConstants.TILE_LOCATION;
 import static com.android.internal.util.mahdi.QSConstants.TILE_LOCKSCREEN;
@@ -197,6 +198,9 @@ public class QuickSettingsUtil {
         registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_SHAKE, R.string.title_tile_shake,
                 "com.android.systemui:drawable/ic_qs_shake_events"));
+        registerTile(new QuickSettingsUtil.TileInfo(
+                TILE_HEADS_UP, R.string.title_tile_heads_up,
+                "com.android.systemui:drawable/ic_qs_heads_up_on"));
     }
 
     private static void registerTile(QuickSettingsUtil.TileInfo info) {
