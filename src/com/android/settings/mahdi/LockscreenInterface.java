@@ -55,6 +55,8 @@ import com.android.settings.ChooseLockSettingsHelper;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
+import com.android.settings.mahdi.SystemSettingSwitchPreference;
+
 public class LockscreenInterface extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
@@ -64,7 +66,6 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
 
     private static final String LOCKSCREEN_GENERAL_CATEGORY = "lockscreen_general_category";
     private static final String KEY_LOCKSCREEN_MODLOCK_ENABLED = "lockscreen_modlock_enabled";
-    private static final String KEY_LOCKSCREEN_NOTIFICATONS = "lockscreen_notifications";
     private static final String KEY_NOTIFICATON_PEEK = "notification_peek";
     private static final String KEY_PEEK_PICKUP_TIMEOUT = "peek_pickup_timeout";
     private static final String KEY_PEEK_WAKE_TIMEOUT = "peek_wake_timeout";
@@ -79,8 +80,8 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     private static final String PEEK_APPLICATION = "com.jedga.peek";
         
     private SwitchPreference mEnableModLock;
-    private PreferenceScreen mLockscreenNotifications;
-    private CheckBoxPreference mNotificationPeek;
+    private SystemSettingSwitchPreference mLockscreenNotifications;;
+    private SwitchPreference mNotificationPeek;
     private ListPreference mPeekPickupTimeout;
     private ListPreference mPeekWakeTimeout;
     private PreferenceCategory mStyleCategory;
@@ -160,9 +161,10 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
             mEnableModLock.setOnPreferenceChangeListener(this);
         }
 
-        mLockscreenNotifications = (PreferenceScreen) prefs.findPreference(KEY_LOCKSCREEN_NOTIFICATONS);
+        mLockscreenNotifications = (SystemSettingSwitchPreference)
+                findPreference(Settings.System.LOCKSCREEN_NOTIFICATIONS);
 
-        mNotificationPeek = (CheckBoxPreference) prefs.findPreference(KEY_NOTIFICATON_PEEK);
+        mNotificationPeek = (SwitchPreference) prefs.findPreference(KEY_NOTIFICATON_PEEK);
         mNotificationPeek.setChecked(Settings.System.getInt(getContentResolver(), Settings.System.PEEK_STATE, 0) == 1);
         mNotificationPeek.setOnPreferenceChangeListener(this);
         updateVisiblePreferences();
@@ -263,6 +265,11 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
         getActivity().registerReceiver(mPackageStatusReceiver, mIntentFilter);
         super.onResume();
 
+        boolean lockscreenNotificationsEnabled = Settings.System.getIntForUser(
+                getActivity().getContentResolver(),
+                Settings.System.LOCKSCREEN_NOTIFICATIONS, 0, UserHandle.USER_CURRENT) == 1;
+        mLockscreenNotifications.setChecked(lockscreenNotificationsEnabled);
+
         final LockPatternUtils lockPatternUtils = mChooseLockSettingsHelper.utils();
 
         // Update mod lockscreen status
@@ -308,9 +315,6 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (preference == mLockscreenNotifications) {
-            return super.onPreferenceTreeClick(preferenceScreen, preference);
-        }        
        return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 

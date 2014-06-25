@@ -25,13 +25,13 @@
         android:key="notification_category"
         android:title="@string/notification_category" >
 
-        <PreferenceScreen
+        <com.android.settings.mahdi.SystemSettingSwitchPreference
             android:key="lockscreen_notifications"
             android:fragment="com.android.settings.mahdi.lsn.LockscreenNotifications"
             android:title="@string/lockscreen_notifications"
             android:summary="@string/lockscreen_notifications_summary" />
 
-        <CheckBoxPreference
+        <SwitchPreference
             android:key="notification_peek"
             android:title="@string/notification_peek_title"
             android:summary="@string/notification_peek_summary" />
