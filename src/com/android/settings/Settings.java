@@ -89,7 +89,7 @@ import com.android.settings.mahdi.DisplayRotation;
 import com.android.settings.mahdi.NavbarSettings;
 import com.android.settings.mahdi.quicksettings.QuickSettingsTiles;
 import com.android.settings.mahdi.QuietHours;
-import com.android.settings.mahdi.themes.ThemeSettings;
+import com.android.settings.ThemeSettings;
 import com.android.settings.mahdi.superuser.PolicyNativeFragment;
 import com.android.settings.mahdi.slim.ShakeEvents;
 import com.android.settings.net.MobileDataEnabler;

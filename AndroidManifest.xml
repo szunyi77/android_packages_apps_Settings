@@ -1953,22 +1953,18 @@
         </activity>
 
         <!-- Theme Settings -->
-        <activity
-            android:name=".mahdi.themes.ThemeSettings"
-            android:label="@string/themes_settings_title" >
-        </activity>
-        <activity
-            android:name="Settings$ThemeSettingsActivity"
-            android:label="@string/themes_settings_title"
+        <activity android:name="Settings$ThemeSettingsActivity"
+                  android:label="@string/themes_settings_title"
                   android:taskAffinity=""
                   android:excludeFromRecents="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.settings.THEME_SETTINGS" />
+                <category android:name="com.android.settings.SHORTCUT" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.mahdi.themes.ThemeSettings" />
+                       android:value="com.android.settings.ThemeSettings" />
         </activity>
 
         <!-- Profiles config -->

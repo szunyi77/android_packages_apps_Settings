@@ -16,12 +16,9 @@
 <PreferenceScreen
         xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <ListPreference
-        android:key="pref_theme_auto_mode"
-        android:entries="@array/theme_auto_mode_entries"
-        android:entryValues="@array/theme_auto_mode_values"
-        android:title="@string/theme_auto_mode_title"
-        android:dialogTitle="@string/theme_auto_mode_title" />
+    <PreferenceScreen
+        android:key="theme_settings_slim"
+        android:title="@string/darkui_title" />
 
     <PreferenceCategory
         android:title="@string/title_cm_themes" >
