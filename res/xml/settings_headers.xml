@@ -213,7 +213,7 @@
         android:id="@+id/theme_settings"
         android:title="@string/themes_settings_title"
         android:breadCrumbTitle="@string/themes_settings_title"
-        android:fragment="com.android.settings.mahdi.themes.ThemeSettings"
+        android:fragment="com.android.settings.ThemeSettings"
         android:icon="@drawable/prd_ic_themepacks" />
 
     <!-- Customization -->

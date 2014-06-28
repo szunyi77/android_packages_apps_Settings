@@ -18,7 +18,9 @@
 
     <PreferenceScreen
         android:key="theme_settings_slim"
-        android:title="@string/darkui_title" />
+        android:icon="@drawable/ic_settings_themes"
+        android:title="@string/darkui_title"
+        android:fragment="com.android.settings.mahdi.themes.ThemeSettings" />
 
     <PreferenceCategory
         android:title="@string/title_cm_themes" >

@@ -96,7 +96,7 @@
     <!-- Power menu enable disable -->
     <string name="power_menu_title">Power menu</string> 
     <string name="power_menu_summary">View or change the power menu list</string>
-    <string name="lockscreen_enable_power_menu_title">Enable power menu on lockscreen</string>
+    <string name="lockscreen_enable_power_menu_title">Enable power menu on lock screen</string>
     <string name="power_menu_reboot_title">Reboot menu</string>
     <string name="power_menu_screenshot_title">Screenshot</string>
     <string name="power_menu_screenrecord_title">Screen record</string>
@@ -389,10 +389,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="lock_screen_summary">Change the way your lock screen looks, add shortcuts and adjust widget options</string>
     <string name="additional_options_title">Additional options</string>
     <string name="lock_before_unlock_title">Show slider before secure unlock</string>
-    <string name="lock_before_unlock_summary">Show slider lockscreen before secure unlock mechanism</string>
+    <string name="lock_before_unlock_summary">Show slider lock screen before secure unlock mechanism</string>
 
     <!-- Shake to secure -->
-    <string name="shake_to_secure_title">Shake the lockscreen to enable security</string>
+    <string name="shake_to_secure_title">Shake the lock screen to enable security</string>
     <string name="shake_to_secure_summary">Security will be disabled after each successful unlock</string>
     <string name="shake_to_secure_dlg_title">Warning:</string>
     <string name="shake_to_secure_dlg_message">Your device will be insecure until you explicitly shake to enable a temporary secure lock.  Once secure: if your device is successfully unlocked it will become insecure until you shake again.</string>
@@ -593,6 +593,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="summary_quick_access_linked">Use the same tiles and layout as the Quick Settings panel</string>
 
     <!-- QuickSettings style options -->
+    <string name="quick_settings_title">Quick settings</string>
     <string name="summary_quicksettings_tiles_style">Change the color of the tiles and more</string>
     <string name="quick_tiles_color_title">Enable custom colors</string>
     <string name="quick_tiles_color_summary">Enabling custom colors will override themes</string>
@@ -738,7 +739,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Battery status on lock ring -->
     <string name="battery_around_lockscreen_ring">Battery level around lock ring</string>
-    <string name="battery_around_lockscreen_ring_summary">If checked the lockscreen ring will display the battery charge level</string>
+    <string name="battery_around_lockscreen_ring_summary">If checked the lock screen ring will display the battery charge level</string>
 
     <!-- Setting checkbox summary for displaying USB debugging notification -->
     <string name="adb_notify">USB debugging notify</string>
@@ -1148,7 +1149,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="screen_recorder_bitrate_100000000">100000000</string>
 
     <!-- Custom lockscreen options -->
-    <string name="lockscreen_custom_title">Custom lockscreen options</string>
+    <string name="lockscreen_custom_title">Custom lock screen options</string>
     <string name="lockscreen_custom_summary">Add shortcuts, enable notifications and more</string>
 
     <!-- Lockscreen widget settings -->
@@ -1186,7 +1187,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="hide_non_clearable">Hide non clearable</string>
     <string name="hide_non_clearable_summary">Hide all non clearable notifications</string>
     <string name="dismiss_all">Allow dismissing all notifications</string>
-    <string name="dismiss_all_summary">Allow dismissing even non clearable notifications. Of course, they\'re just hidden from lockscreen and not from the notification panel.</string>
+    <string name="dismiss_all_summary">Allow dismissing even non clearable notifications. Of course, they\'re just hidden from lock screen and not from the notification panel.</string>
     <string name="expanded_view">Expanded notification view</string>
     <string name="expanded_view_summary">Show notifications expanded when possible</string>
     <string name="force_expanded_view">Force expanded view</string>
@@ -1201,7 +1202,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="dynamic_width">Dynamic width</string>
     <string name="dynamic_width_summary">Sets the width of notifications dynamic, so that they only use the space they really need</string>
     <string name="excluded_apps_title">Excluded applications</string>
-    <string name="excluded_apps_summary">Excluded applications will not show up as lockscreen notifications</string>
+    <string name="excluded_apps_summary">Excluded applications will not show up as lock screen notifications</string>
     <string name="notification_color">Notification background color</string>
 
     <!-- Lock Screen -->
@@ -1213,8 +1214,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="lockscreen_target_color_title">Target icon color</string>
     <string name="lockscreen_eight_targets_title">Eight slider targets</string>
     <string name="lockscreen_eight_targets_summary">Enable eight custom lock screen targets.</string>
-    <string name="lockscreen_enable_eight_targets_dialog">Changing this option resets your current lockscreen targets setup to default.</string>
-    <string name="lockscreen_enable_eight_targets_enabled_dialog">\n\nWith eight lockscreen targets enabled you cannot use your lockscreen shortcuts at the same time.</string>
+    <string name="lockscreen_enable_eight_targets_dialog">Changing this option resets your current lock screen targets setup to default.</string>
+    <string name="lockscreen_enable_eight_targets_enabled_dialog">\n\nWith eight lock screen targets enabled you cannot use your lock screen shortcuts at the same time.</string>
     <string name="lockscreen_glowpad_torch_title">Slider torch</string>
     <string name="lockscreen_glowpad_torch_summary">Double-tap and hold the slider to start torch</string>
     <string name="lockscreen_target_reset">Lock screen targets reset to default</string>
@@ -1236,7 +1237,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!--Lockscreen See Through-->
     <string name="see_through_title">See through</string>
-    <string name="see_through_summary">Shows the content behind your lockscreen, your data may be visible to those around you</string>
+    <string name="see_through_summary">Shows the content behind your lock screen, your data may be visible to those around you</string>
 
     <!-- Lock screen shortcuts -->
     <string name="picker_activities">Activities</string>
@@ -1379,14 +1380,14 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="title_cm_themes">Themes chooser</string>
 
     <!-- The following are entries under the themes menu -->
-    <string name="themepacks_settings_title">Theme Packs</string>
+    <string name="themepacks_settings_title">Theme packs</string>
     <string name="styles_settings_title">Styles</string>
     <string name="icons_settings_title">Icons</string>
     <string name="fonts_settings_title">Fonts</string>
     <string name="wallpaper_settings_title">Wallpapers</string>
-    <string name="lockscreen_wallpaper_settings_title">Lockscreen Wallpapers</string>
-    <string name="bootanim_settings_title">Boot Animations</string>
-    <string name="soundpack_settings_title">Sound Packs</string>
+    <string name="lockscreen_wallpaper_settings_title">Lock screen wallpapers</string>
+    <string name="bootanim_settings_title">Boot animations</string>
+    <string name="soundpack_settings_title">Sound packs</string>
 
     <!-- DarkUI -->
     <string name="darkui_title">Dark UI</string>
@@ -1420,8 +1421,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="minimum_vibration_duration">Minimum vibration duration</string>
 
     <!-- Lock screen buttons -->
-    <string name="lockscreen_buttons_category">Lockscreen button actions</string>
-    <string name="lockscreen_buttons_title">Lockscreen button actions</string>
+    <string name="lockscreen_buttons_category">Lock screen button actions</string>
+    <string name="lockscreen_buttons_title">Lock screen button actions</string>
     <string name="lockscreen_buttons_summary">View or change lock screen button actions</string>
     <string name="lockscreen_long_press_back_title">Long press Back button</string>
     <string name="lockscreen_long_press_home_title">Long press Home button</string>
@@ -1800,8 +1801,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="ad_redisplay_5h">5 hours</string>    
 
     <!-- Lockscreen system bar visibility -->
-    <string name="system_bar_visibility">Disable in lockscreen</string>
-    <string name="system_bar_visibility_summary">Show status and navigation bars in lockscreen during immersive mode</string>
+    <string name="system_bar_visibility">Disable in lock screen</string>
+    <string name="system_bar_visibility_summary">Show status and navigation bars in lock screen during immersive mode</string>
 
     <!-- Notification Reminders -->
     <string name="noti_reminder_category">Notification reminder</string>
@@ -1819,7 +1820,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="noti_reminder_interval_4s">4 seconds</string>
 
     <!-- Lockscreen style settings -->
-    <string name="lockscreen_style_reset_message">Reset all lockscreen colors?</string>
+    <string name="lockscreen_style_reset_message">Reset all lock screen colors?</string>
     <string name="lockscreen_icon_title">Lock handle icon</string>
     <string name="lockscreen_lock_icon_custom">Custom icon</string>
     <string name="lockscreen_lock_icon_mahdi">Mahdi icon</string>
@@ -1839,18 +1840,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="lockscreen_misc_color_title">Miscellaneous color</string>
     <string name="lockscreen_misc_color_summary">Color of the remaining items</string>
 
-    <!-- Themes -->
-    <string name="theme_settings_title_slim">Themes</string>
-    <string name="theme_auto_mode_title">Dark UI</string>
-    <string name="theme_auto_mode_off">Manual</string>
-    <string name="theme_auto_mode_lightsensor">On light condition change</string>
-    <string name="theme_auto_mode_twilight">On daytime</string>
-    <string name="theme_auto_switch_mode_error">Automatic light condition change mode is enabled. Manual switching is not possible.</string>
-
     <!-- Double-tap to sleep -->
     <string name="double_tap_sleep_title">Double-tap to sleep</string>
     <string name="double_tap_to_sleep_summary">View or change double-tap to sleep options</string>
-    <string name="double_tap_sleep_secure_lockscreen_category">Secure lockscreen</string>
+    <string name="double_tap_sleep_secure_lockscreen_category">Secure lock screen</string>
     <string name="status_bar_double_tap_sleep_status_bar_title">Status bar</string>
     <string name="status_bar_double_tap_sleep_status_bar_summary">Double tap anywhere on the status bar</string>
     <string name="status_bar_double_tap_sleep_glowpad_title">Glow pad</string>
@@ -2183,8 +2176,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="hover_exclude_non_clearable_summary">Exclude not dismissable notifications</string>
     <string name="hover_exclude_topmost_title">Exclude topmost app</string>
     <string name="hover_exclude_topmost_summary">Exclude notifications from the app running in foreground</string>
-    <string name="hover_exclude_from_insecure_lock_screen_title">Exclude insecure lockscreen</string>
-    <string name="hover_exclude_from_insecure_lock_screen_summary">Exclude hover notifications from insecure lockscreen</string>
+    <string name="hover_exclude_from_insecure_lock_screen_title">Exclude insecure lock screen</string>
+    <string name="hover_exclude_from_insecure_lock_screen_summary">Exclude hover notifications from insecure lock screen</string>
     <string name="hover_long_fadeout_title">Hover notification time</string>
     <string name="hover_long_fadeout_3seconds">3 seconds</string>
     <string name="hover_long_fadeout_5seconds">5 seconds (default)</string>
