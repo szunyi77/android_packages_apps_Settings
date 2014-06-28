@@ -2308,4 +2308,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Glove mode / high touch sensitivity -->
     <string name="auto_adjust_touch_title">High touch sensitivity</string>
     <string name="auto_adjust_touch_summary">"Increase the screen's sensitivity so you can touch it while wearing gloves"</string>
+
+    <!-- Search -->
+    <string name="settings_search_action_bar_button">Search</string>
+    <string name="settings_search_autocompleteview_hint">Search settings</string>
 </resources>

@@ -20,42 +20,49 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <PreferenceScreen
+        settings:includeXmlForSearch="@xml/system_bars"
         android:key="system_bars"
         android:title="@string/system_bars_title"
         android:summary="@string/system_bars_summary"
         android:fragment="com.android.settings.mahdi.SystemBars" />
 
     <PreferenceScreen
+        settings:includeXmlForSearch="@xml/quick_settings_panel"
         android:key="quick_settings_panel"        
         android:title="@string/quick_settings_panel_title"
         android:summary="@string/quick_settings_summary"
         android:fragment="com.android.settings.mahdi.quicksettings.QuickSettings" />
 
     <PreferenceScreen
+        settings:includeXmlForSearch="@xml/notification_settings"
         android:key="notification_settings"
         android:title="@string/notification_settings_title"
         android:summary="@string/notification_settings_summary"
         android:fragment="com.android.settings.mahdi.NotificationSettings" />
 
     <PreferenceScreen
+        settings:includeXmlForSearch="@xml/recents_panel_settings"
         android:key="recents_panel"
         android:title="@string/recents_panel_settings_title"
         android:summary="@string/recents_panel_settings_summary"
         android:fragment="com.android.settings.mahdi.RecentsPanelSettings" />
 
     <PreferenceScreen
+        settings:includeXmlForSearch="@xml/power_menu_settings"
         android:key="power_menu"
         android:title="@string/power_menu_title"
         android:summary="@string/power_menu_summary"
         android:fragment="com.android.settings.mahdi.PowerMenu" />
 
     <PreferenceScreen
+        settings:includeXmlForSearch="@xml/lockscreen_interface_settings"
         android:key="lock_screen_settings"
         android:title="@string/lock_screen_title"
         android:summary="@string/lock_screen_summary"
         android:fragment="com.android.settings.mahdi.LockscreenInterface" />
 
     <PreferenceScreen
+        settings:includeXmlForSearch="@xml/animation_interface_settings"
         android:id="@+id/interface_animation"
         android:title="@string/interface_animation_title"
         android:summary="@string/interface_animation_summary"
@@ -63,18 +70,21 @@
         android:fragment="com.android.settings.mahdi.aokp.AnimationInterfaceSettings" />
 
     <PreferenceScreen
+        settings:includeXmlForSearch="@xml/shake_event_settings"
         android:key="shake_events"
         android:fragment="com.android.settings.mahdi.slim.ShakeEvents"
         android:title="@string/shake_events_title"
         android:summary="@string/shake_events_summary" />
 
     <PreferenceScreen
+        settings:includeXmlForSearch="@xml/hardware_keys"
         android:key="hardware_keys"
         android:title="@string/button_keys_title"
         android:summary="@string/button_keys_summary"
         android:fragment="com.android.settings.mahdi.HardwareKeys" />
 
     <PreferenceScreen
+        settings:includeXmlForSearch="@xml/tts_notif_settings"
         android:key="interface_voice_tts"
         android:title="@string/voice_tts_title"
         android:summary="@string/voice_tts_summary"

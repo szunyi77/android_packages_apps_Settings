@@ -66,4 +66,9 @@
         <attr name="neutralButtonValue" format="string|reference" />
         <attr name="positiveButtonValue" format="string|reference" />
     </declare-styleable>
+
+    <declare-styleable name="SearchableInfo">
+        <attr name="includeXmlForSearch" format="reference" />
+        <attr name="excludeFromSearch" format="boolean" />
+    </declare-styleable>
 </resources>
