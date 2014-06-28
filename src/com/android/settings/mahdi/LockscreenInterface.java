@@ -263,6 +263,11 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
         getActivity().registerReceiver(mPackageStatusReceiver, mIntentFilter);
         super.onResume();
 
+        boolean lsnEnabled = Settings.System.getInt(
+                getContentResolver(), Settings.System.LOCKSCREEN_NOTIFICATIONS, 0) == 1;
+        mLockscreenNotifications.setSummary(lsnEnabled
+                ? R.string.summary_lockscreen_notifications_enabled : R.string.summary_lockscreen_notifications_disabled);
+
         final LockPatternUtils lockPatternUtils = mChooseLockSettingsHelper.utils();
 
         // Update mod lockscreen status
@@ -367,6 +372,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(),
                 Settings.System.LOCKSCREEN_NOTIFICATIONS, 0);
             mLockscreenNotifications.setEnabled(false);
+            mLockscreenNotifications.setSummary(R.string.summary_lockscreen_notifications_disabled);
         } else if (lsn == 1) {
             Settings.System.putInt(getContentResolver(),
                 Settings.System.PEEK_STATE, 0);

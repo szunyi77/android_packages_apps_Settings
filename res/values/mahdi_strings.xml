@@ -1175,9 +1175,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="layout">Layout</string>
     <string name="privacy">Privacy</string>
 
-    <string name="Lockscreen_notifications_header">Lockscreen Notifications</string>
-    <string name="lockscreen_notifications">Lockscreen notifications</string>
-    <string name="lockscreen_notifications_summary">Show pending notifications on lockscreen</string>
+    <string name="lockscreen_notifications">Lock screen notifications</string>
+    <string name="summary_lockscreen_notifications_enabled">Lock screen notifications are enabled</string>
+    <string name="summary_lockscreen_notifications_disabled">Lock screen notifications are disabled</string>
+    <string name="lockscreen_notifications_disabled_notice">To allow lock screen to display interactive notifications on your screen, enable lock screen notifications.</string>
     <string name="pocket_mode">Pocket mode</string>
     <string name="pocket_mode_summary">Turn screen on and show all notifications when device is pulled out of pocket. Turn screen off when device gets back into pocket.</string>
     <string name="show_always">Show always</string>
