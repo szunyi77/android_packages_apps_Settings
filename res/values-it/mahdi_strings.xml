@@ -1329,6 +1329,8 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <string name="recent_panel_expanded_mode_auto">Automatica</string>
     <string name="recent_panel_expanded_mode_always">Sempre</string>
     <string name="recent_panel_expanded_mode_never">Mai</string>
+    <string name="recent_panel_show_topmost_title">Mostra app corrente</string>
+    <string name="recent_panel_show_topmost_summary">Non escludere l\'app in uso da slim recents</string>
 
     <!-- ATTENTION: RTL languages need to replace left with right -->
     <string name="recent_panel_lefty_mode_title">Mostra a sinistra </string>
@@ -2194,8 +2196,8 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <string name="hover_exclude_non_clearable_summary">Escludi le notifiche che non si possono rimuovere</string>
     <string name="hover_exclude_topmost_title">Escudi app corrente</string>
     <string name="hover_exclude_topmost_summary">Escludi notifiche dall\'app attualmente in uso</string>
-    <string name="hover_exclude_from_insecure_lock_screen_title">Exclude insecure lock screen</string>
-    <string name="hover_exclude_from_insecure_lock_screen_summary">Exclude hover notifications from insecure lock screen</string>
+    <string name="hover_exclude_from_insecure_lock_screen_title">Escludi dalla lockscreen</string>
+    <string name="hover_exclude_from_insecure_lock_screen_summary">Escludi le notifiche hover se la modalità di sblocco è insicura</string>
     <string name="hover_long_fadeout_title">Hover acceso per...</string>
     <string name="hover_long_fadeout_3seconds">3 secondi</string>
     <string name="hover_long_fadeout_5seconds">5 secondi (predefinito)</string>
