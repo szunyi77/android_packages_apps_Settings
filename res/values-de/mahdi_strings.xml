@@ -595,6 +595,7 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="summary_quick_access_linked">Konfiguration der Schnelleinstellungen verwenden</string>
 
     <!-- QuickSettings style options -->
+    <string name="quick_settings_title">Schnelleinstellungen</string>
     <string name="summary_quicksettings_tiles_style">Konfiguration der Kacheloptik</string>
     <string name="quick_tiles_color_title">Bnutzerdefinierte Farben aktivieren</string>
     <string name="quick_tiles_color_summary">Aktivierte benutzerdefinierte Farben überschreiben die Änderungen von Themen</string>
@@ -952,7 +953,7 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="collapse_on_dismiss_if_empty_summary">Nach dem Entfernen der letzten Benachrichtigung schließen</string>
     <string name="collapse_on_dismiss_if_no_clearable_summary">Nach dem Entfernen der letzten löschbaren Benachrichtigung schließen</string>
     
-	<!-- Notification hide labels -->
+    <!-- Notification hide labels -->
     <string name="notification_hide_labels_title">Verstecke Netzwerknamen</string>
     <string name="notification_hide_labels_disable">Zeige alle Netzwerke</string>
     <string name="notification_hide_labels_carrier">Verstecke Provider</string>
@@ -1081,6 +1082,8 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="quiet_hours_alarm_dialog_title">Ruhige Stunen Ausnahme</string>
     <string name="quiet_hours_alarm_message">" entspricht den Ausnahmeregeln der Ruhigen Stunden!"</string>
 
+	
+	
     <!-- time range preference -->
     <string name="start_time_title">Start</string>
     <string name="end_time_title">Ende</string>
@@ -1173,9 +1176,10 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="layout">Layout</string>
     <string name="privacy">Datenschutz</string>
 
-    <string name="Lockscreen_notifications_header">Sperrbildschirm-Benachrichtigungen</string>
     <string name="lockscreen_notifications">Sperrbildschirm-Benachrichtigungen</string>
-    <string name="lockscreen_notifications_summary">Anzeige von Benachrichtigungen auf dem Sperrbildschirm</string>
+    <string name="summary_lockscreen_notifications_enabled">Sperrbildschirm-Benachrichtigungen aktiviert</string>
+    <string name="summary_lockscreen_notifications_disabled">Sperrbildschirm-Benachrichtigungen deaktiviert</string>
+    <string name="lockscreen_notifications_disabled_notice">Aktivieren um interaktive Benachrichtigungen auf dem Sperrbildschirm anzeigen zu lassen.</string>
     <string name="pocket_mode">Taschenmodus</string>
     <string name="pocket_mode_summary">Bildschirm beim Herausnehmen aus der Tasche einschalten und anstehende Benachrichtigungen anzeigen. Bildschirm beim Zurückstecken in die Tasche wieder ausschalten.</string>
     <string name="show_always">Immer anzeigen</string>
@@ -1444,6 +1448,9 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
 
     <!-- Superuser header name -->
     <string name="superuser">Superuser</string>
+
+    <!-- SuperSU header name - the app hides itself from launcher based on this resource name being present in com.android.settings -->
+    <string name="supersu_title">SuperSU</string>
 
     <!-- Emulate menu key -->
     <string name="emulate_menu_key_title">Hardware-Menütaste emulieren</string>
@@ -1837,14 +1844,6 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="lockscreen_targets_color_summary">Farbe der Ringziele</string>
     <string name="lockscreen_misc_color_title">Sonstige Farben</string>
     <string name="lockscreen_misc_color_summary">Farbe der verbleibenden Elemente</string>
-
-    <!-- Themes -->
-    <string name="theme_settings_title_slim">Themen</string>
-    <string name="theme_auto_mode_title">Dunkles UI</string>
-    <string name="theme_auto_mode_off">Manuell</string>
-    <string name="theme_auto_mode_lightsensor">Bei Änderung der Lichtverhältnisse</string>
-    <string name="theme_auto_mode_twilight">Tageszeitabhängig</string>
-    <string name="theme_auto_switch_mode_error">Automatischer Änderungsmodus durch Lichtverhältnisse aktiviert. Manuelles Umschalten nicht möglich.</string>
 
     <!-- Double-tap to sleep -->
     <string name="double_tap_sleep_title">Double-Tap-Schlafmodus</string>
@@ -2266,4 +2265,8 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="backlight_summary_disabled">Deaktiviert</string>
     <string name="backlight_summary_enabled_with_timeout">Aktiviert für <xliff:g id="timeout">%s</xliff:g></string>
     <string name="backlight_summary_enabled">Aktiviert</string>
+	
+    <!-- Glove mode / high touch sensitivity -->
+    <string name="auto_adjust_touch_title">Hohe Berührungsempfindlichkeit</string>
+    <string name="auto_adjust_touch_summary">"Verbesserte Empfindlichkeit des Bildschirms zur Bedienung mit Handschuhen"</string>
 </resources>
