@@ -247,7 +247,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
         mHighTouchSensitivity = (CheckBoxPreference) findPreference(KEY_AUTO_ADJUST_TOUCH);
         if (!isHighTouchSensitivitySupported()) {
-            getPreferenceScreen().removePreference(mHighTouchSensitivity);
+            advancedPrefs.removePreference(mHighTouchSensitivity);
             mHighTouchSensitivity = null;
         }
 
