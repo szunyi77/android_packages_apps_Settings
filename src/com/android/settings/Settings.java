@@ -63,6 +63,7 @@ import android.widget.TextView;
 
 import com.android.internal.util.ArrayUtils;
 import com.android.settings.ActivityPicker;
+import com.android.settings.ThemeSettings;
 import com.android.settings.accessibility.AccessibilitySettings;
 import com.android.settings.accessibility.CaptionPropertiesFragment;
 import com.android.settings.accessibility.ToggleAccessibilityServicePreferenceFragment;
@@ -75,6 +76,7 @@ import com.android.settings.applications.ProcessStatsUi;
 import com.android.settings.blacklist.BlacklistSettings;
 import com.android.settings.bluetooth.BluetoothEnabler;
 import com.android.settings.bluetooth.BluetoothSettings;
+import com.android.settings.cyanogenmod.PerformanceSettings;
 import com.android.settings.deviceinfo.Memory;
 import com.android.settings.deviceinfo.UsbSettings;
 import com.android.settings.fuelgauge.PowerUsageSummary;
@@ -89,7 +91,6 @@ import com.android.settings.mahdi.DisplayRotation;
 import com.android.settings.mahdi.NavbarSettings;
 import com.android.settings.mahdi.quicksettings.QuickSettingsTiles;
 import com.android.settings.mahdi.QuietHours;
-import com.android.settings.ThemeSettings;
 import com.android.settings.mahdi.superuser.PolicyNativeFragment;
 import com.android.settings.mahdi.slim.ShakeEvents;
 import com.android.settings.net.MobileDataEnabler;
@@ -100,8 +101,8 @@ import com.android.settings.print.PrintServiceSettingsFragment;
 import com.android.settings.print.PrintSettingsFragment;
 import com.android.settings.profiles.AppGroupConfig;
 import com.android.settings.profiles.ProfileConfig;
-import com.android.settings.profiles.ProfilesSettings;
 import com.android.settings.profiles.ProfileEnabler;
+import com.android.settings.profiles.ProfilesSettings;
 import com.android.settings.tts.TextToSpeechSettings;
 import com.android.settings.users.UserSettings;
 import com.android.settings.voicewakeup.VoiceWakeupEnabler;
@@ -383,7 +384,8 @@ public class Settings extends PreferenceActivity
         com.android.settings.mahdi.PrivacySettings.class.getName(),
         com.android.settings.mahdi.superuser.PolicyNativeFragment.class.getName(),
         ThemeSettings.class.getName(),
-        ShakeEvents.class.getName()       
+        ShakeEvents.class.getName(),
+        PerformanceSettings.class.getName()
     };
 
     @Override
@@ -669,7 +671,8 @@ public class Settings extends PreferenceActivity
                     //SuperSu is installed and embeddable, so remove SuperUser header
                     target.remove(i);
                 }
-            } else if (id == R.id.development_settings) {
+            } else if (id == R.id.development_settings
+                   || id == R.id.performance_settings) {
                 if (!showDev) {
                     target.remove(i);
                 }
