@@ -154,6 +154,7 @@ public class Settings extends PreferenceActivity
         "com.android.settings.PARENT_FRAGMENT_CLASS";
 
     private static final String EXTRA_UI_OPTIONS = "settings:ui_options";
+    private static final String EXTRA_DISABLE_SEARCH = "settings:disable_search";
 
     private static final String SAVE_KEY_CURRENT_HEADER = "com.android.settings.CURRENT_HEADER";
     private static final String SAVE_KEY_PARENT_HEADER = "com.android.settings.PARENT_HEADER";
@@ -163,6 +164,8 @@ public class Settings extends PreferenceActivity
     static final int DIALOG_ONLY_ONE_HOME = 1;
 
     private static boolean sShowNoHomeNotice = false;
+
+    private boolean mDisableSearchIcon = false;
 
     private String mFragmentClass;
     private int mTopLevelHeaderId;
@@ -270,7 +273,10 @@ public class Settings extends PreferenceActivity
         mSearchBar.setLayoutParams(layoutParams);
         mSearchBar.setHint(R.string.settings_search_autocompleteview_hint);
         mSearchBar.setThreshold(1);
+        mSearchBar.setSingleLine(true);
         mSearchBar.setOnItemClickListener(this);
+
+        mSearchItem.setVisible(!mDisableSearchIcon);
         return true;
     }
 
@@ -306,6 +312,10 @@ public class Settings extends PreferenceActivity
             getWindow().setUiOptions(getIntent().getIntExtra(EXTRA_UI_OPTIONS, 0));
         }
 
+        if (getIntent().hasExtra(EXTRA_DISABLE_SEARCH)) {
+            mDisableSearchIcon = getIntent().getBooleanExtra(EXTRA_DISABLE_SEARCH, false);
+        }
+    
         startPopulatingSearchData();
 
         mAuthenticatorHelper = new AuthenticatorHelper();
@@ -686,6 +696,20 @@ public class Settings extends PreferenceActivity
                 PrintSettingsFragment.class.getName().equals(fragmentName) ||
                 PrintServiceSettingsFragment.class.getName().equals(fragmentName)) {
             intent.putExtra(EXTRA_UI_OPTIONS, ActivityInfo.UIOPTION_SPLIT_ACTION_BAR_WHEN_NARROW);
+        // Should also disable the search options here to not confuse
+            // the end user
+            intent.putExtra(EXTRA_DISABLE_SEARCH, true);
+        } else if (ApplicationSettings.class.getName().equals(fragmentName) ||
+                DataUsageSummary.class.getName().equals(fragmentName) ||
+                QuickSettingsTiles.class.getName().equals(fragmentName) ||
+                HeadsUpSettings.class.getName().equals(fragmentName) ||
+                PowerUsageSummary.class.getName().equals(fragmentName) ||
+                ThemeSettings.class.getName().equals(fragmentName) ||
+                ManageApplications.class.getName().equals(fragmentName) ||
+                PaymentSettings.class.getName().equals(fragmentName) ||
+                WifiDisplaySettings.class.getName().equals(fragmentName)) {
+            // Should force disable search options
+            intent.putExtra(EXTRA_DISABLE_SEARCH, true);
         }
         intent.setClass(this, SubSettings.class);
     }
