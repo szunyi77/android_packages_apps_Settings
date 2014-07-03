@@ -90,6 +90,7 @@ import com.android.settings.cyanogenmod.PerformanceSettings;
 import com.android.settings.deviceinfo.Memory;
 import com.android.settings.deviceinfo.UsbSettings;
 import com.android.settings.fuelgauge.PowerUsageSummary;
+import com.android.settings.headsup.HeadsUpSettings;
 import com.android.settings.inputmethod.InputMethodAndLanguageSettings;
 import com.android.settings.inputmethod.KeyboardLayoutPickerFragment;
 import com.android.settings.inputmethod.SpellCheckersSettings;
@@ -103,6 +104,7 @@ import com.android.settings.mahdi.quicksettings.QuickSettingsTiles;
 import com.android.settings.mahdi.QuietHours;
 import com.android.settings.mahdi.superuser.PolicyNativeFragment;
 import com.android.settings.mahdi.slim.ShakeEvents;
+import com.android.settings.mahdi.batterysaver.BatterySaverSettings;
 import com.android.settings.net.MobileDataEnabler;
 import com.android.settings.nfc.AndroidBeam;
 import com.android.settings.nfc.PaymentSettings;
@@ -496,7 +498,9 @@ public class Settings extends PreferenceActivity
         com.android.settings.mahdi.superuser.PolicyNativeFragment.class.getName(),
         ThemeSettings.class.getName(),
         ShakeEvents.class.getName(),
-        PerformanceSettings.class.getName()
+        PerformanceSettings.class.getName(),
+        HeadsUpSettings.class.getName(),
+        BatterySaverSettings.class.getName()
     };
 
     @Override
@@ -1397,4 +1401,6 @@ public class Settings extends PreferenceActivity
     public static class RamBarActivity extends Settings { /* empty */ }
     public static class VoiceWakeupSettingsActivity extends Settings { /* empty */ }
     public static class ShakeEventsSettingsActivity extends Settings { /* empty */ }
+    public static class HeadsUpSettingsActivity extends Settings { /* empty */ }
+    public static class BatterySaverSettingsActivity extends Settings { /* empty */ }
 }

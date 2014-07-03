@@ -1849,7 +1849,8 @@
         </activity>
 
 	<!-- Mahdi-Rom activities Start -->
-        
+
+        <!-- Customization settings -->        
         <activity android:name="Settings$CustomizationSettingsActivity"
                 android:label="@string/customization_settings_title"
                 android:taskAffinity=""
@@ -1873,13 +1874,12 @@
         <activity android:name=".mahdi.lsn.LockscreenNotifications" />
         <activity android:name=".mahdi.LockscreenButtons" />
         <activity android:name=".mahdi.PrivacySettings" />
-        <activity android:name=".headsup.HeadsUpSettings" />
+        <activity android:name=".ApnEditor" />
 
+        <!-- Auto brightness settings -->
         <activity android:name=".mahdi.AutoBrightnessSetup"
                 android:excludeFromRecents="true"
                 android:theme="@*android:style/Theme.Holo.Dialog.Alert" />
-
-        <activity android:name=".ApnEditor" />
 
         <!-- Quick tiles settings -->
         <activity android:name="Settings$QuickSettingsTilesSettingsActivity"
@@ -2086,9 +2086,16 @@
         </activity>
 
         <!-- Battery Saver -->
-        <activity
-             android:name=".mahdi.batterysaver.BatterySaverSettings"
-             android:label="@string/data_usage_enable_batterysaver" >
+        <activity android:name="Settings$BatterySaverSettingsActivity"
+                android:label="@string/data_usage_enable_batterysaver"
+                android:taskAffinity=""
+                android:excludeFromRecents="true">
+        <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.mahdi.batterysaver.BatterySaverSettings" />
         </activity>
 
         <receiver
@@ -2146,6 +2153,7 @@
                 android:value="com.android.settings.mahdi.slim.ShakeEvents" />
         </activity>
 
+        <!-- Protected apps -->
         <activity android:name=".applications.ProtectedAppsActivity"
                   android:label="@string/protected_apps"
                   android:excludeFromRecents="true"
@@ -2173,6 +2181,19 @@
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
+
+        <!-- Heads up settings -->
+        <activity android:name="Settings$HeadsUpSettingsActivity"
+                android:label="@string/category_heads_up"
+                android:taskAffinity=""
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.headsup.HeadsUpSettings" />
+        </activity>
 
         <!-- Mahdi-Rom activities End -->
 
