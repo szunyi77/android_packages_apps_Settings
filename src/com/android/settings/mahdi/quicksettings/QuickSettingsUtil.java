@@ -171,7 +171,7 @@ public class QuickSettingsUtil {
                 "com.android.systemui:drawable/ic_qs_default_user"));
         registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_VOLUME, R.string.title_tile_volume,
-                "com.android.systemui:drawable/ic_qs_volume"));
+                "com.android.systemui:drawable/ic_qs_volume_4"));
         registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_WIFI, R.string.title_tile_wifi,
                 "com.android.systemui:drawable/ic_qs_wifi_full_4"));

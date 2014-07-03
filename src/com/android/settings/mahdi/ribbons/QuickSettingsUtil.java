@@ -20,10 +20,13 @@ import static com.android.internal.util.mahdi.QSConstants.TILES_DEFAULT;
 import static com.android.internal.util.mahdi.QSConstants.TILE_AIRPLANE;
 import static com.android.internal.util.mahdi.QSConstants.TILE_AUTOROTATE;
 import static com.android.internal.util.mahdi.QSConstants.TILE_BATTERY;
+import static com.android.internal.util.mahdi.QSConstants.TILE_BATTERYSAVER;
 import static com.android.internal.util.mahdi.QSConstants.TILE_BLUETOOTH;
 import static com.android.internal.util.mahdi.QSConstants.TILE_BRIGHTNESS;
 import static com.android.internal.util.mahdi.QSConstants.TILE_CAMERA;
+import static com.android.internal.util.mahdi.QSConstants.TILE_COMPASS;
 import static com.android.internal.util.mahdi.QSConstants.TILE_DELIMITER;
+import static com.android.internal.util.mahdi.QSConstants.TILE_HEADS_UP;
 import static com.android.internal.util.mahdi.QSConstants.TILE_IMMERSIVEMODE;
 import static com.android.internal.util.mahdi.QSConstants.TILE_LOCATION;
 import static com.android.internal.util.mahdi.QSConstants.TILE_LOCKSCREEN;
@@ -32,13 +35,18 @@ import static com.android.internal.util.mahdi.QSConstants.TILE_MOBILEDATA;
 import static com.android.internal.util.mahdi.QSConstants.TILE_NETWORKADB;
 import static com.android.internal.util.mahdi.QSConstants.TILE_NETWORKMODE;
 import static com.android.internal.util.mahdi.QSConstants.TILE_NFC;
+import static com.android.internal.util.mahdi.QSConstants.TILE_ONTHEGO;
+import static com.android.internal.util.mahdi.QSConstants.TILE_PERFORMANCE_PROFILE;
 import static com.android.internal.util.mahdi.QSConstants.TILE_PROFILE;
+import static com.android.internal.util.mahdi.QSConstants.TILE_QUICKRECORD;
 import static com.android.internal.util.mahdi.QSConstants.TILE_QUIETHOURS;
 import static com.android.internal.util.mahdi.QSConstants.TILE_RINGER;
 import static com.android.internal.util.mahdi.QSConstants.TILE_SCREENTIMEOUT;
 import static com.android.internal.util.mahdi.QSConstants.TILE_SETTINGS;
+import static com.android.internal.util.mahdi.QSConstants.TILE_SHAKE;
 import static com.android.internal.util.mahdi.QSConstants.TILE_SLEEP;
 import static com.android.internal.util.mahdi.QSConstants.TILE_SYNC;
+import static com.android.internal.util.mahdi.QSConstants.TILE_THEME;
 import static com.android.internal.util.mahdi.QSConstants.TILE_TORCH;
 import static com.android.internal.util.mahdi.QSConstants.TILE_USER;
 import static com.android.internal.util.mahdi.QSConstants.TILE_VOLUME;
@@ -56,8 +64,10 @@ import android.util.Log;
 
 import com.android.internal.telephony.Phone;
 import com.android.internal.util.mahdi.QSUtils;
+import com.android.internal.util.mahdi.DeviceUtils;
 import com.android.settings.R;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -90,6 +100,9 @@ public class QuickSettingsUtil {
                  TILE_CAMERA, R.string.title_tile_camera,
                 "com.android.systemui:drawable/ic_qs_camera"));
         registerTile(new QuickSettingsUtil.TileInfo(
+                TILE_COMPASS, R.string.title_tile_compass,
+                "com.android.systemui:drawable/ic_qs_compass_on"));
+        registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_IMMERSIVEMODE, R.string.title_tile_immersive_mode,
                 "com.android.systemui:drawable/ic_qs_immersive_mode_on"));
         registerTile(new QuickSettingsUtil.TileInfo(
@@ -120,6 +133,9 @@ public class QuickSettingsUtil {
                 TILE_PROFILE, R.string.title_tile_profile,
                 "com.android.systemui:drawable/ic_qs_profiles"));
         registerTile(new QuickSettingsUtil.TileInfo(
+                TILE_QUICKRECORD, R.string.title_tile_quick_record,
+                "com.android.systemui:drawable/ic_qs_quickrecord"));
+        registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_QUIETHOURS, R.string.title_tile_quiet_hours,
                 "com.android.systemui:drawable/ic_qs_quiet_hours_on"));
         registerTile(new QuickSettingsUtil.TileInfo(
@@ -142,7 +158,7 @@ public class QuickSettingsUtil {
                 "com.android.systemui:drawable/ic_qs_default_user"));
         registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_VOLUME, R.string.title_tile_volume,
-                "com.android.systemui:drawable/ic_qs_volume"));
+                "com.android.systemui:drawable/ic_qs_volume_4"));
         registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_WIFI, R.string.title_tile_wifi,
                 "com.android.systemui:drawable/ic_qs_wifi_full_4"));
@@ -161,6 +177,24 @@ public class QuickSettingsUtil {
         registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_MUSIC, R.string.title_tile_music,
                 "com.android.systemui:drawable/ic_qs_media_play"));
+        registerTile(new QuickSettingsUtil.TileInfo(
+                TILE_THEME, R.string.title_tile_theme,
+                "com.android.systemui:drawable/ic_qs_theme_manual"));
+        registerTile(new QuickSettingsUtil.TileInfo(
+                TILE_ONTHEGO, R.string.title_tile_onthego,
+                "com.android.systemui:drawable/ic_qs_onthego"));
+        registerTile(new QuickSettingsUtil.TileInfo(
+                TILE_BATTERYSAVER, R.string.title_tile_batterysaver,
+                "com.android.systemui:drawable/ic_qs_battery_saver_on"));
+        registerTile(new QuickSettingsUtil.TileInfo(
+                TILE_SHAKE, R.string.title_tile_shake,
+                "com.android.systemui:drawable/ic_qs_shake_events"));
+        registerTile(new QuickSettingsUtil.TileInfo(
+                TILE_HEADS_UP, R.string.title_tile_heads_up,
+                "com.android.systemui:drawable/ic_qs_heads_up_on"));
+        registerTile(new QuickSettingsUtil.TileInfo(
+                TILE_PERFORMANCE_PROFILE, R.string.title_tile_performance_profile,
+                "com.android.systemui:drawable/ic_qs_perf_profile"));
     }
 
     private static void registerTile(QuickSettingsUtil.TileInfo info) {
@@ -185,7 +219,7 @@ public class QuickSettingsUtil {
         }
     }
 
-    private static synchronized void removeUnsupportedTiles(Context context) {
+    protected static synchronized void removeUnsupportedTiles(Context context) {
         // Don't show mobile data options if not supported
         if (!QSUtils.deviceSupportsMobileData(context)) {
             removeTile(TILE_MOBILEDATA);
@@ -216,6 +250,17 @@ public class QuickSettingsUtil {
         // Don't show the Camera tile if the device has no cameras
         if (!QSUtils.deviceSupportsCamera()) {
             removeTile(TILE_CAMERA);
+            removeTile(TILE_ONTHEGO);
+        }
+
+        // Don't show the Compass tile if the device has no orientation sensor
+        if (!QSUtils.deviceSupportsCompass(context)) {
+            removeTile(TILE_COMPASS);
+        }
+
+        // Don't show the performance profiles tile if is not available for the device
+        if (!QSUtils.deviceSupportsPerformanceProfiles(context)) {
+            removeTile(TILE_PERFORMANCE_PROFILE);
         }
     }
 
