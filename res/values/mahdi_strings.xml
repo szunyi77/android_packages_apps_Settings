@@ -2164,30 +2164,12 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="blacklist_button_title">Blacklist</string>
     <string name="peek_blacklist_label">Blacklist from Peek</string>
     <string name="floating_blacklist_label">Blacklist from Floating Mode</string>
-    <string name="hover_blacklist_label">Blacklist from Hover</string>
 
     <!-- Protected Apps -->
     <string name="menu_hidden_apps_delete">Reset</string>
     <string name="menu_hidden_apps_reset_lock">Reset pattern lock</string>
     <string name="protected_apps">Protected apps</string>
     <string name="saving_protected_components">Saving component state</string>
-
-    <!-- Hover -->
-    <string name="hover_settings_title">Hover</string>
-    <string name="hover_exclude_low_priority_title">Exclude low priority</string>
-    <string name="hover_exclude_low_priority_summary">Exclude notifications marked as low priority</string>
-    <string name="hover_exclude_non_clearable_title">Exclude non-clearable</string>
-    <string name="hover_exclude_non_clearable_summary">Exclude not dismissable notifications</string>
-    <string name="hover_exclude_topmost_title">Exclude topmost app</string>
-    <string name="hover_exclude_topmost_summary">Exclude notifications from the app running in foreground</string>
-    <string name="hover_exclude_from_insecure_lock_screen_title">Exclude insecure lock screen</string>
-    <string name="hover_exclude_from_insecure_lock_screen_summary">Exclude hover notifications from insecure lock screen</string>
-    <string name="hover_long_fadeout_title">Hover notification time</string>
-    <string name="hover_long_fadeout_3seconds">3 seconds</string>
-    <string name="hover_long_fadeout_5seconds">5 seconds (default)</string>
-    <string name="hover_long_fadeout_7seconds">7 seconds</string>
-    <string name="hover_long_fadeout_10seconds">10 seconds</string>
-    <string name="hover_long_fadeout_15seconds">15 seconds</string>
 
     <!-- Heads Up -->
     <string name="category_heads_up">Heads up</string>

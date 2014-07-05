@@ -2164,30 +2164,12 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="blacklist_button_title">Schwarze Listen</string>
     <string name="peek_blacklist_label">Peek</string>
     <string name="floating_blacklist_label">Überlagerungsmodus</string>
-    <string name="hover_blacklist_label">Hover</string>
 
     <!-- Protected Apps -->
     <string name="menu_hidden_apps_delete">Zurücksetzen</string>
     <string name="menu_hidden_apps_reset_lock">Zurücksetzen des Sperrmusters</string>
     <string name="protected_apps">Geschützte Apps</string>
     <string name="saving_protected_components">Speichern des Komponentenstatus</string>
-
-    <!-- Hover -->
-    <string name="hover_settings_title">Hover</string>
-    <string name="hover_exclude_low_priority_title">Nierdrige Priorität ausschließen</string>
-    <string name="hover_exclude_low_priority_summary">Benachrichtigungen von nierdriger Priorität ausschließen</string>
-    <string name="hover_exclude_non_clearable_title">Nicht Löschbare ausschließen</string>
-    <string name="hover_exclude_non_clearable_summary">Nichtlöschbare Benachrichtigungen ausschließen</string>
-    <string name="hover_exclude_topmost_title">Aktuelle App ausschließen</string>
-    <string name="hover_exclude_topmost_summary">Benachrichtigungen der App im Vordergrund ausschließen</string>
-    <string name="hover_exclude_from_insecure_lock_screen_title">Unsicheren Sperrbildschirm ausschließen</string>
-    <string name="hover_exclude_from_insecure_lock_screen_summary">Benachrichtigungen von unsicheren Sperrbildschirm ausschließen</string>
-    <string name="hover_long_fadeout_title">Benachrichtigungszeit</string>
-    <string name="hover_long_fadeout_3seconds">3 Sekunden</string>
-    <string name="hover_long_fadeout_5seconds">5 Sekunden (Standard)</string>
-    <string name="hover_long_fadeout_7seconds">7 Sekunden</string>
-    <string name="hover_long_fadeout_10seconds">10 Sekunden</string>
-    <string name="hover_long_fadeout_15seconds">15 Sekunden</string>
 
     <!-- Heads Up -->
     <string name="category_heads_up">Heads-Up</string>

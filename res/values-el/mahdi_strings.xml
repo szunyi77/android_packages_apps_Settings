@@ -2125,28 +2125,12 @@
     <string name="blacklist_button_title">Μαύρη λίστα</string>
     <string name="peek_blacklist_label">Μαύρη λίστα του Peek</string>
     <string name="floating_blacklist_label">Μαύρη λίστα του Floating Mode</string>
-    <string name="hover_blacklist_label">Μαύρη λίστα του Hover</string>
 
     <!-- Protected Apps -->
     <string name="menu_hidden_apps_delete">Επαναφορά</string>
     <string name="menu_hidden_apps_reset_lock">Επαναφορά μοτίβου κλειδώματοςReset pattern lock</string>
     <string name="protected_apps">Προστατευόμενες εφαρμογές</string>
     <string name="saving_protected_components">Αποθήκευση στοιχείων</string>
-
-    <!-- Hover -->
-    <string name="hover_settings_title">Hover</string>
-    <string name="hover_exclude_low_priority_title">Εξαίρεση χαμηλής προτεραιότητας</string>
-    <string name="hover_exclude_low_priority_summary">Εξαίρεση ειδοποιήσεων που είναι χαμηλής προτεραιότητας</string>
-    <string name="hover_exclude_non_clearable_title">Εξαίρεση μή απορρίψιμων</string>
-    <string name="hover_exclude_non_clearable_summary">Εξαίρεση ειδοποιήσεων που δεν μπορούν να απορριπτούν</string>
-    <string name="hover_exclude_topmost_title">Εξαίρεση εφαρμογών προσκηνίου</string>
-    <string name="hover_exclude_topmost_summary">Εξαίρεση ειδοποιήσεων απο εφαρμογές που τρέχουν στο προσκήνιο</string>
-    <string name="hover_long_fadeout_title">Χρονική διάρκεια ειδοποίησης</string>
-    <string name="hover_long_fadeout_3seconds">3 δευτ.</string>
-    <string name="hover_long_fadeout_5seconds">5 δευτ. (default)</string>
-    <string name="hover_long_fadeout_7seconds">7 δευτ.</string>
-    <string name="hover_long_fadeout_10seconds">10 δευτ.</string>
-    <string name="hover_long_fadeout_15seconds">15 δευτ.</string>
 
     <!-- Heads Up -->
     <string name="category_heads_up">Heads up</string>

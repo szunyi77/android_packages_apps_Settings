@@ -2115,7 +2115,6 @@
     <string name="blacklist_button_title">Чёрный список</string>
     <string name="peek_blacklist_label">Чёрный список от Peek</string>
     <string name="floating_blacklist_label">Чёрный список от Плавающего режима</string>
-    <string name="hover_blacklist_label">Черный список от Hover</string>
 
     <!-- Protected Apps -->
     <string name="menu_hidden_apps_delete">Сброс</string>
