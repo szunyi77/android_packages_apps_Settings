@@ -17,39 +17,9 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/lock_screen_title" >
 
-    <SwitchPreference
+    <CheckBoxPreference
             android:key="lockscreen_modlock_enabled"
             android:title="@string/lockscreen_enable_modlock_title" />
-
-    <PreferenceCategory
-        android:key="notification_category"
-        android:title="@string/notification_category" >
-
-        <PreferenceScreen
-            android:key="lockscreen_notifications"
-            android:fragment="com.android.settings.mahdi.lsn.LockscreenNotifications"
-            android:title="@string/lockscreen_notifications" />
-
-        <CheckBoxPreference
-            android:key="notification_peek"
-            android:title="@string/notification_peek_title"
-            android:summary="@string/notification_peek_summary" />
-
-        <ListPreference
-            android:key="peek_pickup_timeout"
-            android:title="@string/peek_pickup_timeout_title"
-            android:entries="@array/peek_pickup_timeout_entries"
-            android:entryValues="@array/peek_pickup_timeout_values"
-            android:dependency="notification_peek" />
-
-        <ListPreference
-            android:key="peek_wake_timeout"
-            android:title="@string/peek_wake_timeout_title"
-            android:entries="@array/peek_wake_timeout_entries"
-            android:entryValues="@array/peek_wake_timeout_values"
-            android:dependency="notification_peek" />
-
-    </PreferenceCategory>
 
     <PreferenceCategory
         android:title="@string/style_title"

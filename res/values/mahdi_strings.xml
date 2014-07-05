@@ -2241,7 +2241,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Notification settings -->
     <string name="notification_settings_title">Notifications</string>
-    <string name="notification_settings_summary">Customize the way you recieve notifications with options like Hover, Heads up and more</string>
+    <string name="notification_settings_summary">Customize the way you recieve notifications with options like Heads up, Peek and more</string>
 
     <!-- Hardware tunables - Vibrator intensity -->
     <string name="vibrator_intensity_title">Vibrator intensity</string>
