@@ -37,10 +37,6 @@ public class CustomizationSettings extends SettingsPreferenceFragment {
 
     private static final String TAG = "CustomizationSettings";
 
-    private static final String KEY_HARDWARE_KEYS = "hardware_keys";    
-
-    private PreferenceScreen mHardwareKeys;   
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,14 +45,6 @@ public class CustomizationSettings extends SettingsPreferenceFragment {
 
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
-        final Resources res = getResources();
-
-        // Only show the hardware keys config on a device that does not have a navbar
-        mHardwareKeys = (PreferenceScreen) findPreference(KEY_HARDWARE_KEYS);
-        if (mHardwareKeys != null) {
-            if (!res.getBoolean(R.bool.config_has_hardware_buttons)) {
-                getPreferenceScreen().removePreference(mHardwareKeys);
-            }        
-        }
     }
+
 }

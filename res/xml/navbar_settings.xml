@@ -16,43 +16,96 @@
 
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/navigation_settings_category_title">
 
-        <PreferenceCategory
-                android:key="advanced_cat"
-                android:title="@string/advanced_settings" >
+    <PreferenceScreen
+        android:key="hardware_keys"
+        android:title="@string/button_keys_title"
+        android:summary="@string/button_keys_summary"
+        android:fragment="com.android.settings.mahdi.HardwareKeys" />
 
-            <CheckBoxPreference
-                    android:key="emulate_menu_key"
-                    android:title="@string/emulate_menu_key_title"
-                    android:summary="@string/emulate_menu_key_summary"
-                    android:persistent="false" />
+    <PreferenceScreen
+        android:key="pie_control"
+        android:title="@string/pie_control_title"
+        android:summary="@string/pie_control_summary"
+        android:fragment="com.android.settings.mahdi.slim.PieControl" />
 
-            <ListPreference
-                    android:key="pref_navbar_menu_display"
-                    android:entries="@array/pref_menu_display_entries"
-                    android:entryValues="@array/pref_menu_display_values"
-                    android:title="@string/title_pref_menu_display"
-                    android:summary="@string/summary_pref_menu_display" />
+    <PreferenceCategory
+        android:key="navigation_bar"
+        android:title="@string/navigation_settings_title" >
 
-            <ListPreference
-                    android:key="pref_navbar_menu_location"
-                    android:entries="@array/pref_navigation_menu_entries"
-                    android:entryValues="@array/pref_navigation_menu_values"
-                    android:title="@string/title_pref_menu_location"
-                    android:summary="@string/summary_pref_menu_location" />
+        <CheckBoxPreference
+            android:key="enable_nav_bar"
+            android:title="@string/navbar_enable_bar"
+            android:summary="@string/navbar_enable_bar_summary" />
 
-            <CheckBoxPreference
-                    android:key="navbar_can_move"
-                    android:title="@string/navbar_can_move"
-                    android:summary="@string/navbar_can_move_summary" />
+        <PreferenceScreen
+            android:key="navbar_button_settings"
+            android:fragment="com.android.settings.mahdi.dslv.ButtonsListViewSettings"
+            android:title="@string/navbar_button_title"
+            android:summary="@string/navigation_button_summary">
+            <extra android:name="buttonMode" android:value="0" />
+            <extra android:name="maxAllowedButtons" android:value="5" />
+            <extra android:name="disableDeleteLastEntry" android:value="true" />
+            <extra android:name="fragment" android:value="com.android.settings.mahdi.fragments.NavbarButtonFragment" />
+        </PreferenceScreen>
 
-            <com.android.settings.mahdi.SystemSettingCheckBoxPreference
-                    android:key="navigation_bar_left"
-                    android:title="@string/navigation_bar_left_title"
-                    android:summary="@string/navigation_bar_left_summary"
-                    android:defaultValue="false" />
+        <PreferenceScreen
+            android:key="navbar_targets_settings"
+            android:fragment="com.android.settings.mahdi.dslv.ButtonsListViewSettings"
+            android:title="@string/navbar_targets_title"
+            android:summary="@string/navbar_targets_summary">
+            <extra android:name="buttonMode" android:value="3" />
+            <extra android:name="maxAllowedButtons" android:value="5" />
+            <extra android:name="actionValues" android:value="shortcut_action_navring_values" />
+            <extra android:name="actionEntries" android:value="shortcut_action_navring_entries" />
+        </PreferenceScreen>
 
-        </PreferenceCategory>
+        <PreferenceScreen
+            android:key="navbar_style_dimen_settings"
+            android:fragment="com.android.settings.mahdi.NavbarStyleDimenSettings"
+            android:title="@string/navbar_style_dimen_title"
+            android:summary="@string/navbar_style_dimen_summary" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="advanced_cat"
+        android:title="@string/advanced_settings" >
+
+        <CheckBoxPreference
+            android:key="emulate_menu_key"
+            android:title="@string/emulate_menu_key_title"
+            android:summary="@string/emulate_menu_key_summary"
+            android:persistent="false" />
+
+        <ListPreference
+            android:key="pref_navbar_menu_display"
+            android:entries="@array/pref_menu_display_entries"
+            android:entryValues="@array/pref_menu_display_values"
+            android:title="@string/title_pref_menu_display"
+            android:summary="@string/summary_pref_menu_display" />
+
+        <ListPreference
+            android:key="pref_navbar_menu_location"
+            android:entries="@array/pref_navigation_menu_entries"
+            android:entryValues="@array/pref_navigation_menu_values"
+            android:title="@string/title_pref_menu_location"
+            android:summary="@string/summary_pref_menu_location" />
+
+        <CheckBoxPreference
+            android:key="navbar_can_move"
+            android:title="@string/navbar_can_move"
+            android:summary="@string/navbar_can_move_summary" />
+
+        <com.android.settings.mahdi.SystemSettingCheckBoxPreference
+            android:key="navigation_bar_left"
+            android:title="@string/navigation_bar_left_title"
+            android:summary="@string/navigation_bar_left_summary"
+            android:defaultValue="false"
+            android:dependency="enable_nav_bar" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>
