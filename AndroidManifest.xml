@@ -1872,7 +1872,6 @@
         <activity android:name=".mahdi.NotificationDrawerSettings" />
         <activity android:name=".mahdi.LockscreenTargets" />
         <activity android:name=".mahdi.lsn.LockscreenNotifications" />
-        <activity android:name=".mahdi.LockscreenButtons" />
         <activity android:name=".mahdi.PrivacySettings" />
         <activity android:name=".ApnEditor" />
 

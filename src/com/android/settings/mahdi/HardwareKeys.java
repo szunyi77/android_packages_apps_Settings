@@ -459,13 +459,6 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        ListPreference list = (ListPreference) preference;
-        String value = (String) newValue;
-
-        if (Settings.System.putString(getContentResolver(), list.getKey(), value)) {
-            preference.setSummary(findEntryForValue(list, value));
-        }
-
         if (!mCheckPreferences) {
             return false;
         }
@@ -475,7 +468,14 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
                     setCecked ? 1 : 0);
             return true;
         }
-        return false;
+
+        ListPreference list = (ListPreference) preference;
+        String value = (String) newValue;
+
+        if (Settings.System.putString(getContentResolver(), list.getKey(), value)) {
+            preference.setSummary(findEntryForValue(list, value));
+        }
+        return true;
     }
 
     private boolean hasHomeKey() {
