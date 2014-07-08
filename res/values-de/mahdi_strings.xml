@@ -310,22 +310,17 @@ limitations under the License.
     <!-- Performance Settings : Processor settings sub items -->
     <string name="cpu_cur_freq_title">Aktuelle CPU-Frequenz</string>
     <string name="cpu_governors_title">CPU Governor</string>
-    <string name="cpu_governors_summary" translatable="false">%S</string>
     <string name="cpu_min_freq_title">Minimale CPU-Frequenz</string>
-    <string name="cpu_min_freq_summary" translatable="false">%s</string>
     <string name="cpu_max_freq_title">Maximale CPU-Frequenz</string>
-    <string name="cpu_max_freq_summary" translatable="false">%s</string>
 
     <!-- Performance Settings : I/O scheduler settings title -->
     <string name="io_scheds_title">I/O Scheduler</string>
 
     <!-- Performance Settings : I/O scheduler settings sub items -->
     <string name="io_sched_title">I/O Scheduler</string>
-    <string name="io_sched_summary" translatable="false">%S</string>
 
     <!-- Performance Settings : Performance profile settings -->
     <string name="perf_profile_title">Profile</string>
-    <string name="perf_profile_summary" translatable="false">%s</string>
 
     <!-- Memory Management -->
     <string name="memory_management_title">Speicherverwaltung</string>
