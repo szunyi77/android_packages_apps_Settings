@@ -39,12 +39,6 @@
             android:title="@string/lockpattern_settings_enable_power_button_instantly_locks"/>
 
         <PreferenceScreen
-            android:key="custom_lockscreen_options"
-            android:fragment="com.android.settings.mahdi.LockscreenInterface"
-            android:title="@string/lockscreen_custom_title"
-            android:summary="@string/lockscreen_custom_summary"/>
-
-        <PreferenceScreen
             android:fragment="com.android.settings.OwnerInfoSettings"
             android:key="owner_info_settings"
             android:title="@string/owner_info_settings_title"
