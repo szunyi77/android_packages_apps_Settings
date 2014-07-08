@@ -2214,6 +2214,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="summary_heads_up_enabled">Pop-up notifications are enabled</string>
     <string name="summary_heads_up_disabled">Pop-up notifications are disabled</string>
     <string name="heads_up_floating_window">Launch in floating window</string>
+    <string name="heads_up_floating_window_summary">Tapping on the notification will open the app in a floating window</string>
     <string name="heads_up_expanded_title">Always expanded</string>
     <string name="heads_up_expanded_summary">Show heads up notification always expanded</string>
     <string name="heads_up_show_updates_title">Show updates</string>
