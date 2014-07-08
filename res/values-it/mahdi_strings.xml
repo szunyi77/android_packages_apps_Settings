@@ -292,8 +292,58 @@
     <string name="remove_blacklist_entry">Vuoi rimuovere questo numero dalla blacklist?</string>
     <string name="select_contact">Seleziona contatto</string>
 
-    <!-- Performance Control -->
-    <string name="performance_settings">Impostazioni kernel</string>
+    <!-- Performance settings -->
+    <string name="performance_settings_title">Prestazioni</string>
+ 
+    <!-- Performance Settings : Warning dialog -->
+    <string name="performance_settings_warning_title">Procedi con cautela</string>
+    <string name="performance_settings_warning">Queste impostazioni sono incluse per la sperimentazione e ogni cambiamento potrebbe causare instabilità, crash, perdita di dati o danni all\'hardware.\n\nPer favore non riportare bug se hai cambiato il valore predefinito di una di queste impostazioni.</string>
+ 
+    <!-- Performance Settings : Set on boot option -->
+    <string name="performance_set_on_boot">Imposta all\'avvio</string>
+    <string name="performance_set_on_boot_summary">Ripristina le impostazioni all\'avvio</string>
+ 
+    <!-- Performance Settings : Processor Settings -->
+    <!-- Performance Settings : Processor settings title -->
+    <string name="processor_title">Processore</string>
+ 
+    <!-- Performance Settings : Processor settings sub items -->
+    <string name="cpu_cur_freq_title">Frequenza attuale CPU</string>
+    <string name="cpu_governors_title">Governor CPU</string>
+    <string name="cpu_min_freq_title">Frequenza minima CPU</string>
+    <string name="cpu_max_freq_title">Frequenza massima CPU</string>
+    
+    <!-- Performance Settings : I/O scheduler settings title -->
+    <string name="io_scheds_title">Schedulatore I/O</string>
+ 
+    <!-- Performance Settings : I/O scheduler settings sub items -->
+    <string name="io_sched_title">Schedulatore I/O</string>
+    
+    <!-- Performance Settings : Performance profile settings -->
+    <string name="perf_profile_title">Profilo</string>
+    
+    <!-- Memory Management -->
+    <string name="memory_management_title">Controllo memoria</string>
+    <!-- zRam -->
+    <string name="pref_zram_title">zRam</string>
+    <string name="pref_zram_summary">Comprimi la memoria per aumentarne la capicità virtuale (riavvio richiesto)</string>
+    <!-- KSM -->
+    <string name="pref_ksm_title">Unisci pagine kernel</string>
+    <string name="pref_ksm_summary">UPK riduce la memoria fisica richiesta e migliora le prestazioni</string>
+    <!-- Purgeable Assets -->
+    <string name="pref_purgeable_assets_title">Consenti pulizia delle attività</string>
+    <string name="pref_purgeable_assets_summary">La pulizia della memoria bitmap delle attività permette la liberazione di più RAM quando necessario (riavvio richiesto)</string>
+ 
+    <!-- Performance Settings : 16bpp Alpha -->
+    <string name="pref_use_16bpp_alpha_title">Trasparenza 16 bit</string>
+    <string name="pref_use_16bpp_alpha_summary">Migliori performance grafiche, ma qualità minore e possibili bug grafici (riavvio richiesto)</string>
+ 
+    <!-- Automatic performance profiles -->
+    <string name="autoperf_title">Attiva profili per-app</string>
+    <string name="autoperf_summary">Scegli automaticamente un profilo per le prestazioni appropriato per varie app</string>
+ 
+    <!-- Performance menu, graphics options category -->
+    <string name="graphics_title">Grafica e rendering</string>
 
     <!-- Sound settings -->
     <string name="volume_category">Volume</string>
@@ -431,22 +481,6 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <string name="unlock_quick_unlock_control_title">Sblocco veloce</string>
     <string name="unlock_quick_unlock_control_summary">Sblocco automatico quando viene inserito correttamente il PIN o la password</string>
 
-    <!-- Slide lock delay -->
-    <string name="delay_and_timeout_title">Ritardo blocco</string>
-    <string name="slide_lock_delay_title">Ritardo blocco schermo</string>
-    <string name="slide_lock_timeout_delay_title">Ritardo dopo timeout</string>
-    <string name="slide_lock_screenoff_delay_title">Ritardo dopo schermo spento</string>
-    <string name="slide_lock_delay_none">Nessuno</string>
-    <string name="slide_lock_delay_1s">1 secondo</string>
-    <string name="slide_lock_delay_5s">5 secondi</string>
-    <string name="slide_lock_delay_10s">10 secondi</string>
-    <string name="slide_lock_delay_15s">15 secondi</string>
-    <string name="slide_lock_delay_30s">30 secondi</string>
-    <string name="slide_lock_delay_1m">1 minuto</string>
-    <string name="slide_lock_delay_5m">5 minuti</string>
-    <string name="slide_lock_delay_10m">10 minuti</string>
-    <string name="slide_lock_delay_30m">30 minuti</string>
-
     <!-- Lock Gesture settings -->
     <string name="lockgesture_change_lock_pattern_label">Cambia gesture di sblocco</string>
     <string name="lockgesture_change_lock_pin_label">Cambia PIN di sblocco</string>
@@ -538,6 +572,7 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <string name="title_tile_theme">Cambia tema</string>
     <string name="title_tile_batterysaver">Modalità salva batteria</string>
     <string name="title_tile_heads_up">Heads up</string>
+    <string name="title_tile_performance_profile">Profilo prestazioni</string>
     
     <string name="title_dynamic_tiles">Tile dinamici</string>
     <string name="dynamic_tiles_note_title">Nota</string>
@@ -672,6 +707,7 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
 
     <!-- Status bar | Clock -->
     <string name="status_bar_title">Barra di stato</string>
+    <string name="status_bar_summary">Vedi o cambia opzioni per la barra di stato</string>
     <string name="status_bar_style_title">Stile</string>
 
     <string name="status_bar_clock">Orologio e data</string>
@@ -776,7 +812,7 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <!-- Increase Ringing -->
     <string name="increasing_ring_title">Suoneria incrementale</string>
     <!-- Sound settings screen, the caption of the checkbox for making incoming calls increase in volume -->
-    <string name="checkbox_increasing_ring">Attiva</string>
+    <string name="checkbox_increasing_ring">Attivata</string>
     <!-- Sound settings screen, the title of the volume bar to adjust the minimum increasing ring volume -->
     <string name="increasing_ring_min_volume_title">Volume di partenza</string>
     <string name="increasing_ring_volume_notice">Attenzione:se il volume di partenza è più alto del volume della suoneria, all\'arrivo della chiamata si userà il volume suoneria.</string>
@@ -965,6 +1001,7 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <!-- Navigation settings -->
     <string name="navigation_settings_options_title">Opzioni di navigazione</string>
     <string name="navigation_settings_category_title">Pulsanti</string>
+    <string name="navigation_settings_summary">Opzioni per la navigation bar, i controlli pie e i tasti fisici</string>
     <string name="navigation_settings_title">Navigation bar</string>
 
     <!-- Navigation bar -->
@@ -1241,6 +1278,8 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <!--Lockscreen See Through-->
     <string name="see_through_title">Lockscreen trasparente</string>
     <string name="see_through_summary">Mostra i contenuti dietro la lockscreen, i tuoi dati possono essere visibili a chi ti è vicino</string>
+    <string name="blur_radius_title">Livello trasparenza</string>
+    <string name="blur_radius_summary">Imposta l\'intensità dell\'effetto trasparenza nella lockscreen</string>    
 
     <!-- Lock screen shortcuts -->
     <string name="picker_activities">Attività</string>
@@ -1454,7 +1493,7 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <string name="supersu_title">SuperSU</string>
 
     <!-- Emulate menu key -->
-    <string name="emulate_menu_key_title">Emula tasto hardware </string>
+    <string name="emulate_menu_key_title">Emula tasto fisico </string>
     <string name="emulate_menu_key_summary">Premere il tasto menu sulla navbar mostrerà il menu in basso </string>
 
     <!-- App ops -->
@@ -1797,19 +1836,15 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <string name="battery_saver_network_gsm_title">Reti GSM </string>
     <string name="battery_saver_network_cdma_title">Reti CDMA </string>
     <string name="battery_saver_system_title">Opzioni di sistema </string>
-    <string name="ad_redisplay_never">Mai </string>
-    <string name="ad_redisplay_1m">1 minuto </string>
-    <string name="ad_redisplay_5m">5 minuti </string>
-    <string name="ad_redisplay_15m">15 minuti </string>
-    <string name="ad_redisplay_30m">30 minuti </string>
-    <string name="ad_redisplay_1h">1 ora </string>
-    <string name="ad_redisplay_2h">2 ore </string>
-    <string name="ad_redisplay_5h">5 ore </string>    
-
-    <!-- Lockscreen system bar visibility -->
-    <string name="system_bar_visibility">Disattiva nella lockscreen </string>
-    <string name="system_bar_visibility_summary">Durante l\'immersive mode, la barra di stato e la navigation bar sono mostrate nella lockscreen </string>
-
+    <string name="ad_redisplay_never">Mai</string>
+    <string name="ad_redisplay_1m">1 minuto</string>
+    <string name="ad_redisplay_5m">5 minuti</string>
+    <string name="ad_redisplay_15m">15 minuti</string>
+    <string name="ad_redisplay_30m">30 minuti</string>
+    <string name="ad_redisplay_1h">1 ora</string>
+    <string name="ad_redisplay_2h">2 ore</string>
+    <string name="ad_redisplay_5h">5 ore</string>
+    
     <!-- Notification Reminders -->
     <string name="noti_reminder_category">Ricorda notifiche </string>
     <string name="noti_reminder_enable_title">Attiva il ricorda notifiche </string>
@@ -1870,18 +1905,21 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <!-- Notification count -->
     <string name="notification_count_title">Contatore notifiche </string>
     <string name="notification_count_summary">Mostra il numero di notifiche in sospeso sulla barra di stato </string>
-
-    <!-- System Bars -->
-    <string name="system_bars_title">Barre di sistema </string>
-    <string name="system_bars_summary">Cambia opzioni della barra di stato e della navigation bar </string>
+    
+    <!-- Immersive mode -->
+    <string name="immersive_mode_category">Immersive</string>
     <string name="immersive_mode_title">Modalità immersive</string>
     <string name="summary_immersive_mode">%1$s</string>
     <string name="immersive_mode_summary_status_bar">Con la barra di stato </string>
     <string name="immersive_mode_summary_no_status_bar">Senza barra di stato </string>
     <string name="immersive_mode_disabled">Spenta </string>
-    <string name="immersive_mode_status_bar">Con la barra di stato </string>
-    <string name="immersive_mode_no_status_bar">Senza barra di stato </string>
-
+    <string name="immersive_mode_status_bar">Barra di stato visibile</string>
+    <string name="immersive_mode_no_status_bar">Barra di stato nascosta</string>
+    
+    <!-- Lockscreen system bar visibility -->
+    <string name="system_bar_visibility">Disattiva in locksceen</string>
+    <string name="system_bar_visibility_summary">Mostra la navigation bar e la barra di stato nella lockscreen durante l\'immersive mode</string>
+ 
     <!-- On-The-Go -->
     <string name="power_menu_onthego_title">Modalità On-The-Go</string>
     <string name="title_tile_onthego">On-The-Go</string>
@@ -2174,8 +2212,7 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <string name="blacklist_button_title">Blacklist</string>
     <string name="peek_blacklist_label">Blacklist di peek</string>
     <string name="floating_blacklist_label">Blacklist della modalità floating</string>
-    <string name="hover_blacklist_label">Blacklist di hover</string>
-
+    
     <!-- Protected Apps -->
     <string name="menu_hidden_apps_delete">Ripristina</string>
     <string name="menu_hidden_apps_reset_lock">Ripristina modello di sblocco</string>
@@ -2186,6 +2223,27 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <string name="category_heads_up">Heads up</string>
     <string name="summary_heads_up_enabled">Heads up è attivo</string>
     <string name="summary_heads_up_disabled">Heads up non è attivo</string>
+    <string name="heads_up_floating_window">Apri in modalità floating</string>
+    <string name="heads_up_expanded_title">Sempre esteso</string>
+    <string name="heads_up_expanded_summary">Mostra le notifiche di heads up sempre in modalità estesa</string>
+    <string name="heads_up_show_updates_title">Mostra aggiornamenti</string>
+    <string name="heads_up_show_updates_summary">Mostra aggiornamenti delle notifiche in sospeso con heads up</string>
+    <string name="heads_up_snooze_title">Timer vai a dormire</string>
+    <string name="heads_up_snooze_summary">Se premi il pulsante vai a dormire heads up si disattiverà per <xliff:g id="number">%d</xliff:g> minuti.</string>
+    <string name="heads_up_snooze_disabled_summary">Il timer vai a dormire è spento.</string>
+    <string name="heads_up_snooze_3min">3 minuti</string>
+    <string name="heads_up_snooze_5min">5 minuti</string>
+    <string name="heads_up_snooze_10min">10 minuti</string>
+    <string name="heads_up_snooze_15min">15 minuti</string>
+    <string name="heads_up_snooze_20min">20 minuti</string>
+    <string name="heads_up_time_out_title">Timeout</string>
+    <string name="heads_up_time_out_summary">Heads up notification will show up for <xliff:g id="number">%d</xliff:g> secondi.</string>
+    <string name="heads_up_time_out_never_summary">Le notifiche di heads up saranno mostrate fino alla rimozione.</string>
+    <string name="heads_up_time_out_4sec">4 secondi</string>
+    <string name="heads_up_time_out_6sec">6 secondi</string>
+    <string name="heads_up_time_out_8sec">8 secondi</string>
+    <string name="heads_up_time_out_10sec">10 secondi</string>
+    <string name="heads_up_time_out_never">Mai</string>
     <string name="add_heads_up_package">Aggiungi app</string>
     <string name="add_heads_up_dnd_summary">Non mostrare heads up in queste app</string>
     <string name="add_heads_up_blacklist_summary">Non mostrare notifiche heads up da queste app</string>
@@ -2195,7 +2253,7 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     
     <!-- Notification settings -->
     <string name="notification_settings_title">Notifiche</string>
-    <string name="notification_settings_summary">Personalizza il modo in cui ricevi le notifiche con hover, heads up e altro</string>
+    <string name="notification_settings_summary">Personalizza il modo in cui ricevi le notifiche con heads up, peek, le notifiche in lockscreen e altro</string>
 
     <!-- Hardware tunables - Vibrator intensity -->
     <string name="vibrator_intensity_title">Intensità vibrazione</string>
@@ -2262,4 +2320,26 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <!-- Glove mode / high touch sensitivity -->
     <string name="auto_adjust_touch_title">Alta sensibilità</string>
     <string name="auto_adjust_touch_summary">Aumenta la sensibilità del touch così puoi usarlo mentre indossi i guanti</string>
+    
+    <!-- Search -->
+    <string name="settings_search_action_bar_button">Cerca</string>
+    <string name="settings_search_autocompleteview_hint">Cerca impostazioni</string>
+    
+    <!-- Stay Awake while plugged in -->
+    <string name="keep_screen_on_summary_cm">Lo schermo non si spegnerà mai se in carica</string>
+    
+    <!-- [CHAR LIMIT=NONE] Device Info screen. Countdown for user taps to enable development settings -->
+    <plurals name="show_dev_countdown_cm">
+        <item quantity="one">Ancora <xliff:g id="step_count">%1$d</xliff:g> tocco e sarai uno sviluppatore.</item>
+        <item quantity="other">Ancora <xliff:g id="step_count">%1$d</xliff:g> tocchi e sarai uno sviluppatore.</item>
+    </plurals>
+    <!-- [CHAR LIMIT=NONE] Device Info screen. Confirmation that developer settings are enabled -->
+    <string name="show_dev_on_cm">Hai attivato le opzioni sviluppatore!</string>
+    <!-- [CHAR LIMIT=NONE] Device Info screen. Okay we get it, stop pressing, you already have it on -->
+    <string name="show_dev_already_cm">Non è necessario, hai già attivato le opzioni sviluppatore.</string>
+    
+    <!-- Setting checkbox title for Whether to enable Android debugging support on the phone. -->
+    <string name="enable_adb_cm">Debug USB</string>
+    <!-- Setting checkbox summary for Whether to enable Android debugging support on the phone -->
+    <string name="enable_adb_summary_cm">Attiva l\'interfaccia adb di android</string>
 </resources>
