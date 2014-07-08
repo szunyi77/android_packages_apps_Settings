@@ -117,10 +117,12 @@ public class RecentsPanelSettings extends SettingsPreferenceFragment implements
                 Settings.System.CUSTOM_RECENT, false);
 
         if (customRecent == false) {
+            mRecentsShowTopmost.setEnabled(false);
             mRecentPanelLeftyMode.setEnabled(false);
             mRecentPanelScale.setEnabled(false);
             mRecentPanelExpandedMode.setEnabled(false);
         } else {
+            mRecentsShowTopmost.setEnabled(true);
             mRecentPanelLeftyMode.setEnabled(true);
             mRecentPanelScale.setEnabled(true);
             mRecentPanelExpandedMode.setEnabled(true);
