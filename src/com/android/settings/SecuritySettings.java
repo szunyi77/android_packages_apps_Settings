@@ -334,22 +334,13 @@ public class SecuritySettings extends RestrictedSettingsFragment
             mLockBeforeUnlock.setOnPreferenceChangeListener(this);
         }
 
-        // Add the additional Mahdi-Rom settings
-        addPreferencesFromResource(R.xml.security_settings_mahdi);
-
         final int deviceKeys = res.getInteger(
                 com.android.internal.R.integer.config_deviceHardwareKeys);
         final PreferenceGroup additionalPrefs =
                 (PreferenceGroup) findPreference(CATEGORY_ADDITIONAL);
 
-        CheckBoxPreference homeUnlock = (CheckBoxPreference)
-                findPreference(Settings.System.HOME_UNLOCK_SCREEN);
-
         // hide all lock options if lock screen set to NONE
         if (mLockPatternUtils.isLockScreenDisabled()) {
-            root.removePreference(additionalPrefs);
-        // Hide the HomeUnlock setting if no home button is available
-        } else if ((deviceKeys & HardwareKeys.KEY_MASK_HOME) == 0) {
             root.removePreference(additionalPrefs);
         }
 

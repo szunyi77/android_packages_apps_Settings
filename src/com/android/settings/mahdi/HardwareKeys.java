@@ -28,7 +28,9 @@ import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
+import android.preference.ListPreference;
 import android.preference.Preference;
+import android.preference.PreferenceActivity;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceCategory;
@@ -37,6 +39,7 @@ import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.text.TextUtils;
 
 import com.android.internal.util.mahdi.AppHelper;
 import com.android.internal.util.mahdi.ButtonsConstants;
@@ -48,10 +51,9 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
 import com.android.settings.cyanogenmod.ButtonBacklightBrightness;
 import com.android.settings.mahdi.util.ShortcutPickerHelper;
+import com.android.internal.util.mahdi.QSUtils;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 
 public class HardwareKeys extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener, OnPreferenceClickListener,
@@ -84,6 +86,7 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
     private static final String KEYS_APP_SWITCH_LONG_PRESS = "keys_app_switch_long_press";
     private static final String KEYS_APP_SWITCH_DOUBLE_TAP = "keys_app_switch_double_tap";
     private static final String KEY_BUTTON_BACKLIGHT = "button_backlight";
+    private static final String LOCKSCREENLONG_PRESS_HOME = "lockscreen_long_press_home";
 
     private static final int DLG_SHOW_WARNING_DIALOG = 0;
     private static final int DLG_SHOW_ACTION_DIALOG  = 1;
@@ -115,6 +118,8 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
     private Preference mAppSwitchPressAction;
     private Preference mAppSwitchLongPressAction;
     private Preference mAppSwitchDoubleTapAction;
+    private ListPreference mLongHomeAction;
+    private ListPreference[] mActions;
 
     private boolean mCheckPreferences;
     private Map<String, String> mKeySettings = new HashMap<String, String>();
@@ -330,6 +335,36 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
                     .putBoolean("no_home_action", false).commit();
         }
 
+        mLongHomeAction = (ListPreference) findPreference(LOCKSCREENLONG_PRESS_HOME);
+        if (hasHomeKey) {
+            mLongHomeAction.setKey(Settings.System.LOCKSCREEN_LONG_HOME_ACTION);
+        } else {
+            getPreferenceScreen().removePreference(mLongHomeAction);
+        }
+
+        mActions = new ListPreference[] {
+            mLongHomeAction
+        };
+        for (ListPreference pref : mActions) {
+            if (QSUtils.deviceSupportsTorch(getActivity())) {
+                final CharSequence[] oldEntries = pref.getEntries();
+                final CharSequence[] oldValues = pref.getEntryValues();
+                ArrayList<CharSequence> newEntries = new ArrayList<CharSequence>();
+                ArrayList<CharSequence> newValues = new ArrayList<CharSequence>();
+                for (int i = 0; i < oldEntries.length; i++) {
+                    newEntries.add(oldEntries[i].toString());
+                    newValues.add(oldValues[i].toString());
+                }
+                newEntries.add(getString(R.string.lockscreen_buttons_flashlight));
+                newValues.add("FLASHLIGHT");
+                pref.setEntries(
+                        newEntries.toArray(new CharSequence[newEntries.size()]));
+                pref.setEntryValues(
+                        newValues.toArray(new CharSequence[newValues.size()]));
+            }
+            pref.setOnPreferenceChangeListener(this);
+        }
+
         mCheckPreferences = true;
         return prefs;
     }
@@ -424,13 +459,20 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ListPreference list = (ListPreference) preference;
+        String value = (String) newValue;
+
+        if (Settings.System.putString(getContentResolver(), list.getKey(), value)) {
+            preference.setSummary(findEntryForValue(list, value));
+        }
+
         if (!mCheckPreferences) {
             return false;
         }
         if (preference == mEnableCustomBindings) {
-            boolean value = (Boolean) newValue;
+            boolean setCecked = (Boolean) newValue;
             Settings.System.putInt(getContentResolver(), Settings.System.HARDWARE_KEY_REBINDING,
-                    value ? 1 : 0);
+                    setCecked ? 1 : 0);
             return true;
         }
         return false;
@@ -462,6 +504,10 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
     @Override
     public void onResume() {
         super.onResume();
+
+        for (ListPreference pref : mActions) {
+            updateEntry(pref);
+        }
     }
 
     @Override
@@ -586,6 +632,30 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
         @Override
         public void onCancel(DialogInterface dialog) {
         }
+    }
+
+    private void updateEntry(ListPreference pref) {
+        String value = Settings.System.getString(getContentResolver(), pref.getKey());
+        if (value == null) {
+            value = "";
+        }
+
+        CharSequence entry = findEntryForValue(pref, value);
+        if (entry != null) {
+            pref.setValue(value);
+            pref.setSummary(entry);
+            return;
+        }
+    }
+
+    private CharSequence findEntryForValue(ListPreference pref, CharSequence value) {
+        CharSequence[] entries = pref.getEntryValues();
+        for (int i = 0; i < entries.length; i++) {
+            if (TextUtils.equals(entries[i], value)) {
+                return pref.getEntries()[i];
+            }
+        }
+        return null;
     }
 
 }
