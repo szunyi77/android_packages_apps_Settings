@@ -292,8 +292,63 @@ limitations under the License.
     <string name="remove_blacklist_entry">Soll dieser Sperrlisteneintrag entfernt werden?</string>
     <string name="select_contact">Kontakt auswählen</string>
 
-    <!-- Performance Control -->
-    <string name="performance_settings">Kerneleinstellungen</string>
+    <!-- Performance settings -->
+    <string name="performance_settings">Leistungsoptionen</string>
+
+    <!-- Performance Settings : Warning dialog -->
+    <string name="performance_settings_warning_title">Bitte Vorsicht</string>
+    <string name="performance_settings_warning">Änderungen an den Einstellungen können zu Instabilität, Abstürzen, Datenverlust oder Hardwarefehlern zu führen.\n\nBitte keine Fehlerberichte erstellen wenn eine dieser Einstellungen geändert wurde.</string>
+
+    <!-- Performance Settings : Set on boot option -->
+    <string name="performance_set_on_boot">Bei Systemstart anwenden</string>
+    <string name="performance_set_on_boot_summary">Einstellungen nach einem Neustart wieder herstellen</string>
+
+    <!-- Performance Settings : Processor Settings -->
+    <!-- Performance Settings : Processor settings title -->
+    <string name="processor_title">Prozessor</string>
+
+    <!-- Performance Settings : Processor settings sub items -->
+    <string name="cpu_cur_freq_title">Aktuelle CPU-Frequenz</string>
+    <string name="cpu_governors_title">CPU Governor</string>
+    <string name="cpu_governors_summary" translatable="false">%S</string>
+    <string name="cpu_min_freq_title">Minimale CPU-Frequenz</string>
+    <string name="cpu_min_freq_summary" translatable="false">%s</string>
+    <string name="cpu_max_freq_title">Maximale CPU-Frequenz</string>
+    <string name="cpu_max_freq_summary" translatable="false">%s</string>
+
+    <!-- Performance Settings : I/O scheduler settings title -->
+    <string name="io_scheds_title">I/O Scheduler</string>
+
+    <!-- Performance Settings : I/O scheduler settings sub items -->
+    <string name="io_sched_title">I/O Scheduler</string>
+    <string name="io_sched_summary" translatable="false">%S</string>
+
+    <!-- Performance Settings : Performance profile settings -->
+    <string name="perf_profile_title">Profile</string>
+    <string name="perf_profile_summary" translatable="false">%s</string>
+
+    <!-- Memory Management -->
+    <string name="memory_management_title">Speicherverwaltung</string>
+    <!-- zRam -->
+    <string name="pref_zram_title">zRam</string>
+    <string name="pref_zram_summary">Speicher komprimieren für erhöhte virtuelle Kapazität (erfordert Neustart)</string>
+    <!-- KSM -->
+    <string name="pref_ksm_title">Kernel Samepage Zusammenlegung</string>
+    <string name="pref_ksm_summary">Reduziert den physischen Speicherbedarf und verbessert die Leistung</string>
+    <!-- Purgeable Assets -->
+    <string name="pref_purgeable_assets_title">Purging zulassen</string>
+    <string name="pref_purgeable_assets_summary">Purging von Bitmap-Speicher ermöglicht die Freigabe von mehr RAM bei Bedarf (erfordert Neustart)</string>
+
+    <!-- Performance Settings : 16bpp Alpha -->
+    <string name="pref_use_16bpp_alpha_title">16 Bit Transparenz</string>
+    <string name="pref_use_16bpp_alpha_summary">Bessere Grafikleistung, aber geringere Qualität und kann visuelle Artefakte verursachen (erfordert Neustart)</string>
+
+    <!-- Automatic performance profiles -->
+    <string name="autoperf_title">Aktivieren von App-Profilen</string>
+    <string name="autoperf_summary">Automatische Leistungsprofile für verschiedene Anwendungen</string>
+
+    <!-- Performance menu, graphics options category -->
+    <string name="graphics_title">Grafik- und Rendering</string>
 
     <!-- Sound settings -->
     <string name="volume_category">Lautstärke</string>
@@ -542,8 +597,9 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="title_tile_theme">Design-Umschalter</string>
     <string name="title_tile_batterysaver">Energiesparmodus</string>
     <string name="title_tile_heads_up">Heads-Up</string>
-	
-    <string name="title_dynamic_tiles">Dynamische Kacheln</string>
+    <string name="title_tile_performance_profile">Leistungsprofile</string>	
+    
+	<string name="title_dynamic_tiles">Dynamische Kacheln</string>
     <string name="dynamic_tiles_note_title">Hinweis</string>
     <string name="dynamic_tiles_note_summary">Dynamische Kacheln werden nur angezeigt, wenn das entsprechende Systemereignis eintritt</string>
     <string name="title_dynamic_alarm">Wecker</string>
@@ -617,7 +673,8 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="title_qs_small_icons">Kleinere Kacheln anzeigen</string>
     <string name="summary_qs_small_icons">Anzeige kleinerer Kacheln um die Anzahl der Spalten zu erhöhen</string>
 
-    <!-- This exists as part of Power widget already, re-use them If Power widget is removed, re-enable these -->
+    <!-- This exists as part of Power widget already, re-use them
+If Power widget is removed, re-enable these -->
     <string name="pref_ring_mode_title">Klingelmodi</string>
     <string name="pref_ring_mode_summary">Klingelmodi, zwischen denen umgeschaltet wird</string>
     <string name="cm_sound_mode_silent">Lautlos</string>
@@ -671,6 +728,7 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
 
     <!-- Status bar | Clock -->
     <string name="status_bar_title">Statusleiste</string>
+    <string name="status_bar_summary">Konfiguration der Statusleiste</string>
     <string name="status_bar_style_title">Optik</string>
 
     <string name="status_bar_clock">Uhr und Datum</string>
@@ -963,9 +1021,10 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
 
     <!-- Navigation settings -->
     <string name="navigation_settings_options_title">Navigations-Optionen</string>
-    <string name="navigation_settings_category_title">Navigationsleiste</string>
-    <string name="navigation_settings_title">Bildschirm-Navigationsleiste</string>
-
+    <string name="navigation_settings_category_title">Navigation</string>
+    <string name="navigation_settings_summary">Konfiguration von Navigationsleiste, Pie und Hardware-Tasten</string>
+    <string name="navigation_settings_title">Navigationsleiste</string>
+   
     <!-- Navigation bar -->
     <string name="navigation_bar_size_42_dp_default">42 DPI (Standard)</string>
     <string name="navigation_bar_size_36_dp">36 DPI</string>
@@ -1082,8 +1141,6 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="quiet_hours_alarm_dialog_title">Ruhige Stunen Ausnahme</string>
     <string name="quiet_hours_alarm_message">" entspricht den Ausnahmeregeln der Ruhigen Stunden!"</string>
 
-	
-	
     <!-- time range preference -->
     <string name="start_time_title">Start</string>
     <string name="end_time_title">Ende</string>
@@ -1805,10 +1862,6 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="ad_redisplay_2h">2 Stunden</string>
     <string name="ad_redisplay_5h">5 Stunden</string>
 
-    <!-- Lockscreen system bar visibility -->
-    <string name="system_bar_visibility">Deaktiviert bei aktivierter Display-Sperre</string>
-    <string name="system_bar_visibility_summary">Anzeige der Systemleisten bei aktivierter Display-Sperre im erweiterten Desktop-Modus</string>
-
     <!-- Notification Reminders -->
     <string name="noti_reminder_category">Benachrichtigungserinnerung</string>
     <string name="noti_reminder_enable_title">Benachrichtigungserinnerung aktivieren</string>
@@ -1862,9 +1915,8 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="notification_count_title">Benachrichtigungsanzahl</string>
     <string name="notification_count_summary">Die Anzahl der ausstehenden Benachrichtigen als Überlagerung in der Statusleiste anzeigen</string>
 
-    <!-- System Bars -->
-    <string name="system_bars_title">Systemleisten</string>
-    <string name="system_bars_summary">Konfiguration von Status- und Navigationsleiste</string>
+    <!-- Immersive mode -->
+    <string name="immersive_mode_category">Erweiterter Desktop</string>
     <string name="immersive_mode_title">Erweiterter Desktop</string>
     <string name="summary_immersive_mode">%1$s</string>
     <string name="immersive_mode_summary_status_bar">Statusleiste anzeigen</string>
@@ -1872,6 +1924,10 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="immersive_mode_disabled">Aus</string>
     <string name="immersive_mode_status_bar">Statusleiste anzeigen</string>
     <string name="immersive_mode_no_status_bar">Statusleiste verbergen</string>
+
+    <!-- Lockscreen system bar visibility -->
+    <string name="system_bar_visibility">Deaktiviert bei aktivierter Display-Sperre</string>
+    <string name="system_bar_visibility_summary">Anzeige der Systemleisten bei aktivierter Display-Sperre im erweiterten Desktop-Modus</string>
 
     <!-- On-The-Go -->
     <string name="power_menu_onthego_title">On-The-Go-Modus</string>
@@ -2062,7 +2118,8 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <!-- Bluetooth accept all file types -->
     <string name="bluetooth_accept_all_files">Akzeptieren aller Dateitypen</string>
 
-    <!-- Font size sample text. This needs to be a very short string, as it is shown in multiple font sizes in a limited amount of space. -->
+    <!-- Font size sample text. This needs to be a very short string, as it is shown in
+multiple font sizes in a limited amount of space. -->
     <string name="font_size_sample">Beispiel</string>
 
     <!--Notification category-->
@@ -2173,14 +2230,15 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
 
     <!-- Heads Up -->
     <string name="category_heads_up">Heads-Up</string>
-    <string name="summary_heads_up">Heads-Up ermöglicht es Benachrichtigungen über dem aktuellen Bildschirminhalt anzuzeigen</string>
-    <string name="title_heads_up_enabled">Aktivieren</string>
+    <string name="summary_heads_up_enabled">Pop-Up Benachrichtigungen aktiviert</string>
+    <string name="summary_heads_up_disabled">Pop-Up Benachrichtigungen deaktiviert</string>
+    <string name="heads_up_floating_window">Im Überlagerungsmodus starten</string>
     <string name="add_heads_up_package">App hinzufügen</string>
     <string name="add_heads_up_dnd_summary">Innerhalb dieser Anwendungen nichts anzeigen</string>
     <string name="add_heads_up_blacklist_summary">Von diesen Anwendungen nichts anzeigen</string>
     <string name="heads_up_dnd_title">Nicht stören</string>
     <string name="heads_up_blacklist_title">Schwarzeliste</string>
-    <string name="heads_up_disabled_notice">Heads-Up aktivieren um Apps interaktive Benachrichtigungen in einem Popup-Fenster auf dem Bildschirm zu ermöglichen.</string>
+    <string name="heads_up_disabled_notice">Heads-Up aktivieren um Apps interaktive Benachrichtigungen in einem Pop-Up auf dem Bildschirm zu ermöglichen.</string>
 	
     <!-- Notification settings -->
     <string name="notification_settings_title">Benachrichtigungen</string>
@@ -2251,4 +2309,26 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <!-- Glove mode / high touch sensitivity -->
     <string name="auto_adjust_touch_title">Hohe Berührungsempfindlichkeit</string>
     <string name="auto_adjust_touch_summary">"Verbesserte Empfindlichkeit des Bildschirms zur Bedienung mit Handschuhen"</string>
+
+    <!-- Search -->
+    <string name="settings_search_action_bar_button">Suche</string>
+    <string name="settings_search_autocompleteview_hint">Durchsuche die Einstellungen</string>
+
+    <!-- Stay Awake while plugged in -->
+    <string name="keep_screen_on_summary_cm">Beim laden Bildschirm nicht ausschalten</string>
+
+    <!-- [CHAR LIMIT=NONE] Device Info screen. Countdown for user taps to enable development settings -->
+    <plurals name="show_dev_countdown_cm">
+        <item quantity="one">Noch <xliff:g id="step_count">%1$d</xliff:g> Schritt um die Entwickleroptionen freizuschalten.</item>
+        <item quantity="other">Noch <xliff:g id="step_count">%1$d</xliff:g> Schritte um die Entwickleroptionen freizuschalten.</item>
+    </plurals>
+    <!-- [CHAR LIMIT=NONE] Device Info screen. Confirmation that developer settings are enabled -->
+    <string name="show_dev_on_cm">Entwickleroptionen freigeschaltet!</string>
+    <!-- [CHAR LIMIT=NONE] Device Info screen. Okay we get it, stop pressing, you already have it on -->
+    <string name="show_dev_already_cm">Entwickleroptionen wurden bereits freigeschaltet.</string>
+
+    <!-- Setting checkbox title for Whether to enable Android debugging support on the phone. -->
+    <string name="enable_adb_cm">Android-Debugging</string>
+    <!-- Setting checkbox summary for Whether to enable Android debugging support on the phone -->
+    <string name="enable_adb_summary_cm">ADB (Android Debug Bridge) Schnittstelle aktivieren</string>
 </resources>
