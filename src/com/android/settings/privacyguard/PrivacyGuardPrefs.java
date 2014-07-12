@@ -40,12 +40,12 @@ public class PrivacyGuardPrefs extends SettingsPreferenceFragment implements
     private static final String TAG = "PrivacyGuardPrefs";
 
     private static final String KEY_PRIVACY_GUARD_DEFAULT = "privacy_guard_default";
-	private static final String KEY_PRIVACY_GUARD_NOTIFICATION = "privacy_guard_notification";
+    private static final String KEY_PRIVACY_GUARD_NOTIFICATION = "privacy_guard_notification";
     private static final String KEY_PRIVACY_GUARD_NOTIFICATION_ICON = "privacy_guard_notification_icon";
     private static final String KEY_PRIVACY_GUARD_NOTIFICATION_DISMISS = "privacy_guard_notification_dismiss";
 
     private CheckBoxPreference mPrivacyGuardDefault;
-	private CheckBoxPreference mPrivacyGuardNotification;
+    private CheckBoxPreference mPrivacyGuardNotification;
     private CheckBoxPreference mPrivacyGuardNotificationIcon;
     private CheckBoxPreference mPrivacyGuardNotificationDismiss;
 
@@ -62,23 +62,23 @@ public class PrivacyGuardPrefs extends SettingsPreferenceFragment implements
         mPrivacyGuardDefault.setChecked(Settings.Secure.getInt(getContentResolver(),
                 Settings.Secure.PRIVACY_GUARD_DEFAULT, 0) == 1);
 
-	mPrivacyGuardNotification = (CheckBoxPreference) findPreference(KEY_PRIVACY_GUARD_NOTIFICATION);
+        mPrivacyGuardNotification = (CheckBoxPreference) findPreference(KEY_PRIVACY_GUARD_NOTIFICATION);
         mPrivacyGuardNotification.setOnPreferenceChangeListener(this);
 
-        mPrivacyGuardNotification.setChecked(Settings.Secure.getInt(getContentResolver(),
-		Settings.Secure.PRIVACY_GUARD_NOTIFICATION, 1) == 1);
+        mPrivacyGuardNotification.setChecked(Settings.System.getInt(getContentResolver(),
+		Settings.System.PRIVACY_GUARD_NOTIFICATION, 1) == 1);
 
-	mPrivacyGuardNotificationIcon = (CheckBoxPreference) findPreference(KEY_PRIVACY_GUARD_NOTIFICATION_ICON);
+        mPrivacyGuardNotificationIcon = (CheckBoxPreference) findPreference(KEY_PRIVACY_GUARD_NOTIFICATION_ICON);
         mPrivacyGuardNotificationIcon.setOnPreferenceChangeListener(this);
 
-        mPrivacyGuardNotificationIcon.setChecked(Settings.Secure.getInt(getContentResolver(),
-		Settings.Secure.PRIVACY_GUARD_NOTIFICATION_ICON, 1) == 1);
+        mPrivacyGuardNotificationIcon.setChecked(Settings.System.getInt(getContentResolver(),
+		Settings.System.PRIVACY_GUARD_NOTIFICATION_ICON, 1) == 1);
 
-	mPrivacyGuardNotificationDismiss = (CheckBoxPreference) findPreference(KEY_PRIVACY_GUARD_NOTIFICATION_DISMISS);
+        mPrivacyGuardNotificationDismiss = (CheckBoxPreference) findPreference(KEY_PRIVACY_GUARD_NOTIFICATION_DISMISS);
         mPrivacyGuardNotificationDismiss.setOnPreferenceChangeListener(this);
 
-        mPrivacyGuardNotificationDismiss.setChecked(Settings.Secure.getInt(getContentResolver(),
-		Settings.Secure.PRIVACY_GUARD_NOTIFICATION_DISMISS, 0) == 1);
+        mPrivacyGuardNotificationDismiss.setChecked(Settings.System.getInt(getContentResolver(),
+		Settings.System.PRIVACY_GUARD_NOTIFICATION_DISMISS, 0) == 1);
     }
 
     @Override
@@ -102,20 +102,20 @@ public class PrivacyGuardPrefs extends SettingsPreferenceFragment implements
             return true;
         } else if (preference == mPrivacyGuardNotification) {
             boolean value = (Boolean) newValue;
-            Settings.Secure.putInt(getContentResolver(),
-                    Settings.Secure.PRIVACY_GUARD_NOTIFICATION, value ? 1 : 0);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.PRIVACY_GUARD_NOTIFICATION, value ? 1 : 0);
 		return true;
-	} else if (preference == mPrivacyGuardNotificationIcon) {
+        } else if (preference == mPrivacyGuardNotificationIcon) {
             boolean value = (Boolean) newValue;
-            Settings.Secure.putInt(getContentResolver(),
-                    Settings.Secure.PRIVACY_GUARD_NOTIFICATION_ICON, value ? 1 : 0);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.PRIVACY_GUARD_NOTIFICATION_ICON, value ? 1 : 0);
 		return true;
-	} else if (preference == mPrivacyGuardNotificationDismiss) {
+        } else if (preference == mPrivacyGuardNotificationDismiss) {
             boolean value = (Boolean) newValue;
-            Settings.Secure.putInt(getContentResolver(),
-                    Settings.Secure.PRIVACY_GUARD_NOTIFICATION_DISMISS, value ? 1 : 0);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.PRIVACY_GUARD_NOTIFICATION_DISMISS, value ? 1 : 0);
 		return true;
-	}
+        }
         return false;
     }
 }
