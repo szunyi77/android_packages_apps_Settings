@@ -73,7 +73,6 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
     private static final String CATEGORY_MENU = "button_keys_menu";
     private static final String CATEGORY_ASSIST = "button_keys_assist";
     private static final String CATEGORY_APPSWITCH = "button_keys_appSwitch";
-    private static final String CATEGORY_ADDITIONAL = "button_keys_additional";
 
     private static final String KEYS_DISABLE_HW_KEYS = "disable_hardware_keys";
     private static final String KEYS_CATEGORY_BINDINGS = "keys_bindings";
@@ -95,6 +94,7 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
     private static final String KEYS_APP_SWITCH_DOUBLE_TAP = "keys_app_switch_double_tap";
     private static final String KEY_BUTTON_BACKLIGHT = "button_backlight";
     private static final String LOCKSCREENLONG_PRESS_HOME = "lockscreen_long_press_home";
+    private static final String KEY_HOME_ANSWER_CALL = "home_answer_call";
 
     private static final int DLG_SHOW_WARNING_DIALOG = 0;
     private static final int DLG_SHOW_ACTION_DIALOG  = 1;
@@ -128,6 +128,7 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
     private Preference mAppSwitchLongPressAction;
     private Preference mAppSwitchDoubleTapAction;
     private ListPreference mLongHomeAction;
+    private CheckBoxPreference mHomeAnswerCall;
     private ListPreference[] mActions;
 
     private Handler mHandler;
@@ -195,8 +196,6 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
                 (PreferenceCategory) prefs.findPreference(CATEGORY_ASSIST);
         PreferenceCategory keysAppSwitchCategory =
                 (PreferenceCategory) prefs.findPreference(CATEGORY_APPSWITCH);
-        PreferenceCategory keysAdditionalCategory =
-                (PreferenceCategory) prefs.findPreference(CATEGORY_ADDITIONAL);
 
         mDisableHwKeys = (CheckBoxPreference) prefs.findPreference(
                 KEYS_DISABLE_HW_KEYS);
@@ -232,6 +231,9 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
                 KEYS_APP_SWITCH_LONG_PRESS);
         mAppSwitchDoubleTapAction = (Preference) prefs.findPreference(
                 KEYS_APP_SWITCH_DOUBLE_TAP);
+
+        // Home button answers calls.
+        mHomeAnswerCall = (CheckBoxPreference) findPreference(KEY_HOME_ANSWER_CALL);
 
         if (hasBackKey) {
             // Back key
@@ -551,8 +553,6 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_ASSIST);
         final PreferenceCategory appSwitchCategory =
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_APPSWITCH);
-        final PreferenceCategory additionalCategory =
-                (PreferenceCategory) prefScreen.findPreference(CATEGORY_ADDITIONAL);
         final ButtonBacklightBrightness backlight =
                 (ButtonBacklightBrightness) prefScreen.findPreference(KEY_BUTTON_BACKLIGHT);
 
@@ -582,9 +582,6 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
         if (appSwitchCategory != null) {
             appSwitchCategory.setEnabled(!enabled);
         }
-        if (additionalCategory != null) {
-            additionalCategory.setEnabled(!enabled);
-        }
     }
 
     public static void restoreKeyDisabler(Context context) {
@@ -608,6 +605,9 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
                     mDisableHwKeys.setEnabled(true);
                 }
             }, 1000);
+        } else if (preference == mHomeAnswerCall) {
+            handleToggleHomeButtonAnswersCallPreferenceClick();
+            return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
@@ -639,6 +639,16 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
     public void onResume() {
         updateDisableHwkeysOption();
         super.onResume();
+
+        // Home button answers calls.
+        if (mHomeAnswerCall != null) {
+            final int incallHomeBehavior = Settings.Secure.getInt(getContentResolver(),
+                    Settings.Secure.RING_HOME_BUTTON_BEHAVIOR,
+                    Settings.Secure.RING_HOME_BUTTON_BEHAVIOR_DEFAULT);
+            final boolean homeButtonAnswersCall =
+                (incallHomeBehavior == Settings.Secure.RING_HOME_BUTTON_BEHAVIOR_ANSWER);
+            mHomeAnswerCall.setChecked(homeButtonAnswersCall);
+        }
 
         for (ListPreference pref : mActions) {
             updateEntry(pref);
@@ -793,4 +803,10 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
         return null;
     }
 
+    private void handleToggleHomeButtonAnswersCallPreferenceClick() {
+        Settings.Secure.putInt(getContentResolver(),
+                Settings.Secure.RING_HOME_BUTTON_BEHAVIOR, (mHomeAnswerCall.isChecked()
+                        ? Settings.Secure.RING_HOME_BUTTON_BEHAVIOR_ANSWER
+                        : Settings.Secure.RING_HOME_BUTTON_BEHAVIOR_DO_NOTHING));
+    }
 }

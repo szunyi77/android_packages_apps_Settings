@@ -73,6 +73,23 @@
             android:key="keys_home_double_tap"
             android:title="@string/keys_action_double"
             android:dependency="enable_hardware_rebind" />
+
+        <ListPreference android:key="lockscreen_long_press_home"
+            android:title="@string/lockscreen_long_press_home_title"
+            android:persistent="false"
+            android:entries="@array/lockscreen_long_key_press_entries"
+            android:entryValues="@array/lockscreen_long_key_press_values"/>
+
+        <CheckBoxPreference
+            android:key="home_answer_call"
+            android:title="@string/home_answer_call_title"
+            android:summary="@string/home_answer_call_summary"
+            android:persistent="false"/>
+
+        <com.android.settings.mahdi.SystemSettingCheckBoxPreference
+            android:key="home_unlock_screen"
+            android:title="@string/unlock_home_unlock_title"
+            android:summary="@string/unlock_home_unlock_summary" />
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -133,23 +150,6 @@
             android:key="keys_app_switch_double_tap"
             android:title="@string/keys_action_double"
             android:dependency="enable_hardware_rebind" />
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="button_keys_additional"
-        android:title="@string/additional_options_title">
-
-        <com.android.settings.mahdi.SystemSettingCheckBoxPreference
-            android:key="home_unlock_screen"
-            android:title="@string/unlock_home_unlock_title"
-            android:summary="@string/unlock_home_unlock_summary" />
-
-        <ListPreference android:key="lockscreen_long_press_home"
-            android:title="@string/lockscreen_long_press_home_title"
-            android:persistent="false"
-            android:entries="@array/lockscreen_long_key_press_entries"
-            android:entryValues="@array/lockscreen_long_key_press_values"/>
-
     </PreferenceCategory>
 
 </PreferenceScreen>

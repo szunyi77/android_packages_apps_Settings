@@ -76,7 +76,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_NOTIFICATION_PULSE = "notification_pulse";
     private static final String KEY_SCREEN_ON_NOTIFICATION_LED = "screen_on_notification_led";
     private static final String KEY_BATTERY_LIGHT = "battery_light";
-    private static final String KEY_VOLUME_WAKE = "pref_volume_wake";
     private static final String KEY_WAKE_WHEN_PLUGGED_OR_UNPLUGGED = "wake_when_plugged_or_unplugged";
     private static final String KEY_TAP_TO_WAKE = "double_tap_wake_gesture";
     private static final String KEY_ADAPTIVE_BACKLIGHT = "adaptive_backlight";
@@ -104,7 +103,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private CheckBoxPreference mScreenOnLed;
     private PreferenceScreen mBatteryPulse;
     private PreferenceCategory mWakeUpOptions;
-    private CheckBoxPreference mVolumeWake;
     private CheckBoxPreference mWakeWhenPluggedOrUnplugged;
     private CheckBoxPreference mTapToWake;
     private CheckBoxPreference mAdaptiveBacklight;
@@ -208,19 +206,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         }
 
         PreferenceCategory advancedPrefs = (PreferenceCategory) findPreference(CATEGORY_ADVANCED);
-
-        int counter = 0;
-        mVolumeWake = (CheckBoxPreference) findPreference(KEY_VOLUME_WAKE);
-        if (mVolumeWake != null) {
-            if (!getResources().getBoolean(R.bool.config_show_volumeRockerWake)) {
-                advancedPrefs.removePreference(mVolumeWake);
-                counter++;
-            } else {
-                mVolumeWake.setChecked(Settings.System.getInt(resolver,
-                        Settings.System.VOLUME_WAKE_SCREEN, 0) == 1);
-                mVolumeWake.setOnPreferenceChangeListener(this);
-            }
-        }
 
         mWakeWhenPluggedOrUnplugged =
                 (CheckBoxPreference) findPreference(KEY_WAKE_WHEN_PLUGGED_OR_UNPLUGGED);
@@ -548,11 +533,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         }
         if (KEY_FONT_SIZE.equals(key)) {
             writeFontSizePreference(objValue);
-        }
-        if (KEY_VOLUME_WAKE.equals(key)) {
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.VOLUME_WAKE_SCREEN,
-                    (Boolean) objValue ? 1 : 0);
         }
         return true;
     }

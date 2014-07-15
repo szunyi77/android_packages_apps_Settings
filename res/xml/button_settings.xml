@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2008 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+    <PreferenceCategory
+        android:key="navigation_category"
+        android:title="@string/navigation_settings_category_title" >
+
+        <PreferenceScreen
+            android:key="navbar_settings"
+            android:title="@string/navigation_settings_title"
+            android:summary="@string/navigation_settings_summary"
+            android:fragment="com.android.settings.mahdi.NavbarSettings" />
+
+        <PreferenceScreen
+            android:key="hardware_keys"
+            android:title="@string/button_keys_title"
+            android:summary="@string/button_keys_summary"
+            android:fragment="com.android.settings.mahdi.HardwareKeys" />
+
+        <PreferenceScreen
+            android:key="pie_control"
+            android:title="@string/pie_control_title"
+            android:summary="@string/pie_control_summary"
+            android:fragment="com.android.settings.mahdi.slim.PieControl" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="power_key"
+        android:title="@string/hardware_keys_power_key_title" >
+
+        <PreferenceScreen
+            android:key="power_menu"
+            android:title="@string/power_menu_title"
+            android:summary="@string/power_menu_summary"
+            android:fragment="com.android.settings.mahdi.PowerMenu" />
+
+        <CheckBoxPreference
+            android:key="power_end_call"
+            android:title="@string/power_end_call_title"
+            android:summary="@string/power_end_call_summary"
+            android:persistent="false"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="volume_keys"
+        android:title="@string/button_volume_keys_title" >
+
+        <ListPreference
+            android:key="button_volume_default_screen"
+            android:title="@string/button_volume_default_title"
+            android:summary="@string/button_volume_default_summary"
+            android:entries="@array/button_volume_default_entries"
+            android:entryValues="@array/button_volume_default_values"
+            android:defaultValue="0" />
+
+        <ListPreference
+            android:key="volume_key_cursor_control"
+            android:persistent="false"
+            android:dialogTitle="@string/volume_key_cursor_control_title"
+            android:title="@string/volume_key_cursor_control_title"
+            android:entries="@array/volume_key_cursor_control_entries"
+            android:entryValues="@array/volume_key_cursor_control_values" />
+
+        <com.android.settings.mahdi.SystemSettingCheckBoxPreference
+            android:key="volume_wake_screen"
+            android:title="@string/button_volume_wake_title"
+            android:summary="@string/button_volume_wake_summary"
+            android:defaultValue="false" />
+
+        <com.android.settings.mahdi.SystemSettingCheckBoxPreference
+            android:key="volume_music_controls"
+            android:title="@string/volbtn_music_controls_title"
+            android:summary="@string/volbtn_music_controls_summary"
+            android:defaultValue="false" />
+
+        <CheckBoxPreference
+            android:key="swap_volume_buttons"
+            android:title="@string/swap_volume_buttons_title"
+            android:summary="@string/swap_volume_buttons_summary" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

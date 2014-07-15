@@ -37,7 +37,6 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
 
     private static final String TAG = "NavBarSettings";
 
-    private static final String KEY_HARDWARE_KEYS = "hardware_keys";
     private static final String PREF_MENU_LOCATION = "pref_navbar_menu_location";
     private static final String PREF_NAVBAR_MENU_DISPLAY = "pref_navbar_menu_display";
     private static final String ENABLE_NAVIGATION_BAR = "enable_nav_bar";
@@ -51,7 +50,6 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
 
     private int mNavBarMenuDisplayValue;
 
-    PreferenceScreen mHardwareKeys;
     ListPreference mMenuDisplayLocation;
     ListPreference mNavBarMenuDisplay;
     CheckBoxPreference mEnableNavigationBar;
@@ -116,14 +114,6 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
                 (PreferenceCategory) findPreference(CATEGORY_ADVANCED);
             advanced_cat.removePreference(mNavigationBarLeftPref);
             advanced_cat.removePreference(mNavigationBarCanMove);
-        }
-
-        // Only show the hardware keys config on a device that does not have a navbar
-        mHardwareKeys = (PreferenceScreen) findPreference(KEY_HARDWARE_KEYS);
-        if (mHardwareKeys != null) {
-            if (!res.getBoolean(R.bool.config_has_hardware_buttons)) {
-                getPreferenceScreen().removePreference(mHardwareKeys);
-            }        
         }
     }
 
