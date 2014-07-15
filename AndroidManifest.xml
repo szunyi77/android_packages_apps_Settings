@@ -2194,6 +2194,9 @@
                 android:value="com.android.settings.headsup.HeadsUpSettings" />
         </activity>
 
+        <!-- Spam notifications -->
+        <activity android:name=".cyanogenmod.SpamList" />
+
         <!-- Mahdi-Rom activities End -->
 
         <receiver android:name=".widget.SettingsAppWidgetProvider"
