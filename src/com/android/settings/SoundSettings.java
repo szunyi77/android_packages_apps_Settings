@@ -58,6 +58,8 @@ import java.util.Date;
 import java.util.Calendar;
 import java.util.List;
 
+import com.android.settings.mahdi.chameleonos.SeekBarPreference;
+
 public class SoundSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
     private static final String TAG = "SoundSettings";
@@ -69,17 +71,19 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     
     private static final String KEY_VIBRATE = "vibrate_when_ringing";
     private static final String KEY_VOLUME_OVERLAY = "volume_overlay";
+    private static final String KEY_VOLUME_PANEL_TIMEOUT = "volume_panel_timeout";
     private static final String KEY_RING_VOLUME = "ring_volume";
     private static final String KEY_INCREASING_RING = "increasing_ring";
     private static final String KEY_MUSICFX = "musicfx";
     private static final String KEY_DTMF_TONE = "dtmf_tone";
     private static final String KEY_SOUND_EFFECTS = "sound_effects";
+    private static final String KEY_LOCK_SOUNDS = "lock_sounds";
+    private static final String KEY_VOLUME_ADJUST_SOUNDS = "volume_adjust_sounds_enabled";
     private static final String KEY_HAPTIC_FEEDBACK = "haptic_feedback";
     private static final String KEY_VIBRATION_DURATION = "vibration_duration";
     private static final String KEY_VIBRATION_INTENSITY = "vibration_intensity";
     private static final String KEY_EMERGENCY_TONE = "emergency_tone";
     private static final String KEY_SOUND_SETTINGS = "sound_settings";
-    private static final String KEY_LOCK_SOUNDS = "lock_sounds";
     private static final String KEY_RINGTONE = "ringtone";
     private static final String KEY_NOTIFICATION_SOUND = "notification_sound";
     private static final String KEY_CATEGORY_CALLS = "category_calls_and_notification";
@@ -95,7 +99,8 @@ public class SoundSettings extends SettingsPreferenceFragment implements
 
     private static final String[] NEED_VOICE_CAPABILITY = {
             KEY_RINGTONE, KEY_DTMF_TONE, KEY_CATEGORY_CALLS,
-            KEY_EMERGENCY_TONE, KEY_INCREASING_RING, KEY_VIBRATE
+            KEY_EMERGENCY_TONE, KEY_INCREASING_RING, KEY_VIBRATE,
+            KEY_VOLUME_ADJUST_SOUNDS
     };
 
     private static final int MSG_UPDATE_RINGTONE_SUMMARY = 1;
@@ -109,6 +114,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
 
     private CheckBoxPreference mVibrateWhenRinging;
     private ListPreference mVolumeOverlay;
+    private SeekBarPreference mVolumePanelTimeout;
     private CheckBoxPreference mDtmfTone;
     private CheckBoxPreference mSoundEffects;
     private CheckBoxPreference mHapticFeedback;
@@ -169,6 +175,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
 
         mRingtonePreference = findPreference(KEY_RINGTONE);
         mNotificationPreference = findPreference(KEY_NOTIFICATION_SOUND);
+        mVolumePanelTimeout = (SeekBarPreference) findPreference(KEY_VOLUME_PANEL_TIMEOUT);
 
         if (TelephonyManager.PHONE_TYPE_CDMA != activePhoneType) {
             // device is not CDMA, do not display CDMA emergency_tone
@@ -178,6 +185,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         if (getResources().getBoolean(com.android.internal.R.bool.config_useFixedVolume)) {
             // device with fixed volume policy, do not display volumes submenu
             getPreferenceScreen().removePreference(findPreference(KEY_RING_VOLUME));
+            getPreferenceScreen().removePreference(findPreference(KEY_VOLUME_PANEL_TIMEOUT));
         }
 
         mQuietHours = (PreferenceScreen) findPreference(KEY_QUIET_HOURS);
@@ -232,6 +240,11 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         mLockSounds.setChecked(Settings.System.getInt(resolver,
                 Settings.System.LOCKSCREEN_SOUNDS_ENABLED, 1) != 0);
 
+        int statusVolumePanelTimeout = Settings.System.getInt(resolver,
+                    Settings.System.VOLUME_PANEL_TIMEOUT, 3000);
+            mVolumePanelTimeout.setValue(statusVolumePanelTimeout / 1000);
+            mVolumePanelTimeout.setOnPreferenceChangeListener(this);
+
         if (mVib == null || !mVib.hasVibrator()) {
             removePreference(KEY_VIBRATE);
             removePreference(KEY_HAPTIC_FEEDBACK);
@@ -250,6 +263,10 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         }
 
         mSoundSettings = (PreferenceGroup) findPreference(KEY_SOUND_SETTINGS);
+
+        if (!Utils.hasVolumeRocker(getActivity())) {
+            getPreferenceScreen().removePreference(findPreference(KEY_VOLUME_ADJUST_SOUNDS));
+        }
 
         mMusicFx = mSoundSettings.findPreference(KEY_MUSICFX);
         Intent i = new Intent(AudioEffect.ACTION_DISPLAY_AUDIO_EFFECT_CONTROL_PANEL);
@@ -460,12 +477,10 @@ public class SoundSettings extends SettingsPreferenceFragment implements
             Settings.Global.putInt(getContentResolver(),
                     Settings.Global.POWER_NOTIFICATIONS_ENABLED,
                     mPowerSounds.isChecked() ? 1 : 0);
-
         } else if (preference == mPowerSoundsVibrate) {
             Settings.Global.putInt(getContentResolver(),
                     Settings.Global.POWER_NOTIFICATIONS_VIBRATE,
                     mPowerSoundsVibrate.isChecked() ? 1 : 0);
-
         } else if (preference == mPowerSoundsRingtone) {
             launchNotificationSoundPicker(REQUEST_CODE_POWER_NOTIFICATIONS_RINGTONE,
                     Settings.Global.getString(getContentResolver(),
@@ -494,6 +509,10 @@ public class SoundSettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(),
                     Settings.System.MODE_VOLUME_OVERLAY, value);
             mVolumeOverlay.setSummary(mVolumeOverlay.getEntries()[index]);
+        } else if (preference == mVolumePanelTimeout) {
+            int volumePanelTimeout = (Integer) objValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.VOLUME_PANEL_TIMEOUT, volumePanelTimeout * 1000);
         } else if (PREF_LESS_NOTIFICATION_SOUNDS.equals(key)) {
             final int val = Integer.valueOf((String) objValue);
             Settings.System.putInt(getContentResolver(),

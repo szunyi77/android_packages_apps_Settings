@@ -701,6 +701,11 @@ public class Utils {
         return getScreenType(con) == DEVICE_TABLET;
     }
 
+    /* returns whether the device has volume rocker or not. */
+    public static boolean hasVolumeRocker(Context context) {
+        return context.getResources().getBoolean(R.bool.config_has_volume_rocker);
+    }
+
     public static boolean isPackageInstalled(Context context, String pkg) {
         if (pkg == null) {
             return false;
