@@ -96,6 +96,8 @@ import com.android.settings.inputmethod.SpellCheckersSettings;
 import com.android.settings.inputmethod.UserDictionaryList;
 import com.android.settings.location.LocationEnabler;
 import com.android.settings.location.LocationSettings;
+import com.android.settings.mahdi.batterysaver.BatterySaverSettings;
+import com.android.settings.mahdi.ButtonSettings;
 import com.android.settings.mahdi.CustomizationSettings;
 import com.android.settings.mahdi.DisplayRotation;
 import com.android.settings.mahdi.NavbarSettings;
@@ -103,7 +105,6 @@ import com.android.settings.mahdi.quicksettings.QuickSettingsTiles;
 import com.android.settings.mahdi.QuietHours;
 import com.android.settings.mahdi.superuser.PolicyNativeFragment;
 import com.android.settings.mahdi.slim.ShakeEvents;
-import com.android.settings.mahdi.batterysaver.BatterySaverSettings;
 import com.android.settings.net.MobileDataEnabler;
 import com.android.settings.nfc.AndroidBeam;
 import com.android.settings.nfc.PaymentSettings;
@@ -203,7 +204,8 @@ public class Settings extends PreferenceActivity
             R.id.home_settings,
             R.id.privacy_settings_mahdi,
             R.id.customization_settings,
-            R.id.theme_settings
+            R.id.theme_settings,
+            R.id.button_settings
     };
 
     private SharedPreferences mDevelopmentPreferences;
@@ -481,7 +483,8 @@ public class Settings extends PreferenceActivity
         ShakeEvents.class.getName(),
         PerformanceSettings.class.getName(),
         HeadsUpSettings.class.getName(),
-        BatterySaverSettings.class.getName()
+        BatterySaverSettings.class.getName(),
+        ButtonSettings.class.getName(),
     };
 
     @Override
