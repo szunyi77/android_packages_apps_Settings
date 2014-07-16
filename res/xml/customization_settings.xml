@@ -55,14 +55,6 @@
         android:fragment="com.android.settings.mahdi.LockscreenInterface" />
 
     <PreferenceScreen
-        settings:includeXmlForSearch="@xml/animation_interface_settings"
-        android:id="@+id/interface_animation"
-        android:title="@string/interface_animation_title"
-        android:summary="@string/interface_animation_summary"
-        android:breadCrumbTitle="@string/interface_animation_title"
-        android:fragment="com.android.settings.mahdi.aokp.AnimationInterfaceSettings" />
-
-    <PreferenceScreen
         settings:includeXmlForSearch="@xml/shake_event_settings"
         android:key="shake_events"
         android:fragment="com.android.settings.mahdi.slim.ShakeEvents"

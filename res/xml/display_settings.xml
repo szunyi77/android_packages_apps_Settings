@@ -27,49 +27,64 @@
             android:title="@string/display_settings_title">
 
             <PreferenceScreen
-                    android:key="display_rotation"
-                    android:fragment="com.android.settings.mahdi.DisplayRotation"
-                    android:title="@string/display_rotation_title" />
+                android:key="display_rotation"
+                android:fragment="com.android.settings.mahdi.DisplayRotation"
+                android:title="@string/display_rotation_title" />
 
             <ListPreference
-                    android:key="screen_timeout"
-                    android:title="@string/screen_timeout"
-                    android:summary="@string/screen_timeout_summary"
-                    android:persistent="false"
-                    android:entries="@array/screen_timeout_entries"
-                    android:entryValues="@array/screen_timeout_values" />
+                android:key="screen_timeout"
+                android:title="@string/screen_timeout"
+                android:summary="@string/screen_timeout_summary"
+                android:persistent="false"
+                android:entries="@array/screen_timeout_entries"
+                android:entryValues="@array/screen_timeout_values" />
 
             <com.android.settings.FontDialogPreference
-                    android:key="font_size"
-                    android:title="@string/title_font_size"
-                    android:summary="@string/summary_font_size"
-                    android:dialogTitle="@string/dialog_title_font_size" />
+                android:key="font_size"
+                android:title="@string/title_font_size"
+                android:summary="@string/summary_font_size"
+                android:dialogTitle="@string/dialog_title_font_size" />
 
             <PreferenceScreen
-                    android:key="screensaver"
-                    android:title="@string/screensaver_settings_title"
-                    android:fragment="com.android.settings.DreamSettings" />
+                android:key="screensaver"
+                android:title="@string/screensaver_settings_title"
+                android:fragment="com.android.settings.DreamSettings" />
 
             <PreferenceScreen
-                    android:key="wifi_display"
-                    android:title="@string/wifi_display_settings_title"
-                    android:fragment="com.android.settings.wfd.WifiDisplaySettings" />
+                android:key="wifi_display"
+                android:title="@string/wifi_display_settings_title"
+                android:fragment="com.android.settings.wfd.WifiDisplaySettings" />
 
 	    <PreferenceScreen
-                    android:key="screen_recorder"
-                    android:title="@string/screen_recorder_title"
-                    android:fragment="com.android.settings.mahdi.ScreenRecorderSettings" />
+                android:key="screen_recorder"
+                android:title="@string/screen_recorder_title"
+                android:fragment="com.android.settings.mahdi.ScreenRecorderSettings" />
+
+        </PreferenceCategory>
+
+        <PreferenceCategory
+            android:key="category_animation_options"
+            android:title="@string/display_category_animation_options_title" >
+
+            <ListPreference
+                android:key="system_power_crt_mode"
+                android:dialogTitle="@string/system_power_crt_mode_dialog_title"
+                android:title="@string/system_power_crt_mode_title"
+                android:entries="@array/entries_system_power_crt_mode"
+                android:entryValues="@array/values_system_power_crt_mode" />
+
+            <PreferenceScreen
+                android:id="@+id/interface_animation"
+                android:title="@string/interface_animation_title"
+                android:summary="@string/interface_animation_summary"
+                android:breadCrumbTitle="@string/interface_animation_title"
+                android:fragment="com.android.settings.mahdi.aokp.AnimationInterfaceSettings" />            
 
         </PreferenceCategory>
 
         <PreferenceCategory
             android:key="category_light_options"
             android:title="@string/display_category_light_options_title" >
-
-            <PreferenceScreen
-                android:key="battery_light"
-                android:title="@string/battery_light_title"
-                android:fragment="com.android.settings.mahdi.notificationlight.BatteryLightSettings" />
 
             <CheckBoxPreference
                 android:key="notification_pulse"
@@ -87,6 +102,11 @@
                 android:key="notification_light"
                 android:title="@string/notification_light_title"
                 android:fragment="com.android.settings.mahdi.notificationlight.NotificationLightSettings" />
+
+            <PreferenceScreen
+                android:key="battery_light"
+                android:title="@string/battery_light_title"
+                android:fragment="com.android.settings.mahdi.notificationlight.BatteryLightSettings" />
 
         </PreferenceCategory>
 
