@@ -1654,6 +1654,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="app_ops_reset_confirm_mesg">Are you sure you wish to reset AppOps counters?</string>
 
     <!-- Screen off animation options -->
+    <string name="display_category_animation_options_title">Animation options</string>
     <string name="system_power_crt_mode_title">Screen off </string>
     <string name="system_power_crt_mode_dialog_title">Screen off animation</string>
     <string name="system_power_crt_mode_off">Don\'t show</string>
@@ -1663,8 +1664,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="system_power_crt_mode_scale">Scale down</string>
 
     <!-- Animation Control -->
-    <string name="interface_animation_title">Animation control</string>
-    <string name="interface_animation_summary">Choose alternative animations for System, Listview, Scroll and more</string>
+    <string name="interface_animation_title">Advanced options</string>
+    <string name="interface_animation_summary">Customize animations for System, Listview, Scroll and more</string>
 
     <!-- ListView animation -->
     <string name="system_animation_title">System</string>

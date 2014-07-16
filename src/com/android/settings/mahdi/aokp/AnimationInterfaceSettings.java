@@ -37,10 +37,8 @@ public class AnimationInterfaceSettings extends SettingsPreferenceFragment imple
         Preference.OnPreferenceChangeListener {
     private static final String TAG = "AnimationInterfaceSettings";
 
-    private static final String KEY_POWER_CRT_MODE = "system_power_crt_mode";
     private static final String KEY_TOAST_ANIMATION = "toast_animation";
 
-    private ListPreference mCrtMode;
     private ListPreference mToastAnimation; 
 
     @Override
@@ -49,16 +47,6 @@ public class AnimationInterfaceSettings extends SettingsPreferenceFragment imple
         addPreferencesFromResource(R.xml.animation_interface_settings);
 
         PreferenceScreen prefSet = getPreferenceScreen();
-
-        mCrtMode = (ListPreference) prefSet.findPreference(KEY_POWER_CRT_MODE);
-        mCrtMode.setOnPreferenceChangeListener(this);
-        if (mCrtMode != null) {
-            int crtMode = Settings.System.getInt(getContentResolver(),
-                    Settings.System.SYSTEM_POWER_CRT_MODE, 1);
-            mCrtMode.setValue(String.valueOf(crtMode));
-            mCrtMode.setSummary(mCrtMode.getEntry());
-            mCrtMode.setOnPreferenceChangeListener(this);
-        }
 
         mToastAnimation = (ListPreference) findPreference(KEY_TOAST_ANIMATION);
         mToastAnimation.setSummary(mToastAnimation.getEntry());
@@ -77,16 +65,7 @@ public class AnimationInterfaceSettings extends SettingsPreferenceFragment imple
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mCrtMode) {
-            int value = Integer.parseInt((String) objValue);
-            int index = mCrtMode.findIndexOfValue((String) objValue);
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.SYSTEM_POWER_CRT_MODE,
-                    value);
-            mCrtMode.setSummary(mCrtMode.getEntries()[index]);
-            return true;
-
-        } else if (preference == mToastAnimation) {
+        if (preference == mToastAnimation) {
             int index = mToastAnimation.findIndexOfValue((String) objValue);
             Settings.System.putString(getContentResolver(), Settings.System.ACTIVITY_ANIMATION_CONTROLS[10], (String) objValue);
             mToastAnimation.setSummary(mToastAnimation.getEntries()[index]);
