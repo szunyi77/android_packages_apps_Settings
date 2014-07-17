@@ -100,7 +100,9 @@ import com.android.settings.mahdi.batterysaver.BatterySaverSettings;
 import com.android.settings.mahdi.ButtonSettings;
 import com.android.settings.mahdi.CustomizationSettings;
 import com.android.settings.mahdi.DisplayRotation;
+import com.android.settings.mahdi.LockscreenInterface;
 import com.android.settings.mahdi.NavbarSettings;
+import com.android.settings.mahdi.NotificationSettings;
 import com.android.settings.mahdi.quicksettings.QuickSettingsTiles;
 import com.android.settings.mahdi.QuietHours;
 import com.android.settings.mahdi.superuser.PolicyNativeFragment;
@@ -208,7 +210,9 @@ public class Settings extends PreferenceActivity
             R.id.privacy_settings_mahdi,
             R.id.customization_settings,
             R.id.theme_settings,
-            R.id.button_settings
+            R.id.button_settings,
+            R.id.lock_screen_settings,
+            R.id.notification_settings
     };
 
     private SharedPreferences mDevelopmentPreferences;
@@ -488,6 +492,8 @@ public class Settings extends PreferenceActivity
         HeadsUpSettings.class.getName(),
         BatterySaverSettings.class.getName(),
         ButtonSettings.class.getName(),
+        LockscreenInterface.class.getName(),
+        NotificationSettings.class.getName()
     };
 
     @Override
