@@ -87,12 +87,6 @@
             android:defaultValue="false" />
 
         <PreferenceScreen
-            android:fragment="com.android.settings.mahdi.slim.KeyguardShakeEvents"
-            android:key="shake_events"
-            android:title="@string/shake_events_title"
-            android:summary="@string/shake_events_summary" />
-
-        <PreferenceScreen
             android:key="lockscreen_shortcuts"
             android:fragment="com.android.settings.mahdi.dslv.ButtonsListViewSettings"
             android:summary="@string/lockscreen_shortcuts_summary"
