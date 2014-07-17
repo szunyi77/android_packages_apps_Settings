@@ -167,7 +167,7 @@
     <!-- Notifications -->
     <header
         settings:includeXmlForSearch="@xml/notification_settings"
-        android:key="notification_settings"
+        android:id="@+id/notification_settings"
         android:title="@string/notification_settings_title"
         android:icon="@drawable/ic_settings_notification"
         android:fragment="com.android.settings.mahdi.NotificationSettings" />
@@ -183,7 +183,7 @@
     <!-- Lock screen -->
     <header
         settings:includeXmlForSearch="@xml/lockscreen_interface_settings"
-        android:key="lock_screen_settings"
+        android:id="@+id/lock_screen_settings"
         android:title="@string/lock_screen_title"
         android:icon="@drawable/ic_settings_lockscreen"
         android:fragment="com.android.settings.mahdi.LockscreenInterface" />
