@@ -25,9 +25,13 @@ import com.android.settings.Utils;
 import com.android.settings.VoiceInputOutputSettings;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
 import android.app.Fragment;
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
@@ -37,6 +41,7 @@ import android.hardware.input.InputManager;
 import android.hardware.input.KeyboardLayout;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.UserHandle;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -46,11 +51,13 @@ import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.provider.Settings.System;
+import android.provider.Settings.SettingNotFoundException;
 import android.text.TextUtils;
 import android.view.InputDevice;
 import android.view.inputmethod.InputMethodInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.BaseAdapter;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -67,6 +74,16 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
     private static final String KEY_USER_DICTIONARY_SETTINGS = "key_user_dictionary_settings";
     // false: on ICS or later
     private static final boolean SHOW_INPUT_METHOD_SWITCHER_SETTINGS = false;
+
+    private static final int DLG_KEYBOARD_ROTATION = 0;
+
+    private static final String PREF_DISABLE_FULLSCREEN_KEYBOARD = "disable_fullscreen_keyboard";
+    private static final String KEY_IME_SWITCHER = "status_bar_ime_switcher";
+    private static final String KEYBOARD_ROTATION_TOGGLE = "keyboard_rotation_toggle";
+    private static final String KEYBOARD_ROTATION_TIMEOUT = "keyboard_rotation_timeout";
+    private static final String SHOW_ENTER_KEY = "show_enter_key";
+
+    private static final int KEYBOARD_ROTATION_TIMEOUT_DEFAULT = 5000; // 5s
 
     private static final String[] sSystemSettingNames = {
         System.TEXT_AUTO_REPLACE, System.TEXT_AUTO_CAPS, System.TEXT_AUTO_PUNCTUATE,
@@ -93,6 +110,12 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
     private SettingsObserver mSettingsObserver;
     private Intent mIntentWaitingForResult;
     private InputMethodSettingValuesWrapper mInputMethodSettingValues;
+
+    private CheckBoxPreference mDisableFullscreenKeyboard;
+    private CheckBoxPreference mStatusBarImeSwitcher;
+    private CheckBoxPreference mKeyboardRotationToggle;
+    private ListPreference mKeyboardRotationTimeout;
+    private CheckBoxPreference mShowEnterKey;
 
     private final OnPreferenceChangeListener mOnImePreferenceChangedListener =
             new OnPreferenceChangeListener() {
@@ -181,6 +204,39 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
 
         mHandler = new Handler();
         mSettingsObserver = new SettingsObserver(mHandler, getActivity());
+
+        mDisableFullscreenKeyboard =
+            (CheckBoxPreference) findPreference(PREF_DISABLE_FULLSCREEN_KEYBOARD);
+        mDisableFullscreenKeyboard.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.DISABLE_FULLSCREEN_KEYBOARD, 0) == 1);
+        mDisableFullscreenKeyboard.setOnPreferenceChangeListener(this);
+
+        // Enable or disable mStatusBarImeSwitcher based on boolean value: config_show_cmIMESwitcher
+        final Preference keyImeSwitcherPref = findPreference(KEY_IME_SWITCHER);
+        if (keyImeSwitcherPref != null) {
+            if (!getResources().getBoolean(com.android.internal.R.bool.config_show_IMESwitcher)) {
+                getPreferenceScreen().removePreference(keyImeSwitcherPref);
+            } else {
+                mStatusBarImeSwitcher = (CheckBoxPreference) keyImeSwitcherPref;
+                mStatusBarImeSwitcher.setOnPreferenceChangeListener(this);
+            }
+        }
+
+        mKeyboardRotationToggle = (CheckBoxPreference) findPreference(KEYBOARD_ROTATION_TOGGLE);
+        mKeyboardRotationToggle.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.KEYBOARD_ROTATION_TIMEOUT, 0) > 0);
+        mKeyboardRotationToggle.setOnPreferenceChangeListener(this);
+
+        mKeyboardRotationTimeout = (ListPreference) findPreference(KEYBOARD_ROTATION_TIMEOUT);
+        mKeyboardRotationTimeout.setOnPreferenceChangeListener(this);
+        updateRotationTimeout(Settings.System.getInt(
+                getContentResolver(), Settings.System.KEYBOARD_ROTATION_TIMEOUT,
+                KEYBOARD_ROTATION_TIMEOUT_DEFAULT));
+
+        mShowEnterKey = (CheckBoxPreference) findPreference(SHOW_ENTER_KEY);
+        mShowEnterKey.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.FORMAL_TEXT_INPUT, 0) == 1);
+        mShowEnterKey.setOnPreferenceChangeListener(this);
     }
 
     private void updateInputMethodSelectorSummary(int value) {
@@ -230,6 +286,16 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
                         }
                     });
         }
+    }
+
+    public void updateRotationTimeout(int timeout) {
+        if (timeout == 0) {
+            timeout = KEYBOARD_ROTATION_TIMEOUT_DEFAULT;
+        }
+        mKeyboardRotationTimeout.setValue(Integer.toString(timeout));
+        mKeyboardRotationTimeout.setSummary(
+            getString(R.string.keyboard_rotation_timeout_summary,
+            mKeyboardRotationTimeout.getEntry()));
     }
 
     @Override
@@ -293,6 +359,11 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
         // "InputMethodInfo"s and "InputMethodSubtype"s
         mInputMethodSettingValues.refreshAllInputMethodAndSubtypes();
         updateInputMethodPreferenceViews();
+
+        if (mStatusBarImeSwitcher != null) {
+            mStatusBarImeSwitcher.setChecked(Settings.System.getInt(getContentResolver(),
+                    Settings.System.STATUS_BAR_IME_SWITCHER, 1) != 0);
+        }
     }
 
     @Override
@@ -391,11 +462,40 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
     }
 
     @Override
-    public boolean onPreferenceChange(Preference preference, Object value) {
-        if (SHOW_INPUT_METHOD_SWITCHER_SETTINGS) {
+    public boolean onPreferenceChange(Preference preference, Object objValue) {
+        if (preference == mDisableFullscreenKeyboard) {
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.DISABLE_FULLSCREEN_KEYBOARD,  (Boolean) objValue ? 1 : 0);
+            return true;
+        } else if (preference == mStatusBarImeSwitcher) {
+            Settings.System.putInt(getContentResolver(),
+                Settings.System.STATUS_BAR_IME_SWITCHER, (Boolean) objValue ? 1 : 0);
+            return true;
+        } else if (preference == mKeyboardRotationToggle) {
+            boolean isAutoRotate = (Settings.System.getIntForUser(getContentResolver(),
+                        Settings.System.ACCELEROMETER_ROTATION, 0, UserHandle.USER_CURRENT) == 1);
+            if (isAutoRotate && (Boolean) objValue) {
+                showDialogInner(DLG_KEYBOARD_ROTATION);
+            }
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.KEYBOARD_ROTATION_TIMEOUT,
+                    (Boolean) objValue ? KEYBOARD_ROTATION_TIMEOUT_DEFAULT : 0);
+            updateRotationTimeout(KEYBOARD_ROTATION_TIMEOUT_DEFAULT);
+            return true;
+        } else if (preference == mShowEnterKey) {
+            Settings.System.putInt(getContentResolver(),
+                Settings.System.FORMAL_TEXT_INPUT, (Boolean) objValue ? 1 : 0);
+            return true;
+        } else if (preference == mKeyboardRotationTimeout) {
+            int timeout = Integer.parseInt((String) objValue);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.KEYBOARD_ROTATION_TIMEOUT, timeout);
+            updateRotationTimeout(timeout);
+            return true;
+        } else if (SHOW_INPUT_METHOD_SWITCHER_SETTINGS) {
             if (preference == mShowInputMethodSelectorPref) {
-                if (value instanceof String) {
-                    saveInputMethodSelectorVisibility((String)value);
+                if (objValue instanceof String) {
+                    saveInputMethodSelectorVisibility((String)objValue);
                 }
             }
         }
@@ -614,6 +714,51 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
 
         public void pause() {
             mContext.getContentResolver().unregisterContentObserver(this);
+        }
+    }
+
+    private void showDialogInner(int id) {
+        DialogFragment newFragment = MyAlertDialogFragment.newInstance(id);
+        newFragment.setTargetFragment(this, 0);
+        newFragment.show(getFragmentManager(), "dialog " + id);
+    }
+
+    public static class MyAlertDialogFragment extends DialogFragment {
+
+        public static MyAlertDialogFragment newInstance(int id) {
+            MyAlertDialogFragment frag = new MyAlertDialogFragment();
+            Bundle args = new Bundle();
+            args.putInt("id", id);
+            frag.setArguments(args);
+            return frag;
+        }
+
+        InputMethodAndLanguageSettings getOwner() {
+            return (InputMethodAndLanguageSettings) getTargetFragment();
+        }
+
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            int id = getArguments().getInt("id");
+            switch (id) {
+                case DLG_KEYBOARD_ROTATION:
+                    return new AlertDialog.Builder(getActivity())
+                    .setTitle(R.string.attention)
+                    .setMessage(R.string.keyboard_rotation_dialog)
+                    .setPositiveButton(R.string.dlg_ok,
+                        new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    })
+                    .create();
+            }
+            throw new IllegalArgumentException("unknown id " + id);
+        }
+
+        @Override
+        public void onCancel(DialogInterface dialog) {
+
         }
     }
 }
