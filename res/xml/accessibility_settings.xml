@@ -65,6 +65,18 @@
                 android:key="select_long_press_timeout_preference"
                 android:title="@string/accessibility_long_press_timeout_preference_title" />
 
+        <PreferenceScreen
+                android:key="shake_events"
+                android:fragment="com.android.settings.mahdi.slim.ShakeEvents"
+                android:title="@string/shake_events_title"
+                android:summary="@string/shake_events_summary" />
+
+        <PreferenceScreen
+                android:key="interface_voice_tts"
+                android:title="@string/voice_tts_title"
+                android:summary="@string/voice_tts_summary"
+                android:fragment="com.android.settings.mahdi.TtsNotification" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>
