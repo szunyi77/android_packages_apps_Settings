@@ -416,10 +416,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             mAdaptiveBacklight.setChecked(AdaptiveBacklight.isEnabled());
         }
 
-        if (mHighTouchSensitivity != null) {
-            mHighTouchSensitivity.setChecked(mHighTouchSensitivity.isEnabled());
-        }
-
         if (mColorEnhancement != null) {
             mColorEnhancement.setChecked(ColorEnhancement.isEnabled());
         }
