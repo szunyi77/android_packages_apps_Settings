@@ -46,13 +46,6 @@
         android:title="@string/bluetooth_settings_title"
         android:icon="@drawable/ic_settings_bluetooth2" />
 
-    <!-- Location -->
-    <header
-        android:fragment="com.android.settings.location.LocationSettings"
-        android:icon="@drawable/ic_settings_location"
-        android:title="@string/location_settings_title"
-        android:id="@+id/location_settings" />
-
     <!-- Data Usage -->
     <header
         android:id="@+id/data_usage_settings"
@@ -163,6 +156,13 @@
         android:icon="@drawable/ic_settings_profiles"
         android:fragment="com.android.settings.profiles.ProfilesSettings"
         android:title="@string/profiles_settings_title" />
+
+    <!-- Location -->
+    <header
+        android:fragment="com.android.settings.location.LocationSettings"
+        android:icon="@drawable/ic_settings_location"
+        android:title="@string/location_settings_title"
+        android:id="@+id/location_settings" />
 
     <!-- Notifications -->
     <header
