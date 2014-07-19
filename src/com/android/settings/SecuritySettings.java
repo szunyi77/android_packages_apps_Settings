@@ -334,16 +334,6 @@ public class SecuritySettings extends RestrictedSettingsFragment
             mLockBeforeUnlock.setOnPreferenceChangeListener(this);
         }
 
-        final int deviceKeys = res.getInteger(
-                com.android.internal.R.integer.config_deviceHardwareKeys);
-        final PreferenceGroup additionalPrefs =
-                (PreferenceGroup) findPreference(CATEGORY_ADDITIONAL);
-
-        // hide all lock options if lock screen set to NONE
-        if (mLockPatternUtils.isLockScreenDisabled()) {
-            root.removePreference(additionalPrefs);
-        }
-
         // Append the rest of the settings        
         addPreferencesFromResource(R.xml.security_settings_misc);
 
