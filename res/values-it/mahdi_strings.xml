@@ -17,7 +17,7 @@
     <!-- Custom settings  -->
     <string name="custom_settings_category">Mahdi</string>
     <!-- Customization Interface settings  -->
-    <string name="customization_settings_title">Personalizzazioni</string>
+    <string name="customization_settings_title">Impostazioni UI</string>
 
     <!-- About phone screen,  Mod Version -->
     <string name="mod_version">Versione build</string>
@@ -45,7 +45,7 @@
     <string name="add">Aggiungi</string>
     <string name="reset_message">Resettare tutto le impostazioni di default?</string>
     <string name="style_title">Stile</string>
-    <string name="more_title">Altro...</string>
+    <string name="more_title">Altro\u2026</string>
 
     <!-- Display settings screen, notification light settings -->
     <string name="display_category_light_options_title">Opzioni LED</string>
@@ -250,11 +250,6 @@
     <string name="ring_mode_vibrate">Vibrazione</string>
     <string name="ring_mode_mute">Silenzioso</string>
 
-    <!-- button settings -->
-    <string name="button_volume_keys_title">Tasti volume</string>
-    <string name="button_volume_wake_title">Risveglio con i tasti del volume</string>
-    <string name="button_volume_wake_summary">Premendo un pulsante del volume lo schermo si accende</string>
-
     <!-- UI debug setting: show CPU info? [CHAR LIMIT=25] -->
     <string name="show_cpu_info">Mostra info CPU</string>
     <!-- UI debug setting: show cpu usage summary [CHAR LIMIT=50] -->
@@ -352,9 +347,6 @@
     <string name="link_volume_ringtones">Unisci volume suoneria e notifica</string>
     <string name="volume_ring_only_description">Suoneria</string>
     <string name="volume_overlay_title">Stile pannello volume</string>
-    <!-- Volume button music control -->
-    <string name="volbtn_music_controls_title">Controlla tracce</string>
-    <string name="volbtn_music_controls_summary">Quando lo schermo è spento, tenendo premuti i tasti del volume si cambierà traccia</string>
     <!-- Volume adjust sound -->
     <string name="volume_adjust_sounds_enable_title">Suono regolazione volume</string>
     <string name="volume_adjust_sounds_enable_summary">Suono quando si alza/abbassa il volume con i tasti del volume</string>
@@ -371,10 +363,30 @@
     <!-- Volume panel timeout -->
     <string name="volume_panel_timeout_title">Timeout</string>
     <string name="volume_panel_timeout_summary">Tempo prima che il pannello venga nascosto</string>
-    <!-- Launch music app on connect -->
     <string name="headset_category_title">Cuffie</string>
     <string name="headset_connect_player_title">Apri player predefinito alla connessione delle cuffie</string>
 
+    <!-- Headset category -->
+    <string name="headset_category_title">Cuffie</string>
+    
+    <!-- Headset plug -->
+    <string name="headset_settings">Cuffie</string>
+    <string name="headset_plug_enable_title">Inserisci scorciatoia</string>
+    <string name="headset_plug_positive_title">Disattivato</string>
+    <string name="headset_plug_neutral_title">Predefinito</string>
+    <string name="headset_plug_neutral_summary">App musica di sistema</string>
+    <string name="headset_plug_music_active_title">Disattiva se l\'audio è attivo</string>
+    <string name="headset_plug_music_active_summary">Non aprire scorciatoia se l\'audio è attivo</string>
+    <string name="headset_plug_app_running_title">Azione per la scorciatoia</string>
+    <string name="headset_plug_app_running_nothing">Nulla</string>
+    <string name="headset_plug_app_running_front">Muovi in avanti</string>
+    <string name="headset_plug_actions_title">Action on remove</string>
+    <string name="headset_plug_actions_disabled">Nulla</string>
+    <string name="headset_plug_actions_front">Muovi in avanti</string>
+    <string name="headset_plug_actions_kill">Chiudi app</string>
+    <string name="headset_plug_force_actions_title">Rimozione forzata</string>
+    <string name="headset_plug_force_actions_summary">Non aprire scorciatoia anche se già aperta</string>
+    
     <!-- Automatic brightness customization -->
     <string name="auto_brightness_setup_title">Luminosità automatica</string>
     <string name="auto_brightness_twilight_adjustment">Regolazione all\'alba e al tramonto</string>
@@ -436,7 +448,7 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <string name="lock_screen_title">Schermata di sblocco</string>
     <string name="lock_screen_summary">Cambia il modo in cui si presenta la tua lockscreen, aggiungi scorciatoie e widget</string>
     <string name="additional_options_title">Opzioni avanzate</string>
-    <string name="lock_before_unlock_title">Mostra slider prima dello sblocco sicuro</string>
+    <string name="lock_before_unlock_title">Mostra slider prima di sbloccare</string>
     <string name="lock_before_unlock_summary">Mostra slider di sblocco prima del meccanismo sicuro di sblocco</string>
 
     <!-- Shake to secure -->
@@ -473,10 +485,6 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <!-- Whether the dots will be drawn when using the lockscreen pattern -->
     <string name="lockpattern_settings_enable_dots_title">Mostra punti sequenza</string>
 
-    <!-- Security settings home unlock -->
-    <string name="unlock_home_unlock_title">Sblocco home</string>
-    <string name="unlock_home_unlock_summary">La pressione del tasto home sblocca il dispositivo</string>
-
     <!-- Quick unlock -->
     <string name="unlock_quick_unlock_control_title">Sblocco veloce</string>
     <string name="unlock_quick_unlock_control_summary">Sblocco automatico quando viene inserito correttamente il PIN o la password</string>
@@ -500,7 +508,7 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <string name="lockgesture_settings_enable_title">Gesture richiesta</string>
     <string name="lockgesture_settings_enable_summary">Devi disegnare una gesture per sbloccare lo schermo</string>
     <string name="lockgesture_settings_enable_visible_pattern_title">Rendi la gesture visibile</string>
-    <string name="lockgesture_settings_enable_power_button_instantly_locks">Pulsante power blocca subito lo schermo</string>
+    <string name="lockgesture_settings_enable_power_button_instantly_locks">Pulsante power blocca lo schermo</string>
     <string name="lockgesture_settings_choose_lock_pattern">Imposta gesture di sblocco</string>
     <string name="lockgesture_settings_change_lock_pattern">Cambia gesture di sblocco</string>
     <string name="lockgesture_settings_help_how_to_record">Come disegnare gesture di sblocco</string>
@@ -518,7 +526,7 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <string name="lockgesture_need_to_unlock_wrong_footer" />
 
     <!-- Quick settings panel  -->
-    <string name="quick_settings_panel_title">Quick settings &amp; menu notifiche</string>
+    <string name="quick_settings_panel_title">Quick settings</string>
     <string name="quick_settings_summary">Aggiungi o rimuovi tiles e cambia altre opzioni dei quick settings e del menu delle notifiche</string>
     <string name="title_static_tiles">Tile statici</string>
     <string name="tile_picker_title">Tile e disposizione</string>
@@ -774,6 +782,10 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <string name="privacy_guard_manager_show_system_apps">Mostra app di sistema</string>
     <string name="privacy_guard_manager_filter_permissions">Filtro permessi</string>
     <string name="privacy_guard_advanced_settings_title">Avanzato</string>
+    <string name="privacy_guard_notification_title">Mostra notifica</string>
+    <string name="privacy_guard_notification_icon_title">Mostra icona di notifica</string>
+    <string name="privacy_guard_notification_dismiss_title">Notifica rimovibile</string>
+    <string name="privacy_guard_notification_dismiss_summary">Una notifica rimovibile può essere eliminata</string>
 
     <!-- Battery status on lock ring -->
     <string name="battery_around_lockscreen_ring">Batteria intorno al lucchetto</string>
@@ -782,10 +794,15 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <!-- Setting checkbox summary for displaying USB debugging notification -->
     <string name="adb_notify">Notifica debug USB</string>
     <string name="adb_notify_summary">Mostra notifica quando il debug USB è attivo</string>
+    
+    <!-- button settings -->
+    <string name="button_settings">Pulsanti</string>
 
     <!-- Hardware keys -->
     <string name="button_keys_title">Pulsanti</string>
     <string name="button_keys_summary">Vedi o cambia azioni dei pulsanti</string>
+    <string name="disable_hw_title">Disattiva tasti fisici</string>
+    <string name="disable_hw_summary">Disattivando i tasti fisici si attiverà la navigation bar</string>
     <string name="keys_bindings_title">Azioni</string>
     <string name="keys_enable_custom_title">Attiva azioni personalizzate</string>
     <string name="keys_enable_custom_summary">Attiva azioni personalizzate</string>
@@ -808,7 +825,48 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <string name="keys_action_long">Tieni premuto</string>
     <string name="keys_action_double">Doppio tocco</string>
     <string name="no_home_key">Non hai nessuna opzione selezionata per il tasto \"home\"! \n\n Questo può rendere il tuo dispositivo inusabile!</string>
-
+ 
+    <!-- Lock screen buttons -->
+    <string name="lockscreen_long_press_home_title">Tieni premuto tasto home sulla lockscreen</string>
+    <string name="lockscreen_buttons_no_action">Niente</string>
+    <string name="lockscreen_buttons_flashlight">Torcia</string>
+    <string name="lockscreen_buttons_next">Traccia successiva</string>
+    <string name="lockscreen_buttons_previous">Traccia precedente</string>
+    <string name="lockscreen_buttons_playpause">Play/Pausa musica</string>
+    <string name="lockscreen_buttons_toggle_sound">Suono on/off</string>
+    <string name="lockscreen_buttons_sleep">Vai a dormire</string>
+    
+    <!-- Home unlock -->
+    <string name="unlock_home_unlock_title">Sblocco home</string>
+    <string name="unlock_home_unlock_summary">Premendo sul tasto home si sblocca il dispositivo</string>
+    
+    <!-- Power key end call -->
+    <string name="hardware_keys_power_key_title">Tasto power</string>
+    <string name="power_end_call_title">Chiude chiamata</string>
+    <string name="power_end_call_summary">Premendo sul tasto spegnimento la chiamata attuale sarà terminata</string>
+ 
+    <!-- Home key end call -->
+    <string name="home_answer_call_title">Tasto home risponde</string>
+    <string name="home_answer_call_summary">Premendo il tasto home si risponderà alla chiamata in arrivo</string>
+ 
+    <!-- Volume keys -->
+    <string name="button_volume_keys_title">Tasti volume</string>
+    <string name="button_volume_wake_title">Risveglio</string>
+    <string name="button_volume_wake_summary">Premendo un qualsiasi tasto del volume si accenderà lo schermo</string>
+ 
+    <!-- Swap volume buttons -->
+    <string name="swap_volume_buttons_title">Re-orienta tasti</string>
+    <string name="swap_volume_buttons_summary">Cambia i tasti del volume se lo schermo è ruotato</string>
+ 
+    <!-- Volume buttons cursor control -->
+    <string name="volume_key_cursor_control_title">Cursori di controllo</string>
+    <string name="volume_key_cursor_control_on">Il tasto volume su/giù muove il cursore a sinistra/destra</string>
+    <string name="volume_key_cursor_control_on_reverse">Il tasto volume su/giù muove il cursore a destra/sinistra</string>
+ 
+    <!-- Volume button music control -->
+    <string name="volbtn_music_controls_title">Controllo tracce</string>
+    <string name="volbtn_music_controls_summary">Quando lo schermo è spento, tenendo premuto su un tasto del volume si cambierà traccia</string>
+ 
     <!-- Increase Ringing -->
     <string name="increasing_ring_title">Suoneria incrementale</string>
     <!-- Sound settings screen, the caption of the checkbox for making incoming calls increase in volume -->
@@ -1001,7 +1059,7 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <!-- Navigation settings -->
     <string name="navigation_settings_options_title">Opzioni di navigazione</string>
     <string name="navigation_settings_category_title">Pulsanti</string>
-    <string name="navigation_settings_summary">Opzioni per la navigation bar, i controlli pie e i tasti fisici</string>
+    <string name="navigation_settings_summary">Personalizza la navigation bar</string>
     <string name="navigation_settings_title">Navigation bar</string>
 
     <!-- Navigation bar -->
@@ -1217,7 +1275,7 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <string name="lockscreen_notifications">Notifiche in lockscreen</string>
     <string name="summary_lockscreen_notifications_enabled">Le notifiche in lockscreen sono attivate</string>
     <string name="summary_lockscreen_notifications_disabled">Le notifiche in lockscreen sono disattivate</string>
-    <string name="lockscreen_notifications_disabled_notice">To allow lock screen to display interactive notifications on your screen, enable lock screen notifications.</string>
+    <string name="lockscreen_notifications_disabled_notice">Per permettere alla lockscreen di mostrare le notifiche in sospeso, attiva le notifiche in lockscreen.</string>
     <string name="pocket_mode">Modalità pocket</string>
     <string name="pocket_mode_summary">Lo schermo si accende e mostra tutte le notifiche quando il dispositivo è tirato fuori dalla tasca. Lo schermo si spegne quando il dispositivo torna in tasca </string>
     <string name="show_always">Mostra sempre </string>
@@ -1382,7 +1440,7 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
 
     <!-- Less Notification sounds -->
     <string name="notifications_category_title">Notifiche </string>
-    <string name="less_notification_sounds_title">Suoni di notifica meno presenti </string>
+    <string name="less_notification_sounds_title">Suoni di notifica meno frequenti</string>
     <string name="less_notification_sounds_summary">Limita il numero di suono che può fare un\'app per un determinato periodo di tempo </string>
     <string name="less_notification_sounds_default">Predefinito </string>
     <string name="less_notification_sounds_3s">3 secondi </string>
@@ -1401,12 +1459,9 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <string name="device_hostname">Hostname dispositivo </string>
 
     <!-- Keyboard and Input methods  -->
-    <string name="title_keyboard_input">Opzioni avanzate </string>
+    <string name="title_keyboard_input">Opzioni avanzate tastiera</string>
     <string name="disable_fullscreen_keyboard_title">Disattiva tastiera a schermo intero </string>
     <string name="disable_fullscreen_keyboard_summary">La tastiera in modalità orizzontale non occuperà mai tutto lo schermo </string>
-    <string name="volume_key_cursor_control_title">Tasti del volume controllano il cursore </string>
-    <string name="volume_key_cursor_control_on">Il pulsante volume su/giù muove il cursore a sinistra/destra </string>
-    <string name="volume_key_cursor_control_on_reverse"> Il pulsante volume su/giù muove il cursore a destra/sinistra </string>
     <string name="keyboard_rotation_toggle_title">Rotazione automatica tastiera </string>
     <string name="keyboard_rotation_toggle_summary">Attiva rotazione automatica quando la tastiera è mostrata </string>
     <string name="keyboard_rotation_timeout_title">Timeout rotazione automatica </string>
@@ -1461,21 +1516,6 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
 
     <!-- Minimum Vibration Duration -->
     <string name="minimum_vibration_duration">Durata minima vibrazione </string>
-
-    <!-- Lock screen buttons -->
-    <string name="lockscreen_buttons_category">Azione dei pulsanti nella lockscreen </string>
-    <string name="lockscreen_buttons_title">Azione dei pulsanti nella lockscreen </string>
-    <string name="lockscreen_buttons_summary">Vedi o cambia le azioni dei pulsanti nella lockscreen </string>
-    <string name="lockscreen_long_press_back_title">Tieni premuto pulsante indietro </string>
-    <string name="lockscreen_long_press_home_title">Tieni premuto pulsante home </string>
-    <string name="lockscreen_long_press_menu_title">Tieni premuto pulsante menu </string>
-    <string name="lockscreen_buttons_no_action">Nessun azione </string>
-    <string name="lockscreen_buttons_flashlight">Torcia </string>
-    <string name="lockscreen_buttons_next">Prossima canzone </string>
-    <string name="lockscreen_buttons_previous">Canzone </string>
-    <string name="lockscreen_buttons_playpause">Play/Pausa musica </string>
-    <string name="lockscreen_buttons_toggle_sound">Toggle suono </string>
-    <string name="lockscreen_buttons_sleep">Vai a dormire </string>
 
     <!-- Lock screen misc. settings -->
     <string name="lockscreen_battery_status_title">Livello batteria </string>
@@ -1613,8 +1653,9 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <string name="app_ops_reset_confirm_mesg">Sei sicuro di voler ripristinare il contatore AppOps?</string>
 
     <!-- Screen off animation options -->
+    <string name="display_category_animation_options_title">Animazioni</string>
     <string name="system_power_crt_mode_title">Animazione spegnimento schermo </string>
-    <string name="system_power_crt_mode_dialog_title">CRT animation</string>
+    <string name="system_power_crt_mode_dialog_title">Animazione</string>
     <string name="system_power_crt_mode_off">Non mostrare </string>
     <string name="system_power_crt_mode_horizontal">Chiusura in orizzontale </string>
     <string name="system_power_crt_mode_vertical">Chiusura in verticale </string>
@@ -1622,9 +1663,9 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <string name="system_power_crt_mode_scale">Graduale </string>
 
     <!-- Animation Control -->
-    <string name="interface_animation_title">Animazioni </string>
-    <string name="interface_animation_summary">Scegli animazioni alternative per varie cose </string>
-
+    <string name="interface_animation_title">Opzioni avanzate</string>
+    <string name="interface_animation_summary">Personalizza le animazioni di sistema, della visione lista, dello scroll e altro</string>
+  
     <!-- ListView animation -->
     <string name="system_animation_title">Sistema</string>
     <string name="system_animation_summary">Vedi o cambia animazioni di sistema</string>
@@ -1924,10 +1965,6 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <string name="power_menu_onthego_title">Modalità On-The-Go</string>
     <string name="title_tile_onthego">On-The-Go</string>
 
-    <!-- Swap volume buttons -->
-    <string name="swap_volume_buttons_title">Riorienta i pulsanti del volume </string>
-    <string name="swap_volume_buttons_summary">Scambia i pulsanti del volume quando lo schermo è ruotato </string>
-
     <!-- Recents Ram Bar -->
     <string name="ram_bar_title">RAM Bar </string>
     <string name="ram_bar_summary">Vedi o cambia le impostazioni della RAM bar</string>
@@ -2190,24 +2227,6 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <!-- Subtitle of dialog for editing data usage cycle length. [CHAR LIMIT=32] -->
     <string name="data_usage_lengths_spinner_subtitle">Lunghezza ciclo:</string>
 
-    <!-- Headset plug -->
-    <string name="headset_settings">Cuffie</string>
-    <string name="headset_plug_enable_title">Inserisci scorciatoia</string>
-    <string name="headset_plug_positive_title">Disattivato</string>
-    <string name="headset_plug_neutral_title">Predefinito</string>
-    <string name="headset_plug_neutral_summary">App musica di sistema</string>
-    <string name="headset_plug_music_active_title">Disattiva se l\'audio è attivo</string>
-    <string name="headset_plug_music_active_summary">Non aprire scorciatoia se l\'audio è attivo</string>
-    <string name="headset_plug_app_running_title">Azione per la scorciatoia</string>
-    <string name="headset_plug_app_running_nothing">Nulla</string>
-    <string name="headset_plug_app_running_front">Muovi in avanti</string>
-    <string name="headset_plug_actions_title">Action on remove</string>
-    <string name="headset_plug_actions_disabled">Nulla</string>
-    <string name="headset_plug_actions_front">Muovi in avanti</string>
-    <string name="headset_plug_actions_kill">Chiudi app</string>
-    <string name="headset_plug_force_actions_title">Rimozione forzata</string>
-    <string name="headset_plug_force_actions_summary">Non aprire scorciatoia anche se già aperta</string>
-    
     <!--Blacklist-->
     <string name="blacklist_button_title">Blacklist</string>
     <string name="peek_blacklist_label">Blacklist di peek</string>
@@ -2224,6 +2243,7 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <string name="summary_heads_up_enabled">Heads up è attivo</string>
     <string name="summary_heads_up_disabled">Heads up non è attivo</string>
     <string name="heads_up_floating_window">Apri in modalità floating</string>
+    <string name="heads_up_floating_window_summary">Cliccando sulla notifica quest\'ultima si aprirà in modalità floating</string>
     <string name="heads_up_expanded_title">Sempre esteso</string>
     <string name="heads_up_expanded_summary">Mostra le notifiche di heads up sempre in modalità estesa</string>
     <string name="heads_up_show_updates_title">Mostra aggiornamenti</string>
@@ -2237,8 +2257,8 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <string name="heads_up_snooze_15min">15 minuti</string>
     <string name="heads_up_snooze_20min">20 minuti</string>
     <string name="heads_up_time_out_title">Timeout</string>
-    <string name="heads_up_time_out_summary">Heads up notification will show up for <xliff:g id="number">%d</xliff:g> secondi.</string>
-    <string name="heads_up_time_out_never_summary">Le notifiche di heads up saranno mostrate fino alla rimozione.</string>
+    <string name="heads_up_time_out_summary">Le notifiche di heads up saranno mostrate per <xliff:g id="number">%d</xliff:g> secondi</string>
+    <string name="heads_up_time_out_never_summary">Le notifiche di heads up saranno mostrate fino alla loro rimozione.</string>
     <string name="heads_up_time_out_4sec">4 secondi</string>
     <string name="heads_up_time_out_6sec">6 secondi</string>
     <string name="heads_up_time_out_8sec">8 secondi</string>
@@ -2323,7 +2343,8 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     
     <!-- Search -->
     <string name="settings_search_action_bar_button">Cerca</string>
-    <string name="settings_search_autocompleteview_hint">Cerca impostazioni</string>
+    <string name="settings_search_autocompleteview_hint">Cerca nelle impostazioni</string>
+    <string name="settings_search_loading_text">Ricerca in corso\u2026</string>
     
     <!-- Stay Awake while plugged in -->
     <string name="keep_screen_on_summary_cm">Lo schermo non si spegnerà mai se in carica</string>
@@ -2342,4 +2363,7 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <string name="enable_adb_cm">Debug USB</string>
     <!-- Setting checkbox summary for Whether to enable Android debugging support on the phone -->
     <string name="enable_adb_summary_cm">Attiva l\'interfaccia adb di android</string>
+    
+    <!-- Gestures Options -->
+    <string name="gestures_settings_header_title">Gesture</string>
 </resources>
