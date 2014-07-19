@@ -17,13 +17,7 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/advanced_sound_title"
-    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">        
-
-    <CheckBoxPreference
-        android:key="safe_headset_volume"
-        android:title="@string/safe_headset_volume_title"
-        android:summary="@string/safe_headset_volume_summary"
-        android:defaultValue="true" />
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <com.android.settings.mahdi.preference.AppSelectListPreference
         android:key="headset_plug"
