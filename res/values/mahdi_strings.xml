@@ -837,18 +837,22 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="lockscreen_buttons_toggle_sound">Toggle sound</string>
     <string name="lockscreen_buttons_sleep">Go to sleep</string>
 
+    <!-- Home wake -->
+    <string name="button_volume_wake_title">Wake up</string>
+    <string name="home_wake_summary">Pressing the home button will wake your device</string>
+
     <!-- Home unlock -->
     <string name="unlock_home_unlock_title">Unlock</string>
     <string name="unlock_home_unlock_summary">Pressing the home button unlocks the device</string>
+
+    <!-- Home key end call -->
+    <string name="home_answer_call_title">Answer call</string>
+    <string name="home_answer_call_summary">Pressing the home button will answer the current incoming call</string>
 
     <!-- Power key end call -->
     <string name="hardware_keys_power_key_title">Power button</string>
     <string name="power_end_call_title">End call</string>
     <string name="power_end_call_summary">Pressing the power button will end the current call</string>
-
-    <!-- Home key end call -->
-    <string name="home_answer_call_title">Answer call</string>
-    <string name="home_answer_call_summary">Pressing the home button will answer the current incoming call</string>
 
     <!-- Volume keys -->
     <string name="button_volume_keys_title">Volume Keys</string>
