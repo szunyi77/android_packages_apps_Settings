@@ -80,16 +80,22 @@
             android:entries="@array/lockscreen_long_key_press_entries"
             android:entryValues="@array/lockscreen_long_key_press_values"/>
 
-        <CheckBoxPreference
-            android:key="home_answer_call"
-            android:title="@string/home_answer_call_title"
-            android:summary="@string/home_answer_call_summary"
-            android:persistent="false"/>
+        <com.android.settings.mahdi.SystemSettingCheckBoxPreference
+            android:key="home_wake_screen"
+            android:title="@string/button_volume_wake_title"
+            android:summary="@string/home_wake_summary"
+            android:defaultValue="true" />
 
         <com.android.settings.mahdi.SystemSettingCheckBoxPreference
             android:key="home_unlock_screen"
             android:title="@string/unlock_home_unlock_title"
             android:summary="@string/unlock_home_unlock_summary" />
+
+        <CheckBoxPreference
+            android:key="home_answer_call"
+            android:title="@string/home_answer_call_title"
+            android:summary="@string/home_answer_call_summary"
+            android:persistent="false"/>
     </PreferenceCategory>
 
     <PreferenceCategory
