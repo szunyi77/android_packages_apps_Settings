@@ -39,6 +39,7 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+            android:key="advanced_keyboard"
             android:title="@string/title_keyboard_input" >
 
         <CheckBoxPreference

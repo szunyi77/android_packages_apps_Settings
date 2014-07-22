@@ -96,6 +96,7 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
     private int mDefaultInputMethodSelectorVisibility = 0;
     private ListPreference mShowInputMethodSelectorPref;
     private PreferenceCategory mKeyboardSettingsCategory;
+    private PreferenceCategory mAdvancedKeyboardCategory;
     private PreferenceCategory mHardKeyboardCategory;
     private PreferenceCategory mGameControllerCategory;
     private Preference mLanguagePref;
@@ -158,6 +159,7 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
         new VoiceInputOutputSettings(this).onCreate();
 
         // Get references to dynamically constructed categories.
+        mAdvancedKeyboardCategory = (PreferenceCategory)findPreference("advanced_keyboard");
         mHardKeyboardCategory = (PreferenceCategory)findPreference("hard_keyboard");
         mKeyboardSettingsCategory = (PreferenceCategory)findPreference(
                 "keyboard_settings_category");
@@ -175,6 +177,7 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
                 getPreferenceScreen().addPreference(mShowInputMethodSelectorPref);
             }
             getPreferenceScreen().addPreference(mKeyboardSettingsCategory);
+            getPreferenceScreen().addPreference(mAdvancedKeyboardCategory);
         }
 
         // Build IME preference category.
