@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2012-2013 The Mahdi-Rom Project
+<!-- Copyright (C) 2013-2014 The Mahdi-Rom Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Custom settings  -->
-    <string name="custom_settings_category">Mahdi</string>
+    <string name="custom_settings_category">UI sistema</string>
     <!-- Customization Interface settings  -->
     <string name="customization_settings_title">Impostazioni UI</string>
 
@@ -79,7 +79,7 @@
     <string name="pulse_length_normal">Normale</string>
     <string name="pulse_length_long">Lungo</string>
     <string name="pulse_length_very_long">Molto lungo</string>
-    <string name="pulse_speed_very_fast">Molto facile</string>
+    <string name="pulse_speed_very_fast">Molto veloce</string>
     <string name="pulse_speed_fast">Veloce</string>
     <string name="pulse_speed_normal">Normale</string>
     <string name="pulse_speed_slow">Lento</string>
@@ -170,6 +170,8 @@
     <string name="profile_trigger_connect">Connetti</string>
     <string name="profile_trigger_disconnect">Disconnetti</string>
     <string name="profile_trigger_notrigger">Nessun innesco</string>
+    <string name="profile_trigger_a2dp_connect">Connetti A2DP</string>
+    <string name="profile_trigger_a2dp_disconnect">Disconnetti A2DP</string>
 
     <!-- Profile Settings sound modes labels -->
     <string name="sound_mode">Modalità notifica</string>
@@ -363,9 +365,7 @@
     <!-- Volume panel timeout -->
     <string name="volume_panel_timeout_title">Timeout</string>
     <string name="volume_panel_timeout_summary">Tempo prima che il pannello venga nascosto</string>
-    <string name="headset_category_title">Cuffie</string>
-    <string name="headset_connect_player_title">Apri player predefinito alla connessione delle cuffie</string>
-
+   
     <!-- Headset category -->
     <string name="headset_category_title">Cuffie</string>
     
@@ -414,15 +414,15 @@
     <string name="auto_brightness_help_text"><b>Come viene calcolata la luminosità automatica?</b>
 \n\n
 La curva di luminosità viene calcolata eseguendo una <i>interpolazione spline di terzo grado</i>
-su un dato numero di <i>punti di controllo</i>. Non è un algoritmo che fa rimanere costante
-la luminosità dello schermo in determinati intervalli di luminosità ambientale. In questo modo,
-piccole variazioni di luce ambientale non causano grandi variazioni di luminosità dello schermo;
+su un dato numero di <i>punti di controllo</i>. Non è un algoritmo che fa rimanere costante la
+luminosità dello schermo in determinati intervalli di luminosità ambientale. In questo modo, piccole
+variazioni di luce ambientale non causano grandi variazioni di luminosità dello schermo;
 tuttavia, può essere arduo predire le esatte conseguenze di una modifica nei punti di controllo.\n
 Per rimediare a questo, si può esaminare un\'anteprima della curva calcolata. Si noti che
-l\'anteprima mostra la curva in scala <i>logaritmica</i>, in modo che i punti di controllo
-possano essere visualizzati distintamente. Se si usasse una scala lineare, non sarebbe
-possibile distinguere i punti di controllo - tendenzialmente più importanti - nella gamma
-più bassa di luminosità ambientale.\n\n
+l\'anteprima mostra la curva in scala <i>logaritmica</i>, in modo che i punti di controllo possano essere
+visualizzati distintamente. Se si usasse una scala lineare, non sarebbe possibile distinguere
+i punti di controllo - tendenzialmente più importanti - nella gamma più bassa di luminosità ambientale.
+\n\n
 <b>Come modificare la curva di luminosità?</b>
 \n\n
 Ogni riga nella lista corrisponde ad un <i>punto di controllo</i> della curva di luminosità.
@@ -432,7 +432,8 @@ del controllo a scorrimento per fornire un\'anteprima del livello di luminosità
 Altre opzioni sono disponibili premendo a lungo una riga. Selezionando \'Modifica\', puoi modificare
 il livello di luce ambientale del punto di controllo, ed anche inserire manualmente il valore
 desiderato di luminosità dello schermo. Selezionando \'Dividi\' puoi dividere una riga, per
-inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.</string>
+inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
+    </string>
 
     <string name="auto_brightness_sensitivity_title">Regola sensibilità</string>
     <string name="auto_brightness_sensitivity_verylow">Molto bassa</string>
@@ -648,18 +649,14 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <string name="flip_qs_tiles_title">Gira tile</string>
     <string name="flip_qs_tiles_summary">Gira i tile al tocco</string>
     
-    <!-- QuickSettings smaller tiles -->
-    <string name="title_qs_small_icons">Mostra tile più piccoli</string>
-    <string name="summary_qs_small_icons">Usa tile più piccoli per aumentare il numero di colonne</string>
-
     <!-- QuickSettings haptic feedback -->
     <string name="haptic_qs_tiles_title">Vibra al tocco</string>
     <string name="haptic_qs_tiles_summary">Il telefono vibra al tocco del tile</string>
     
     <!-- QuickSettings smaller tiles -->
     <string name="title_qs_small_icons">Mostra tile più piccoli</string>
-    <string name="summary_qs_small_icons">Mostra tile più piccoli per usarne di più</string>
- 
+    <string name="summary_qs_small_icons">Usa tile più piccoli per aumentare il numero di colonne</string>
+
     <!-- This exists as part of Power widget already, re-use them
          If Power widget is removed, re-enable these -->
     <string name="pref_ring_mode_title">Modalità suoneria</string>
@@ -836,18 +833,22 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <string name="lockscreen_buttons_toggle_sound">Suono on/off</string>
     <string name="lockscreen_buttons_sleep">Vai a dormire</string>
     
+    <!-- Home wake -->
+    <string name="button_volume_wake_title">Risveglio</string>
+    <string name="home_wake_summary">Lo schermo si accende quando si preme il tasto home</string>
+    
     <!-- Home unlock -->
     <string name="unlock_home_unlock_title">Sblocco home</string>
     <string name="unlock_home_unlock_summary">Premendo sul tasto home si sblocca il dispositivo</string>
     
+    <!-- Home key end call -->
+    <string name="home_answer_call_title">Rispondi alla chiamata</string>
+    <string name="home_answer_call_summary">Premendo il tasto home si risponderà alla chiamata in arrivo</string>
+ 
     <!-- Power key end call -->
     <string name="hardware_keys_power_key_title">Tasto power</string>
     <string name="power_end_call_title">Chiude chiamata</string>
     <string name="power_end_call_summary">Premendo sul tasto spegnimento la chiamata attuale sarà terminata</string>
- 
-    <!-- Home key end call -->
-    <string name="home_answer_call_title">Tasto home risponde</string>
-    <string name="home_answer_call_summary">Premendo il tasto home si risponderà alla chiamata in arrivo</string>
  
     <!-- Volume keys -->
     <string name="button_volume_keys_title">Tasti volume</string>
@@ -1112,15 +1113,15 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <string name="navigation_bar_glow_tint_title">Colore bagliore</string>
 
     <!-- Basic Numbers -->
-    <string name="two">Due </string>
-    <string name="three">Tre </string>
-    <string name="four">Quattro </string>
-    <string name="five">Cinque </string>
-    <string name="six">Sei </string>
+    <string name="two">Due</string>
+    <string name="three">Tre</string>
+    <string name="four">Quattro</string>
+    <string name="five">Cinque</string>
+    <string name="six">Sei</string>
 
     <!-- Quiet hours -->
-    <string name="quiet_hours_title">Ore di quiete </string>
-    <string name="quiet_hours_summary">Configura gli orari in cui il dispositivo deve essere silenzioso </string>
+    <string name="quiet_hours_title">Ore di quiete</string>
+    <string name="quiet_hours_summary">Configura gli orari in cui il dispositivo deve essere silenzioso</string>
     <string name="quiet_hours_enabled">Attiva ore di quiete </string>
     <string name="quiet_hours_enabled_on">Le ore di quiete saranno forzate</string>
     <string name="quiet_hours_enabled_off">Le notifiche funzioneranno normalmente </string>
@@ -1489,9 +1490,9 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <!-- DarkUI -->
     <string name="darkui_title">Dark-UI</string>
     <string name="theme_auto_mode_title">Modalità</string>
-    <string name="theme_auto_mode_off">Manuale </string>
-    <string name="theme_auto_mode_lightsensor">Al cambiamento delle condizioni di luce </string>
-    <string name="theme_auto_mode_twilight">A seconda dell\'orario </string>
+    <string name="theme_auto_mode_off">Manuale</string>
+    <string name="theme_auto_mode_lightsensor">Al cambiamento delle condizioni di luce</string>
+    <string name="theme_auto_mode_twilight">A seconda dell\'orario</string>
     <string name="theme_auto_switch_mode_error">Lo switch automatico con la luminosità è attivo. Non puoi attivare il tema dark in modo manuale </string>
 
     <!-- Notification drawer background -->    
@@ -1537,12 +1538,12 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <string name="emulate_menu_key_summary">Premere il tasto menu sulla navbar mostrerà il menu in basso </string>
 
     <!-- App ops -->
-    <string name="app_ops_summaries_coarse_location">Locazione </string>
-    <string name="app_ops_summaries_fine_location">Alta precisione </string>
+    <string name="app_ops_summaries_coarse_location">Posizione</string>
+    <string name="app_ops_summaries_fine_location">Alta precisione</string>
     <string name="app_ops_summaries_gps">GPS</string>
-    <string name="app_ops_summaries_vibrate">vibrazione </string>
-    <string name="app_ops_summaries_read_contacts">leggi contatti </string>
-    <string name="app_ops_summaries_modify_contacts">modifica contatti </string>
+    <string name="app_ops_summaries_vibrate">vibrazione</string>
+    <string name="app_ops_summaries_read_contacts">leggi contatti</string>
+    <string name="app_ops_summaries_modify_contacts">modifica contatti</string>
     <string name="app_ops_summaries_read_call_log">leggi log chiamate </string>
     <string name="app_ops_summaries_modify_call_log">modifica log chiamate </string>
     <string name="app_ops_summaries_read_calendar">leggi calendario </string>
@@ -1913,14 +1914,6 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <string name="lockscreen_misc_color_title">Colori vari</string>
     <string name="lockscreen_misc_color_summary">Colore degli elementi rimanenti</string>
     
-    <!-- Themes -->
-    <string name="theme_settings_title_slim">Temi</string>
-    <string name="theme_auto_mode_title">Dark-UI</string>
-    <string name="theme_auto_mode_off">Manuale</string>
-    <string name="theme_auto_mode_lightsensor">Al cambiamento delle condizioni di luce</string>
-    <string name="theme_auto_mode_twilight">A seconda dell\'orario</string>
-    <string name="theme_auto_switch_mode_error">Lo switch automatico con la luminosità è attivo. Non puoi attivare il tema dark in modo manuale </string>
-
     <!-- Double-tap to sleep -->
     <string name="double_tap_sleep_title">Doppio tocco per spegnere lo schermo </string>
     <string name="double_tap_to_sleep_summary">Vedi o cambia le opzioni </string>
@@ -2227,8 +2220,17 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <string name="menu_hidden_apps_delete">Ripristina</string>
     <string name="menu_hidden_apps_reset_lock">Ripristina modello di sblocco</string>
     <string name="protected_apps">Applicazioni protette</string>
-    <string name="saving_protected_components">Salvataggio dei componenti di stato</string>
+    <string name="saving_protected_components">Salvataggio stato dei componenti</string>
     
+    <!-- Protected apps lockpattern reset button -->
+    <string name="lockpattern_reset_button">Ripristina</string>
+    <string name="lockpattern_settings_reset_summary">Inserisci l\'email primaria e la password corrispondente per ripristinare il modello di sblocco</string>
+    <string name="pa_login_username_hint">Nome utente (email)</string>
+    <string name="pa_login_password_hint">Password</string>
+    <string name="pa_login_submit_button">Login</string>
+    <string name="pa_login_checking_password">Controllo account\u2026</string>
+    <string name="pa_login_incorrect_login">C'è stato un errore</string>
+ 
     <!-- Heads Up -->
     <string name="category_heads_up">Heads up</string>
     <string name="summary_heads_up_enabled">Heads up è attivo</string>
@@ -2357,4 +2359,11 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     
     <!-- Gestures Options -->
     <string name="gestures_settings_header_title">Gesture</string>
+    
+    <!-- Lid Settings -->
+    <string name="smart_cover">Smart cover</string>
+    <string name="smart_cover_wake_title">Risveglio smart cover</string>
+    <string name="smart_cover_wake_summary">Risveglia dispositivo all\'apertura della smart cover</string>
+    <string name="smart_cover_sleep_title">Spegnimento smart cover</string>
+    <string name="smart_cover_sleep_summary">Spegni lo schermo del dispositivo alla chiusura della smart cover</string>
 </resources>
