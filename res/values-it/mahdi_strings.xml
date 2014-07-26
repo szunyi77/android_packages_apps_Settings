@@ -1755,15 +1755,6 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <string name="animation_no_scroll_summary_on">Attivato</string>
     <string name="animation_no_scroll_summary_off">Disattivato</string>
 
-    <!-- IME Animation Controls -->
-    <string name="ime_animation_title">Tastiera </string>
-    <string name="ime_animation_summary">Vedi o cambia le animazioni della tastiera </string>
-    <string name="ime_animation_test_title">Testa l\'animazione qui </string>
-    <string name="ime_enter_animation_title">Entrata </string>
-    <string name="ime_exit_animation_title">Uscita </string>
-    <string name="ime_interpolator_title">Movimento </string>
-    <string name="ime_duration_title">Durata IME </string>
-
     <!-- Smooth ProgressBar -->
     <string name="progressbar_title">Barra di avanzamento </string>
     <string name="progressbar_summary">Vedi o cambia le impostazioni della barra di avanzamento </string>

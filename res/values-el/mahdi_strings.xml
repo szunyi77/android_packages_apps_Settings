@@ -1734,15 +1734,6 @@
   <string name="animation_no_scroll_summary_on">Ενεργό</string>
   <string name="animation_no_scroll_summary_off">Ανενεργό</string>
 
-  <!-- IME Animation Controls -->
-  <string name="ime_animation_title">Πληκτρολόγιο</string>
-  <string name="ime_animation_summary">Προβολή και αλλαγή των εφφέ πληκτρολογίου</string>
-  <string name="ime_animation_test_title">Τεστάρισμα του εφφέ πληκτρολογίου</string>
-  <string name="ime_enter_animation_title">Εφφέ εισόδου</string>
-  <string name="ime_exit_animation_title">Εφφέ εξόδου</string>
-  <string name="ime_interpolator_title">Νοθευτής</string>
-  <string name="ime_duration_title">Διάρκεια εφφέ</string>
-
   <!-- Smooth ProgressBar -->
   <string name="progressbar_title">Μπάρες προόδου</string>
   <string name="progressbar_summary">Προβολή και αλλαγή των εφφέ της μπάρας προόδου</string>

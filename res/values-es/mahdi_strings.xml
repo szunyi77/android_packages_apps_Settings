@@ -1666,15 +1666,6 @@ dos con el fin de insertar puntos de control adicionales. \'Borrar\' elimina lin
     <string name="animation_no_scroll_title">Personaliza scroll</string>
     <string name="animation_no_scroll_summary_on">Activado</string>
     <string name="animation_no_scroll_summary_off">Desactivado</string>
-
-    <!-- IME Animation Controls -->
-    <string name="ime_animation_title">Teclado</string>
-    <string name="ime_animation_summary">Ver o cambiar animaciones de teclado</string>
-    <string name="ime_animation_test_title">Prueba Animación de teclado aquí</string>
-    <string name="ime_enter_animation_title">Animación de entrada</string>
-    <string name="ime_exit_animation_title">Animación de salida</string>
-    <string name="ime_interpolator_title">Interpolador</string>
-    <string name="ime_duration_title">Duración de teclado</string>
 	
     <!-- Smooth ProgressBar -->
     <string name="progressbar_title">Barras de progreso</string>
