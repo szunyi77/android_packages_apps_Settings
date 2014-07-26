@@ -1718,16 +1718,6 @@ dos con el fin de insertar puntos de control adicionales. \'Borrar\' elimina lin
     <string name="edge_gesture_service_title">Bloquear gesto de toque de eventos</string>
     <string name="edge_gesture_service_summary">No emitir gesto de toque de eventos en navbar y barra de estado</string>
 	
-    <!-- Wakelock blocker -->
-    <string name="wakelock_blocker">Bloqueador de Wakelock</string>
-    <string name="wakelock_blocker_title">Activar</string>
-    <string name="wakelock_blocker_summary">Activar Bloqueador de Wakelocks para revisar wakelocks</string>
-    <string name="wakelock_blocker_save">Guardar</string>
-    <string name="wakelock_list_header">Wakelocks disponible</string>
-    <string name="wakelock_blocker_reload">Recargar</string>
-    <string name="wakelock_blocker_warning_title">Proceder con precaución</string>
-    <string name="wakelock_blocker_warning">Bloqueador de Wakelocks puede causar inestabilidad, accidentes o pérdida de datos.</string>
-	
     <!-- Toggle switch title for enabling battery saver connections. [CHAR LIMIT=32] -->
     <string name="data_usage_enable_batterysaver">Ahorro de batería</string>
 

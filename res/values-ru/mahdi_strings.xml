@@ -1781,16 +1781,6 @@
     <string name="edge_gesture_service_title">Подавлять события жестов</string>
     <string name="edge_gesture_service_summary">Не передавать приложениям жесты показа строки состояния и панели навигации</string>
 
-    <!-- Wakelock blocker -->
-    <string name="wakelock_blocker">Блокировка wakelock-ов</string>
-    <string name="wakelock_blocker_title">Включить</string>
-    <string name="wakelock_blocker_summary">Активировать блокировку для выбранных wakelock-ов</string>
-    <string name="wakelock_blocker_save">Сохранить</string>
-    <string name="wakelock_list_header">Доступные вейклоки</string>
-    <string name="wakelock_blocker_reload">Перезагрузить</string>
-    <string name="wakelock_blocker_warning_title">Действовать с осторожностью</string>
-    <string name="wakelock_blocker_warning">Блокирование вейклоков потенциально может привести к нестабильной работе устройства, сбою или потере данных</string>
-
     <!-- Battery saver mode -->
     <string name="unit_sec">сек</string>
     <string name="network_lte">LTE (рекомендуется)</string>
