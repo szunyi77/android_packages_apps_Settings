@@ -1558,15 +1558,6 @@ Xóa sẽ gỡ bỏ dòng.
     <string name="animation_no_scroll_summary_on">Bật</string>
     <string name="animation_no_scroll_summary_off">Tắt</string>
 
-    <!-- IME Animation Controls -->
-    <string name="ime_animation_title">Bàn phím</string>
-    <string name="ime_animation_summary">Hiện hay đổi hiệu ứng bàn phím</string>
-    <string name="ime_animation_test_title">Thử nghiệm IME ở đây</string>
-    <string name="ime_enter_animation_title">Hiệu ứng bật</string>
-    <string name="ime_exit_animation_title">Hiệu ứng tắt</string>
-    <string name="ime_interpolator_title">Interpolator</string>
-    <string name="ime_duration_title">IME khoảng thời gian</string>
-
     <!-- Smooth ProgressBar -->
     <string name="progressbar_title">Thanh tiến trình</string>
     <string name="progressbar_summary">Hiện hay đổi hiệu ứng thanh tiến trình và mà</string>
@@ -1617,16 +1608,6 @@ Xóa sẽ gỡ bỏ dòng.
     <!-- EdgeGesture service -->
     <string name="edge_gesture_service_title">Chặn gesture touch events</string>
     <string name="edge_gesture_service_summary">Không gửi touch events cho điều hướng và thanh gesture trạng thái tới ứng dụng</string>
-
-    <!-- Wakelock blocker -->
-    <string name="wakelock_blocker">Wakelock Blocker</string>
-    <string name="wakelock_blocker_title">Bật</string>
-    <string name="wakelock_blocker_summary">Bật chặn cho wakelocks đánh dấu</string>
-    <string name="wakelock_blocker_save">Lưu</string>
-    <string name="wakelock_list_header">Wakelocks hiện có</string>
-    <string name="wakelock_blocker_reload">Tải lại</string>
-    <string name="wakelock_blocker_warning_title">Thực hiện với Chú ý</string>
-    <string name="wakelock_blocker_warning">Chặn wakelocks có thể làm mất ổn định, crashes hay mất dữ liệu.</string>
 
     <!-- Battery saver mode -->
     <string name="unit_sec">sec</string>

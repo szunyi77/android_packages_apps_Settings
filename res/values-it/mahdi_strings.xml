@@ -1807,16 +1807,6 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <string name="edge_gesture_service_title">Blocca eventi tocco </string>
     <string name="edge_gesture_service_summary">Non inviare eventi al tocco della navigation bar </string>
 
-    <!-- Wakelock blocker -->
-    <string name="wakelock_blocker">Blocca wakelock </string>
-    <string name="wakelock_blocker_title">Attiva </string>
-    <string name="wakelock_blocker_summary">Attiva blocco per wakelock controllati </string>
-    <string name="wakelock_blocker_save">Salva </string>
-    <string name="wakelock_list_header">Wakelock disponibili </string>
-    <string name="wakelock_blocker_reload">Ricarica </string>
-    <string name="wakelock_blocker_warning_title">Procedere con cautela </string>
-    <string name="wakelock_blocker_warning">Bloccare wakelock può causare problemi </string>
-
     <!-- Battery saver mode -->
     <string name="unit_sec">sec</string>
     <string name="network_lte">LTE (consigliato)</string>

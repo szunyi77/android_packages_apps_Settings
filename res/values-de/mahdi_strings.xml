@@ -1777,16 +1777,6 @@ If Power widget is removed, re-enable these -->
     <string name="edge_gesture_service_title">Berührungen bei Gestensteuerung blockieren</string>
     <string name="edge_gesture_service_summary">Berührungen der Navigations- und Statusleiste bei Gestensteuerung vor Apps verbergen</string>
 
-    <!-- Wakelock blocker -->
-    <string name="wakelock_blocker">Wakelock Blocker</string>
-    <string name="wakelock_blocker_title">Aktivieren</string>
-    <string name="wakelock_blocker_summary">Blockieren der ausgewählten Wakelocks</string>
-    <string name="wakelock_blocker_save">Speichern</string>
-    <string name="wakelock_list_header">Verfügbare Wakelocks</string>
-    <string name="wakelock_blocker_reload">Neu Laden</string>
-    <string name="wakelock_blocker_warning_title">Bitte Vorsicht</string>
-    <string name="wakelock_blocker_warning">Das Blocken von Wakelocks kann zu Instabilität, Abstürzen oder Datenverlust führen.</string>
-
     <!-- Battery saver mode -->
     <string name="unit_sec">Sek</string>
     <string name="network_lte">LTE (empfohlen)</string>

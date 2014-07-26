@@ -1785,16 +1785,6 @@
   <string name="edge_gesture_service_title">Εμπόδισε τα συμβάντα με χρήση χειρονομίας </string>
   <string name="edge_gesture_service_summary">Μην στέλνεις τα συμβάντα αφής απο την μπαρα πλοήγησης και κατάστασης στις εφαρμογές</string>
 
-  <!-- Wakelock blocker -->
-  <string name="wakelock_blocker">Μπλοκάρισμα αφυπνίσεων</string>
-  <string name="wakelock_blocker_title">Ενεργό</string>
-  <string name="wakelock_blocker_summary">Ενεργοποίησε το μπλοκάρισμα στις τσεκαρισμένες αφυπνίσεις </string>
-  <string name="wakelock_blocker_save">Σώσιμο</string>
-  <string name="wakelock_list_header">Διαθέσιμες αφυπνίσεις</string>
-  <string name="wakelock_blocker_reload">Επαναφόρτωση</string>
-  <string name="wakelock_blocker_warning_title">Προχωρήστε με επιφύλαξη </string>
-  <string name="wakelock_blocker_warning">Μπλοκάροντας τις αφυπνίσεις του επεξεργαστή είναι πιθανό να δημιουργήθει αστάθια, κολλήματα ή απώλεια δεδομένων.</string>
-
   <!-- Battery saver mode -->
   <string name="unit_sec">δευτ.</string>
   <string name="network_lte">LTE (προτείνεται)</string>
