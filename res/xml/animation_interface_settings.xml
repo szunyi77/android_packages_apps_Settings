@@ -45,11 +45,6 @@
         android:title="@string/scrolling_title" />
 
     <PreferenceScreen
-        android:key="interface_animation_keyboard"
-        android:fragment="com.android.settings.mahdi.aokp.KeyboardAnimationInterfaceSettings"
-        android:title="@string/ime_animation_title" />
-
-    <PreferenceScreen
         android:key="progressbar_settings"
         android:fragment="com.android.settings.mahdi.aokp.ProgressBar"
         android:title="@string/progressbar_title" />

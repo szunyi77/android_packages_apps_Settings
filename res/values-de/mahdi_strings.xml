@@ -1726,15 +1726,6 @@ If Power widget is removed, re-enable these -->
     <string name="animation_no_scroll_summary_on">Aktiviert</string>
     <string name="animation_no_scroll_summary_off">Deaktiviert</string>
 
-    <!-- IME Animation Controls -->
-    <string name="ime_animation_title">Tastatur</string>
-    <string name="ime_animation_summary">Konfiguration der Tastaturanimationen</string>
-    <string name="ime_animation_test_title">Animation testen</string>
-    <string name="ime_enter_animation_title">Einblenden</string>
-    <string name="ime_exit_animation_title">Ausblenden</string>
-    <string name="ime_interpolator_title">Interpolator</string>
-    <string name="ime_duration_title">Animationsdauer</string>
-
     <!-- Smooth ProgressBar -->
     <string name="progressbar_title">Fortschrittsbalken</string>
     <string name="progressbar_summary">Konfiguration der Fortschrittsbalken</string>

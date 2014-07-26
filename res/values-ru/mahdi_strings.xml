@@ -1679,15 +1679,6 @@
     <string name="animation_no_scroll_summary_on">Включена</string>
     <string name="animation_no_scroll_summary_off">Отключена</string>
 
-    <!-- IME Animation Controls -->
-    <string name="ime_animation_title">Клавиатура</string>
-    <string name="ime_animation_summary">Посмотреть или изменить анимацию клавиатуры</string>
-    <string name="ime_animation_test_title">Проверить анимацию клавиатуры</string>
-    <string name="ime_enter_animation_title">Анимация появления</string>
-    <string name="ime_exit_animation_title">Анимация исчезания</string>
-    <string name="ime_interpolator_title">Эффект</string>
-    <string name="ime_duration_title">Продолжительность анимации</string>
-
     <!-- Smooth ProgressBar -->
     <string name="progressbar_title">Индикатор прогресса</string>
     <string name="progressbar_summary">Посмотреть или изменить настройки индикатора прогресса</string>
