@@ -2219,7 +2219,7 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <string name="pa_login_password_hint">Password</string>
     <string name="pa_login_submit_button">Login</string>
     <string name="pa_login_checking_password">Controllo account\u2026</string>
-    <string name="pa_login_incorrect_login">C'è stato un errore</string>
+    <string name="pa_login_incorrect_login">C\'è stato un errore</string>
  
     <!-- Heads Up -->
     <string name="category_heads_up">Heads up</string>
