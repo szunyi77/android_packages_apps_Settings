@@ -24,6 +24,13 @@
         android:defaultValue="true" />
 
     <CheckBoxPreference
+        android:key="heads_up_gravity"
+        android:title="@string/heads_up_gravity_title"
+        android:summary="@string/heads_up_gravity_summary"
+        android:persistent="false"
+        android:defaultValue="false" />
+
+    <CheckBoxPreference
         android:key="heads_up_expanded"
         android:title="@string/heads_up_expanded_title"
         android:summary="@string/heads_up_expanded_summary"
