@@ -2373,8 +2373,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="smart_cover_sleep_summary">Put the device to sleep when smart cover closes</string>
 
     <!-- Proximity wake -->
-    <string name="proximity_wake_title">Proximity wake-up</string>
-    <string name="proximity_wake_summary">Use proximity sensor to help decide whether to wake device up</string>
+    <string name="proximity_wake_title">Prevent accidental wake-up</string>
+    <string name="proximity_wake_summary">Check the proximity sensor prior to waking up screen</string>
 
     <!-- Spam notifications -->
     <string name="spam_added_title">Added %1$s</string>
