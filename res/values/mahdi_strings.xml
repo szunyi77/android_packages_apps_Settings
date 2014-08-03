@@ -1096,6 +1096,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="navbar_enable_bar_summary">Enable the navigation bar</string>
     <string name="navigation_bar_left_title">Left handed mode</string>
     <string name="navigation_bar_left_summary">Place the navigation bar on the left side of the screen in landscape mode</string>
+    <string name="navigation_bar_ime_title">Disable keyboard cursor arrows</string>
+    <string name="navigation_bar_ime_summary">Keyboard cursor arrows are enabled by default, use this option to disable them</string>
     <string name="navigation_bar_height_title">Navigation bar height</string>
     <string name="navigation_bar_height_summary">Navigation bar height while in portrait.</string>
     <string name="navigation_bar_height_landscape_title">Navigation bar height landscape</string>
