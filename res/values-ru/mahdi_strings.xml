@@ -2308,7 +2308,7 @@
     <string name="enable_adb_summary_cm">Включение интерфейса Android Debug Bridge (ADB)</string>
 
     <!-- Gestures Options -->
-    <string name="gestures_settings_header_title">Жесты</string>
+    <string name="screen_off_gesture_settings_title">Жесты</string>
     
     <!-- Lid Settings -->
     <string name="smart_cover">\"Умная\" обложка</string>

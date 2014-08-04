@@ -88,6 +88,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_SCREEN_COLOR_SETTINGS = "screencolor_settings";
     private static final String KEY_SMART_COVER = "smart_cover";
     private static final String KEY_PROXIMITY_WAKE = "proximity_on_wake";
+    private static final String KEY_SCREEN_OFF_GESTURE_SETTINGS = "screen_off_gesture_settings";
 
     // Strings used for building the summary
     private static final String ROTATION_ANGLE_0 = "0";
@@ -284,6 +285,9 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 com.android.internal.R.array.config_smartCoverWindowCoords).length != 4) {
             getPreferenceScreen().removePreference(findPreference(KEY_SMART_COVER));
         }
+
+        Utils.updatePreferenceToSpecificActivityFromMetaDataOrRemove(getActivity(),
+                getPreferenceScreen(), KEY_SCREEN_OFF_GESTURE_SETTINGS);
     }
 
     private void updateDisplayRotationPreferenceDescription() {
