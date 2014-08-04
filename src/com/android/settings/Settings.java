@@ -156,8 +156,6 @@ public class Settings extends PreferenceActivity
     private static final String META_DATA_KEY_PARENT_FRAGMENT_CLASS =
         "com.android.settings.PARENT_FRAGMENT_CLASS";
 
-    private static final String KEY_SCREEN_GESTURE_SETTINGS = "touch_screen_gesture_settings";
-
     private static final String EXTRA_UI_OPTIONS = "settings:ui_options";
     private static final String EXTRA_DISABLE_SEARCH = "settings:disable_search";
 
@@ -165,7 +163,6 @@ public class Settings extends PreferenceActivity
     private static final String SAVE_KEY_PARENT_HEADER = "com.android.settings.PARENT_HEADER";
 
     private static final String VOICE_WAKEUP_PACKAGE_NAME = "com.cyanogenmod.voicewakeup";
-    private static final String GESTURE_SETTINGS_PACKAGE_NAME = "com.cyanogenmod.settings";
 
     static final int DIALOG_ONLY_ONE_HOME = 1;
 
@@ -718,8 +715,7 @@ public class Settings extends PreferenceActivity
             Header header = target.get(i);
             // Ids are integers, so downcasting
             int id = (int) header.id;
-            if (id == R.id.operator_settings || id == R.id.manufacturer_settings
-                    || id == R.id.device_specific_gesture_settings) {
+            if (id == R.id.operator_settings || id == R.id.manufacturer_settings) {
                 Utils.updateHeaderToSpecificActivityFromMetaDataOrRemove(this, target, header);
             } else if (id == R.id.wifi_settings) {
                 // Remove WiFi Settings if WiFi service is not available.

@@ -2362,9 +2362,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Setting checkbox summary for Whether to enable Android debugging support on the phone -->
     <string name="enable_adb_summary_cm">Enable the Android Debug Bridge (adb) interface</string>
 
-    <!-- Gestures Options -->
-    <string name="gestures_settings_header_title">Gestures</string>
-
     <!-- Lid Settings -->
     <string name="smart_cover">Smart cover</string>
     <string name="smart_cover_wake_title">Smart cover wake</string>
