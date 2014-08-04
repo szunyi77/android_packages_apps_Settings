@@ -2348,7 +2348,7 @@ inserire punti di controllo aggiuntivi. \'Rimuovi\' elimina la riga selezionata.
     <string name="enable_adb_summary_cm">Attiva l\'interfaccia adb di android</string>
     
     <!-- Gestures Options -->
-    <string name="gestures_settings_header_title">Gesture</string>
+    <string name="screen_off_gesture_settings_title">Gesture</string>
     
     <!-- Lid Settings -->
     <string name="smart_cover">Smart cover</string>

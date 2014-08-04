@@ -2332,7 +2332,7 @@
   <string name="enable_adb_summary_cm">Ενεργοποίηση της γέφυρας ανίχνευσης σφαλμάτων Android (adb)</string>
 
   <!-- Gestures Options -->
-  <string name="gestures_settings_header_title">Χειρονομίες</string>
+  <string name="screen_off_gesture_settings_title">Χειρονομίες</string>
 
   <!-- Lid Settings -->
   <string name="smart_cover">Έξυπνο κάλυμμα</string>
