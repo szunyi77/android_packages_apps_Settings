@@ -159,31 +159,31 @@
     <string name="profile_appgroup_manage">Alkalmazás csoport kezelése</string>
 
     <!-- Profile settings screen, section header for settings related to notification profiles -->
-    <string name="profile_settings">Profile settings</string>
-    <string name="profile_name">Name</string>
-    <string name="profile_trigger_connect">On connect</string>
-    <string name="profile_trigger_disconnect">On disconnect</string>
-    <string name="profile_trigger_notrigger">No trigger</string>
+    <string name="profile_settings">Profil</string>
+    <string name="profile_name">Név</string>
+    <string name="profile_trigger_connect">Csatlakozáskor</string>
+    <string name="profile_trigger_disconnect">Lecsatlakozáskor</string>
+    <string name="profile_trigger_notrigger">Ne váltson profilt</string>
 
     <!-- Profile Settings sound modes labels -->
-    <string name="sound_mode">Notification mode</string>
-    <string name="ringer_mode">Ring mode</string>
-    <string name="lights_mode">Lights mode</string>
-    <string name="vibrate_mode">Vibrate mode</string>
-    <string name="choose_soundtone">Choose notification tone</string>
-    <string name="choose_ringtone">Choose ringtone</string>
+    <string name="sound_mode">Értesítési mód</string>
+    <string name="ringer_mode">Csengetés módja</string>
+    <string name="lights_mode">Fényjelzés módja</string>
+    <string name="vibrate_mode">Rezgő mód</string>
+    <string name="choose_soundtone">Értesítés hangja</string>
+    <string name="choose_ringtone">Telefon csengőhangja</string>
 
     <!-- Sound settings screen, setting option name to pick ringtone (a list dialog comes up)-->
-    <string name="soundtone_title">Notification tone</string>
+    <string name="soundtone_title">Értesítés hangja</string>
     <string name="soundtone_summary">""</string>
 
     <!-- Title for application group setting screen -->
-    <string name="profile_appgroups_title">App groups</string>
-    <string name="profile_applist_title">Apps</string>
-    <string name="profile_new_appgroup">New app group</string>
-    <string name="profile_delete_appgroup">Delete this app group?</string>
-    <string name="profile_appgroup_name_prompt">Enter a name for the new app group</string>
-    <string name="profile_appgroup_name_title">Name</string>
+    <string name="profile_appgroups_title">Alkalmazáscsoportok</string>
+    <string name="profile_applist_title">Alkalmazások</string>
+    <string name="profile_new_appgroup">Új alkalmazáscsoport</string>
+    <string name="profile_delete_appgroup">Alkalmazáscsoport törlése?</string>
+    <string name="profile_appgroup_name_prompt">Adja meg az új alkalmazáscsoport nevét</string>
+    <string name="profile_appgroup_name_title">Név</string>
 
     <!-- Add application dialog box title -->
     <string name="profile_choose_app">Choose app</string>
